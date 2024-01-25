@@ -1,0 +1,13 @@
+#logoheader{
+    width: 50%;
+}
+.fixed-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Ajustez la valeur selon vos besoins, pour garantir que le header reste au-dessus du reste du contenu */
+    background-color: white;
+    box-shadow: 1px 1px 1px #252649;
+  }
+

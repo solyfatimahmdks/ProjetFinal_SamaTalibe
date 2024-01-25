@@ -1,0 +1,76 @@
+<!-- <p>header works!</p> -->
+<header (window:scroll)="onScroll($event)" [ngClass]="{'fixed-header': isHeaderFixed}" style="border-bottom: 3px solid #252649;">
+    <div class="px-3 py-2 border-bottom" style="background-color: #252649;">
+      <div class="">
+        <div class="d-flex flex-wrap justify-content-between justify-content-lg-start">
+          <a href="/" class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
+          <p style="color: #C2A966; font-size: 12px;">Nimbal ci dahra yi, moy taxawu talibé yi</p>
+          </a>
+
+          <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
+            <li class="ms-3" style="border: 1px solid #C2A966; padding: 8px; border-radius: 5px; background-color: #252649; opacity: 75%;"><a class="link-body-emphasis" href="#"><i class="bi bi-twitter" style="color: #C2A966;"></i></a></li>
+            <li class="ms-3" style="border: 1px solid #C2A966; padding: 8px; border-radius: 5px; background-color: #252649; opacity: 75%;"><a class="link-body-emphasis" href="#"><i class="bi bi-facebook" style="color: #C2A966;"></i></a></li>
+            <li class="ms-3" style="border: 1px solid #C2A966; padding: 8px; border-radius: 5px; background-color: #252649; opacity: 75%;"><a class="link-body-emphasis" href="#"><i class="bi bi-linkedin" style="color: #C2A966;"></i></a></li>
+            <li class="ms-3" style="border: 1px solid #C2A966; padding: 8px; border-radius: 5px; background-color: #252649; opacity: 75%;"><a class="link-body-emphasis" href="#"><i class="bi bi-instagram" style="color: #C2A966;"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="px-3 py-2 mb-3 row" style="margin: 0 auto;">
+              <div class="col-md-4 mb-2 mb-md-0">
+                <a href="/" class="d-inline-flex link-body-emphasis text-decoration-none">
+                <img src="assets/LOGOS/LogoHeader.png" alt="" id="logoheader">
+                </a>
+              </div>
+        
+              <ul class="nav col-12 col-md-5 mb-2 justify-content-center mb-md-0">
+                <li><a routerLink="/accueil" [class.active-link]="isLinkActive('/accueil')" style="margin-right:20px; text-decoration: none; color: #252649; font-weight: bold;">Accueil</a></li>
+                <li><a routerLink="/a-propos" [class.active-link]="isLinkActive('/a-propos')" style="margin-right:20px ; text-decoration: none; color: #252649; font-weight: bold;">A propos</a></li>
+                <!-- <li class="nav-item dropdown">
+                  <a  class="nav-link dropdown-toggle" id="navbarDropdownDahras" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="margin-right:20px; color: #252649; font-weight: bold;">
+                    Dahras
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdownDahras">
+                    <a class="dropdown-item" >Liste des dahras</a>
+                    <a class="dropdown-item" >Sama dahra</a>
+                  </div>
+                </li> -->
+                <!-- retouche -->
+                <!-- <div class="dropdown">
+                  <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Dahras
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" >Liste</a></li>
+                    <li><a class="dropdown-item" >Sama dahra</a></li>
+                  </ul>
+                </div>
+                <div class="dropdown">
+                  <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Dropdown link
+                  </a>
+                
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Action</a></li>
+                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                  </ul>
+                </div> -->
+                <!-- retouche -->
+
+                <!-- <li class="nav-item dropdown">
+                  <a href="#" class="nav-link dropdown-toggle" id="navbarDropdownSoutiens" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="margin-right:20px; color: #252649; font-weight: bold;">
+                    Soutiens
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdownSoutiens">
+                    <a class="dropdown-item" href="#">Donnations</a>
+                    <a class="dropdown-item" href="#">Parrainages</a>
+                  </div>
+                </li> -->
+              </ul>
+        
+              <div class="col-md-3 mt-3 container" style="padding-left: 190px !important;">
+                <button type="button" class="btn" style="background-color: #252649; color: #C2A966; box-shadow: 1px 1px 1px 1px #C2A966;">Connexion</button>
+              </div>
+    </div>
+  </header>
