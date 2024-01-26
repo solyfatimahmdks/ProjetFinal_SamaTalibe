@@ -23,18 +23,13 @@
                 </a>
               </div>
         
-              <ul class="nav col-12 col-md-5 mb-2 justify-content-center mb-md-0">
-                <li><a routerLink="/accueil" [class.active-link]="isLinkActive('/accueil')" style="margin-right:20px; text-decoration: none; color: #252649; font-weight: bold;">Accueil</a></li>
-                <li><a routerLink="/a-propos" [class.active-link]="isLinkActive('/a-propos')" style="margin-right:20px ; text-decoration: none; color: #252649; font-weight: bold;">A propos</a></li>
-                <!-- <li class="nav-item dropdown">
-                  <a  class="nav-link dropdown-toggle" id="navbarDropdownDahras" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="margin-right:20px; color: #252649; font-weight: bold;">
-                    Dahras
-                  </a>
-                  <div class="dropdown-menu" aria-labelledby="navbarDropdownDahras">
-                    <a class="dropdown-item" >Liste des dahras</a>
-                    <a class="dropdown-item" >Sama dahra</a>
-                  </div>
-                </li> -->
+              <ul class="nav col-12 col-md-5 mt-4 fs-5 justify-content-center mb-md-0">
+                <li><a routerLink="/accueil" [class.active-link]="isLinkActive('/accueil')" style="margin-right:40px; text-decoration: none; color: #252649; font-weight: bold;">Accueil</a></li>
+                <li><a routerLink="/a-propos" [class.active-link]="isLinkActive('/a-propos')" style="margin-right:40px ; text-decoration: none; color: #252649; font-weight: bold;">A propos</a></li>
+                <li><a routerLink="/dahras" [class.active-link]="isLinkActive('/dahras')" style="margin-right:40px ; text-decoration: none; color: #252649; font-weight: bold;">Dahras</a></li>
+                <li><a routerLink="/soutiens" [class.active-link]="isLinkActive('/soutiens')" style="margin-right:40px ; text-decoration: none; color: #252649; font-weight: bold;">Soutiens</a></li>
+
+            
                 <!-- retouche -->
                 <!-- <div class="dropdown">
                   <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -49,6 +44,7 @@
                   <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Dropdown link
                   </a>
+                  
                 
                   <ul class="dropdown-menu">
                     <li><a class="dropdown-item" href="#">Action</a></li>
@@ -69,7 +65,7 @@
                 </li> -->
               </ul>
         
-              <div class="col-md-3 mt-3 container" style="padding-left: 190px !important;">
+              <div class="col-md-3 mt-4 container" style="padding-left: 190px !important;">
                 <button type="button" class="btn" style="background-color: #252649; color: #C2A966; box-shadow: 1px 1px 1px 1px #C2A966;">Connexion</button>
               </div>
     </div>

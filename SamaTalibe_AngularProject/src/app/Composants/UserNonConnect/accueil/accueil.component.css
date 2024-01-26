@@ -3,9 +3,8 @@ main{
   padding: 0;
 }
 
-#imgAcbanner{
-    width: 75%;
-    margin-left: 162px;
+#bcgban{
+   width: 100%; 
 }
 
 .imageabout-container {
@@ -75,4 +74,18 @@ main{
 #cardBottom{
   border-top-right-radius: 30px !important;
   border-bottom-right-radius: 30px !important;
+}
+
+/* contacts */
+#exampleFormControlInput1{
+  height: 60px;
+  border: 1px solid #C2A966;
+}
+#exampleFormControlTextarea1{
+  height: 250px;
+  border: 1px solid #C2A966
+}
+#contactImg{
+  /* border: 1px solid black; */
+  width: 70%;
 }

@@ -1,8 +1,8 @@
 <!-- <p>login works!</p> -->
 
-<div class="content mt-4" style="border: 1px solid #C2A966;border-radius: 5px; width: 70%;margin: 0 auto;">
-    <div class="position-absolute" style="width: 15%; height: 30%; background-color: #C2A966; border-radius: 0 100% 100% "></div>
-    <div class="position-absolute" style="width: 15%; height: 30%; background-color: #C2A966; top: 401px; left: 955px; border-radius: 100% 100% 0"></div>
+<div class="content mt-4" *ngIf="isLoginFormVisible; else signupForm" style="border: 1px solid #C2A966;border-radius: 5px; width: 70%;margin: 0 auto;">
+    <!-- <div class="position-absolute" style="width: 15%; height: 30%; background-color: #C2A966; border-radius: 0 100% 100% "></div> -->
+    <!-- <div class="position-absolute" style="width: 15%; height: 30%; background-color: #C2A966; top: 401px; left: 955px; border-radius: 100% 100% 0"></div> -->
     <div class="form-container my-5" style="margin: 0 auto; width: 50%;">
         <p class="title">Accéder à mon espace</p>
         <form class="form">
@@ -21,17 +21,44 @@
         </div>
         <div class="social-icons mb-3">
             <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
-                <li class="ms-3" ><a class="link-body-emphasis" href="#"><i class="bi bi-twitter" style="color: #C2A966;"></i></a></li>
-                <li class="ms-3" ><a class="link-body-emphasis" href="#"><i class="bi bi-facebook" style="color: #C2A966;"></i></a></li>
-                <li class="ms-3" ><a class="link-body-emphasis" href="#"><i class="bi bi-linkedin" style="color: #C2A966;"></i></a></li>
-                <li class="ms-3" ><a class="link-body-emphasis" href="#"><i class="bi bi-google" style="color: #C2A966;"></i></a></li>
+                <li class="ms-3" ><a class="link-body-emphasis" ><i class="bi bi-twitter" style="color: #C2A966;"></i></a></li>
+                <li class="ms-3" ><a class="link-body-emphasis" ><i class="bi bi-facebook" style="color: #C2A966;"></i></a></li>
+                <li class="ms-3" ><a class="link-body-emphasis" ><i class="bi bi-linkedin" style="color: #C2A966;"></i></a></li>
+                <li class="ms-3" ><a class="link-body-emphasis" ><i class="bi bi-google" style="color: #C2A966;"></i></a></li>
               </ul>
         </div>
         <p class="signup">Vous n'avez pas de compte?
-            <a rel="noopener noreferrer" href="#" class="" style="color: #C2A966; font-weight: bold;">S'inscrire</a>
+            <a rel="noopener noreferrer" (click)="toggleForm()" class="" style="color: #C2A966; font-weight: bold; cursor: pointer;">S'inscrire</a>
         </p>
     </div>
+
 </div>
+<ng-template #signupForm>
+    <div class="form-container my-5" style="margin: 0 auto; width: 50%;">
+            <p class="title">Nous rejoindre</p>
+            <form class="form">
+                <div class="input-group">
+                    <label for="username"  class="ms-2" style="color: #C2A966;">Adresse-mail:</label>
+                    <input type="text" name="username" id="username" placeholder="">
+                </div>
+                <div class="input-group">
+                    <label for="password" class="ms-2" style="color: #C2A966;">Mot de passe:</label>
+                    <input type="password" name="password" id="password" placeholder="">
+                </div>
+                <div class="input-group">
+                    <label for="password" class="ms-2" style="color: #C2A966;">Confirmer son mot de passe:</label>
+                    <input type="password" name="password" id="password" placeholder="">
+                </div>
+                <button class="sign mt-4" style="background-color: #C2A966; color: white; font-weight: bold;">S'inscrire'</button>
+            </form>
+            <p class="signup mt-4">Vous avez déjà un compte?
+                <a href="#" (click)="toggleForm()" style="color: #C2A966; font-weight: bold;">Se connecter</a>
+            </p>
+    </div>
+</ng-template>
+
+
+
 
 <!-- <header *ngIf="showHeaderAndFooter"></header>
 <footer *ngIf="showHeaderAndFooter"></footer> -->
