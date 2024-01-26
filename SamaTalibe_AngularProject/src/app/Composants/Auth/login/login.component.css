@@ -1,3 +1,12 @@
+.content{
+  background: linear-gradient(0deg, #401a88cb, #401a88d0), url("../../../../assets/accueil/ImgAbout.jpeg");
+  /* height: 80vh; */
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 0;
+  width: 100%;
+  background-position: center;
+}
 .form-container {
     width: 320px;
     border-radius: 0.75rem;
