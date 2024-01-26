@@ -8,11 +8,11 @@
         <form class="form">
             <div class="input-group">
                 <label for="username"  class="ms-2" style="color: #C2A966;">Adresse-mail:</label>
-                <input type="text" name="username" id="username" placeholder="">
+                <input type="text" name="username" id="username" placeholder="" [(ngModel)]="loginUser.username">
             </div>
             <div class="input-group">
                 <label for="password" class="ms-2" style="color: #C2A966;">Mot de passe:</label>
-                <input type="password" name="password" id="password" placeholder="">
+                <input type="password" name="password" id="password" placeholder="" [(ngModel)]="loginUser.password">
             </div>
             <button class="sign mt-4" style="background-color: #C2A966; color: white; font-weight: bold;">Se connecter</button>
         </form>
@@ -39,15 +39,15 @@
             <form class="form">
                 <div class="input-group">
                     <label for="username"  class="ms-2" style="color: #C2A966;">Adresse-mail:</label>
-                    <input type="text" name="username" id="username" placeholder="">
+                    <input type="text" name="username" id="username" placeholder="" [(ngModel)]="signupUser.username">
                 </div>
                 <div class="input-group">
                     <label for="password" class="ms-2" style="color: #C2A966;">Mot de passe:</label>
-                    <input type="password" name="password" id="password" placeholder="">
+                    <input type="password" name="password" id="password" placeholder="" [(ngModel)]="signupUser.password">
                 </div>
                 <div class="input-group">
                     <label for="password" class="ms-2" style="color: #C2A966;">Confirmer son mot de passe:</label>
-                    <input type="password" name="password" id="password" placeholder="">
+                    <input type="password" name="password" id="password" placeholder="" [(ngModel)]="signupUser.confirmPassword">
                 </div>
                 <button class="sign mt-4" style="background-color: #C2A966; color: white; font-weight: bold;">S'inscrire'</button>
             </form>

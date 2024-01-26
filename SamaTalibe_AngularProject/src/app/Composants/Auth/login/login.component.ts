@@ -7,8 +7,18 @@ import { Component, TemplateRef } from '@angular/core';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  isLoginFormVisible = true; // Indique si le formulaire de connexion est visible
-signupForm: TemplateRef<NgIfContext<boolean>> | null | undefined;
+  isLoginFormVisible = true;
+
+  loginUser = {
+    username: '',
+    password: ''
+  };
+
+  signupUser = {
+    username: '',
+    password: '',
+    confirmPassword: ''
+  };
 
   toggleForm() {
     this.isLoginFormVisible = !this.isLoginFormVisible;

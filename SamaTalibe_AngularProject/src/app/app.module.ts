@@ -21,6 +21,7 @@ import { TemUserComponent } from './Composants/UserConnect/tem-user/tem-user.com
 import { AccueilComponent } from './Composants/UserNonConnect/accueil/accueil.component';
 import { AproposComponent } from './Composants/UserNonConnect/apropos/apropos.component';
 import { DahraComponent } from './Composants/UserNonConnect/dahra/dahra.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -44,12 +45,14 @@ import { DahraComponent } from './Composants/UserNonConnect/dahra/dahra.componen
     AccueilComponent,
     AproposComponent,
     DahraComponent,
+  
 
 
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

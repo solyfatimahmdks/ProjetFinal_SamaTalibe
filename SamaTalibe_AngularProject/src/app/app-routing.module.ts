@@ -13,10 +13,10 @@ const routes: Routes = [
   { path: 'accueil', component: AccueilComponent },
   { path: 'a-propos', component: AproposComponent },
   { path: 'login', component: LoginComponent},
-  { path: '', redirectTo: '/accueil', pathMatch: 'full' },
   { path: 'adsupaccueil' , component: AccueilAdSupComponent},
   { path: 'dahras' , component: DahraComponent},
   { path: 'soutiens' , component: SoutiensComponent},
+  { path: '', redirectTo: '/accueil', pathMatch: 'full' },
   
 ];
 

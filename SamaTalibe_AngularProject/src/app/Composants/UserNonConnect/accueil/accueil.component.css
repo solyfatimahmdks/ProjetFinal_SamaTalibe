@@ -62,7 +62,9 @@ main{
     width: 100px;
     border-radius: 100%;
   }
-  
+.card-img i{
+
+}
 
 /* temoignages   */
 #maitreImg{
