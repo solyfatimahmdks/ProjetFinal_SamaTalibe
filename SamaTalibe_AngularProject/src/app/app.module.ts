@@ -22,6 +22,8 @@ import { AccueilComponent } from './Composants/UserNonConnect/accueil/accueil.co
 import { AproposComponent } from './Composants/UserNonConnect/apropos/apropos.component';
 import { DahraComponent } from './Composants/UserNonConnect/dahra/dahra.component';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule} from '@angular/common/http';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
 
 
 @NgModule({
@@ -45,6 +47,7 @@ import { FormsModule } from '@angular/forms';
     AccueilComponent,
     AproposComponent,
     DahraComponent,
+
   
 
 
@@ -52,7 +55,8 @@ import { FormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule, 
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

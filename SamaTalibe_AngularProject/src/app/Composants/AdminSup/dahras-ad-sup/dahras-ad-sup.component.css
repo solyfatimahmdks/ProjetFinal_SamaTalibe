@@ -1,0 +1,31 @@
+*{
+    padding: 0;
+    margin: 0;
+  }
+  #logodash{
+    width: 70%;
+    margin: 0 auto;
+  }
+  .nav-item a i{
+    width: 30%;
+  }
+  .btn{
+    background-color: #252649;
+    box-shadow: 1px 1px 1px 1px #C2A966 !important;
+    width: 300px; font-size: 20px; 
+    padding: 10px; margin: 20px; 
+    font-weight: bold;
+    color: #C2A966;
+  }
+  /* .btn:hover, .btn i:hover{
+    color: #252649 !important;
+    box-shadow: 1px 1px 1px 1px #252649;
+    font-weight: bold;
+  } */
+  #admindatable{
+    width: 65px;
+    box-shadow: 1px 1px 1px 1px #C2A966;
+    border-radius: 8px;
+  }
+
+/* card-content */

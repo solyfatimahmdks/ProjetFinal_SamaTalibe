@@ -5,7 +5,21 @@ main{
 
 #bcgban{
    width: 100%; 
+   height: auto;
 }
+
+.banner-container {
+  position: relative;
+}
+
+.banner-text {
+  position: absolute;
+  top: 50%; /* Ajustez la position verticale du texte */
+  left: 40%; /* Ajustez la position horizontale du texte */
+  transform: translate(-50%, -50%);
+  text-align: start; /* Centrez le texte horizontalement */
+}
+
 
 .imageabout-container {
     position: relative;

@@ -1,5 +1,5 @@
 .content{
-  background: linear-gradient(0deg, #401a88cb, #401a88d0), url("../../../../assets/accueil/ImgAbout.jpeg");
+  background: linear-gradient(0deg, #2f315a59,#2f315a59), url("../../../../assets/authbcg.jpg");
   /* height: 80vh; */
   background-size: cover;
   background-repeat: no-repeat;
@@ -7,10 +7,13 @@
   width: 100%;
   background-position: center;
 }
+#logoform{
+  width: 70%;
+  margin: 10%;
+}
 .form-container {
     width: 320px;
     border-radius: 0.75rem;
-    background-color: white;
     padding: 2rem;
     color: rgba(243, 244, 246, 1);
     border: 1px solid #C2A966;
@@ -45,9 +48,9 @@
     border-radius: 0.375rem;
     border: 1px solid #C2A966;
     outline: 0;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.418);
     padding: 0.75rem 1rem;
-    color: #C2A966;
+    color: black;
   }
   
   .input-group input:focus {
@@ -55,16 +58,12 @@
     border: 2px solid #C2A966;
   }
   
-
-  
 .signup a {
     color: rgba(243, 244, 246, 1);
     text-decoration: none;
     font-size: 14px;
   }
-  
-
-  
+ 
   .sign {
     display: block;
     width: 30%;
