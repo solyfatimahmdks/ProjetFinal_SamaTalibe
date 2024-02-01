@@ -1,74 +1,146 @@
 *{
-    padding: 0;
-    margin: 0;
-  }
-  #logodash{
-    width: 70%;
-    margin: 0 auto;
-  }
-  .nav-item a i{
-    width: 30%;
-  }
-  .btn{
-    background-color: #252649;
-    box-shadow: 1px 1px 1px 1px #C2A966 !important;
-    width: 300px; font-size: 20px; 
-    padding: 10px; margin: 20px; 
-    font-weight: bold;
-    color: #C2A966;
-  }
-  /* .btn:hover, .btn i:hover{
-    color: #252649 !important;
-    box-shadow: 1px 1px 1px 1px #252649;
-    font-weight: bold;
-  } */
+  padding: 0;
+  margin: 0;
+}
+#logodash{
+  width: 70%;
+  margin: 0 auto;
+}
+.nav-item a i{
+  width: 30%;
+}
+.btn{
+  background-color: #252649;
+  box-shadow: 1px 1px 1px 1px #C2A966 !important;
+  width: 300px; font-size: 20px; 
+  padding: 10px; margin: 20px; 
+  font-weight: bold;
+  color: #C2A966;
+}
+
 /* card-parrains */
 
 .card {
-  padding: 20px;
-  width: 330px;
-  min-height: 370px;
-  border-radius: 20px;
-  box-shadow: 5px 5px 6px #dadada,
-               -5px -5px 6px #f6f6f6;
-  transition: 0.4s;
+padding: 20px;
+width: 330px;
+min-height: 370px;
+border-radius: 20px;
+box-shadow: 5px 5px 6px #dadada,
+             -5px -5px 6px #f6f6f6;
+transition: 0.4s;
 }
 
 .card:hover {
-  translate: 0 -10px;
+translate: 0 -10px;
 }
 
 .card-title {
-  font-size: 18px;
-  font-weight: 600;
-  color: #252649;
-  margin: 0 auto;
-  font-weight: bold;
+font-size: 18px;
+font-weight: 600;
+color: #252649;
+margin: 0 auto;
+font-weight: bold;
 }
 
 .card-image img{
-  min-height: 170px;
-  background-color: #c9c9c9;
-  border-radius: 15px;
-  box-shadow: inset 8px 8px 10px #c3c3c3,
-            inset -8px -8px 10px #cfcfcf;
-            width: 285px;          
+min-height: 170px;
+background-color: #c9c9c9;
+border-radius: 15px;
+box-shadow: inset 8px 8px 10px #c3c3c3,
+          inset -8px -8px 10px #cfcfcf;
+          width: 285px;          
 }
 
 
 .card-body {
-  margin: 13px 0 0 10px;
-  color: rgb(31, 31, 31);
-  font-size: 15px;
+margin: 13px 0 0 10px;
+color: rgb(31, 31, 31);
+font-size: 12px;
 }
 
 .footer {
-  float: right;
-  margin: 28px 0 0 18px;
-  font-size: 13px;
-  color: #636363;
+float: right;
+margin: 28px 0 0 18px;
+font-size: 13px;
+color: #636363;
 }
 
 .by-name {
-  font-weight: 700;
+font-weight: 700;
+}
+.btnfoot a{
+font-size: 12px;
+}
+*{
+  padding: 0;
+  margin: 0;
+}
+#logodash{
+  width: 70%;
+  margin: 0 auto;
+}
+.nav-item a i{
+  width: 30%;
+}
+.btn{
+  background-color: #252649;
+  box-shadow: 1px 1px 1px 1px #C2A966 !important;
+  width: 300px; font-size: 20px; 
+  padding: 10px; margin: 20px; 
+  font-weight: bold;
+  color: #C2A966;
+}
+
+/* card-parrains */
+
+.card {
+padding: 20px;
+width: 330px;
+min-height: 370px;
+border-radius: 20px;
+box-shadow: 5px 5px 6px #dadada,
+             -5px -5px 6px #f6f6f6;
+transition: 0.4s;
+}
+
+.card:hover {
+translate: 0 -10px;
+}
+
+.card-title {
+font-size: 18px;
+font-weight: 600;
+color: #252649;
+margin: 0 auto;
+font-weight: bold;
+}
+
+.card-image img{
+min-height: 170px;
+background-color: #c9c9c9;
+border-radius: 15px;
+box-shadow: inset 8px 8px 10px #c3c3c3,
+          inset -8px -8px 10px #cfcfcf;
+          width: 285px;          
+}
+
+
+.card-body {
+margin: 13px 0 0 10px;
+color: rgb(31, 31, 31);
+font-size: 12px;
+}
+
+.footer {
+float: right;
+margin: 28px 0 0 18px;
+font-size: 13px;
+color: #636363;
+}
+
+.by-name {
+font-weight: 700;
+}
+.btnfoot a{
+font-size: 12px;
 }

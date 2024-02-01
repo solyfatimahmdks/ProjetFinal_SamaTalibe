@@ -1,0 +1,18 @@
+#bcgBann{
+    width: 100%; 
+  }
+
+#cardImg{
+  width: 100%;
+  border-radius: 1%;
+}
+#détailImg{
+  width:100%;
+  border-radius: 30% 0 30% 0;
+  /* box-shadow: 5px 5px 5px 5px #252649; */
+  border-top: 8px solid #252649;
+  border-left: 8px solid #252649;
+  
+}
+
+/* paginations */

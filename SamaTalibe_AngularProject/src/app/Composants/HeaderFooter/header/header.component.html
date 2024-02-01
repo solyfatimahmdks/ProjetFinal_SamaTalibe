@@ -26,47 +26,45 @@
               <ul class="nav col-12 col-md-5 mt-4 fs-5 justify-content-center mb-md-0">
                 <li><a routerLink="/accueil" [class.active-link]="isLinkActive('/accueil')" style="margin-right:40px; text-decoration: none; color: #252649; font-weight: bold;">Accueil</a></li>
                 <li><a routerLink="/a-propos" [class.active-link]="isLinkActive('/a-propos')" style="margin-right:40px ; text-decoration: none; color: #252649; font-weight: bold;">A propos</a></li>
-                <li><a routerLink="/dahras" [class.active-link]="isLinkActive('/dahras')" style="margin-right:40px ; text-decoration: none; color: #252649; font-weight: bold;">Dahras</a></li>
-                <li><a routerLink="/soutiens" [class.active-link]="isLinkActive('/soutiens')" style="margin-right:40px ; text-decoration: none; color: #252649; font-weight: bold;">Soutiens</a></li>
-
-            
-                <!-- retouche -->
-                <!-- <div class="dropdown">
-                  <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Dahras
-                  </button>
-                  <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" >Liste</a></li>
-                    <li><a class="dropdown-item" >Sama dahra</a></li>
-                  </ul>
-                </div>
-                <div class="dropdown">
-                  <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Dropdown link
-                  </a>
-                  
+                <li>
+                  <a (click)="toggleDahrasDropdown()" style="margin-right:40px; text-decoration: none; color: #252649; font-weight: bold; cursor: pointer;">Dahras</a>
                 
-                  <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Action</a></li>
-                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                  <!-- Dropdown content -->
+                  <ul *ngIf="isDahrasDropdownVisible ">
+                    <li style="list-style: none; font-weight: bold; "><a routerLink="/listdahra" [class.active-link]="isLinkActive('/dahra/liste')" style="text-decoration: none;color: #252649;">Liste des dahras</a></li>
+                    <li style="list-style: none; font-weight: bold; "><a class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal" style="text-decoration: none;color: #252649; border: none; font-size: 20px; font-weight: bold;">Sama dahra</a></li>
+                      <!-- Button trigger modal -->
+                                <!-- Modal -->
+                                <div class="modal fade mt-5" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                  <div class="modal-dialog">
+                                    <div class="modal-content p-5">
+                                      <div class="modal-header">
+                                        <h1 class="modal-title fs-5" style="margin: 0 auto; color: #252649;" id="exampleModalLabel">Authentifiez-vous d'abord</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                      </div>
+                                         <button type="button" class="btn" style="background-color: #252649; color: #C2A966; border: none; box-shadow:1px 1px 1px 1px #C2A966; font-weight: bold;" routerLink="/login">Connexion</button>
+                                    </div>
+                                  </div>
+                                </div>
                   </ul>
-                </div> -->
-                <!-- retouche -->
+                </li>
 
-                <!-- <li class="nav-item dropdown">
-                  <a href="#" class="nav-link dropdown-toggle" id="navbarDropdownSoutiens" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="margin-right:20px; color: #252649; font-weight: bold;">
-                    Soutiens
-                  </a>
-                  <div class="dropdown-menu" aria-labelledby="navbarDropdownSoutiens">
-                    <a class="dropdown-item" href="#">Donnations</a>
-                    <a class="dropdown-item" href="#">Parrainages</a>
-                  </div>
-                </li> -->
+
+
+                <li>
+                  <a (click)="toggleSoutiensDropdown()" style="margin-right:40px; text-decoration: none; color: #252649; font-weight: bold; cursor: pointer;">Soutiens</a>
+                
+                  <!-- Dropdown content -->
+                  <ul *ngIf=" isSoutiensDropdownVisible">
+                    <li style="list-style: none; font-weight: bold; "><a routerLink="/donnations" [class.active-link]="isLinkActive('/donnations')" style="text-decoration: none;color: #252649;">Donnations</a></li>
+                    <li style="list-style: none; font-weight: bold; "><a routerLink="/parrains" [class.active-link]="isLinkActive('/parrains')" style="text-decoration: none;color: #252649;">Parrainages</a></li>
+                  </ul>
+                </li>
+
               </ul>
         
               <div class="col-md-3 mt-4 container" style="padding-left: 190px !important;">
-                <button type="button" class="btn" style="background-color: #252649; color: #C2A966; box-shadow: 1px 1px 1px 1px #C2A966;">Connexion</button>
+                <button type="button" routerLink="/login" class="btn" style="background-color: #252649; color: #C2A966; box-shadow: 1px 1px 1px 1px #C2A966;">Connexion</button>
               </div>
     </div>
   </header>

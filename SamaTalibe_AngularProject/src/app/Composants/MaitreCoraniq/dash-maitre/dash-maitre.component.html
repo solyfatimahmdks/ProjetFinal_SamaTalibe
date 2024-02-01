@@ -4,7 +4,7 @@
 
     <!-- Page Wrapper -->
     <div class="row" id="wrapper">
-  
+       
         <!-- Sidebar -->
         <div class="col-md-3" style="background-color: #252649;height: 674px;">
           <ul class="navbar-nav sidebar sidebar-dark accordion" id="accordionSidebar" style="">
@@ -14,30 +14,30 @@
               </a>
             </li>
             <li>
-              <a href="#" class="nav-link ps-5 mb-2" style="height: 50px; color: #C2A966; font-size: 20px; font-weight: bold;">
+              <a  class="nav-link ps-5 mb-2" routerLink="/dashmaitre"  style="height: 50px; color: #C2A966; font-size: 20px; font-weight: bold;">
                 <i class="me-3 fa-solid fa-house" style="color: #C2A966;"></i>Dashboard
               </a>
             </li>
             <li>
-              <a href="#" class="nav-link ps-5 mb-2" style="height: 50px; color: #C2A966; font-size: 20px; font-weight: bold;">
-                <i class="me-3 fa-solid fa-hand-holding-droplet" style="color: #C2A966;"></i>Donnations
+              <a  class="nav-link ps-5 mb-2" routerLink="/samadahra"  style="cursor: pointer; height: 50px; color: white; font-size: 20px; font-weight: bold;">
+                <i class="me-3 fa-solid fa-house"  style="color: white;"></i>Sama Dahra
               </a>
             </li>
             <li>
-              <a href="#" class="nav-link ps-5 mb-2" style="height: 50px; color: #C2A966; font-size: 20px; font-weight: bold;">
-                <i class="me-3 fa-solid fa-user-xmark" style="color: #C2A966;"></i>Parrainages
+              <a  class="nav-link ps-5 mb-2" routerLink="/donsmaitre" style="height: 50px; color: white;border-left: 3px solid #C2A966; font-size: 20px; font-weight: bold;">
+                <i class="me-3 fa-solid fa-hand-holding-droplet" style="color: white;"></i>Donnations
               </a>
             </li>
             <li>
-              <a href="#" class="nav-link ps-5 mb-2" style="height: 50px; color: #C2A966; font-size: 20px; font-weight: bold;">
-                <i class="me-3 fa-solid fa-user-group" style="color: #C2A966;"></i>Rôles
+              <a class="nav-link ps-5 mb-2" routerLink="/parrainmaitre" style="height: 50px; color: white; font-size: 20px; font-weight: bold;">
+                <i class="me-3 fa-solid fa-user-xmark" style="color: white;"></i>Parrainages
               </a>
             </li>
             <li>
-              <a href="#" class="nav-link ps-5 mb-2" style="height: 50px; color: #C2A966; font-size: 20px; font-weight: bold;">
-                <i class="me-3 fa-solid fa-house-chimney-user" style="color: #C2A966;"></i>Dahras
+              <a class="nav-link ps-5 mb-2" routerLink="/temaitre" style="height: 50px; color: white; font-size: 20px; font-weight: bold;">
+                <i class="me-3 fa-solid fa-user-group" style="color: white;"></i>Témoignages
               </a>
-            </li>   
+            </li>
       
             <div class="d-sm-flex align-items-center justify-content-between my-4" style="margin: 0 auto;">
               <a href="#" class="d-none d-sm-inline-block btn btn-sm shadow-sm">
@@ -65,7 +65,7 @@
                       <div class="dropdown me-3">
                           <a href="#" class="d-flex align-items-center link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                             <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
-                            <strong>mdo</strong>
+                            <strong>Maitre</strong>
                           </a>
                           <ul class="dropdown-menu text-small shadow">
                             <li><a class="dropdown-item" href="#">New project...</a></li>
@@ -79,19 +79,84 @@
                   </div> 
                 </nav>
                 <!-- End of Topbar -->
-              
+                  <button type="button" class="nav-link ps-5 mb-2 btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop" style="background-color: #252649; cursor: pointer; height: 50px; color: #C2A966;box-shadow:1px 1px 1px #C2A966; font-size: 20px; font-weight: bold;">
+                    Nous rejoindre
+                  </button>
+                  <!-- Modal -->
+                  <div class="modal fade" style="" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog mt-5" style="margin: 0 auto;">
+                      <div class="modal-content" style="padding: 40px;  width: 800px;">
+                        <div class="modal-header">
+                          <h1 class="modal-title fs-5" style="margin: 0 auto; color: #252649;" id="staticBackdropLabel">Enregistrez votre dahra</h1>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                             <div class="row">
+                                <div class="col-md-6 mb-3 pe-3">
+                                  <label for="exampleFormControlInput1" style="color: #C2A966;" class="form-label">Nom Dahra:</label>
+                                  <input type="name"  style="height: 40px;border: 1px solid #C2A966; box-shadow:1px 1px 1px #C2A966;" class="form-control" id="exampleFormControlInput1" >
+                                </div>
+                                <div class="col-md-6 mb-3 ps-3">
+                                  <label for="exampleFormControlInput1" style="color: #C2A966;" class="form-label">Nom Oustaz:</label>
+                                  <input type="name" style="height: 40px;border: 1px solid #C2A966; box-shadow:1px 1px 1px #C2A966;" class="form-control" id="exampleFormControlInput1" >
+                                </div>
+                             </div>
+                             <div class="row">
+                              <div class="col-md-6 mb-3 pe-3">
+                                <label for="exampleFormControlInput1" style="color: #C2A966;" class="form-label">Numero Téléphone:</label>
+                                <input type="text"  style="height: 40px;border: 1px solid #C2A966; box-shadow:1px 1px 1px #C2A966;" class="form-control" id="exampleFormControlInput1" >
+                              </div>
+                              <div class="col-md-6 mb-3 ps-3">
+                                <label for="exampleFormControlInput1" style="color: #C2A966;" class="form-label">Numéro Téléphone Oustaz:</label>
+                                <input type="text"  style="height: 40px;border: 1px solid #C2A966; box-shadow:1px 1px 1px #C2A966;" class="form-control" id="exampleFormControlInput1" >
+                              </div>
+                           </div>
+                           <div class="row">
+                            <div class="col-md-6 mb-3 pe-3">
+                              <label for="exampleFormControlInput1" style="color: #C2A966;" class="form-label">Adresse:</label>
+                              <input type="text" style="height: 40px;border: 1px solid #C2A966; box-shadow:1px 1px 1px #C2A966;" class="form-control" id="exampleFormControlInput1" >
+                            </div>
+                            <div class="col-md-6 mb-3 ps-3">
+                              <label for="exampleFormControlInput1" style="color: #C2A966;" class="form-label">Région:</label>
+                              <input type="text"  style="height: 40px;border: 1px solid #C2A966; box-shadow:1px 1px 1px #C2A966;" class="form-control" id="exampleFormControlInput1" >
+                            </div>
+                         </div>
+                         <div class="row">
+                          <div class="col-md-6 mb-3 pe-3">
+                            <label for="exampleFormControlInput1" style="color: #C2A966;" class="form-label">Adresse mail:</label>
+                            <input type="email" style="height: 40px;border: 1px solid #C2A966; box-shadow:1px 1px 1px #C2A966;" class="form-control" id="exampleFormControlInput1" >
+                          </div>
+                          <div class="col-md-6 mb-3 ps-3">
+                            <label for="exampleFormControlInput1" style="color: #C2A966;" class="form-label">Mot de passe:</label>
+                            <input type="password" style="height: 40px;border: 1px solid #C2A966; box-shadow:1px 1px 1px #C2A966;" class="form-control" id="exampleFormControlInput1" >
+                          </div>
+                          <div class="mb-3 ps-3">
+                            <label for="exampleFormControlInput1" style="color: #C2A966;" class="form-label">Nombre de talibés:</label>
+                            <input type="password"  style="height: 40px;border: 1px solid #C2A966; box-shadow:1px 1px 1px #C2A966;" class="form-control" id="exampleFormControlInput1" >
+                          </div>
+                       </div>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" routerLink="/dashmaitre" data-bs-dismiss="modal">Ajouter</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+               
+
+
                 <div class="my-5 row" >
-                  <div class="contentcard col-md-4">
+                  <div class="contentcard col-md-4" *ngFor="let dahra of dahras">
                       <div class="card" style="width: 20rem; box-shadow: 1px 1px 1px 1px #C2A966; margin: 0 auto;">
                           <div><img src="assets/dahras/Imgcarte1.jpg" id="cardImg" alt=""></div>
                           <div class="card-body">
                             <h5 class="mt-2 card-title text-center">Dahra Al Ihsaan</h5>  
-                            <div class="row p-2" style="border: 1px solid blue;">
+                            <div class="row p-2" style="">
                                 <div class="col-md-6 mt-3 fw-bold">
                                     <p class="card-text text-start"><i class="bi bi-person-badge" style="color: #252649; margin-right: 10px;"></i>567 apprenants</p>
                                     <p class="card-text text-start"><i class="bi bi-geo-alt-fill" style="color: #252649; margin-right: 10px;"></i>Thies</p>
                                 </div>
-                                <div class="col-md-6">
+                                <div class="col-md-6" >
                                     <a href="#" class="btn"  data-bs-toggle="modal" data-bs-target="#exampleModal" style="width:80%; font-size: 18px; background-color: #252649;color: #C2A966;box-shadow:2px 2px 2px 2px #C2A966; font-weight: bold;"> <i class="bi bi-eye-fill" style="color: #C2A966; margin-right: 15px; font-weight: bold;"></i>Détails</a>
                                 
                                       <!-- Modal -->
@@ -133,73 +198,14 @@
                                                   </div>
                                                   </div>
                                               </div>
-                              </div>
+                                </div>
         
       
                             </div>
                           </div>
                       </div>
                   </div>
-                  <div class="contentcard col-md-4">
-                    <div class="card" style="width: 20rem; box-shadow: 1px 1px 1px 1px #C2A966; margin: 0 auto;">
-                        <div><img src="assets/dahras/Imgcarte1.jpg" id="cardImg" alt=""></div>
-                        <div class="card-body">
-                          <h5 class="mt-2 card-title text-center">Dahra Al Ihsaan</h5>  
-                          <div class="row p-2" style="border: 1px solid blue;">
-                              <div class="col-md-6 mt-3 fw-bold">
-                                  <p class="card-text text-start"><i class="bi bi-person-badge" style="color: #252649; margin-right: 10px;"></i>567 apprenants</p>
-                                  <p class="card-text text-start"><i class="bi bi-geo-alt-fill" style="color: #252649; margin-right: 10px;"></i>Thies</p>
-                              </div>
-                              <div class="col-md-6">
-                                  <a href="#" class="btn"  data-bs-toggle="modal" data-bs-target="#exampleModal" style="width:80%; font-size: 18px; background-color: #252649;color: #C2A966;box-shadow:2px 2px 2px 2px #C2A966; font-weight: bold;"> <i class="bi bi-eye-fill" style="color: #C2A966; margin-right: 15px; font-weight: bold;"></i>Détails</a>
-                              
-                                    <!-- Modal -->
-                                            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                                <div class="modal-dialog">
-                                                <div class="modal-content" style="background-color: #C2A966 !important;">
-                                                    <div class="modal-header">
-                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                                    </div>
-                                                    <div class="modal-body">
-                                                        <h1 class="text-center"  style="color: #252649;">Dahra Al Ihsaan</h1>
-                                                        <div class="mb-3 row" style="color: #252649; font-weight: bold;">
-                                                            <div class="col-md-6">
-                                                                <img src="assets/dahras/Imgcarte1.jpg" id="détailImg" alt="">
-                                                            </div>
-                                                            <div class="col-md-6">
-                                                                <p>Nom et prénom Oustaz:</p>
-                                                                <hr>
-                                                                <p>Région:</p>
-                                                                <hr>
-                                                                <p>Adresse:</p>
-                                                                <hr>
-                                                            </div>
-                                                        </div>
-                                                        <div class="mb-3">
-                                                            <p>Contact:</p>
-                                                            <hr>
-                                                            <p>Description:</p>
-                                                            <hr>
-                                                            <hr>
-                                                            <hr>
-                                                            <hr>
-                                                        </div>
-                                                    </div>
-                                                    <div class="modal-footer d-flex justify-content-between">
-                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" style="background-color: #252649;color: #C2A966;font-weight: bold; box-shadow:2px 2px 2px 2px #C2A966;"> <i class="bi bi-eye-fill" style="color: #C2A966; margin-right: 10px; font-weight: bold;"></i>567 apprenants</button>
-                                                    <button type="button" class="btn btn-primary" style="background-color: #252649; color: #C2A966; font-weight: bold; border: none;">Faire un don</button>
-                                                    </div>
-                                                </div>
-                                                </div>
-                                            </div>
-                            </div>
-      
-    
-                          </div>
-                        </div>
-                    </div>
-                </div>
-              </div>  
+                </div> 
                         
   
             </div>

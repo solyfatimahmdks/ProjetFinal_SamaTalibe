@@ -14,27 +14,27 @@
             </a>
           </li>
           <li>
-            <a href="#" class="nav-link ps-5 mb-2" style="height: 50px; color: #C2A966; font-size: 20px; font-weight: bold;">
-              <i class="me-3 fa-solid fa-house" style="color: #C2A966;"></i>Dashboard
+            <a  class="nav-link ps-5 mb-2" routerLink="/adsup"  style="height: 50px; color: white; font-size: 20px; font-weight: bold;">
+              <i class="me-3 fa-solid fa-house" style="color: white;"></i>Dashboard
             </a>
           </li>
           <li>
-            <a href="#" class="nav-link ps-5 mb-2" style="height: 50px; color: #C2A966; font-size: 20px; font-weight: bold;">
-              <i class="me-3 fa-solid fa-hand-holding-droplet" style="color: #C2A966;"></i>Donnations
+            <a  class="nav-link ps-5 mb-2" routerLink="" style="height: 50px; color: white;border-left: 3px solid #C2A966; font-size: 20px; font-weight: bold;">
+              <i class="me-3 fa-solid fa-hand-holding-droplet" style="color: white;"></i>Donnations
             </a>
           </li>
           <li>
-            <a href="#" class="nav-link ps-5 mb-2" style="height: 50px; color: #C2A966; font-size: 20px; font-weight: bold;">
-              <i class="me-3 fa-solid fa-user-xmark" style="color: #C2A966;"></i>Parrainages
+            <a class="nav-link ps-5 mb-2" routerLink="/parrainadsup" style="height: 50px; color: white; font-size: 20px; font-weight: bold;">
+              <i class="me-3 fa-solid fa-user-xmark" style="color: white;"></i>Parrainages
             </a>
           </li>
           <li>
-            <a href="#" class="nav-link ps-5 mb-2" style="height: 50px; color: #C2A966; font-size: 20px; font-weight: bold;">
-              <i class="me-3 fa-solid fa-user-group" style="color: #C2A966;"></i>Rôles
+            <a class="nav-link ps-5 mb-2" routerLink="/rolesadsup" style="height: 50px; color: white; font-size: 20px; font-weight: bold;">
+              <i class="me-3 fa-solid fa-user-group" style="color: white;"></i>Rôles
             </a>
           </li>
           <li>
-            <a href="#" class="nav-link ps-5 mb-2" style="height: 50px; color: #C2A966; font-size: 20px; border-left: 3px solid #C2A966; font-weight: bold;">
+            <a class="nav-link ps-5 mb-2" routerLink="/dahradsup" style="height: 50px; color: #C2A966; font-size: 20px; font-weight: bold;">
               <i class="me-3 fa-solid fa-house-chimney-user" style="color: #C2A966;"></i>Dahras
             </a>
           </li>   
@@ -65,7 +65,7 @@
                     <div class="dropdown me-3">
                         <a href="#" class="d-flex align-items-center link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                           <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
-                          <strong>mdo</strong>
+                          <strong>Admin</strong>
                         </a>
                         <ul class="dropdown-menu text-small shadow">
                           <li><a class="dropdown-item" href="#">New project...</a></li>
@@ -82,6 +82,25 @@
                       <!-- Page Heading -->
   
                       <!-- Content Row -->
+              <a class="btn mb-0" data-bs-toggle="modal" data-bs-target="#exampleModal" style="width: 12% !important; margin-left: 5%;">Ajouter</a>
+              <!-- Button trigger modal -->
+
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog"  style="margin: 0 auto;">
+                    <div class="modal-content">
+                      <div class="modal-header my-3" >
+                        <h1 class="modal-title fs-5" id="exampleModalLabel" style="margin: 0 auto;">Ajouter un dahra</h1>
+                        <button type="button" class="btn-close me-3"  data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn ">Save changes</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               <div class="table-responsive small m-5" style="border: 1px solid #C2A966; border-radius: 10px;">
                 <h5 class="text-center p-2" style="color: #252649;">Liste des dahras de la plateforme</h5>
                 <table class="table table-striped table-sm" style="width: 100%;">

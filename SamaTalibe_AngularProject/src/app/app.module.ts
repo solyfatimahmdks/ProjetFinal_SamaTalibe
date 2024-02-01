@@ -24,6 +24,14 @@ import { DahraComponent } from './Composants/UserNonConnect/dahra/dahra.componen
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule} from '@angular/common/http';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { ListDahraComponent } from './Composants/UserNonConnect/dahra/list-dahra/list-dahra.component';
+import { ParrainsComponent } from './Composants/UserNonConnect/soutiens/parrains/parrains.component';
+import { ListTalibesComponent } from './Composants/UserNonConnect/dahra/list-talibes/list-talibes.component';
+import { CommonModule } from '@angular/common';
+import { DonUserNonConnectComponent } from './Composants/UserNonConnect/soutiens/don-user-non-connect/don-user-non-connect.component';
+import { TemMaitreComponent } from './Composants/MaitreCoraniq/tem-maitre/tem-maitre.component';
+import { SamaDahraComponent } from './Composants/MaitreCoraniq/sama-dahra/sama-dahra.component';
+
 
 
 @NgModule({
@@ -47,6 +55,14 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
     AccueilComponent,
     AproposComponent,
     DahraComponent,
+    ListDahraComponent,
+    ParrainsComponent,
+    ListTalibesComponent,
+    DonUserNonConnectComponent,
+    TemMaitreComponent,
+    SamaDahraComponent,
+    SamaDahraComponent,
+
 
   
 
