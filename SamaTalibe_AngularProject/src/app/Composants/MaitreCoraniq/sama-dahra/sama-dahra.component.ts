@@ -7,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sama-dahra.component.css']
 })
 // N'oubliez pas d'ajouter 'export' devant la classe
-export class SamaDahraComponent implements OnInit {
-  ngOnInit(): void {
-    throw new Error('Method not implemented.');
+export class SamaDahraComponent {
+  showListTalib = true;
+  showListTalibArchiv = false;
+
+  toggleView(view: string): void {
+    this.showListTalib = view === 'listTalib';
+    this.showListTalibArchiv = view === 'listTalibArchiv';
   }
-  // ... Votre code ici
 }

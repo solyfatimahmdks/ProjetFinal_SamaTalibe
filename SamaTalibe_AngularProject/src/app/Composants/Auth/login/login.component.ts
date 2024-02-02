@@ -13,7 +13,25 @@ import Swal from 'sweetalert2';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  isLoginFormVisible = true;
+  isLoginFormVisible = "connexion";
+  choixForm: string = 'inscription';
+  nomDahra: string = '';
+  nomOustaz: string = '';
+  adressDahra: string = '';
+  regionDahra: string = '';
+  numeroDahra: string = '';
+  numeroOustaz: string = '';
+  nombreTalibeDahra: string = '';
+  mailDahra: string = '';
+  passwordDahra: string = '';
+  
+
+
+  updateChoixForm(event: any) {
+    // this.choixForm = event.target.value;
+    this.isLoginFormVisible = event.target.value;
+
+  }
 
   loginUser = {
     email: '',
@@ -29,9 +47,23 @@ export class LoginComponent {
     confirmPassword: ''
   };
 
-  toggleForm() {
-    this.isLoginFormVisible = !this.isLoginFormVisible;
-  }
+  signupDahra = {
+     
+    nomDahra: '',
+    nomOustaz: '',
+    adressDahra: '',
+    regionDahra: '',
+    numeroDahra: '',
+    numeroOustaz: '',
+    nombreTalibeDahra: '',
+    mailDahra: '',
+    passwordDahra: '',
+  };
+
+
+  // toggleForm() {
+  //   this.isLoginFormVisible = !this.isLoginFormVisible;
+  // }
  submitFunction(event: Event) {
     event.preventDefault();
   }
@@ -48,6 +80,17 @@ export class LoginComponent {
     password: '',
     confirmedPassword: '',
   };
+  userDahra: any ={
+    nomDahra: '',
+    nameDahra: '',
+    numeroOustaz: '',
+    numeroDahra: '',
+    adresseDahra: '',
+    regionDahra: '',
+    mailDahra: '',
+    nombreTalibeDahra: '',
+    passwordDahra: '',
+  }
   credentials: any;
   loading!: boolean;
   userConnected: any;
@@ -175,9 +218,10 @@ Signup() {
     (response:any) => {
       console.log(response);
       alert("inscription réussie")
-      this.isLoginFormVisible=!this.isLoginFormVisible
+      // this.isLoginFormVisible=!this.isLoginFormVisible
       
-      this.route.navigate(['/login']);
+      // this.route.navigate(['/login']);
+      
     }, 
     (error:any) => {
       // Gérez les erreurs d'inscription.
@@ -186,4 +230,41 @@ Signup() {
   );
 }
 
+
+    
+SignupDahra() {
+  // this.userDahra = {
+  //   nomDahra: this.nomDahra,
+  //   nomOustaz: this.nomOustaz,
+  //   adressDahra:this.adressDahra,
+  //   regionDahra:this.regionDahra,
+  //   numeroDahra:this.numeroDahra,
+  //   numeroOustaz:this.numeroOustaz,
+  //   nombreTalibeDahra:this.nombreTalibeDahra,
+  //   mailDahra:this.mailDahra,
+  //   passwordDahra:this.passwordDahra,
+
+    // Ajoutez d'autres propriétés spécifiques au formulaire "Nous rejoindre" si nécessaire
+  }
+  // alert("hi");
+  // this.authService.inscriptionDahra(this.userDahra).subscribe(
+  //   (response:any) => {
+  //     console.log(response);
+  //     alert("inscription réussie")
+  //     this.isLoginFormVisible=!this.isLoginFormVisible
+      
+  //     this.route.navigate(['/login']);
+  //   }, 
+  //   (error:any) => {
+  //     // Gérez les erreurs d'inscription.
+  //     console.error('Erreur d\'inscription :', error);
+  //   }
+  // );
+
+
+  getLoginLogin(choice:any){
+    this.isLoginFormVisible=choice;
+  }
 }
+  
+

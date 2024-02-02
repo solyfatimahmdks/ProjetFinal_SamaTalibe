@@ -79,28 +79,12 @@
                 </div> 
               </nav>
               <!-- End of Topbar -->
-                      <!-- Page Heading -->
-  
-                      <!-- Content Row -->
-              <a class="btn mb-0" data-bs-toggle="modal" data-bs-target="#exampleModal" style="width: 12% !important; margin-left: 5%;">Ajouter</a>
-              <!-- Button trigger modal -->
 
-                <!-- Modal -->
-                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                  <div class="modal-dialog"  style="margin: 0 auto;">
-                    <div class="modal-content">
-                      <div class="modal-header my-3" >
-                        <h1 class="modal-title fs-5" id="exampleModalLabel" style="margin: 0 auto;">Ajouter un dahra</h1>
-                        <button type="button" class="btn-close me-3"  data-bs-dismiss="modal" aria-label="Close"></button>
-                      </div>
-                      <div class="modal-body">
-                      </div>
-                      <div class="modal-footer">
-                        <button type="button" class="btn ">Save changes</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                 <!-- End of Topbar -->
+                 <button type="button" class="nav-link ps-5 mb-2 btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop" style="background-color: #252649; cursor: pointer; height: 50px; color: #C2A966;box-shadow:1px 1px 1px #C2A966; font-size: 20px; font-weight: bold;">
+                  Nous rejoindre
+                </button>
+              
               <div class="table-responsive small m-5" style="border: 1px solid #C2A966; border-radius: 10px;">
                 <h5 class="text-center p-2" style="color: #252649;">Liste des dahras de la plateforme</h5>
                 <table class="table table-striped table-sm" style="width: 100%;">
@@ -168,6 +152,67 @@
   </div>
   <!-- End of Page Wrapper -->
 
+
+    <!-- Modal 2-->
+    <div class="modal fade" style="" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog mt-5" style="margin: 0 auto;">
+        <div class="modal-content" style="padding: 40px;  width: 800px;">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" style="margin: 0 auto; color: #252649;" id="staticBackdropLabel">Enregistrez votre dahra</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+               <div class="row">
+                  <div class="col-md-6 mb-3 pe-3">
+                    <label for="exampleFormControlInput1" style="color: #C2A966;" class="form-label">Nom Dahra:</label>
+                    <input type="name"  style="height: 40px;border: 1px solid #C2A966; box-shadow:1px 1px 1px #C2A966;" class="form-control" id="exampleFormControlInput1" >
+                  </div>
+                  <div class="col-md-6 mb-3 ps-3">
+                    <label for="exampleFormControlInput1" style="color: #C2A966;" class="form-label">Nom Oustaz:</label>
+                    <input type="name" style="height: 40px;border: 1px solid #C2A966; box-shadow:1px 1px 1px #C2A966;" class="form-control" id="exampleFormControlInput1" >
+                  </div>
+               </div>
+               <div class="row">
+                <div class="col-md-6 mb-3 pe-3">
+                  <label for="exampleFormControlInput1" style="color: #C2A966;" class="form-label">Numero Téléphone:</label>
+                  <input type="text"  style="height: 40px;border: 1px solid #C2A966; box-shadow:1px 1px 1px #C2A966;" class="form-control" id="exampleFormControlInput1" >
+                </div>
+                <div class="col-md-6 mb-3 ps-3">
+                  <label for="exampleFormControlInput1" style="color: #C2A966;" class="form-label">Numéro Téléphone Oustaz:</label>
+                  <input type="text"  style="height: 40px;border: 1px solid #C2A966; box-shadow:1px 1px 1px #C2A966;" class="form-control" id="exampleFormControlInput1" >
+                </div>
+             </div>
+             <div class="row">
+              <div class="col-md-6 mb-3 pe-3">
+                <label for="exampleFormControlInput1" style="color: #C2A966;" class="form-label">Adresse:</label>
+                <input type="text" style="height: 40px;border: 1px solid #C2A966; box-shadow:1px 1px 1px #C2A966;" class="form-control" id="exampleFormControlInput1" >
+              </div>
+              <div class="col-md-6 mb-3 ps-3">
+                <label for="exampleFormControlInput1" style="color: #C2A966;" class="form-label">Région:</label>
+                <input type="text"  style="height: 40px;border: 1px solid #C2A966; box-shadow:1px 1px 1px #C2A966;" class="form-control" id="exampleFormControlInput1" >
+              </div>
+           </div>
+           <div class="row">
+            <div class="col-md-6 mb-3 pe-3">
+              <label for="exampleFormControlInput1" style="color: #C2A966;" class="form-label">Adresse mail:</label>
+              <input type="email" style="height: 40px;border: 1px solid #C2A966; box-shadow:1px 1px 1px #C2A966;" class="form-control" id="exampleFormControlInput1" >
+            </div>
+            <div class="col-md-6 mb-3 ps-3">
+              <label for="exampleFormControlInput1" style="color: #C2A966;" class="form-label">Mot de passe:</label>
+              <input type="password" style="height: 40px;border: 1px solid #C2A966; box-shadow:1px 1px 1px #C2A966;" class="form-control" id="exampleFormControlInput1" >
+            </div>
+            <div class="mb-3 ps-3">
+              <label for="exampleFormControlInput1" style="color: #C2A966;" class="form-label">Nombre de talibés:</label>
+              <input type="password"  style="height: 40px;border: 1px solid #C2A966; box-shadow:1px 1px 1px #C2A966;" class="form-control" id="exampleFormControlInput1" >
+            </div>
+         </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" routerLink="/dashmaitre" data-bs-dismiss="modal">Ajouter</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
 
 

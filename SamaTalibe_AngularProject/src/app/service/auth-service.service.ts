@@ -7,6 +7,9 @@ import Swal from 'sweetalert2';
   providedIn: 'root',
 })
 export class AuthService implements OnInit{
+  inscriptionDahra(userDahra: any) {
+    throw new Error('Method not implemented.');
+  }
   private apiUrl = 'http://127.0.0.1:8000/api';  // URL de votre backend
  
   token: any;

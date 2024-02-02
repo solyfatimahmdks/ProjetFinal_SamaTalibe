@@ -36,8 +36,8 @@
           <h5 style="color: #252649; font-weight: bold; margin-bottom: 12px;">S'abonner à notre newsletter</h5>
           <div class="d-flex flex-column flex-sm-row w-100 gap-2">
             <label for="newsletter1" class="visually-hidden">Adresse-mail</label>
-            <input id="newsletter1" type="text" class="form-control" style="border-radius: 5px;" placeholder="Adresse-mail">
-            <button class="btn" style="background-color: #252649; font-weight: bold; color: #C2A966; padding: 6px;"  type="button">Envoyer</button>
+            <input id="newsletter1" type="text" class="form-control" style="border-radius: 5px;" placeholder="Adresse-mail" [(ngModel)]="email">
+            <button class="btn" style="background-color: #252649; font-weight: bold; color: #C2A966; padding: 6px;"  type="button" (click)="sAbonnerNewsletter()">Envoyer</button>
 
           </div>
         </form>
