@@ -1,29 +1,59 @@
 *{
-    padding: 0;
-    margin: 0;
-  }
-  #logodash{
-    width: 70%;
-    margin: 0 auto;
-  }
-  .nav-item a i{
-    width: 30%;
-  }
-  .btn{
-    background-color: #252649;
-    box-shadow: 1px 1px 1px 1px #C2A966 !important;
-    width: 300px; font-size: 20px; 
-    padding: 10px; margin: 20px; 
-    font-weight: bold;
-    color: #C2A966;
-  }
-  /* .btn:hover, .btn i:hover{
-    color: #252649 !important;
-    box-shadow: 1px 1px 1px 1px #252649;
-    font-weight: bold;
-  } */
-  #admindatable{
-    width: 65px;
-    box-shadow: 1px 1px 1px 1px #C2A966;
-    border-radius: 8px;
-  }
+  padding: 0;
+  margin: 0;
+}
+#logodash{
+  width: 70%;
+  margin: 0 auto;
+}
+.nav-item a i{
+  width: 30%;
+}
+.btn{
+  background-color: #252649;
+  box-shadow: 1px 1px 1px 1px #C2A966 !important;
+  /* width: 300px;  */
+  font-size: 20px; 
+  padding: 10px; margin: 20px; 
+  font-weight: bold;
+  color: #C2A966;
+}
+/* .btn:hover, .btn i:hover{
+  color: #252649 !important;
+  box-shadow: 1px 1px 1px 1px #252649;
+  font-weight: bold;
+} */
+#admindatable{
+  width: 65px;
+  box-shadow: 1px 1px 1px 1px #C2A966;
+  border-radius: 8px;
+}
+#bcgBann{
+  width: 100%; 
+}
+
+#cardImg{
+width: 100%;
+border-radius: 1%;
+}
+#détailImg{
+width:100%;
+border-radius: 30% 0 30% 0;
+/* box-shadow: 5px 5px 5px 5px #252649; */
+border-top: 8px solid #252649;
+border-left: 8px solid #252649;
+
+}
+
+/* temoignages   */
+#maitreImg{
+width: 70%;
+height: 70px;
+border-radius: 100%;
+box-shadow:2px 5px 2px #252649;
+}
+#cardBottom{
+border-top-right-radius: 30px !important;
+border-bottom-right-radius: 30px !important;
+}
+/* paginations */

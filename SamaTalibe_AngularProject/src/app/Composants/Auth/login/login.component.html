@@ -28,7 +28,7 @@
               </ul>
         </div>
         <p class="signup">Vous n'avez pas de compte?
-            <a rel="noopener noreferrer" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal" style="color: #C2A966; font-weight: bold; cursor: pointer;">S'inscrire</a>
+            <a rel="noopener noreferrer" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal" style="color: #C2A966; font-weight: bold; cursor: pointer;" (click)=" Signup()">S'inscrire</a>
         </p>
   
                 <!-- Modal -->
@@ -44,29 +44,32 @@
                         <form class="form">
                             <div class="input-group">
                                 <label for="name"  class="ms-2" style="color: #C2A966;">Nom:</label>
-                                <input type="name" name="name" id="name" placeholder="" [(ngModel)]="nom">
+                                <input type="name" name="nom" id="name" placeholder="" [(ngModel)]="nom">
                             </div>
                             <div class="input-group">
                                 <label for="firstname"  class="ms-2" style="color: #C2A966;">Prénom:</label>
-                                <input type="text" name="firstname" id="firstname" placeholder="" [(ngModel)]="prenom">
+                                <input type="text" name="prenom" id="firstname" placeholder="" [(ngModel)]="prenom">
                             </div>
                             <div class="input-group">
                                 <label for="phone"  class="ms-2" style="color: #C2A966;">Téléphone:</label>
-                                <input type="text" name="phone" id="phone" placeholder="" [(ngModel)]="numeroTelephone">
+                                <input type="text" name="numeroTelephone" id="phone" placeholder="" [(ngModel)]="numeroTelephone">
                             </div>
                             <div class="input-group">
-                                <label for="adresse" class="ms-2" style="color: #C2A966;">Adresse</label>
-                                <input type="adresse"  name="adresse" id="adresse" placeholder="" [(ngModel)]="adresse">
+                                <select [(ngModel)]="selectedAdresse" class="" style="color: #C2A966;height: 45px; border: 1px solid #C2A966;
+                                outline: 0;background-color: rgba(255, 255, 255, 0.418); width: 900px !important; margin-top: 25px;border-radius: 5px; font-size: 0.875rem;line-height: 1.25rem;" name="adresse" id="adresse">
+                                    <option value="" disabled selected>Choisissez une adresse</option>
+                                    <option *ngFor="let adresse of adresses" [value]="adresse">{{ adresse }}</option>
+                                </select>
                             </div>
                             <div class="input-group">
                                 <label for="username"  class="ms-2" style="color: #C2A966;">Adresse-mail:</label>
-                                <input type="text" name="username" id="username" placeholder="" [(ngModel)]="email">
+                                <input type="text" name="email" id="username" placeholder="" [(ngModel)]="email">
                             </div>
                             <div class="input-group">
                                 <label for="password" class="ms-2" style="color: #C2A966;">Mot de passe:</label>
                                 <input type="password" name="password" id="password" placeholder="" [(ngModel)]="password">
                             </div>
-                            <button class="sign mt-4" routerLink="/login" style="background-color: #C2A966; color: white; font-weight: bold;" (click)="choixForm = 'inscription'">S'inscrire </button>
+                            <button class="sign mt-4"  style="background-color: #C2A966; color: white; font-weight: bold;" (click)="Signup()" routerLink="/login">S'inscrire </button>
                         </form>
                         <p class="signup mt-4">Vous avez déjà un compte?
                             <a   style="color: #C2A966; font-weight: bold;" (click)="getLoginLogin('connexion')">Se connecter</a>
@@ -82,41 +85,41 @@
                         <form class="form">
                             <div class="input-group">
                                 <label for="name"  class="ms-2" style="color: #C2A966;">Nom Dahra:</label>
-                                <input type="name" name="name" id="name" placeholder="" [(ngModel)]="nomDahra">
+                                <input type="name" name="nom" id="name" placeholder="" [(ngModel)]="nom">
                             </div>
                             <div class="input-group">
                                 <label for="firstname"  class="ms-2" style="color: #C2A966;">Nom Oustaz:</label>
-                                <input type="text" name="firstname" id="firstname" placeholder="" [(ngModel)]="nomOustaz">
+                                <input type="text" name="nomOuztas" id="firstname" placeholder="" [(ngModel)]="nomOuztas">
                             </div>
                             <div class="input-group">
                                 <label for="phone"  class="ms-2" style="color: #C2A966;">Téléphone Dahra:</label>
-                                <input type="text" name="phone" id="phone" placeholder="" [(ngModel)]="numeroDahra">
+                                <input type="text" name="numeroTelephone" id="phone" placeholder="" [(ngModel)]="numeroTelephone">
                             </div>
                             <div class="input-group">
                                 <label for="adresse" class="ms-2" style="color: #C2A966;">Téléphone Oustaz:</label>
-                                <input type="text"  name="phone" id="phone" placeholder="" [(ngModel)]="numeroOustaz">
+                                <input type="text"  name="numeroTelephoneOuztas" id="phone" placeholder="" [(ngModel)]="numeroTelephoneOuztas">
                             </div>
                             <div class="input-group">
                                 <label for="adresse" class="ms-2" style="color: #C2A966;">Région:</label>
-                                <input type="text"  name="adress" id="adress" placeholder="" [(ngModel)]="regionDahra">
+                                <input type="text"  name="region" id="adress" placeholder="" [(ngModel)]="region">
                             </div>
                             <div class="input-group">
                                 <label for="adresse" class="ms-2" style="color: #C2A966;">Adresse:</label>
-                                <input type="text"  name="adress" id="adress" placeholder="" [(ngModel)]="adressDahra">
+                                <input type="text"  name="adresse" id="adress" placeholder="" [(ngModel)]="adresse">
                             </div>
                             <div class="input-group">
                                 <label for="adresse" class="ms-2" style="color: #C2A966;">Nombre de Talibés:</label>
-                                <input type="number"  name="number" id="number" placeholder="" [(ngModel)]="nombreTalibeDahra">
+                                <input type="number"  name="nombreTalibe" id="number" placeholder="" [(ngModel)]="nombreTalibe">
                             </div>
                             <div class="input-group">
                                 <label for="username"  class="ms-2" style="color: #C2A966;">Adresse-mail:</label>
-                                <input type="text" name="username" id="username" placeholder="" [(ngModel)]="mailDahra">
+                                <input type="text" name="email" id="username" placeholder="" [(ngModel)]="email">
                             </div>
                             <div class="input-group">
                                 <label for="password" class="ms-2" style="color: #C2A966;">Mot de passe:</label>
-                                <input type="password" name="password" id="password" placeholder="" [(ngModel)]="passwordDahra">
+                                <input type="password" name="password" id="password" placeholder="" [(ngModel)]="password">
                             </div>
-                            <button class="sign mt-4" (click)="getLoginLogin('connexion')" style="background-color: #C2A966; color: white; font-weight: bold;" (click)="choixForm = 'rejoindre'">Nous rejoindre</button>
+                            <button class="sign mt-4" routerLink="/login" style="background-color: #C2A966; color: white; font-weight: bold;" (click)="SignupDahra()">Nous rejoindre</button>
                         </form>
                         <p class="signup mt-4">Vous avez déjà un compte?
                             <a   style="color: #C2A966; font-weight: bold;" (click)="getLoginLogin('connexion')">Se connecter</a>
@@ -143,10 +146,10 @@
         </div>
         <div class="modal-body">
             <select class="form-control" aria-label="default input example"(change)="updateChoixForm($event)">
-                <option value="inscription">Donnateur</option>
+                <option value="inscription"></option>
                 <option value="rejoindre">Maitre Coranique</option>
-                <option value="inscription">Marraine</option>
-              </select>
+                <option value="inscription">Donnateur/Marraine</option>
+            </select>
         </div>
         <div class="modal-footer">
         <button type="button" class="btn" style="background-color: #252649; color: #C2A966;font-weight: bold; box-shadow:1px 1px 1px #C2A966;" data-bs-dismiss="modal" aria-label="Close">Continuer</button>

@@ -2,13 +2,19 @@ import { Injectable, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, tap } from 'rxjs';
 import Swal from 'sweetalert2';
+import { TOKEN_KEY } from '../constants/constant';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService implements OnInit{
-  inscriptionDahra(userDahra: any) {
-    throw new Error('Method not implemented.');
+
+  currentUser: any;
+  getUser(): any {
+    return this.currentUser;
+  }
+  inscriptionDahra(userDahra: any): Observable<any> {
+    return this.http.post<any>(`${this.apiUrl}/register/dahra`, userDahra);
   }
   private apiUrl = 'http://127.0.0.1:8000/api';  // URL de votre backend
  
@@ -17,7 +23,7 @@ export class AuthService implements OnInit{
 
   constructor(private http: HttpClient) {}
   ngOnInit(): void {
-    this.userConnect=JSON.parse(localStorage.getItem('userOnline') || '')
+    this.userConnect=JSON.parse(localStorage.getItem(TOKEN_KEY) || '')
    console.log(this.userConnect)
   }
   // login
@@ -25,7 +31,7 @@ export class AuthService implements OnInit{
    login(user: any, onSuccess: Function){
     const httpOptions = {
       headers: new HttpHeaders({
-        Authorization: "Bearer " + JSON.parse(localStorage.getItem("userOnline")??'{}').token
+        Authorization: "Bearer " + JSON.parse(localStorage.getItem(TOKEN_KEY)??'{}').token
       })
     };
     return this.http.post(`${this.apiUrl}/login`, user,httpOptions).subscribe((reponse: any) => onSuccess(reponse));
@@ -45,14 +51,9 @@ export class AuthService implements OnInit{
 
   // inscription
   inscriptionDonateur(user: any): Observable<any> {
-    // const httpOptions = {
-    //   headers: new HttpHeaders({
-    //     Authorization: "Bearer " + JSON.parse(localStorage.getItem("userOnline")??'{}').token
-    //   })
-    // };
     return this.http.post<any>(`${this.apiUrl}/inscrire-donateur`, user);
   }
-  
+
  
   // connexion
   signIn(credentials: any): Observable<any> {
@@ -64,5 +65,13 @@ export class AuthService implements OnInit{
   }
 
 
-}
+  setLoggedInUser(user: any): void {
+    localStorage.setItem('loggedInUser', JSON.stringify(user));
+  }
 
+  getLoggedInUser(): any {
+    const userString = localStorage.getItem('loggedInUser');
+    return userString ? JSON.parse(userString) : null;
+  }
+
+} 

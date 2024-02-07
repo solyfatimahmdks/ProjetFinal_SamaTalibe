@@ -1,240 +1,150 @@
 <app-header></app-header>
 <main>
+
+  <section class="banniere" style="">
+    <div class="banner-container">
+      <img src="assets/listTalibes.png" alt="Bannière" id="bcgban" class="banner-image">
+      <div class="banner-text">
+        <h1 style="color: #252649;font-weight: bold; font-size: 50px;">SAMA TALIBE </h1>
+        <p style="color: white;font-weight: bold;width: 70%; font-size: 40px; margin-top: 20%;">La plateforme qui vient en  aide les dahras pour une meilleure cohèsion</p>
+      </div>
+    </div>
+</section>
     <h3 class="text-center mt-5" style="color: #252649;"><i class="bi bi-arrow-left-short" routerLink="/listdahra" style="font-size: 30px; color: #252649; font-weight: bold;"></i>Liste de nos apprenants</h3>
+     <!-- soulignement -->
+     <div class="d-flex justify-content-center mb-1">
+      <div style="width: 10%;margin-top: 18px;border-radius: 10px; height: 5px !important; background-color: #C2A966;"></div>
+      <div style="width: 3%; height: 40px !important; background-color: rgb(236, 236, 236); border-radius: 100%;">
+      <div class="position-absolute " style="margin-top: 12px;margin-left: 14px; width: 1%; height: 15px !important; background-color: #252649; border-radius: 100%;"></div>
+      </div>
+      <div style="width: 10%;margin-top: 18px;border-radius: 10px; height: 5px !important; background-color: #C2A966;"></div>
+    </div>
+<!-- End soulignement -->
     <div class="container mt-5">
         <div class="search"><input type="search" class="form-control" placeholder="Rechercher..." aria-label="Search" style="border:1px solid #252649; color: #252649; width: 50%; margin-left: 50%;"></div>
     </div>
-    <div class="row my-5">
-        <div class="col-md-4 card-container" style="margin: 0 auto; box-shadow: 1px 1px 1px 1px #252649;">
-            <div class="card">
-            <div class="front-content">
-              <img src="assets/talibés.jpg" alt="">
+    <hr class="container my-4" style="color: #C2A966;">
+    <div class="row my-5 py-5 container" style="margin: 0 auto;">
+        <div class="card col-md-4 border-0" style="margin: 0 auto;" >
+            <div class="content">
+              <img src="assets/talibés1.png" style="width: 80px;height: 80px; border-radius: 100%;" alt="">
+              <div class="description">
+                <p class="title"  style="color: #252649;"><span class="fw-bold">Nom:</span>Thiam</p>
+                <p class="title"  style="color: #252649;"><span class="fw-bold">Prénom:</span>Elhadji Omar</p>
+                <p class="title"  style="color: #252649;"><span class="fw-bold">Age:</span>8 ans</p>
+                <p class="title"  style="color: #252649;"><span class="fw-bold">Origine:</span> Khombole</p>
+                              <!-- Button trigger modal -->
+                  <button type="button" class="btn container" style="background-color: #252649; color: #C2A966; font-weight: bold; box-shadow: 1px 1px 1px #252649;" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    Parrainer
+                  </button>
+
+              </div>
             </div>
-            <div class="content" style="background-color: #C2A966;">
-             <div class="row">
-                <div class="col-md-4"><img src="assets/talibés.jpg" id="imgSymetrique" alt=""></div>
-               <div class="col-md-8 text-start">
-                   <p style="color: #252649; margin-left: 10px;"><span style="font-weight: bold;">Prénom:</span> Saliou</p>
-                   <p style="color: #252649; margin-left: 10px;"><span style="font-weight: bold;">Nom:</span> Leye</p>
-               </div>
-             </div>
-              <p style="color: #252649; margin-right: 140px;"><span style="font-weight: bold;">Origine:</span>Kaolack</p>
-              <p style="color: #252649; margin-right: 180px;"><span style="font-weight: bold;">Age:</span>8 ans</p>
-              <p style="color: #252649;"><span style="font-weight: bold; ">Description:</span>Lorem ipsum dolor sit, amet 
-              consectetur adipisicing elit.</p>
-              <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal" style="background-color: #252649; color: #C2A966; font-weight: bold; border: none; box-shadow:1px 1px 1px 1px #252649;">Parrainer</button>
-                 <!-- Button trigger modal --
-                        <!-- Modal -->
-                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                <p class="text-center" style="color: #252649; color: #C2A966; font-weight: bold;">Authentifier-vous d'abord</p>
-                                </div>
-                                <div class="modal-footer">
-                                <button type="button" class="btn" style="background-color: #252649; color: #C2A966; font-weight: bold; border: none;" routerLink="/login">Connexion</button>
-                                </div>
-                            </div>
-                            </div>
-                        </div>
+        </div>
+        <div class="card col-md-4 border-0" style="margin: 0 auto;">
+          <div class="content">
+            <img src="assets/talibés1.png" style="width: 80px;height: 80px; border-radius: 100%;" alt="">
+            <div class="description">
+              <p class="title"  style="color: #252649;"><span class="fw-bold">Nom:</span>Thiam</p>
+              <p class="title"  style="color: #252649;"><span class="fw-bold">Prénom:</span>Elhadji Omar</p>
+              <p class="title"  style="color: #252649;"><span class="fw-bold">Age:</span>8 ans</p>
+              <p class="title"  style="color: #252649;"><span class="fw-bold">Origine:</span> Khombole</p>
+                            <!-- Button trigger modal -->
+                <button type="button" class="btn container" style="background-color: #252649; color: #C2A966; font-weight: bold; box-shadow: 1px 1px 1px #252649;" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                  Parrainer
+                </button>
+
             </div>
           </div>
-        </div>   
-        <div class="col-md-4 card-container" style="margin: 0 auto; box-shadow: 1px 1px 1px 1px #252649;">
-            <div class="card">
-            <div class="front-content">
-              <img src="assets/talibés.jpg" alt="">
-            </div>
-            <div class="content" style="background-color: #C2A966;">
-             <div class="row">
-                <div class="col-md-4"><img src="assets/talibés.jpg" id="imgSymetrique" alt=""></div>
-               <div class="col-md-8 text-start">
-                   <p style="color: #252649; margin-left: 10px;"><span style="font-weight: bold;">Prénom:</span> Saliou</p>
-                   <p style="color: #252649; margin-left: 10px;"><span style="font-weight: bold;">Nom:</span> Leye</p>
-               </div>
-             </div>
-              <p style="color: #252649; margin-right: 140px;"><span style="font-weight: bold;">Origine:</span>Kaolack</p>
-              <p style="color: #252649; margin-right: 180px;"><span style="font-weight: bold;">Age:</span>8 ans</p>
-              <p style="color: #252649;"><span style="font-weight: bold; ">Description:</span>Lorem ipsum dolor sit, amet 
-              consectetur adipisicing elit.</p>
-              <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal" style="background-color: #252649; color: #C2A966; font-weight: bold; border: none; box-shadow:1px 1px 1px 1px #252649;">Parrainer</button>
-                 <!-- Button trigger modal --
-                        <!-- Modal -->
-                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                <p class="text-center" style="color: #252649; color: #C2A966; font-weight: bold;">Authentifier-vous d'abord</p>
-                                </div>
-                                <div class="modal-footer">
-                                <button type="button" class="btn" style="background-color: #252649; color: #C2A966; font-weight: bold; border: none;" routerLink="/login">Connexion</button>
-                                </div>
-                            </div>
-                            </div>
-                        </div>
+        </div>
+        <div class="card col-md-4 border-0" style="margin: 0 auto;">
+          <div class="content">
+            <img src="assets/talibés1.png" style="width: 80px;height: 80px; border-radius: 100%;" alt="">
+            <div class="description">
+              <p class="title"  style="color: #252649;"><span class="fw-bold">Nom:</span>Thiam</p>
+              <p class="title"  style="color: #252649;"><span class="fw-bold">Prénom:</span>Elhadji Omar</p>
+              <p class="title"  style="color: #252649;"><span class="fw-bold">Age:</span>8 ans</p>
+              <p class="title"  style="color: #252649;"><span class="fw-bold">Origine:</span> Khombole</p>
+                            <!-- Button trigger modal -->
+                <button type="button" class="btn container" style="background-color: #252649; color: #C2A966; font-weight: bold; box-shadow: 1px 1px 1px #252649;" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                  Parrainer
+                </button>
+
             </div>
           </div>
-        </div>   
-        <div class="col-md-4 card-container" style="margin: 0 auto; box-shadow: 1px 1px 1px 1px #252649;">
-            <div class="card">
-            <div class="front-content">
-              <img src="assets/talibés.jpg" alt="">
-            </div>
-            <div class="content" style="background-color: #C2A966;">
-             <div class="row">
-                <div class="col-md-4"><img src="assets/talibés.jpg" id="imgSymetrique" alt=""></div>
-               <div class="col-md-8 text-start">
-                   <p style="color: #252649; margin-left: 10px;"><span style="font-weight: bold;">Prénom:</span> Saliou</p>
-                   <p style="color: #252649; margin-left: 10px;"><span style="font-weight: bold;">Nom:</span> Leye</p>
-               </div>
-             </div>
-              <p style="color: #252649; margin-right: 140px;"><span style="font-weight: bold;">Origine:</span>Kaolack</p>
-              <p style="color: #252649; margin-right: 180px;"><span style="font-weight: bold;">Age:</span>8 ans</p>
-              <p style="color: #252649;"><span style="font-weight: bold; ">Description:</span>Lorem ipsum dolor sit, amet 
-              consectetur adipisicing elit.</p>
-              <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal" style="background-color: #252649; color: #C2A966; font-weight: bold; border: none; box-shadow:1px 1px 1px 1px #252649;">Parrainer</button>
-                 <!-- Button trigger modal --
-                        <!-- Modal -->
-                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                <p class="text-center" style="color: #252649; color: #C2A966; font-weight: bold;">Authentifier-vous d'abord</p>
-                                </div>
-                                <div class="modal-footer">
-                                <button type="button" class="btn" style="background-color: #252649; color: #C2A966; font-weight: bold; border: none;" routerLink="/login">Connexion</button>
-                                </div>
-                            </div>
-                            </div>
-                        </div>
-            </div>
-          </div>
-        </div>   
+        </div>
     </div>
-    <div class="row my-5">
-        <div class="col-md-4 card-container" style="margin: 0 auto; box-shadow: 1px 1px 1px 1px #252649;">
-            <div class="card">
-            <div class="front-content">
-              <img src="assets/talibés.jpg" alt="">
-            </div>
-            <div class="content" style="background-color: #C2A966;">
-             <div class="row">
-                <div class="col-md-4"><img src="assets/talibés.jpg" id="imgSymetrique" alt=""></div>
-               <div class="col-md-8 text-start">
-                   <p style="color: #252649; margin-left: 10px;"><span style="font-weight: bold;">Prénom:</span> Saliou</p>
-                   <p style="color: #252649; margin-left: 10px;"><span style="font-weight: bold;">Nom:</span> Leye</p>
-               </div>
-             </div>
-              <p style="color: #252649; margin-right: 140px;"><span style="font-weight: bold;">Origine:</span>Kaolack</p>
-              <p style="color: #252649; margin-right: 180px;"><span style="font-weight: bold;">Age:</span>8 ans</p>
-              <p style="color: #252649;"><span style="font-weight: bold; ">Description:</span>Lorem ipsum dolor sit, amet 
-              consectetur adipisicing elit.</p>
-              <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal" style="background-color: #252649; color: #C2A966; font-weight: bold; border: none; box-shadow:1px 1px 1px 1px #252649;">Parrainer</button>
-                 <!-- Button trigger modal --
-                        <!-- Modal -->
-                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                <p class="text-center" style="color: #252649; color: #C2A966; font-weight: bold;">Authentifier-vous d'abord</p>
-                                </div>
-                                <div class="modal-footer">
-                                <button type="button" class="btn" style="background-color: #252649; color: #C2A966; font-weight: bold; border: none;" routerLink="/login">Connexion</button>
-                                </div>
-                            </div>
-                            </div>
-                        </div>
+    <div class="row my-5 py-5 container" style="margin: 0 auto;">
+      <div class="card col-md-4 border-0" style="margin: 0 auto;" >
+          <div class="content">
+            <img src="assets/talibés1.png" style="width: 80px;height: 80px; border-radius: 100%;" alt="">
+            <div class="description">
+              <p class="title"  style="color: #252649;"><span class="fw-bold">Nom:</span>Thiam</p>
+              <p class="title"  style="color: #252649;"><span class="fw-bold">Prénom:</span>Elhadji Omar</p>
+              <p class="title"  style="color: #252649;"><span class="fw-bold">Age:</span>8 ans</p>
+              <p class="title"  style="color: #252649;"><span class="fw-bold">Origine:</span> Khombole</p>
+                            <!-- Button trigger modal -->
+                <button type="button" class="btn container" style="background-color: #252649; color: #C2A966; font-weight: bold; box-shadow: 1px 1px 1px #252649;" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                  Parrainer
+                </button>
+
             </div>
           </div>
-        </div>   
-        <div class="col-md-4 card-container" style="margin: 0 auto; box-shadow: 1px 1px 1px 1px #252649;">
-            <div class="card">
-            <div class="front-content">
-              <img src="assets/talibés.jpg" alt="">
-            </div>
-            <div class="content" style="background-color: #C2A966;">
-             <div class="row">
-                <div class="col-md-4"><img src="assets/talibés.jpg" id="imgSymetrique" alt=""></div>
-               <div class="col-md-8 text-start">
-                   <p style="color: #252649; margin-left: 10px;"><span style="font-weight: bold;">Prénom:</span> Saliou</p>
-                   <p style="color: #252649; margin-left: 10px;"><span style="font-weight: bold;">Nom:</span> Leye</p>
-               </div>
-             </div>
-              <p style="color: #252649; margin-right: 140px;"><span style="font-weight: bold;">Origine:</span>Kaolack</p>
-              <p style="color: #252649; margin-right: 180px;"><span style="font-weight: bold;">Age:</span>8 ans</p>
-              <p style="color: #252649;"><span style="font-weight: bold; ">Description:</span>Lorem ipsum dolor sit, amet 
-              consectetur adipisicing elit.</p>
-              <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal" style="background-color: #252649; color: #C2A966; font-weight: bold; border: none; box-shadow:1px 1px 1px 1px #252649;">Parrainer</button>
-                 <!-- Button trigger modal --
-                        <!-- Modal -->
-                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                <p class="text-center" style="color: #252649; color: #C2A966; font-weight: bold;">Authentifier-vous d'abord</p>
-                                </div>
-                                <div class="modal-footer">
-                                <button type="button" class="btn" style="background-color: #252649; color: #C2A966; font-weight: bold; border: none;" routerLink="/login">Connexion</button>
-                                </div>
-                            </div>
-                            </div>
-                        </div>
-            </div>
+      </div>
+      <div class="card col-md-4 border-0" style="margin: 0 auto;">
+        <div class="content">
+          <img src="assets/talibés1.png" style="width: 80px;height: 80px; border-radius: 100%;" alt="">
+          <div class="description">
+            <p class="title"  style="color: #252649;"><span class="fw-bold">Nom:</span>Thiam</p>
+            <p class="title"  style="color: #252649;"><span class="fw-bold">Prénom:</span>Elhadji Omar</p>
+            <p class="title"  style="color: #252649;"><span class="fw-bold">Age:</span>8 ans</p>
+            <p class="title"  style="color: #252649;"><span class="fw-bold">Origine:</span> Khombole</p>
+                          <!-- Button trigger modal -->
+              <button type="button" class="btn container" style="background-color: #252649; color: #C2A966; font-weight: bold; box-shadow: 1px 1px 1px #252649;" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                Parrainer
+              </button>
+
           </div>
-        </div>   
-        <div class="col-md-4 card-container" style="margin: 0 auto; box-shadow: 1px 1px 1px 1px #252649;">
-            <div class="card">
-            <div class="front-content">
-              <img src="assets/talibés.jpg" alt="">
-            </div>
-            <div class="content" style="background-color: #C2A966;">
-             <div class="row">
-                <div class="col-md-4"><img src="assets/talibés.jpg" id="imgSymetrique" alt=""></div>
-               <div class="col-md-8 text-start">
-                   <p style="color: #252649; margin-left: 10px;"><span style="font-weight: bold;">Prénom:</span> Saliou</p>
-                   <p style="color: #252649; margin-left: 10px;"><span style="font-weight: bold;">Nom:</span> Leye</p>
-               </div>
-             </div>
-              <p style="color: #252649; margin-right: 140px;"><span style="font-weight: bold;">Origine:</span>Kaolack</p>
-              <p style="color: #252649; margin-right: 180px;"><span style="font-weight: bold;">Age:</span>8 ans</p>
-              <p style="color: #252649;"><span style="font-weight: bold; ">Description:</span>Lorem ipsum dolor sit, amet 
-              consectetur adipisicing elit.</p>
-              <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal" style="background-color: #252649; color: #C2A966; font-weight: bold; border: none; box-shadow:1px 1px 1px 1px #252649;">Parrainer</button>
-                 <!-- Button trigger modal --
-                        <!-- Modal -->
-                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                <p class="text-center" style="color: #252649; color: #C2A966; font-weight: bold;">Authentifier-vous d'abord</p>
-                                </div>
-                                <div class="modal-footer">
-                                <button type="button" class="btn" style="background-color: #252649; color: #C2A966; font-weight: bold; border: none;" routerLink="/login">Connexion</button>
-                                </div>
-                            </div>
-                            </div>
-                        </div>
-            </div>
+        </div>
+      </div>
+      <div class="card col-md-4 border-0" style="margin: 0 auto;">
+        <div class="content">
+          <img src="assets/talibés1.png" style="width: 80px;height: 80px; border-radius: 100%;" alt="">
+          <div class="description">
+            <p class="title"  style="color: #252649;"><span class="fw-bold">Nom:</span>Thiam</p>
+            <p class="title"  style="color: #252649;"><span class="fw-bold">Prénom:</span>Elhadji Omar</p>
+            <p class="title"  style="color: #252649;"><span class="fw-bold">Age:</span>8 ans</p>
+            <p class="title"  style="color: #252649;"><span class="fw-bold">Origine:</span> Khombole</p>
+                          <!-- Button trigger modal -->
+              <button type="button" class="btn container" style="background-color: #252649; color: #C2A966; font-weight: bold; box-shadow: 1px 1px 1px #252649;" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                Parrainer
+              </button>
+
           </div>
-        </div>   
+        </div>
+      </div>
     </div>
+    
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            ...
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr class="container mb-5" style="color: #C2A966;">
+
+
 </main>
 <app-footer></app-footer>

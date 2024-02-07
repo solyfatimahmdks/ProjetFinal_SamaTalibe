@@ -20,7 +20,7 @@
               </a>
             </li>
             <li>
-              <a  class="nav-link ps-5 mb-2" routerLink="/donsuser" style="height: 50px; color: white;border-left: 3px solid #C2A966; font-size: 20px; font-weight: bold;">
+              <a  class="nav-link ps-5 mb-2" routerLink="/donsuser" style="height: 50px; color: white;font-size: 20px; font-weight: bold;">
                 <i class="me-3 fa-solid fa-hand-holding-droplet" style="color: white;"></i>Donnations
               </a>
             </li>
@@ -79,15 +79,15 @@
     
                         <!-- Content Row -->
                         <div class="my-5 row" >
-                          <div class="contentcard col-md-4">
+                          <div class="contentcard col-md-4" *ngFor="let dahra of dahras">
                               <div class="card" style="width: 20rem; box-shadow: 1px 1px 1px 1px #C2A966; margin: 0 auto;">
                                   <div><img src="assets/dahras/Imgcarte1.jpg" id="cardImg" alt=""></div>
                                   <div class="card-body">
-                                    <h5 class="mt-2 card-title text-center">Dahra Al Ihsaan</h5>  
+                                    <h5 class="mt-2 card-title text-center">{{ dahra.nom }}</h5>  
                                     <div class="row p-2" style="">
                                         <div class="col-md-6 mt-3 fw-bold">
-                                            <p class="card-text text-start"><i class="bi bi-person-badge" style="color: #252649; margin-right: 10px;"></i>567 apprenants</p>
-                                            <p class="card-text text-start"><i class="bi bi-geo-alt-fill" style="color: #252649; margin-right: 10px;"></i>Thies</p>
+                                            <p class="card-text text-start"><i class="bi bi-person-badge" style="color: #252649; margin-right: 10px;"></i>{{ dahra.nombreTalibes}}</p>
+                                            <p class="card-text text-start"><i class="bi bi-geo-alt-fill" style="color: #252649; margin-right: 10px;"></i>{{ dahra.region }}</p>
                                         </div>
                                         <div class="col-md-6">
                                             <a href="#" class="btn"  data-bs-toggle="modal" data-bs-target="#exampleModal" style="width:80%; font-size: 18px; background-color: #252649;color: #C2A966;box-shadow:2px 2px 2px 2px #C2A966; font-weight: bold;"> <i class="bi bi-eye-fill" style="color: #C2A966; margin-right: 15px; font-weight: bold;"></i>Détails</a>
@@ -100,28 +100,26 @@
                                                               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                               </div>
                                                               <div class="modal-body">
-                                                                  <h1 class="text-center"  style="color: #252649;">Dahra Al Ihsaan</h1>
+                                                                  <h1 class="text-center"  style="color: #252649;">{{ dahra.nom }}</h1>
                                                                   <div class="mb-3 row" style="color: #252649; font-weight: bold;">
                                                                       <div class="col-md-6">
                                                                           <img src="assets/dahras/Imgcarte1.jpg" id="détailImg" alt="">
                                                                       </div>
                                                                       <div class="col-md-6">
-                                                                          <p>Nom et prénom Oustaz:</p>
+                                                                          <p><span>Nom Ouztas:</span>{{ dahra.nomOuztas }}</p>
                                                                           <hr>
-                                                                          <p>Région:</p>
+                                                                          <p><span>Region:</span>{{ dahra.region }}</p>
                                                                           <hr>
-                                                                          <p>Adresse:</p>
+                                                                          <p><span>Adresse:</span>{{ dahra.adresse }}</p>
                                                                           <hr>
                                                                       </div>
                                                                   </div>
                                                                   <div class="mb-3">
-                                                                      <p>Contact:</p>
+                                                                      <p><span>Numéro Télephone Dahra : </span>{{ dahra.numeroTelephone }}</p>
                                                                       <hr>
-                                                                      <p>Description:</p>
+                                                                      <p><span>Numero Téléphone Ouztas :</span>{{ dahra.numeroTelephoneOuztas }}</p>
                                                                       <hr>
-                                                                      <hr>
-                                                                      <hr>
-                                                                      <hr>
+                                                                     
                                                                   </div>
                                                               </div>
                                                               <div class="modal-footer d-flex justify-content-between">
@@ -138,125 +136,9 @@
                                   </div>
                               </div>
                           </div>
-                          <div class="contentcard col-md-4">
-                            <div class="card" style="width: 20rem; box-shadow: 1px 1px 1px 1px #C2A966; margin: 0 auto;">
-                                <div><img src="assets/dahras/Imgcarte1.jpg" id="cardImg" alt=""></div>
-                                <div class="card-body">
-                                  <h5 class="mt-2 card-title text-center">Dahra Al Ihsaan</h5>  
-                                  <div class="row p-2" style="">
-                                      <div class="col-md-6 mt-3 fw-bold">
-                                          <p class="card-text text-start"><i class="bi bi-person-badge" style="color: #252649; margin-right: 10px;"></i>567 apprenants</p>
-                                          <p class="card-text text-start"><i class="bi bi-geo-alt-fill" style="color: #252649; margin-right: 10px;"></i>Thies</p>
-                                      </div>
-                                      <div class="col-md-6">
-                                          <a href="#" class="btn"  data-bs-toggle="modal" data-bs-target="#exampleModal" style="width:80%; font-size: 18px; background-color: #252649;color: #C2A966;box-shadow:2px 2px 2px 2px #C2A966; font-weight: bold;"> <i class="bi bi-eye-fill" style="color: #C2A966; margin-right: 15px; font-weight: bold;"></i>Détails</a>
-                                      
-                                            <!-- Modal -->
-                                                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                                        <div class="modal-dialog">
-                                                        <div class="modal-content" style="background-color: #C2A966 !important;">
-                                                            <div class="modal-header">
-                                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                                            </div>
-                                                            <div class="modal-body">
-                                                                <h1 class="text-center"  style="color: #252649;">Dahra Al Ihsaan</h1>
-                                                                <div class="mb-3 row" style="color: #252649; font-weight: bold;">
-                                                                    <div class="col-md-6">
-                                                                        <img src="assets/dahras/Imgcarte1.jpg" id="détailImg" alt="">
-                                                                    </div>
-                                                                    <div class="col-md-6">
-                                                                        <p>Nom et prénom Oustaz:</p>
-                                                                        <hr>
-                                                                        <p>Région:</p>
-                                                                        <hr>
-                                                                        <p>Adresse:</p>
-                                                                        <hr>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="mb-3">
-                                                                    <p>Contact:</p>
-                                                                    <hr>
-                                                                    <p>Description:</p>
-                                                                    <hr>
-                                                                    <hr>
-                                                                    <hr>
-                                                                    <hr>
-                                                                </div>
-                                                            </div>
-                                                            <div class="modal-footer d-flex justify-content-between">
-                                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" style="background-color: #252649;color: #C2A966;font-weight: bold; box-shadow:2px 2px 2px 2px #C2A966;"> <i class="bi bi-eye-fill" style="color: #C2A966; margin-right: 10px; font-weight: bold;"></i>567 apprenants</button>
-                                                            <button type="button" class="btn btn-primary" style="background-color: #252649; color: #C2A966; font-weight: bold; border: none;">Faire un don</button>
-                                                            </div>
-                                                        </div>
-                                                        </div>
-                                                    </div>
-                                    </div>
-              
-            
-                                  </div>
-                                </div>
-                            </div>
-                          </div>
-                          <div class="contentcard col-md-4">
-                            <div class="card" style="width: 20rem; box-shadow: 1px 1px 1px 1px #C2A966; margin: 0 auto;">
-                                <div><img src="assets/dahras/Imgcarte1.jpg" id="cardImg" alt=""></div>
-                                <div class="card-body">
-                                  <h5 class="mt-2 card-title text-center">Dahra Al Ihsaan</h5>  
-                                  <div class="row p-2" style="">
-                                      <div class="col-md-6 mt-3 fw-bold">
-                                          <p class="card-text text-start"><i class="bi bi-person-badge" style="color: #252649; margin-right: 10px;"></i>567 apprenants</p>
-                                          <p class="card-text text-start"><i class="bi bi-geo-alt-fill" style="color: #252649; margin-right: 10px;"></i>Thies</p>
-                                      </div>
-                                      <div class="col-md-6">
-                                          <a href="#" class="btn"  data-bs-toggle="modal" data-bs-target="#exampleModal" style="width:80%; font-size: 18px; background-color: #252649;color: #C2A966;box-shadow:2px 2px 2px 2px #C2A966; font-weight: bold;"> <i class="bi bi-eye-fill" style="color: #C2A966; margin-right: 15px; font-weight: bold;"></i>Détails</a>
-                                      
-                                            <!-- Modal -->
-                                                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                                        <div class="modal-dialog">
-                                                        <div class="modal-content" style="background-color: #C2A966 !important;">
-                                                            <div class="modal-header">
-                                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                                            </div>
-                                                            <div class="modal-body">
-                                                                <h1 class="text-center"  style="color: #252649;">Dahra Al Ihsaan</h1>
-                                                                <div class="mb-3 row" style="color: #252649; font-weight: bold;">
-                                                                    <div class="col-md-6">
-                                                                        <img src="assets/dahras/Imgcarte1.jpg" id="détailImg" alt="">
-                                                                    </div>
-                                                                    <div class="col-md-6">
-                                                                        <p>Nom et prénom Oustaz:</p>
-                                                                        <hr>
-                                                                        <p>Région:</p>
-                                                                        <hr>
-                                                                        <p>Adresse:</p>
-                                                                        <hr>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="mb-3">
-                                                                    <p>Contact:</p>
-                                                                    <hr>
-                                                                    <p>Description:</p>
-                                                                    <hr>
-                                                                    <hr>
-                                                                    <hr>
-                                                                    <hr>
-                                                                </div>
-                                                            </div>
-                                                            <div class="modal-footer d-flex justify-content-between">
-                                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" style="background-color: #252649;color: #C2A966;font-weight: bold; box-shadow:2px 2px 2px 2px #C2A966;"> <i class="bi bi-eye-fill" style="color: #C2A966; margin-right: 10px; font-weight: bold;"></i>567 apprenants</button>
-                                                            <button type="button" class="btn btn-primary" style="background-color: #252649; color: #C2A966; font-weight: bold; border: none;">Faire un don</button>
-                                                            </div>
-                                                        </div>
-                                                        </div>
-                                                    </div>
-                                    </div>
-              
-            
-                                  </div>
-                                </div>
-                            </div>
-                          </div>
-                      </div> 
+
+                        </div> 
+                        
                         
   
             </div>

@@ -2,11 +2,16 @@ import { Injectable, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 // import { Observable, tap } from 'rxjs';
 import Swal from 'sweetalert2';
+import { TOKEN_KEY } from '../constants/constant';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AllservicesService implements OnInit {
+  unlockAndActivateDahra(id: number, arg1: (response: any) => void) {
+    throw new Error('Method not implemented.');
+  }
+ 
   private apiUrl = 'http://127.0.0.1:8000/api';
 
   constructor(private http: HttpClient) {}
@@ -19,11 +24,23 @@ export class AllservicesService implements OnInit {
       headers: new HttpHeaders({
         Authorization:
           'Bearer ' +
-          JSON.parse(localStorage.getItem('onlineUser') ?? '{}').token,
+          JSON.parse(localStorage.getItem(TOKEN_KEY) ?? '{}').token,
       }),
     };
     this.http
       .post(this.apiUrl + path, dataToSend, httpOptions)
+      .subscribe((reponse: any) => onSuccess(reponse));
+  }
+  simplePost(path: string, onSuccess: Function) {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        Authorization:
+          'Bearer ' +
+          JSON.parse(localStorage.getItem(TOKEN_KEY) ?? '{}').token,
+      }),
+    };
+    this.http
+      .post(this.apiUrl + path, {}, httpOptions)
       .subscribe((reponse: any) => onSuccess(reponse));
   }
 
@@ -32,7 +49,7 @@ export class AllservicesService implements OnInit {
       headers: new HttpHeaders({
         Authorization:
           'Bearer ' +
-          JSON.parse(localStorage.getItem('onlineUser') ?? '{}').token,
+          JSON.parse(localStorage.getItem(TOKEN_KEY) ?? '{}').token,
       }),
     };
     this.http
@@ -45,7 +62,7 @@ export class AllservicesService implements OnInit {
       headers: new HttpHeaders({
         Authorization:
           'Bearer ' +
-          JSON.parse(localStorage.getItem('onlineUser') ?? '{}').token,
+          JSON.parse(localStorage.getItem(TOKEN_KEY) ?? '{}').token,
       }),
     };
     this.http
@@ -58,7 +75,7 @@ export class AllservicesService implements OnInit {
       headers: new HttpHeaders({
         Authorization:
           'Bearer ' +
-          JSON.parse(localStorage.getItem('onlineUser') ?? '{}').token,
+          JSON.parse(localStorage.getItem(TOKEN_KEY) ?? '{}').token,
       }),
     };
     this.http
@@ -73,4 +90,6 @@ export class AllservicesService implements OnInit {
       icon: icon,
     });
   }
+
+  
 }

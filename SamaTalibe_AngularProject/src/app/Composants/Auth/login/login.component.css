@@ -57,6 +57,10 @@
     border-color: #C2A966;
     border: 2px solid #C2A966;
   }
+  .input-group select:focus {
+    border-color: #C2A966;
+    border: 2px solid #C2A966;
+  }
   
 .signup a {
     color: rgba(243, 244, 246, 1);

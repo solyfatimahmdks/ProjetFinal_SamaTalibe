@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { TOKEN_KEY } from '../constants/constant';
 
 @Injectable({
   providedIn: 'root',
@@ -12,7 +13,7 @@ export class DahraService {
     getListOfDahras(onSuccess: Function) {
       const httpOptions = {
         headers: new HttpHeaders({
-          Authorization: 'Bearer ' + JSON.parse(localStorage.getItem('onlineUser') ?? '{}').token,
+          Authorization: 'Bearer ' + JSON.parse(localStorage.getItem(TOKEN_KEY) ?? '{}').token,
         }),
       };
   

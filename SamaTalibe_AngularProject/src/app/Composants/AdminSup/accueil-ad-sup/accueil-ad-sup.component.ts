@@ -1,57 +1,25 @@
 import { Component } from '@angular/core';
+import { AllservicesService } from 'src/app/service/all-services-rest.service';
 
 @Component({
   templateUrl: './accueil-ad-sup.component.html',
   selector: 'app-accueil-ad-sup',
   styleUrls: ['./accueil-ad-sup.component.css'],
-  template: `
-  <ngx-charts-bar-vertical
-    [view]="view"
-    [scheme]="colorScheme"
-    [results]="barChartData"
-    [gradient]="gradient"
-    [xAxis]="showXAxis"
-    [yAxis]="showYAxis"
-    [legend]="showLegend"
-    [showXAxisLabel]="showXAxisLabel"
-    [showYAxisLabel]="showYAxisLabel"
-    [xAxisLabel]="xAxisLabel"
-    [yAxisLabel]="yAxisLabel"
-    (select)="onSelect($event)"
-  >
-  </ngx-charts-bar-vertical>
-`,
 })
 
 export class AccueilAdSupComponent{
-  view: any[] = [400, 300];
-  barChartData: any[] = [
-    {
-      name: 'Série 1',
-      value: 10,
-    },
-    {
-      name: 'Série 2',
-      value: 20,
-    },
-    // Ajoutez autant de séries que nécessaire
-  ];
+  dahras: any[] = []; 
 
-  // Options pour personnaliser le graphique
-  colorScheme = {
-    domain: ['#5AA454', '#E44D25', '#C7B42C', '#AAAAAA'],
-  };
-  gradient = false;
-  showLegend = true;
-  showXAxis = true;
-  showYAxis = true;
-  showXAxisLabel = true;
-  xAxisLabel = 'X-Axis Label';
-  showYAxisLabel = true;
-  yAxisLabel = 'Y-Axis Label';
+  
+  constructor(private allservicesService: AllservicesService) {}
 
-  onSelect(event: any): void {
-    // Gérer la sélection du graphique si nécessaire
-    console.log(event);
+  ngOnInit(): void {
+    this.getAllDahras();
+  }
+
+  getAllDahras() {
+    this.allservicesService.get('/lister-dahra', (response: any) => {
+      this.dahras = response; 
+    });
   }
 }

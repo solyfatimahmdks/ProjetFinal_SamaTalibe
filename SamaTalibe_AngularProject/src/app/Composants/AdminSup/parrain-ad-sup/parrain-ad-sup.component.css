@@ -85,7 +85,8 @@ font-size: 12px;
 .btn{
   background-color: #252649;
   box-shadow: 1px 1px 1px 1px #C2A966 !important;
-  width: 300px; font-size: 20px; 
+  /* width: 300px;  */
+  font-size: 20px; 
   padding: 10px; margin: 20px; 
   font-weight: bold;
   color: #C2A966;

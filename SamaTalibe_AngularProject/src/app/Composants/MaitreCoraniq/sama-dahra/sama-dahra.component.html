@@ -24,7 +24,7 @@
               </a>
             </li>
             <li>
-              <a  class="nav-link ps-5 mb-2" routerLink="/donsmaitre" style="height: 50px; color: white;border-left: 3px solid #C2A966; font-size: 20px; font-weight: bold;">
+              <a  class="nav-link ps-5 mb-2" routerLink="/donsmaitre" style="height: 50px; color: white;font-size: 20px; font-weight: bold;">
                 <i class="me-3 fa-solid fa-hand-holding-droplet" style="color: white;"></i>Donnations
               </a>
             </li>
@@ -292,57 +292,68 @@
     </div>
 
     <!-- Modal 3-->
-    <div class="modal fade" style="" id="staticBackdrop1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-      <div class="modal-dialog mt-5" style="margin: 0 auto;">
-        <div class="modal-content" style="padding: 40px;  width: 800px;">
-          <div class="modal-header">
-            <h1 class="modal-title fs-5" style="margin: 0 auto; color: #252649;" id="staticBackdropLabel"> Enregistrer un Talibé </h1>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body m-3">
-               <div class="row">
+    <form (ngSubmit)="ajouterTalibe(nom.value, prenom.value, origine.value, situation.value, dateArrivee.value, description.value)">
+      <div class="modal fade" style="" id="staticBackdrop1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">      <div class="modal-dialog mt-5" style="margin: 0 auto;">
+          <div class="modal-content" style="padding: 40px;  width: 800px;">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" style="margin: 0 auto; color: #252649;" id="staticBackdropLabel"> Enregistrer un Talibé </h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body m-3">
+                 <div class="row">
+                    <div class="col-md-6 mb-3 pe-3">
+                      <label for="exampleFormControlInput1" style="color: #C2A966;" class="form-label">Nom:</label>
+                      <input name="nom" type="name" #nom placeholder="Nom"  style="height: 40px;border: 1px solid #C2A966; box-shadow:1px 1px 1px #C2A966;" class="form-control" id="exampleFormControlInput1" >
+                    </div>
+                    <div class="col-md-6 mb-3 ps-3">
+                      <label for="exampleFormControlInput1" style="color: #C2A966;" class="form-label">Prénom:</label>
+                      <input name="prenom" type="name"  #prenom placeholder="Prénom" style="height: 40px;border: 1px solid #C2A966; box-shadow:1px 1px 1px #C2A966;" class="form-control" id="exampleFormControlInput1" >
+                    </div>
+                 </div>
+                 <div class="row">
                   <div class="col-md-6 mb-3 pe-3">
-                    <label for="exampleFormControlInput1" style="color: #C2A966;" class="form-label">Nom:</label>
-                    <input type="name"  style="height: 40px;border: 1px solid #C2A966; box-shadow:1px 1px 1px #C2A966;" class="form-control" id="exampleFormControlInput1" >
+                    <label for="exampleFormControlInput1" style="color: #C2A966;" class="form-label">Age:</label>
+                    <input name="age" type="number" #origine placeholder="Age"  style="height: 40px;border: 1px solid #C2A966; box-shadow:1px 1px 1px #C2A966;" class="form-control" id="exampleFormControlInput1" >
                   </div>
                   <div class="col-md-6 mb-3 ps-3">
-                    <label for="exampleFormControlInput1" style="color: #C2A966;" class="form-label">Prénom:</label>
-                    <input type="name" style="height: 40px;border: 1px solid #C2A966; box-shadow:1px 1px 1px #C2A966;" class="form-control" id="exampleFormControlInput1" >
+                    <label for="exampleFormControlInput1" style="color: #C2A966;" class="form-label">Présence talibé:</label>
+                    <input name="text" type="presencetalibe" #situation placeholder="Présence Talibé" style="height: 40px;border: 1px solid #C2A966; box-shadow:1px 1px 1px #C2A966;" class="form-control" id="exampleFormControlInput1" >
+                  </div>
+               </div>
+                 <div class="row">
+                  <div class="col-md-6 mb-3 pe-3">
+                    <label for="exampleFormControlInput1" style="color: #C2A966;" class="form-label">Origine:</label>
+                    <input name="adresse" type="text" #origine placeholder="Adresse"  style="height: 40px;border: 1px solid #C2A966; box-shadow:1px 1px 1px #C2A966;" class="form-control" id="exampleFormControlInput1" >
+                  </div>
+                  <div class="col-md-6 mb-3 ps-3">
+                    <label for="exampleFormControlInput1" style="color: #C2A966;" class="form-label">Situation:</label>
+                    <input name="text" type="text" #situation placeholder="Situation" style="height: 40px;border: 1px solid #C2A966; box-shadow:1px 1px 1px #C2A966;" class="form-control" id="exampleFormControlInput1" >
                   </div>
                </div>
                <div class="row">
                 <div class="col-md-6 mb-3 pe-3">
-                  <label for="exampleFormControlInput1" style="color: #C2A966;" class="form-label">Origine:</label>
-                  <input type="text"  style="height: 40px;border: 1px solid #C2A966; box-shadow:1px 1px 1px #C2A966;" class="form-control" id="exampleFormControlInput1" >
+                  <label for="exampleFormControlInput1" style="color: #C2A966;" class="form-label">Date d'arrivée:</label>
+                  <input name="datearrivetalibe" type="date" #dateArrivee placeholder="Date d'arrivée" style="height: 40px;border: 1px solid #C2A966; box-shadow:1px 1px 1px #C2A966;" class="form-control" id="exampleFormControlInput1" >
                 </div>
                 <div class="col-md-6 mb-3 ps-3">
-                  <label for="exampleFormControlInput1" style="color: #C2A966;" class="form-label">Situation:</label>
-                  <input type="text"  style="height: 40px;border: 1px solid #C2A966; box-shadow:1px 1px 1px #C2A966;" class="form-control" id="exampleFormControlInput1" >
+                  <label for="exampleFormControlInput1" style="color: #C2A966;" class="form-label">Description:</label>
+                  <textarea name="description" #description placeholder="Description" style="height: 40px;border: 1px solid #C2A966; box-shadow:1px 1px 1px #C2A966;" class="form-control" id="exampleFormControlInput1"  cols="30" rows="10"></textarea>
                 </div>
              </div>
              <div class="row">
-              <div class="col-md-6 mb-3 pe-3">
-                <label for="exampleFormControlInput1" style="color: #C2A966;" class="form-label">Date d'arrivée:</label>
-                <input type="text" style="height: 40px;border: 1px solid #C2A966; box-shadow:1px 1px 1px #C2A966;" class="form-control" id="exampleFormControlInput1" >
-              </div>
-              <div class="col-md-6 mb-3 ps-3">
-                <label for="exampleFormControlInput1" style="color: #C2A966;" class="form-label">Description:</label>
-                <textarea name="text" style="height: 40px;border: 1px solid #C2A966; box-shadow:1px 1px 1px #C2A966;" class="form-control" id="exampleFormControlInput1"  cols="30" rows="10"></textarea>
+              <div col-md-12>
+                <label for="formFileLg" style="color: #C2A966;" class="form-label" class="form-label">Image</label>
+                <input name="Image" class="form-control form-control-lg" style="height: 40px;border: 1px solid #C2A966; box-shadow:1px 1px 1px #C2A966;" id="formFileLg" type="file" #image placeholder="Image">
               </div>
            </div>
-           <div class="row">
-            <div col-md-12>
-              <label for="formFileLg" style="color: #C2A966;" class="form-label" class="form-label">Image</label>
-              <input class="form-control form-control-lg" style="height: 40px;border: 1px solid #C2A966; box-shadow:1px 1px 1px #C2A966;" id="formFileLg" type="file">
             </div>
-         </div>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" routerLink="/dashmaitre" data-bs-dismiss="modal">Ajouter</button>
+            <div class="modal-footer">
+              <button  type="submit" class="btn btn-secondary" data-bs-dismiss="modal">Ajouter</button>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </form>
   
   </body>
   
