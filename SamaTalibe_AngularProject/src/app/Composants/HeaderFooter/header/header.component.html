@@ -12,10 +12,10 @@
           </a>
 
           <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
-            <li class="ms-3" style="border: 1px solid #C2A966; padding: 8px; border-radius: 5px; background-color: #252649; opacity: 75%;"><a class="link-body-emphasis" href="#"><i class="bi bi-twitter" style="color: #C2A966;"></i></a></li>
-            <li class="ms-3" style="border: 1px solid #C2A966; padding: 8px; border-radius: 5px; background-color: #252649; opacity: 75%;"><a class="link-body-emphasis" href="#"><i class="bi bi-facebook" style="color: #C2A966;"></i></a></li>
-            <li class="ms-3" style="border: 1px solid #C2A966; padding: 8px; border-radius: 5px; background-color: #252649; opacity: 75%;"><a class="link-body-emphasis" href="#"><i class="bi bi-linkedin" style="color: #C2A966;"></i></a></li>
-            <li class="ms-3" style="border: 1px solid #C2A966; padding: 8px; border-radius: 5px; background-color: #252649; opacity: 75%;"><a class="link-body-emphasis" href="#"><i class="bi bi-instagram" style="color: #C2A966;"></i></a></li>
+            <li class="ms-3" style="border: 1px solid #C2A966; padding: 8px; border-radius: 5px; background-color: #252649; opacity: 75%;"><a class="link-body-emphasis"><i class="bi bi-twitter" style="color: #C2A966;"></i></a></li>
+            <li class="ms-3" style="border: 1px solid #C2A966; padding: 8px; border-radius: 5px; background-color: #252649; opacity: 75%;"><a class="link-body-emphasis"><i class="bi bi-facebook" style="color: #C2A966;"></i></a></li>
+            <li class="ms-3" style="border: 1px solid #C2A966; padding: 8px; border-radius: 5px; background-color: #252649; opacity: 75%;"><a class="link-body-emphasis"><i class="bi bi-linkedin" style="color: #C2A966;"></i></a></li>
+            <li class="ms-3" style="border: 1px solid #C2A966; padding: 8px; border-radius: 5px; background-color: #252649; opacity: 75%;"><a class="link-body-emphasis"><i class="bi bi-instagram" style="color: #C2A966;"></i></a></li>
           </ul>
         </div>
       </div>
@@ -38,18 +38,7 @@
                     <li style="list-style: none; font-weight: bold; "><a routerLink="/listdahra" [class.active-link]="isLinkActive('/dahra/liste')" style="text-decoration: none;color: #252649;">Liste des dahras</a></li>
                     <li style="list-style: none; font-weight: bold; "><a class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal" style="text-decoration: none;color: #252649; border: none; font-size: 20px; font-weight: bold;">Sama dahra</a></li>
                       <!-- Button trigger modal -->
-                                <!-- Modal -->
-                                <div class="modal fade mt-5" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                  <div class="modal-dialog">
-                                    <div class="modal-content p-5">
-                                      <div class="modal-header">
-                                        <h1 class="modal-title fs-5" style="margin: 0 auto; color: #252649;" id="exampleModalLabel">Authentifiez-vous d'abord</h1>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                      </div>
-                                         <button type="button" class="btn" style="background-color: #252649; color: #C2A966; border: none; box-shadow:1px 1px 1px 1px #C2A966; font-weight: bold;" routerLink="/login">Connexion</button>
-                                    </div>
-                                  </div>
-                                </div>
+                 
                   </ul>
                 </li>
 
@@ -72,4 +61,17 @@
               </div>
               
     </div>
-  </header>
+               <!-- Modal -->
+                                <div class="modal fade mt-5" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                  <div class="modal-dialog">
+                                    <div class="modal-content p-5">
+                                      <div class="modal-header">
+                                        <h1 class="modal-title fs-5" style="margin: 0 auto; color: #252649;" id="exampleModalLabel">Authentifiez-vous d'abord</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                      </div>
+                                         <button type="button" class="btn" style="background-color: #252649; color: #C2A966; border: none; box-shadow:1px 1px 1px 1px #C2A966; font-weight: bold;" routerLink="/login">Connexion</button>
+                                    </div>
+                                  </div>
+                                </div>
+
+</header>

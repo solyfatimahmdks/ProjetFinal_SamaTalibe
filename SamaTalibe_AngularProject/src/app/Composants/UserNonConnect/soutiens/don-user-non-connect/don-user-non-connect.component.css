@@ -28,3 +28,15 @@ main{
   .card-group{
       margin: 0 auto;
   }
+   /* section banner bottom */
+ #bannerImage{
+  background: linear-gradient(0deg, #2b213dbb, #2b213dbb), url("../../../../../assets/accueil/ImgAbout.jpeg");
+  height: 40vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 0;
+  width: 100%;
+  background-position: center;
+}
+
+/* End section banner bottom */

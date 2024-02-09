@@ -12,11 +12,12 @@ import Swal from 'sweetalert2';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent {
-adresses: string[] = ["Adresse 1", "Adresse 2", "Adresse 3",
-"Adresse 4", "Adresse 5", "Adresse 6","Adresse 7", "Adresse 8", "Adresse 9",
-"Adresse 10", "Adresse 11", "Adresse 12","Adresse 13", "Adresse 14"
+regions: string[] = ["Dakar", "Kaolack", "Saint-louis",
+"Diourbel", "Ziguinchor", "Tambacounda","Matam", "Fatick", "Thies",
+"Kédougou", "Matam", "Kaffrine","Kolda", "Sédhiou"
 ];
-selectedAdresse: string = "";
+selectedImage: File | null = null;
+selectedRegion: string = "";
 getLoginLogin(choice: string) {
   this.isLoginFormVisible = choice;
 }
@@ -31,6 +32,7 @@ getLoginLogin(choice: string) {
   nombreTalibe: string = '';
   email: string = '';
   password: string = '';
+  imageFile: string = '';
 
   updateChoixForm(event: any) {
     // this.choixForm = event.target.value;
@@ -52,6 +54,7 @@ getLoginLogin(choice: string) {
   };
 
   signupDahra = {
+    imageFile: '',
     nomDahra: '',
     nomOustaz: '',
     adressDahra: '',
@@ -211,7 +214,7 @@ getLoginLogin(choice: string) {
       prenom: this.prenom,
       nom: this.nom,
       email: this.email,
-      adresse: this.selectedAdresse,
+      adresse: this.adresse,
       password: this.password,
       numeroTelephone: this.numeroTelephone,
     };
@@ -231,53 +234,63 @@ getLoginLogin(choice: string) {
     );
   }
 
-  SignupDahra() {
 
- // Vérifier si les champs requis sont vides
- if (
-  !this.nom ||
-  !this.nomOuztas ||
-  !this.adresse ||
-  !this.region ||
-  !this.numeroTelephone ||
-  !this.numeroTelephoneOuztas ||
-  !this.nombreTalibe ||
-  !this.email ||
-  !this.password
-) {
-  alert("Veuillez remplir tous les champs obligatoires.");
-  return;
-}
-     
-    alert('okay');
-    this.userDahra = {
-      nom: this.nom,
-      nomOuztas: this.nomOuztas,
-      adresse:this.adresse,
-      region:this.region,
-      numeroTelephone:this.numeroTelephone,
-      numeroTelephoneOuztas:this.numeroTelephoneOuztas,
-      nombreTalibe:this.nombreTalibe,
-      email:this.email,
-      password:this.password,
-    // Ajoutez d'autres propriétés spécifiques au formulaire "Nous rejoindre" si nécessaire
+  onFileSelected(event: any) {
+    this.selectedImage = event.target.files[0] as File;
   }
-  alert("hi");
-  this.authService.inscriptionDahra(this.userDahra).subscribe(
+SignupDahra() {
+  // Vérifier si les champs requis sont vides
+  // if (
+  //   !this.imageFile ||
+  //   !this.nom ||
+  //   !this.nomOuztas ||
+  //   !this.adresse ||
+  //   !this.region ||
+  //   !this.numeroTelephone ||
+  //   !this.numeroTelephoneOuztas ||
+  //   !this.nombreTalibe ||
+  //   !this.email ||
+  //   !this.password
+  // ) {
+  //   alert("Veuillez remplir tous les champs obligatoires.");
+  //   return;
+  // }
+
+  // Créer un nouvel objet FormData
+  const formData = new FormData();
+
+  formData.append("imageFile", this.selectedImage || '');
+  formData.append("nom", this.nom);
+  formData.append("nomOuztas", this.nomOuztas);
+  formData.append("adresse", this.adresse);
+  formData.append("region", this.selectedRegion);
+  formData.append("numeroTelephone", this.numeroTelephone);
+  formData.append("numeroTelephoneOuztas", this.numeroTelephoneOuztas);
+  formData.append("nombreTalibe", this.nombreTalibe);
+  formData.append("email", this.email);
+  formData.append("password", this.password);
+
+  
+  // Ajouter l'image sélectionnée à l'objet FormData (si elle existe)
+  if (this.selectedImage) {
+    formData.append("image", this.selectedImage);
+    console.log(this.selectedImage);
+    
+  }
+  
+
+  // Appeler la méthode d'inscriptionDahra avec l'objet FormData
+  this.authService.inscriptionDahra(formData).subscribe(
     (response:any) => {
       console.log(response);
-      alert("inscription réussie")
+      alert("Inscription réussie");
       this.isLoginFormVisible = this.isLoginFormVisible ? 'visible' : 'hidden';
-
       this.route.navigate(['/login']);
     },
     (error:any) => {
-      // Gérez les erreurs d'inscription.
+      // Gérer les erreurs d'inscription.
       console.error('Erreur d\'inscription :', error);
     }
   );
-  
-
- 
 }
 }

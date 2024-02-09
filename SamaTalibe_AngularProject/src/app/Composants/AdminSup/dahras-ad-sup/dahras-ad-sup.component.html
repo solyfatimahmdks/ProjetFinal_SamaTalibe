@@ -19,7 +19,7 @@
             </a>
           </li>
           <li>
-            <a  class="nav-link ps-5 mb-2" routerLink="donadsup" style="height: 50px; color: white;font-size: 20px; font-weight: bold;">
+            <a  class="nav-link ps-5 mb-2" routerLink="/donadsup" style="height: 50px; color: white;font-size: 20px; font-weight: bold;">
               <i class="me-3 fa-solid fa-hand-holding-droplet" style="color: white;"></i>Donnations
             </a>
           </li>
@@ -81,7 +81,7 @@
               <!-- End of Topbar -->
 
                  <!-- End of Topbar -->
-                 <button type="button" class="nav-link ps-5 mb-2 btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop" style="background-color: #252649; cursor: pointer; height: 50px; color: #C2A966;box-shadow:1px 1px 1px #C2A966; font-size: 20px; font-weight: bold;">
+                 <button type="button" class="nav-link ms-5 px-5 btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop" style="background-color: #252649; cursor: pointer; height: 50px;color: #C2A966;box-shadow:1px 1px 1px #C2A966; font-size: 15px; font-weight: bold;">
                   Nous rejoindre
                 </button>
               
@@ -90,24 +90,24 @@
                 <table class="table table-striped table-sm" style="width: 100%;">
                   <thead>
                     <tr class="">
-                      <th scope="col" style="color: white; background-color: #C2A966;width: 10%;" class="ps-2">Image</th>
+                      <th scope="col" style="color: white; background-color: #C2A966;width: 15%;" class="ps-5">Image</th>
                       <th scope="col" style="color: white; background-color: #C2A966; width: 20%;">Nom du dahra</th>
                       <th scope="col" style="color: white; background-color: #C2A966;width: 20%;">Fondateur</th>
                       <th scope="col" style="color: white; background-color: #C2A966;width: 10%;">Lieu</th>
-                      <th scope="col" style="color: white; background-color: #C2A966;width: 20%;">Action</th>
+                      <th scope="col" style="color: white; padding-left: 60px; background-color: #C2A966;width: 15%;">Action</th>
  
                     </tr>
                   </thead>
                   <tbody>
                     <tr *ngFor="let dahra of dahrasList" style="height: 60px; margin-top: 20px !important;">
-                      <td class="ps-5"> <img [src]="dahra.imageSrc" id="admindatable" alt=""></td>
+                      <td class="ps-5"> <img src="http://127.0.0.1:8000/uploads/{{dahra.imageSrc}}" id="admindatable" alt=""></td>
                       <td>{{ dahra.nom }}</td>
                       <td>{{ dahra.nomOuztas }}</td>
                       <td>{{ dahra.region }}</td>
-                      <td >
-                        <i class="bi bi-pencil-square btn6"  data-bs-toggle="modal" data-bs-target="#staticBackdrop2" style="cursor: pointer; font-size: 20px; color: #252649;"></i>
-                        <i class="bi bi-trash3-fill" (click)="delete(dahra.id)" style="font-size: 20px; color: #252649;"></i>
-                        <i class="bi bi-eye-fill btn3" (click)="showDahraDetailsModal(dahra)"  data-bs-toggle="modal" data-bs-target="#exampleModal" style="font-size: 20px; color: #252649; cursor: pointer;"></i>
+                      <td style="padding: 20px;">
+                        <i class="bi bi-pencil-square btn6"  data-bs-toggle="modal" data-bs-target="#staticBackdrop2" style="margin: 10px !important; background-color: #252649;border-radius: 5px; box-shadow: 1px 1px 1px #C2A966;cursor: pointer; font-size: 12px;padding: 5px; color: white;"></i>
+                        <i class="bi bi-trash3-fill" (click)="delete(dahra.id)" style="background-color: #252649;border-radius: 5px; box-shadow: 1px 1px 1px #C2A966;margin: 10px !important; cursor: pointer; font-size: 12px;padding: 5px; color: white;"></i>
+                        <i class="bi bi-eye-fill btn3" (click)="showDahraDetailsModal(dahra)"  data-bs-toggle="modal" data-bs-target="#exampleModal" style="background-color: #252649;border-radius: 5px;margin: 10px !important; box-shadow: 1px 1px 1px #C2A966;cursor: pointer; font-size: 12px;padding: 5px; color: white;"></i>
                         <!-- <button *ngIf="selectedDahra === dahra" (click)="unlockDahra(selectedDahra?.id)">Débloquer Dahra</button> -->
                         <i *ngIf="selectedDahra === dahra" class="fa fa-unlock" (click)="unlockDahra(selectedDahra?.id)" style="font-size: 20px; color: #252649;"></i>
                       </td>
@@ -177,6 +177,10 @@
               <div class="mb-3 ps-3">
                 <label for="exampleFormControlInput1" style="color: #C2A966;" class="form-label">Nombre de talibés:</label>
                 <input type="number"  style="height: 40px;border: 1px solid #C2A966; box-shadow:1px 1px 1px #C2A966;" class="form-control" id="exampleFormControlInput1" [(ngModel)]="dara.nombreTalibe">
+              </div>
+              <div>
+                <label for="formFileLg" class="form-label">Image:</label>
+                <input class="form-control form-control-lg" id="formFileLg" type="file" (change)="getImageUrl($event)">
               </div>
            </div>
             </div>

@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { RolesAdSupComponent } from './roles-ad-sup.component';
 
 describe('RolesAdSupComponent', () => {

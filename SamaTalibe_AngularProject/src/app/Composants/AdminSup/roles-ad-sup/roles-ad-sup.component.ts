@@ -16,24 +16,27 @@ export class RolesAdSupComponent implements OnInit {
 
   ngOnInit(): void {
     this.loadRoles();
+    // this.postRole();
   }
 
   loadRoles() {
-    this.service.get('/roles', (reponse: any) => {
+    this.service.get('/liste-roles', (reponse: any) => {
       console.log('test', reponse);
       this.roles=reponse;
+      console.log(this.roles);
+      
     });
   }
 
-  postRole() {
-    let role = {
-      nom: 'admin',
-    };
+  // postRole() {
+  //   let role = {
+  //     nom: 'admin',
+  //   };
 
-    this.service.post('/sm2', role, (reponse: any) => {
-      console.log('test', reponse);
-    });
-  }
+  //   this.service.post('/assigner-role', role, (reponse: any) => {
+  //     console.log('test', reponse);
+  //   });
+  // }
 
 
 

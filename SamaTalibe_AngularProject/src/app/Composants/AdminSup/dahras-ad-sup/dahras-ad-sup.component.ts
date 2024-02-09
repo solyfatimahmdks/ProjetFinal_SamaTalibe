@@ -10,10 +10,16 @@ import { Router } from '@angular/router';
   styleUrls: ['./dahras-ad-sup.component.css']
 })
 export class DahrasAdSupComponent implements OnInit {
+getImageUrl(event: any) {
+  console.warn(event.target.files[0]);
+  this.uploadedImages = event.target.files[0] as File;
+}
+
   dahrasList: any[] = [];
   selectedDahraDetails: any | null = null;
   selectedDahra: any;
   @ViewChild('modalElement') modalElement!: ElementRef;
+    uploadedImages: any;
   constructor(private allservicesService: AllservicesService , private router: Router) {}
 
   ngOnInit(): void {
@@ -37,6 +43,8 @@ export class DahrasAdSupComponent implements OnInit {
 
   loadDahrasList() {
     this.allservicesService.get('/lister-dahra', (response: any) => {
+      console.log(`test`,response);
+      
       this.dahrasList = response.map((dahra: any) => {
         // Initialisez isBlocked à partir du stockage local
         // dahra.isBlocked = localStorage.getItem(`blocked_${dahra.id}`) || true;
@@ -46,18 +54,44 @@ export class DahrasAdSupComponent implements OnInit {
     });
   }
 
-
+  // onFileSelected(event: any) {
+  //   const selectedFile = event.target.files[0] as File;
+  //   this.uploadedImages.push(selectedFile);
+  // }
   addDahra() {
-   
-    console.log("data = ",this.dara);
-    this.allservicesService.post('/ajouter-dahra',  this.dara, (response: any) => {
-      // this.addDahra = response ;
+    // Créer un nouvel objet FormData
+    const formData = new FormData();
+  
+    // Ajouter les données du formulaire
+    formData.append('imageFile', this.uploadedImages);
+    formData.append('nom', this.dara.nom);
+    formData.append('nomOuztas', this.dara.nomOuztas);
+    formData.append('numeroTelephone', this.dara.numeroTelephone);
+    formData.append('numeroTelephoneOuztas', this.dara.numeroTelephoneOuztas);
+    formData.append('adresse', this.dara.adresse);
+    formData.append('region', this.dara.region);
+    formData.append('email', this.dara.email);
+    formData.append('password', this.dara.password);
+    formData.append('nombreTalibe', this.dara.nombreTalibe.toString());
+  
+    // Ajouter les images sélectionnées
+    // if (this.uploadedImages.length > 0) {
+    //   for (let i = 0; i < this.uploadedImages.length; i++) {
+    //     formData.append('images[]', this.uploadedImages[i]);
+    //   }
+    // }
+
+  console.log(`hfghj`,formData);
+  
+
+    // Envoyer les données à votre service
+    this.allservicesService.post('/ajouter-dahra', formData, (response: any) => {
       console.log("reponse = ",response);
       // Vous pouvez gérer la réponse ici, par exemple, afficher un message de succès
       this.allservicesService.message('Succès', 'success', 'Dahra ajouté avec succès');
-
+  
       this.loadDahrasList();
-
+  
       // Naviguer vers la même page pour rafraîchir l'affichage (peut être facultatif)
       this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
         this.router.navigate(['/dahras-ad-sup']);

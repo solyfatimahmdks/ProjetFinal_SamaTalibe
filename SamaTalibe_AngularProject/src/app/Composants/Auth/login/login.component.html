@@ -2,9 +2,9 @@
 
 
 <div class="content my-4 row" *ngIf="isLoginFormVisible=='connexion'" style="border: 1px solid #C2A966;border-radius: 5px; width: 70%;margin: 0 auto;">
-    <div class="col-md-2"><img src="assets/LOGOS/LogoFooter.png" id="logoform" alt=""></div>
+    <div class="col-md-2"><img routerLink="/accueil" style="cursor: pointer;" src="assets/LOGOS/LogoFooter.png" id="logoform" alt=""></div>
     <div class="col-md-10 form-container m-5" style="margin: 0 auto; width: 55%;">
-        <p class="title"><i class="bi bi-arrow-left" style="color: #C2A966 ; margin-right: 20px;"></i>Accéder à mon espace</p>
+        <p class="title" routerLink="/accueil" style="cursor: pointer;"><i class="bi bi-arrow-left" style="color: #C2A966 ; margin-right: 20px;"></i>Accéder à mon espace</p>
         <form class="form">
             <div class="input-group">
                 <label for="username"  class="ms-2" style="color: #C2A966;">Adresse-mail:</label>
@@ -38,7 +38,7 @@
 
     <!-- <ng-template [ngIf]="choixForm === 'inscription'; else rejoindreForm" > -->
         <div class="row content my-4" style=" border: 1px solid #C2A966;border-radius: 5px; width: 70%;margin: 0 auto;" *ngIf="isLoginFormVisible=='inscription'">
-            <div class="col-md-2 "><img src="assets/LOGOS/LogoFooter.png" id="logoform" alt=""></div>
+            <div class="col-md-2 "><img routerLink="/accueil" style="cursor: pointer;" src="assets/LOGOS/LogoFooter.png" id="logoform" alt=""></div>
                 <div class="col-md-10 p-5 m-5 form-container" style="padding: 3% 0 3% 0; margin: 0 auto; width: 90%;">
                         <p class="title"><i class="bi bi-arrow-left" style="color: #C2A966 ; margin-right: 20px;"></i> Nous rejoindre</p>
                         <form class="form">
@@ -55,11 +55,8 @@
                                 <input type="text" name="numeroTelephone" id="phone" placeholder="" [(ngModel)]="numeroTelephone">
                             </div>
                             <div class="input-group">
-                                <select [(ngModel)]="selectedAdresse" class="" style="color: #C2A966;height: 45px; border: 1px solid #C2A966;
-                                outline: 0;background-color: rgba(255, 255, 255, 0.418); width: 900px !important; margin-top: 25px;border-radius: 5px; font-size: 0.875rem;line-height: 1.25rem;" name="adresse" id="adresse">
-                                    <option value="" disabled selected>Choisissez une adresse</option>
-                                    <option *ngFor="let adresse of adresses" [value]="adresse">{{ adresse }}</option>
-                                </select>
+                                <label for="adresse" class="ms-2" style="color: #C2A966;">Adresse:</label>
+                                <input type="text"  name="adresse" id="adress" placeholder="" [(ngModel)]="adresse">
                             </div>
                             <div class="input-group">
                                 <label for="username"  class="ms-2" style="color: #C2A966;">Adresse-mail:</label>
@@ -72,16 +69,16 @@
                             <button class="sign mt-4"  style="background-color: #C2A966; color: white; font-weight: bold;" (click)="Signup()" routerLink="/login">S'inscrire </button>
                         </form>
                         <p class="signup mt-4">Vous avez déjà un compte?
-                            <a   style="color: #C2A966; font-weight: bold;" (click)="getLoginLogin('connexion')">Se connecter</a>
+                            <a   style="color: #C2A966; font-weight: bold;" routerLink="/login" (click)="getLoginLogin('connexion')">Se connecter</a>
                         </p>
                 </div>
         </div>
     <!-- </ng-template> -->
     <!-- <ng-template #rejoindreForm > -->
         <div class="row content my-4" style=" border: 1px solid #C2A966;border-radius: 5px; width: 70%;margin: 0 auto;" *ngIf="isLoginFormVisible=='rejoindre'">
-            <div class="col-md-2 "><img src="assets/LOGOS/LogoFooter.png" id="logoform" alt=""></div>
+            <div class="col-md-2 "><img routerLink="/accueil" style="cursor: pointer;" src="assets/LOGOS/LogoFooter.png" id="logoform" alt=""></div>
                 <div class="col-md-10 p-5 m-5 form-container" style="padding: 3% 0 3% 0; margin: 0 auto; width: 90%;">
-                        <p class="title"><i class="bi bi-arrow-left" style="color: #C2A966 ; margin-right: 20px;"></i>Vous avez un dahra </p>
+                        <p class="title"><i class="bi bi-arrow-left"  style="color: #C2A966 ; margin-right: 20px;"></i>Vous avez un dahra </p>
                         <form class="form">
                             <div class="input-group">
                                 <label for="name"  class="ms-2" style="color: #C2A966;">Nom Dahra:</label>
@@ -93,15 +90,18 @@
                             </div>
                             <div class="input-group">
                                 <label for="phone"  class="ms-2" style="color: #C2A966;">Téléphone Dahra:</label>
-                                <input type="text" name="numeroTelephone" id="phone" placeholder="" [(ngModel)]="numeroTelephone">
+                                <input type="text" name="numeroTelephone" id="numeroTelephone" placeholder="" [(ngModel)]="numeroTelephone">
                             </div>
                             <div class="input-group">
                                 <label for="adresse" class="ms-2" style="color: #C2A966;">Téléphone Oustaz:</label>
-                                <input type="text"  name="numeroTelephoneOuztas" id="phone" placeholder="" [(ngModel)]="numeroTelephoneOuztas">
+                                <input type="text"  name="numeroTelephoneOuztas" id="numeroTelephoneOuztas" placeholder="" [(ngModel)]="numeroTelephoneOuztas">
                             </div>
                             <div class="input-group">
-                                <label for="adresse" class="ms-2" style="color: #C2A966;">Région:</label>
-                                <input type="text"  name="region" id="adress" placeholder="" [(ngModel)]="region">
+                                <select [(ngModel)]="selectedRegion" class="" style="color: #C2A966;height: 45px; border: 1px solid #C2A966;
+                                outline: 0;background-color: rgba(255, 255, 255, 0.418); width: 900px !important; margin-top: 25px;border-radius: 5px; font-size: 0.875rem;line-height: 1.25rem;" name="adresse" id="adresse">
+                                    <option value="" disabled selected>Choisissez une région</option>
+                                    <option *ngFor="let region of regions" [value]="region">{{ region }}</option>
+                                </select>
                             </div>
                             <div class="input-group">
                                 <label for="adresse" class="ms-2" style="color: #C2A966;">Adresse:</label>
@@ -119,10 +119,14 @@
                                 <label for="password" class="ms-2" style="color: #C2A966;">Mot de passe:</label>
                                 <input type="password" name="password" id="password" placeholder="" [(ngModel)]="password">
                             </div>
+                            <div>
+                                <label for="formFileLg" class="form-label">Image:</label>
+                                <input type="file" id="imageFilename" (change)="onFileSelected($event)" multiple>
+                            </div>
                             <button class="sign mt-4" routerLink="/login" style="background-color: #C2A966; color: white; font-weight: bold;" (click)="SignupDahra()">Nous rejoindre</button>
                         </form>
                         <p class="signup mt-4">Vous avez déjà un compte?
-                            <a   style="color: #C2A966; font-weight: bold;" (click)="getLoginLogin('connexion')">Se connecter</a>
+                            <a   style="color: #C2A966; font-weight: bold;" routerLink="/login" (click)="getLoginLogin('connexion')">Se connecter</a>
                         </p>
                 </div>
         </div>
