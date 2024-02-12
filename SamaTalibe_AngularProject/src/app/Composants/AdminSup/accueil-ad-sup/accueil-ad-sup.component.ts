@@ -26,6 +26,10 @@ export class AccueilAdSupComponent{
     });
   }
 
+  getImage(path: string): string {
+    return path.includes(".jpeg") || path.includes(".jpg") || path.includes(".png") ? path : "https://placehold.co/20x20";
+  }
+
 paginatePerPage(page: number, pageSize: number, data: any[]): any[] {
     if (!page) {
       return data;

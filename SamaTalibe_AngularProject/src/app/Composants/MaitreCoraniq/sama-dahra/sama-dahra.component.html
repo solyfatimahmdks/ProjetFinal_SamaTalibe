@@ -10,7 +10,7 @@
           <ul class="navbar-nav sidebar sidebar-dark accordion" id="accordionSidebar" style="">
             <li style="margin-bottom: 40%;">
               <a href="#" class="nav-link ps-5 mb-2" style="height: 50px; color: #C2A966; font-size: 20px; font-weight: bold;">
-                <img class="mt-5 container" style="" id="logodash"  src="../../../../assets/LOGOS/LogoFooter.png" alt="">
+                <img class="mt-5 container" style="" id="logodash"  src="assets/LOGOS/LogoFooter.png" alt="">
               </a>
             </li>
             <li>
@@ -103,48 +103,16 @@
                                 </tr>
                               </thead>
                               <tbody>
-                                <tr style="height: 40px; margin-top: 20px !important;">
-                                  <td class="ps-5"><img src="assets/talibedashmaitre.webp" style="height: 40px;" id="admindatable" alt=""></td>
-                                  <td>Mor Cisse</td>
-                                  <td>Louga</td>
-                                  <td>8 ans</td>
+                                <tr *ngFor="let talibe of talibesList" style="height: 40px; margin-top: 20px !important;">
+                                  <td class="ps-5"><img [src]="getImage(talibe.imageFilename)" style="height: 40px;" id="admindatable" alt=""></td>
+                                  <td>{{ talibe?.nom }}</td>
+                                  <td>{{ talibe?.adresse }}</td>
+                                  <td>{{ talibe?.age}}</td>
                                   <td style="padding: 20px;">
                                     <i class="bi bi-pencil-square btn6"  data-bs-toggle="modal" data-bs-target="#staticBackdrop2" style="margin: 10px !important; background-color: #252649;border-radius: 5px; box-shadow: 1px 1px 1px #C2A966;cursor: pointer; font-size: 12px;padding: 5px; color: white;"></i>
                                     <i class="bi bi-trash3-fill"  style="background-color: #252649;border-radius: 5px; box-shadow: 1px 1px 1px #C2A966;margin: 10px !important; cursor: pointer; font-size: 12px;padding: 5px; color: white;"></i>
                                     <i class="bi bi-eye-fill btn3"   data-bs-toggle="modal" data-bs-target="#exampleModal" style="background-color: #252649;border-radius: 5px;margin: 10px !important; box-shadow: 1px 1px 1px #C2A966;cursor: pointer; font-size: 12px;padding: 5px; color: white;"></i>
                                   </td>
-                                </tr>
-                                <tr style="height: 40px; margin-top: 20px !important;">
-                                  <td class="ps-5"><img src="assets/talibedashmaitre.webp" style="height: 40px;" id="admindatable" alt=""></td>
-                                  <td>Mor Cisse</td>
-                                  <td>Louga</td>
-                                  <td>8 ans</td>
-                                  <td style="padding: 20px;">
-                                    <i class="bi bi-pencil-square btn6"  data-bs-toggle="modal" data-bs-target="#staticBackdrop2" style="margin: 10px !important; background-color: #252649;border-radius: 5px; box-shadow: 1px 1px 1px #C2A966;cursor: pointer; font-size: 12px;padding: 5px; color: white;"></i>
-                                    <i class="bi bi-trash3-fill"  style="background-color: #252649;border-radius: 5px; box-shadow: 1px 1px 1px #C2A966;margin: 10px !important; cursor: pointer; font-size: 12px;padding: 5px; color: white;"></i>
-                                    <i class="bi bi-eye-fill btn3"   data-bs-toggle="modal" data-bs-target="#exampleModal" style="background-color: #252649;border-radius: 5px;margin: 10px !important; box-shadow: 1px 1px 1px #C2A966;cursor: pointer; font-size: 12px;padding: 5px; color: white;"></i>
-                                  </td>
-                                </tr>
-                                <tr style="height: 40px; margin-top: 20px !important;">
-                                  <td class="ps-5"><img src="assets/talibedashmaitre.webp" style="height: 40px;" id="admindatable" alt=""></td>
-                                  <td>Mor Cisse</td>
-                                  <td>Louga</td>
-                                  <td>8 ans</td>
-                                  <td style="padding: 20px;">
-                                    <i class="bi bi-pencil-square btn6"  data-bs-toggle="modal" data-bs-target="#staticBackdrop2" style="margin: 10px !important; background-color: #252649;border-radius: 5px; box-shadow: 1px 1px 1px #C2A966;cursor: pointer; font-size: 12px;padding: 5px; color: white;"></i>
-                                    <i class="bi bi-trash3-fill"  style="background-color: #252649;border-radius: 5px; box-shadow: 1px 1px 1px #C2A966;margin: 10px !important; cursor: pointer; font-size: 12px;padding: 5px; color: white;"></i>
-                                    <i class="bi bi-eye-fill btn3"   data-bs-toggle="modal" data-bs-target="#exampleModal" style="background-color: #252649;border-radius: 5px;margin: 10px !important; box-shadow: 1px 1px 1px #C2A966;cursor: pointer; font-size: 12px;padding: 5px; color: white;"></i>
-                                  </td>
-                                </tr>
-                                <tr style="height: 40px; margin-top: 20px !important;">
-                                  <td class="ps-5"><img src="assets/talibedashmaitre.webp" style="height: 40px;" id="admindatable" alt=""></td>
-                                  <td>Mor Cisse</td>
-                                  <td>Louga</td>
-                                  <td>8 ans</td>
-                                  <td style="padding: 20px;">
-                                    <i class="bi bi-pencil-square btn6"  data-bs-toggle="modal" data-bs-target="#staticBackdrop2" style="margin: 10px !important; background-color: #252649;border-radius: 5px; box-shadow: 1px 1px 1px #C2A966;cursor: pointer; font-size: 12px;padding: 5px; color: white;"></i>
-                                    <i class="bi bi-trash3-fill"  style="background-color: #252649;border-radius: 5px; box-shadow: 1px 1px 1px #C2A966;margin: 10px !important; cursor: pointer; font-size: 12px;padding: 5px; color: white;"></i>
-                                    <i class="bi bi-eye-fill btn3"   data-bs-toggle="modal" data-bs-target="#exampleModal" style="background-color: #252649;border-radius: 5px;margin: 10px !important; box-shadow: 1px 1px 1px #C2A966;cursor: pointer; font-size: 12px;padding: 5px; color: white;"></i>
                                 </tr>
                                 
                                 
@@ -164,32 +132,32 @@
                       </button>
                     </div>
     
-                    <div class="table-responsive small mb-5 mx-4" style="border: 1px solid #C2A966; border-radius: 10px;">
+                    <!-- <div class="table-responsive small mb-5 mx-4" style="border: 1px solid #C2A966; border-radius: 10px;">
                               <h5 class="text-center p-2" style="color: #252649;">Liste des dahras de la plateforme</h5>
                               <table class="table table-striped table-sm" style="width: 100%;">
                                 <thead>
                                   <tr class="">
                                     <th scope="col" style="color: white; background-color: #C2A966;width: 15%;" class="ps-5">Image</th>
-                                    <th scope="col" style="color: white; background-color: #C2A966; width: 20%;">Nom du dahra</th>
-                                    <th scope="col" style="color: white; background-color: #C2A966;width: 20%;">Fondateur</th>
-                                    <th scope="col" style="color: white; background-color: #C2A966;width: 10%;">Lieu</th>
+                                    <th scope="col" style="color: white; background-color: #C2A966; width: 20%;">Nom Talibé</th>
+                                    <th scope="col" style="color: white; background-color: #C2A966;width: 20%;">Origine</th>
+                                    <th scope="col" style="color: white; background-color: #C2A966;width: 10%;">Age</th>
                                     <th scope="col" style="color: white; padding-left: 60px; background-color: #C2A966;width: 15%;">Action</th>
                
                                   </tr>
                                 </thead>
                                 <tbody>
-                                  <tr style="height: 40px; margin-top: 20px !important;">
-                                    <td class="ps-5"><img src="assets/talibedashmaitre.webp" style="height: 40px;" id="admindatable" alt=""></td>
-                                    <td>Mor Cisse</td>
-                                    <td>Louga</td>
-                                    <td>8 ans</td>
+                                  <tr *ngFor="let talibe of talibesList" style="height: 40px; margin-top: 20px !important;">
+                                    <td class="ps-5"><img [src]="getImage(talibe.imageFilename)" style="height: 40px;" id="admindatable" alt=""></td>
+                                    <td>{{ talibe.nom }}</td>
+                                    <td>{{ talibe.adresse }}</td>
+                                    <td>{{ talibe.age}}</td>
                                     <td style="padding: 20px;">
                                       <i class="bi bi-trash3-fill"  style="background-color: #252649;border-radius: 5px; box-shadow: 1px 1px 1px #C2A966;margin: 10px !important; cursor: pointer; font-size: 12px;padding: 5px; color: white;"></i>
                                     </td>
                                   </tr>
                                 </tbody>
                               </table>
-                    </div>
+                    </div> -->
                   </div>
                 </ng-template>
                   
@@ -333,7 +301,7 @@
                <div class="row">
                 <div class="col-md-6 mb-3 pe-3">
                   <label for="exampleFormControlInput1" style="color: #C2A966;" class="form-label">Date d'arrivée:</label>
-                  <input name="datearrivetalibe" type="date" #dateArrivee placeholder="Date d'arrivée" style="height: 40px;border: 1px solid #C2A966; box-shadow:1px 1px 1px #C2A966;" class="form-control" id="exampleFormControlInput1" [(ngModel)]="talibe.datearrivetalibe">
+                  <input name="datearrivetalibe" type="text" #dateArrivee placeholder="Date d'arrivée" style="height: 40px;border: 1px solid #C2A966; box-shadow:1px 1px 1px #C2A966;" class="form-control" id="exampleFormControlInput1" [(ngModel)]="talibe.datearrivetalibe">
                 </div>
                 <div class="col-md-6 mb-3 ps-3">
                   <label for="exampleFormControlInput1" style="color: #C2A966;" class="form-label">Description:</label>

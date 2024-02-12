@@ -9,13 +9,14 @@ import { AllservicesService } from 'src/app/service/all-services-rest.service';
   styleUrls: ['./sama-dahra.component.css']
 })
 // N'oubliez pas d'ajouter 'export' devant la classe
-export class SamaDahraComponent {
+export class SamaDahraComponent  implements OnInit{
   showListTalib = true;
   showListTalibArchiv = false;
   @ViewChild('modalElement') modalElement!: ElementRef;
   router: any;
-  talibe: any;
+  talibe: any = {};
   uploadedImages: any;
+  talibesList: any[] = [];
 
 
   getImageUrl(event: any) {
@@ -29,7 +30,26 @@ export class SamaDahraComponent {
     this.showListTalibArchiv = view === 'listTalibArchiv';
   }
   constructor(private service: AllservicesService) {}
+  ngOnInit(): void {
+    this.loadTalibesList();
+  }
 
+  loadTalibesList() {
+    this.service.get('/lister-talibe', (response: any) => {
+      console.log(`test`,response);
+      
+      this.talibesList = response.map((talibe: any) => {
+        // Initialisez isBlocked à partir du stockage local
+        // talibe.isBlocked = localStorage.getItem(`blocked_${talibe.id}`) || true;
+        console.log(this.talibesList)
+        return talibe;
+      });
+    });
+  }
+
+  getImage(path: string): string {
+    return path.includes(".jpeg") || path.includes(".jpg") || path.includes(".png") ? path : "https://placehold.co/20x20";
+  }
   addTalibe() {
     // Créer un nouvel objet FormData
     const formData = new FormData();
@@ -52,11 +72,11 @@ export class SamaDahraComponent {
     //   }
     // }
 
-  console.log(`hfghj`,formData);
+  console.log(`test`,formData);
   
 
     // Envoyer les données à votre service
-    this.service.post('/ajouter-dahra', formData, (response: any) => {
+    this.service.post('/inscrire/add-talibe', formData, (response: any) => {
       console.log("reponse = ",response);
       // Vous pouvez gérer la réponse ici, par exemple, afficher un message de succès
       this.service.message('Succès', 'success', 'Dahra ajouté avec succès');

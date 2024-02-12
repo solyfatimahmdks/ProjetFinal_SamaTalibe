@@ -78,15 +78,15 @@
                         <!-- Page Heading -->
     
                         <!-- Content Row -->
-                        <div class="my-5 row" >
-                          <div class="contentcard col-md-4" *ngFor="let dahra of dahras">
+                        <div class="my-5 row"   >
+                          <div class="contentcard col-md-4" *ngFor="let dahra of dahras | paginate:{ itemsPerPage:itemsPerPage, currentPage:currentPage , totalItems:dahras.length}">
                               <div class="card" style="width: 20rem; box-shadow: 1px 1px 1px 1px #C2A966; margin: 0 auto;">
-                                  <div><img src="assets/dahras/Imgcarte1.jpg" id="cardImg" alt=""></div>
+                                  <div><img [src]="getImage(dahra.imageFilename)" id="cardImg" alt=""></div>
                                   <div class="card-body">
                                     <h5 class="mt-2 card-title text-center">{{ dahra.nom }}</h5>  
                                     <div class="row p-2" style="">
                                         <div class="col-md-6 mt-3 fw-bold">
-                                            <p class="card-text text-start"><i class="bi bi-person-badge" style="color: #252649; margin-right: 10px;"></i>{{ dahra.nombreTalibes}}</p>
+                                            <p class="card-text text-start"><i class="bi bi-person-badge" style="color: #252649; margin-right: 10px;"></i>{{ dahra.nombreTalibe}} apprenants</p>
                                             <p class="card-text text-start"><i class="bi bi-geo-alt-fill" style="color: #252649; margin-right: 10px;"></i>{{ dahra.region }}</p>
                                         </div>
                                         <div class="col-md-6">
@@ -138,6 +138,10 @@
                           </div>
 
                         </div> 
+
+
+                        <pagination-controls (pageChange)="setPage($event)" class="mt-3" previousLabel="prev" nextLabel="next" style="color: #252649;font-weight: bold;"></pagination-controls>
+
                         
                         
   
@@ -153,6 +157,8 @@
   
   </body>
   
+
+  *ngFor="let dahra of dahras"
   
   
   

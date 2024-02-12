@@ -8,6 +8,9 @@ import { TOKEN_KEY } from '../constants/constant';
   providedIn: 'root',
 })
 export class AllservicesService implements OnInit {
+  search(keyword: string) {
+    throw new Error('Method not implemented.');
+  }
   unlockAndActivateDahra(id: number, arg1: (response: any) => void) {
     throw new Error('Method not implemented.');
   }
