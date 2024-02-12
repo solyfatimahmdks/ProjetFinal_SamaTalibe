@@ -10,11 +10,13 @@ import { Router } from '@angular/router';
   styleUrls: ['./dahras-ad-sup.component.css']
 })
 export class DahrasAdSupComponent implements OnInit {
-getImageUrl(event: any) {
-  console.warn(event.target.files[0]);
-  this.uploadedImages = event.target.files[0] as File;
-}
-
+  getImageUrl(event: any) {
+    console.warn(event.target.files[0]);
+    this.uploadedImages = event.target.files[0] as File;
+  }
+   
+  dahraActive: boolean = false; // Supposons que par défaut, le dahra est désactivé
+  alreadyUnlocked: boolean = false; // Variable de contrôle pour vérifier si le dahra a déjà été débloqué
   dahrasList: any[] = [];
   selectedDahraDetails: any | null = null;
   selectedDahra: any;
@@ -54,6 +56,9 @@ getImageUrl(event: any) {
     });
   }
 
+  getImage(path: string): string {
+    return path.includes(".jpeg") || path.includes(".jpg") || path.includes(".png") ? path : "https://placehold.co/100x100";
+  }
   // onFileSelected(event: any) {
   //   const selectedFile = event.target.files[0] as File;
   //   this.uploadedImages.push(selectedFile);
@@ -129,27 +134,24 @@ getImageUrl(event: any) {
     }
   }
 
-  unlockDahra(id: number) {
-    this.allservicesService.post(`/admin/activate/dahra/${id}`, {}, (response: any) => {
-      // Gérer la réponse ici
-      console.log(response);
-      // Afficher un message de succès
-      this.allservicesService.message('Succès', 'success', 'Dahra débloqué avec succès');
-      
-      // Mettre à jour isBlocked à false pour le dahra débloqué
-      const index = this.dahrasList.findIndex((dahra: any) => dahra.id === id);
-      if (index !== -1) {
-        this.dahrasList[index].isBlocked = false;
-      }
+ 
 
-      // Mettre à jour isBlocked à true pour les autres dahras
-      this.dahrasList.forEach((dahra: any, i: number) => {
-        if (i !== index) {
-          dahra.isBlocked = true;
-        }
-      });
-    });
+  activateDahra(id: number) {
+    // const url = `http://127.0.0.1:8000/api/admin/activate/dahra/${id}`;
+
+    this.allservicesService.post(`/admin/activate/dahra/${id}`, {},
+      (response: any) => {
+        console.log('Dahra activé avec succès :', response);
+        this.activateDahra = response;
+        this.dahraActive = true;
+        this.alreadyUnlocked = true;
+      },
+      
+    );
   }
+
+
+
   delete(id: number) {
     this.allservicesService.simplePost('/supprimer-dahra/'+id,  (response: any) => {
       this.delete = response;

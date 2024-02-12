@@ -1,8 +1,11 @@
+*{
+  margin: 0;
+}
 #logoheader{
     width: 50%;
     margin: 0 auto;
 }
-.fixed-header {
+.headerTop {
     position: fixed;
     top: 0;
     left: 0;

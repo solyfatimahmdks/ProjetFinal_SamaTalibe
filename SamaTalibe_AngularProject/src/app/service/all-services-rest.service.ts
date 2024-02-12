@@ -90,6 +90,7 @@ export class AllservicesService implements OnInit {
       icon: icon,
     });
   }
+  
 
   
 }

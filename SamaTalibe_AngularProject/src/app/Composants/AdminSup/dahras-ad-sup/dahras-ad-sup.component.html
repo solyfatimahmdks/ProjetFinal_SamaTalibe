@@ -6,7 +6,7 @@
   <div class="row" id="wrapper">
 
       <!-- Sidebar -->
-      <div class="col-md-3" style="background-color: #252649;height: 674px;">
+      <div class="col-md-3" style="background-color: #252649;">
         <ul class="navbar-nav sidebar sidebar-dark accordion" id="accordionSidebar" style="">
           <li style="margin-bottom: 40%;">
             <a href="#" class="nav-link ps-5 mb-2" style="height: 50px; color: #C2A966; font-size: 20px; font-weight: bold;">
@@ -23,11 +23,11 @@
               <i class="me-3 fa-solid fa-hand-holding-droplet" style="color: white;"></i>Donnations
             </a>
           </li>
-          <li>
+          <!-- <li>
             <a class="nav-link ps-5 mb-2" routerLink="/parrainadsup" style="height: 50px; color: white; font-size: 20px; font-weight: bold;">
               <i class="me-3 fa-solid fa-user-xmark" style="color: white;"></i>Parrainages
             </a>
-          </li>
+          </li> -->
           <li>
             <a class="nav-link ps-5 mb-2" routerLink="/rolesadsup" style="height: 50px; color: white; font-size: 20px; font-weight: bold;">
               <i class="me-3 fa-solid fa-user-group" style="color: white;"></i>Rôles
@@ -90,30 +90,32 @@
                 <table class="table table-striped table-sm" style="width: 100%;">
                   <thead>
                     <tr class="">
-                      <th scope="col" style="color: white; background-color: #C2A966;width: 15%;" class="ps-5">Image</th>
-                      <th scope="col" style="color: white; background-color: #C2A966; width: 20%;">Nom du dahra</th>
-                      <th scope="col" style="color: white; background-color: #C2A966;width: 20%;">Fondateur</th>
-                      <th scope="col" style="color: white; background-color: #C2A966;width: 10%;">Lieu</th>
-                      <th scope="col" style="color: white; padding-left: 60px; background-color: #C2A966;width: 15%;">Action</th>
+                      <th scope="col" style="color: white; background-color: #C2A966;width: 15% !important;" class="ps-5">Image</th>
+                      <th scope="col" style="color: white; background-color: #C2A966; width: 20% !important;">Nom du dahra</th>
+                      <th scope="col" style="color: white; background-color: #C2A966;width: 15% !important;">Fondateur</th>
+                      <th scope="col" style="color: white; background-color: #C2A966;width: 10% !important;">Lieu</th>
+                      <th scope="col" style="color: white; padding-left: 60px; background-color: #C2A966;width: 20%;">Action</th>
  
                     </tr>
                   </thead>
                   <tbody>
                     <tr *ngFor="let dahra of dahrasList" style="height: 60px; margin-top: 20px !important;">
-                      <td class="ps-5"> <img src="http://127.0.0.1:8000/uploads/{{dahra.imageSrc}}" id="admindatable" alt=""></td>
+                      <td class="ps-5"> <img [src]="getImage(dahra.imageFilename)" id="admindatable" alt=""></td>
                       <td>{{ dahra.nom }}</td>
                       <td>{{ dahra.nomOuztas }}</td>
                       <td>{{ dahra.region }}</td>
                       <td style="padding: 20px;">
-                        <i class="bi bi-pencil-square btn6"  data-bs-toggle="modal" data-bs-target="#staticBackdrop2" style="margin: 10px !important; background-color: #252649;border-radius: 5px; box-shadow: 1px 1px 1px #C2A966;cursor: pointer; font-size: 12px;padding: 5px; color: white;"></i>
-                        <i class="bi bi-trash3-fill" (click)="delete(dahra.id)" style="background-color: #252649;border-radius: 5px; box-shadow: 1px 1px 1px #C2A966;margin: 10px !important; cursor: pointer; font-size: 12px;padding: 5px; color: white;"></i>
-                        <i class="bi bi-eye-fill btn3" (click)="showDahraDetailsModal(dahra)"  data-bs-toggle="modal" data-bs-target="#exampleModal" style="background-color: #252649;border-radius: 5px;margin: 10px !important; box-shadow: 1px 1px 1px #C2A966;cursor: pointer; font-size: 12px;padding: 5px; color: white;"></i>
-                        <!-- <button *ngIf="selectedDahra === dahra" (click)="unlockDahra(selectedDahra?.id)">Débloquer Dahra</button> -->
-                        <i *ngIf="selectedDahra === dahra" class="fa fa-unlock" (click)="unlockDahra(selectedDahra?.id)" style="font-size: 20px; color: #252649;"></i>
+                        <i class="bi bi-pencil-square btn6"  data-bs-toggle="modal" data-bs-target="#staticBackdrop2" style="margin: 8px !important; background-color: #252649;border-radius: 5px; box-shadow: 1px 1px 1px #C2A966;cursor: pointer; font-size: 12px;padding: 5px; color: white;"></i>
+                        <i class="bi bi-trash3-fill" (click)="delete(dahra.id)" style="background-color: #252649;border-radius: 5px; box-shadow: 1px 1px 1px #C2A966;margin: 8px !important; cursor: pointer; font-size: 12px;padding: 5px; color: white;"></i>
+                        <i class="bi bi-eye-fill btn3" (click)="showDahraDetailsModal(dahra)"  data-bs-toggle="modal" data-bs-target="#dahraDetailsModal" style="background-color: #252649;border-radius: 5px;margin: 8px !important; box-shadow: 1px 1px 1px #C2A966;cursor: pointer; font-size: 12px;padding: 5px; color: white;"></i>
+                        <!-- Remplacez l'icône de déblocage par l'icône de cadenas verrouillé -->
+                        <i class="fa fa-lock" *ngIf="!dahraActive"  (click)="activateDahra(dahra.id)"></i>
+                        <i class="fa fa-unlock" *ngIf="dahraActive"></i>
                       </td>
                     </tr>
                   </tbody>
                 </table>
+                
               </div>
                       
 
@@ -126,7 +128,6 @@
 
 
     <!-- Modal 2-->
-    <!-- <form #form="ngForm"> -->
       <div #modalElement class="modal fade" style="" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog mt-5" style="margin: 0 auto;">
           <div class="modal-content" style="padding: 40px;  width: 800px;">
@@ -190,7 +191,6 @@
           </div>
         </div>
       </div>
-    <!-- </form> -->
 
     <!-- Modal -->
     <div *ngIf="selectedDahraDetails" class="modal fade" id="dahraDetailsModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

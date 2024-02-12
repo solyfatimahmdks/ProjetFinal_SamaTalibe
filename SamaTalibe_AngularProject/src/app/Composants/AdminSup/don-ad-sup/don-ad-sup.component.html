@@ -6,7 +6,7 @@
     <div class="row" id="wrapper">
   
         <!-- Sidebar -->
-        <div class="col-md-3" style="background-color: #252649;height: 674px;">
+        <div class="col-md-3" style="background-color: #252649;">
           <ul class="navbar-nav sidebar sidebar-dark accordion" id="accordionSidebar" style="">
             <li style="margin-bottom: 40%;">
               <a href="#" class="nav-link ps-5 mb-2" style="height: 50px; color: #C2A966; font-size: 20px; font-weight: bold;">
@@ -23,11 +23,11 @@
                 <i class="me-3 fa-solid fa-hand-holding-droplet" style="color: #C2A966;"></i>Donnations
               </a>
             </li>
-            <li>
+            <!-- <li>
               <a class="nav-link ps-5 mb-2" routerLink="/parrainadsup" style="height: 50px; color: white; font-size: 20px; font-weight: bold;">
                 <i class="me-3 fa-solid fa-user-xmark" style="color: white;"></i>Parrainages
               </a>
-            </li>
+            </li> -->
             <li>
               <a class="nav-link ps-5 mb-2" routerLink="/rolesadsup" style="height: 50px; color: white; font-size: 20px; font-weight: bold;">
                 <i class="me-3 fa-solid fa-user-group" style="color: white;"></i>Rôles
@@ -79,113 +79,18 @@
                   </div> 
                 </nav>
                 <!-- End of Topbar -->
-                      <div class="row">
+                      <div class="row" *ngFor="let don of dons">
                         <div class="col-md-4 ps-5" style=" padding-right: 20px;">
                             <div class="cardbi mb-3 p-3" style="line-height: 10px; border-radius: 10px; box-shadow: 1px 1px 1px 1px #252649;border-bottom: 10px solid #C2A966;background-color: white;">
                                   <div class="mb-3" style="box-shadow: 1px 1px 1px 1px #252649;width: 30%; margin: 0 auto; border-radius: 5px;"><img src="assets/cardonSup.png" alt=""  style="width: 70px;display: flex; align-items: center;"></div>    
-                                  <p class="card-text py-2" style="color: #252649; font-size: 12px; font-weight: 400;"><span class="fw-bold">Donnateur:</span>Elhadji Thiam Lamtoro</p>
-                                  <p class="card-text py-2" style="color: #252649; font-size: 12px; font-weight: 400;"><span class="fw-bold">Lieu:</span>Pikine</p>
-                                  <p class="card-text py-2" style="color: #252649; font-size: 12px; font-weight: 400;"><span class="fw-bold">Date:</span>Le 19/12/2023</p>
-                                  <p class="card-text py-2" style="color: #252649; font-size: 12px; font-weight: 400;"><span class="fw-bold">Destinataire:</span>Dahra Asmahou Salam</p>
+                                  <p class="card-text py-2" style="color: #252649; font-size: 12px; font-weight: 400;"><span class="fw-bold">Donnateur:</span>{{ don.user }}</p>
+                                  <p class="card-text py-2" style="color: #252649; font-size: 12px; font-weight: 400;"><span class="fw-bold">Lieu:</span>{{ don.adresseProvenance}}</p>
+                                  <p class="card-text py-2" style="color: #252649; font-size: 12px; font-weight: 400;"><span class="fw-bold">Date:</span>{{ don.date }}</p>
+                                  <p class="card-text py-2" style="color: #252649; font-size: 12px; font-weight: 400;"><span class="fw-bold">Destinataire:</span>{{ don.dahra }}</p>
                             </div>
                         </div>
-                        <div class="col-md-4 ps-5" style=" padding-right: 20px;">
-                          <div class="cardbi mb-3 p-3" style="line-height: 10px; border-radius: 10px; box-shadow: 1px 1px 1px 1px #252649;border-bottom: 10px solid #C2A966;background-color: white;">
-                                <div class="mb-3" style="box-shadow: 1px 1px 1px 1px #252649;width: 30%; margin: 0 auto; border-radius: 5px;"><img src="assets/cardonSup.png" alt=""  style="width: 70px;display: flex; align-items: center;"></div>    
-                                <p class="card-text py-2" style="color: #252649; font-size: 12px; font-weight: 400;"><span class="fw-bold">Donnateur:</span>Elhadji Thiam Lamtoro</p>
-                                <p class="card-text py-2" style="color: #252649; font-size: 12px; font-weight: 400;"><span class="fw-bold">Lieu:</span>Pikine</p>
-                                <p class="card-text py-2" style="color: #252649; font-size: 12px; font-weight: 400;"><span class="fw-bold">Date:</span>Le 19/12/2023</p>
-                                <p class="card-text py-2" style="color: #252649; font-size: 12px; font-weight: 400;"><span class="fw-bold">Destinataire:</span>Dahra Asmahou Salam</p>
-                          </div>
-                        </div>
-                        <div class="col-md-4 ps-5" style=" padding-right: 20px;">
-                        <div class="cardbi mb-3 p-3" style="line-height: 10px; border-radius: 10px; box-shadow: 1px 1px 1px 1px #252649;border-bottom: 10px solid #C2A966;background-color: white;">
-                              <div class="mb-3" style="box-shadow: 1px 1px 1px 1px #252649;width: 30%; margin: 0 auto; border-radius: 5px;"><img src="assets/cardonSup.png" alt=""  style="width: 70px;display: flex; align-items: center;"></div>    
-                              <p class="card-text py-2" style="color: #252649; font-size: 12px; font-weight: 400;"><span class="fw-bold">Donnateur:</span>Elhadji Thiam Lamtoro</p>
-                              <p class="card-text py-2" style="color: #252649; font-size: 12px; font-weight: 400;"><span class="fw-bold">Lieu:</span>Pikine</p>
-                              <p class="card-text py-2" style="color: #252649; font-size: 12px; font-weight: 400;"><span class="fw-bold">Date:</span>Le 19/12/2023</p>
-                              <p class="card-text py-2" style="color: #252649; font-size: 12px; font-weight: 400;"><span class="fw-bold">Destinataire:</span>Dahra Asmahou Salam</p>
-                        </div>
-                        </div>
                       </div>
-                      <div class="row">
-                        <div class="col-md-4 ps-5" style=" padding-right: 20px;">
-                            <div class="cardbi mb-3 p-3" style="line-height: 10px; border-radius: 10px; box-shadow: 1px 1px 1px 1px #252649;border-bottom: 10px solid #C2A966;background-color: white;">
-                                  <div class="mb-3" style="box-shadow: 1px 1px 1px 1px #252649;width: 30%; margin: 0 auto; border-radius: 5px;"><img src="assets/cardonSup.png" alt=""  style="width: 70px;display: flex; align-items: center;"></div>    
-                                  <p class="card-text py-2" style="color: #252649; font-size: 12px; font-weight: 400;"><span class="fw-bold">Donnateur:</span>Elhadji Thiam Lamtoro</p>
-                                  <p class="card-text py-2" style="color: #252649; font-size: 12px; font-weight: 400;"><span class="fw-bold">Lieu:</span>Pikine</p>
-                                  <p class="card-text py-2" style="color: #252649; font-size: 12px; font-weight: 400;"><span class="fw-bold">Date:</span>Le 19/12/2023</p>
-                                  <p class="card-text py-2" style="color: #252649; font-size: 12px; font-weight: 400;"><span class="fw-bold">Destinataire:</span>Dahra Asmahou Salam</p>
-                            </div>
-                        </div>
-                        <div class="col-md-4 ps-5" style=" padding-right: 20px;">
-                          <div class="cardbi mb-3 p-3" style="line-height: 10px; border-radius: 10px; box-shadow: 1px 1px 1px 1px #252649;border-bottom: 10px solid #C2A966;background-color: white;">
-                                <div class="mb-3" style="box-shadow: 1px 1px 1px 1px #252649;width: 30%; margin: 0 auto; border-radius: 5px;"><img src="assets/cardonSup.png" alt=""  style="width: 70px;display: flex; align-items: center;"></div>    
-                                <p class="card-text py-2" style="color: #252649; font-size: 12px; font-weight: 400;"><span class="fw-bold">Donnateur:</span>Elhadji Thiam Lamtoro</p>
-                                <p class="card-text py-2" style="color: #252649; font-size: 12px; font-weight: 400;"><span class="fw-bold">Lieu:</span>Pikine</p>
-                                <p class="card-text py-2" style="color: #252649; font-size: 12px; font-weight: 400;"><span class="fw-bold">Date:</span>Le 19/12/2023</p>
-                                <p class="card-text py-2" style="color: #252649; font-size: 12px; font-weight: 400;"><span class="fw-bold">Destinataire:</span>Dahra Asmahou Salam</p>
-                          </div>
-                        </div>
-                        <div class="col-md-4 ps-5" style=" padding-right: 20px;">
-                        <div class="cardbi mb-3 p-3" style="line-height: 10px; border-radius: 10px; box-shadow: 1px 1px 1px 1px #252649;border-bottom: 10px solid #C2A966;background-color: white;">
-                              <div class="mb-3" style="box-shadow: 1px 1px 1px 1px #252649;width: 30%; margin: 0 auto; border-radius: 5px;"><img src="assets/cardonSup.png" alt=""  style="width: 70px;display: flex; align-items: center;"></div>    
-                              <p class="card-text py-2" style="color: #252649; font-size: 12px; font-weight: 400;"><span class="fw-bold">Donnateur:</span>Elhadji Thiam Lamtoro</p>
-                              <p class="card-text py-2" style="color: #252649; font-size: 12px; font-weight: 400;"><span class="fw-bold">Lieu:</span>Pikine</p>
-                              <p class="card-text py-2" style="color: #252649; font-size: 12px; font-weight: 400;"><span class="fw-bold">Date:</span>Le 19/12/2023</p>
-                              <p class="card-text py-2" style="color: #252649; font-size: 12px; font-weight: 400;"><span class="fw-bold">Destinataire:</span>Dahra Asmahou Salam</p>
-                        </div>
-                        </div>
-                      </div>
-
-                     <!-- <div class="row mb-5">
-                      <article class="card col-md-4" style="margin: 0 auto;">
-                        <div class="" id="cardhov">
-                          <img src="assets/cardhov.jpeg" alt="">
-                        </div>
-                    <div class="card_content">
-                        <span class="card_title ms-5 ps-4">Abdoulaye Leye</span>
-                            <span class="card_subtitle text-center"> Association "Aidons les talibés"</span>
-                            <p class="card_description">Pour  la  lutte  contre  le  paludisme nous  avons procédé à une  donnation
-                               de  plusieurs  kits hygiéniques et  des moustiquaires imprégnés pour la protection  de  ses  enfants. </p>
-                            <p> <span class="fw-bold">Date:</span>le 28/01/2024 </p>
-                            <p> <span class="fw-bold">Lieu:</span>Kaolack</p>
-                            <p> <span class="fw-bold">Destinataire:</span>Dahra Serigne Ndao </p>
-                        
-                    </div>
-                    </article>
-                    <article class="card col-md-4" style="margin: 0 auto;">
-                      <div class="" id="cardhov">
-                        <img src="assets/cardhov.jpeg" alt="">
-                      </div>
-                  <div class="card_content">
-                      <span class="card_title ms-5 ps-4">Abdoulaye Leye</span>
-                          <span class="card_subtitle text-center"> Association "Aidons les talibés"</span>
-                          <p class="card_description">Pour  la  lutte  contre  le  paludisme nous  avons procédé à une  donnation
-                             de  plusieurs  kits hygiéniques et  des moustiquaires imprégnés pour la protection  de  ses  enfants. </p>
-                          <p> <span class="fw-bold">Date:</span>le 28/01/2024 </p>
-                          <p> <span class="fw-bold">Lieu:</span>Kaolack</p>
-                          <p> <span class="fw-bold">Destinataire:</span>Dahra Serigne Ndao </p>
-                      
-                  </div>
-                  </article>
-                  <article class="card col-md-4" style="margin: 0 auto;">
-                    <div class="" id="cardhov">
-                      <img src="assets/cardhov.jpeg" alt="">
-                    </div>
-                <div class="card_content">
-                    <span class="card_title ms-5 ps-4">Abdoulaye Leye</span>
-                        <span class="card_subtitle text-center"> Association "Aidons les talibés"</span>
-                        <p class="card_description">Pour  la  lutte  contre  le  paludisme nous  avons procédé à une  donnation
-                           de  plusieurs  kits hygiéniques et  des moustiquaires imprégnés pour la protection  de  ses  enfants. </p>
-                        <p> <span class="fw-bold">Date:</span>le 28/01/2024 </p>
-                        <p> <span class="fw-bold">Lieu:</span>Kaolack</p>
-                        <p> <span class="fw-bold">Destinataire:</span>Dahra Serigne Ndao </p>
                     
-                </div>
-                </article>
-                     </div> -->
-                      
                         
   
             </div>

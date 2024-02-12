@@ -21,6 +21,7 @@ main{
   text-align: start; /* Centrez le texte horizontalement */
 }
 
+
 .card-group .card {
    border: none !important;
    background-color: white !important;

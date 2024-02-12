@@ -1,14 +1,14 @@
 <app-header></app-header>
 <main>
 
-  <section class="banniere" style="">
-    <div class="banner-container">
-      <img src="assets/parrainage.png" alt="Bannière" id="bcgban" class="banner-image">
-      <div class="banner-text">
-        <h1 style="color: #252649;font-weight: bold; font-size: 50px;">Parrainer un talibé</h1>
-        <p style="color: white;font-weight: bold;width: 70%; font-size: 40px; margin-top: 20%;">C'est comprendre notre situation et nous  soutenir</p>
-      </div>
+<section class="banniere" style="margin-top: 160px;">
+  <div class="banner-container">
+    <img src="assets/Parrainages.png" alt="Bannière" id="bcgban" class="banner-image">
+    <div class="banner-text">
+      <h1 style="color: #252649;font-weight: bold; font-size: 50px;">Parrainer un talibé</h1>
+      <p style="color: white;font-weight: bold;width: 70%; font-size: 40px; margin-top: 20%;">C'est comprendre notre situation et nous  soutenir</p>
     </div>
+  </div>
 </section>
 
     <h3 class="text-center mt-4">Nos parrains </h3>
@@ -28,7 +28,7 @@
 
 <hr class="my-5" style="color: #C2A966; ">
     <div class="">
-      <div class="row mb-5"  *ngFor="let parrain of parrainsParPage">
+      <div class="row mb-5">
           <div class=" card col-md-4" style="background-color: white; margin: 0 auto;height: 490px;" >
             <div class="card-image">
               <img src="assets/parrain.avif" alt="">
@@ -62,7 +62,7 @@
                  Détails
               </a>
             </div>
-          </div>qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq
+          </div>
           <div class="card col-md-4" style="background-color: white; margin: 0 auto;height: 490px;" >
             <div class="card-image">
               <img src="assets/parrain.avif" alt="">
@@ -81,20 +81,61 @@
             </div>
           </div>         
       </div>
+      <div class="row mb-5">
+        <div class=" card col-md-4" style="background-color: white; margin: 0 auto;height: 490px;" >
+          <div class="card-image">
+            <img src="assets/parrain.avif" alt="">
+          </div>
+          <p class="card-title">Assane Ly</p>
+          <p class="card-body text-center">
+            Assistant de direction à la CNART
+          </p>
+          <p class="footer"><i class="bi bi-geo-alt-fill" style="color: #252649; margin-right: 10px;"></i><span class="by-name me-2">Adresse:</span>Kaolack</p>
+          <p class="footer"><i class="bi bi-people-fill" style="color: #252649; margin-right: 10px;"></i><span class="by-name me-2">Nombre de parrainages:</span>8</p>
+          <p class="footer"><i class="bi bi-envelope" style="color: #252649; margin-right: 10px;"></i><span class="by-name me-2 ">Adresse-mail:</span>assly@gmail.com</p> 
+          <div class="btnfoot d-sm-flex align-items-center justify-content-between" style="width: 300px;">
+            <a href="#" class="d-sm-inline-block btn btn-sm shadow-sm">
+               Détails
+            </a>
+          </div>
+        </div>
+        <div class="card col-md-4" style="background-color: #C2A966; margin: 0 auto;height: 490px;" >
+          <div class="card-image">
+            <img src="assets/parrain.avif" alt="">
+          </div>
+          <p class="card-title">Assane Ly</p>
+          <p class="card-body text-center">
+            Assistant de direction à la CNART
+          </p>
+          <p class="footer"><i class="bi bi-geo-alt-fill" style="color: #252649; margin-right: 10px;"></i><span class="by-name me-2">Adresse:</span>Kaolack</p>
+          <p class="footer"><i class="bi bi-people-fill" style="color: #252649; margin-right: 10px;"></i><span class="by-name me-2">Nombre de parrainages:</span>8</p>
+          <p class="footer"><i class="bi bi-envelope" style="color: #252649; margin-right: 10px;"></i><span class="by-name me-2 ">Adresse-mail:</span>assly@gmail.com</p> 
+          <div class="btnfoot d-sm-flex align-items-center justify-content-between" style="width: 300px;">
+            <a href="#" class="d-sm-inline-block btn btn-sm shadow-sm">
+               Détails
+            </a>
+          </div>
+        </div>
+        <div class="card col-md-4" style="background-color: white; margin: 0 auto;height: 490px;" >
+          <div class="card-image">
+            <img src="assets/parrain.avif" alt="">
+          </div>
+          <p class="card-title">Assane Ly</p>
+          <p class="card-body text-center">
+            Assistant de direction à la CNART
+          </p>
+          <p class="footer"><i class="bi bi-geo-alt-fill" style="color: #252649; margin-right: 10px;"></i><span class="by-name me-2">Adresse:</span>Kaolack</p>
+          <p class="footer"><i class="bi bi-people-fill" style="color: #252649; margin-right: 10px;"></i><span class="by-name me-2">Nombre de parrainages:</span>8</p>
+          <p class="footer"><i class="bi bi-envelope" style="color: #252649; margin-right: 10px;"></i><span class="by-name me-2 ">Adresse-mail:</span>assly@gmail.com</p> 
+          <div class="btnfoot d-sm-flex align-items-center justify-content-between" style="width: 300px;">
+            <a href="#" class="d-sm-inline-block btn btn-sm shadow-sm">
+               Détails
+            </a>
+          </div>
+        </div>         
+      </div>
     </div>
 
-    <!-- pagination -->
-<div class="d-flex flex-wrap justify-content-center my-5" >
-  <button class="btn pagiColor me-2" [disabled]="pageActuelle === 1" (click)="pageActuelle = pageActuelle - 1">
-    Précédent
-  </button>
-  <button class="btn pagiColor  ms-2 " *ngFor="let page of pages" (click)="pageActuelle = page">
-    {{ page }}
-  </button>
-  <button class="btn pagiColor  ms-2 " [disabled]="pageActuelle === totalPages" (click)="pageActuelle = pageActuelle + 1">
-    Suivant
-  </button>
-</div>
 <!-- pagination fin -->
 
 <hr class="my-5" style="color: #C2A966;">

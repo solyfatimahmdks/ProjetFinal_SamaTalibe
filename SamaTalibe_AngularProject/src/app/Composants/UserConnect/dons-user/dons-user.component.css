@@ -1,45 +1,46 @@
 *{
-    padding: 0;
-    margin: 0;
-  }
-  #logodash{
-    width: 70%;
-    margin: 0 auto;
-  }
-  .nav-item a i{
-    width: 30%;
-  }
-  .btn{
-    background-color: #252649;
-    box-shadow: 1px 1px 1px 1px #C2A966 !important;
-    /* width: 300px; */
-     font-size: 20px; 
-    padding: 10px; margin: 20px; 
-    font-weight: bold;
-    color: #C2A966;
-  }
-  /* .btn:hover, .btn i:hover{
-    color: #252649 !important;
-    box-shadow: 1px 1px 1px 1px #252649;
-    font-weight: bold;
-  } */
-  #admindatable{
-    width: 65px;
-    box-shadow: 1px 1px 1px 1px #C2A966;
-    border-radius: 8px;
-  }
-  /* CARD-CONTENT */
+  padding: 0;
+  margin: 0;
+}
+#logodash{
+  width: 70%;
+  margin: 0 auto;
+}
+.nav-item a i{
+  width: 30%;
+}
+.btn{
+  background-color: #252649;
+  box-shadow: 1px 1px 1px 1px #C2A966 !important;
+  /* width: 300px;  */
+  font-size: 20px; 
+  padding: 10px; margin: 20px; 
+  font-weight: bold;
+  color: #C2A966;
+}
+/* .btn:hover, .btn i:hover{
+  color: #252649 !important;
+  box-shadow: 1px 1px 1px 1px #252649;
+  font-weight: bold;
+} */
+#admindatable{
+  width: 65px;
+  box-shadow: 1px 1px 1px 1px #C2A966;
+  border-radius: 8px;
+}
+
+/* CARD-CONTENT */
 .card {
-  position: relative;
-  width: 250px;
-  height: 250px;
-  color: #252649;
-  background: white;
-  overflow: hidden;
-  border: none;
-  border: 1px solid #C2A966;
-  border-radius: 20px;
-  box-shadow:1px 1px 1px 1px #C2A966;
+position: relative;
+width: 250px;
+height: 250px;
+color: #252649;
+background: white;
+overflow: hidden;
+border: none;
+border: 1px solid #C2A966;
+border-radius: 20px;
+box-shadow:1px 1px 1px 1px #C2A966;
 }
 
 #cardhov img{
@@ -48,78 +49,63 @@ width: 250px;
 }
 
 .card_title {
-  font-weight: bold;
-  
+font-weight: bold;
+
 }
 
 .card_content {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-    /* edit the width to fit card */
-  width: 100%;
-  font-size: 12px;
-  background: white;
-  border-top-left-radius: 20px;
-    /* edit here to change the height of the content box */
-  transform: translateY(150px);
-  transition: transform .25s;
+position: absolute;
+left: 0;
+bottom: 0;
+  /* edit the width to fit card */
+width: 100%;
+font-size: 12px;
+background: white;
+border-top-left-radius: 20px;
+  /* edit here to change the height of the content box */
+transform: translateY(150px);
+transition: transform .25s;
 }
 
 .card_content::before {
-  content: '';
-  position: absolute;
-  top: -47px;
-  right: -45px;
-  width: 100px;
-  height: 100px;
-  transform: rotate(-175deg);
-  border-radius: 50%;
+content: '';
+position: absolute;
+top: -47px;
+right: -45px;
+width: 100px;
+height: 100px;
+transform: rotate(-175deg);
+border-radius: 50%;
 }
 
 .card_title {
-  color: #252649;
-  line-height: 15px;
+color: #252649;
+line-height: 15px;
 }
 
 .card_subtitle {
-  display: block;
-  font-size: 12px;
-  margin-bottom: 10px;
+display: block;
+font-size: 12px;
+margin-bottom: 10px;
 }
 
 .card_description {
-  font-size: 14px;
-  opacity: 0;
-  transition: opacity .5s;
+font-size: 14px;
+opacity: 0;
+transition: opacity .5s;
 }
 
 .card:hover .card_content {
-  transform: translateY(0);
-  background-color: #C2A966;
-  padding: 5px;
-  color: #252649;
-  
+transform: translateY(0);
+background-color: #C2A966;
+padding: 5px;
+color: #252649;
+
 }
 
 .card:hover .card_description {
-  opacity: 1;
-  transition-delay: .25s;
-  text-align: center;
+opacity: 1;
+transition-delay: .25s;
+text-align: center;
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

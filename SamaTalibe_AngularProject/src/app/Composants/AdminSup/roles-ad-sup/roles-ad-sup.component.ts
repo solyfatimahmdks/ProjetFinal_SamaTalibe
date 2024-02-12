@@ -8,35 +8,54 @@ import { AllservicesService } from 'src/app/service/all-services-rest.service';
   styleUrls: ['./roles-ad-sup.component.css'],
 })
 export class RolesAdSupComponent implements OnInit {
-  roles: any[] = [];
+  roles:{[key:string]:string} = {};
   role: any;
   public:any;
+  nomRole: string = '';
+  users: any[] = [];
 
   constructor(private service: AllservicesService) {}
 
   ngOnInit(): void {
     this.loadRoles();
-    // this.postRole();
+    this.loadUsers();
   }
 
   loadRoles() {
     this.service.get('/liste-roles', (reponse: any) => {
       console.log('test', reponse);
-      this.roles=reponse;
+      this.roles=reponse.roles;
       console.log(this.roles);
       
     });
   }
-
-  // postRole() {
-  //   let role = {
-  //     nom: 'admin',
-  //   };
-
-  //   this.service.post('/assigner-role', role, (reponse: any) => {
-  //     console.log('test', reponse);
-  //   });
-  // }
+  postRole() {
+    if (this.nomRole.trim() !== '') { // Vérifie si le champ nomRole n'est pas vide
+      let role = {
+        nom: this.nomRole // Utilise la valeur de nomRole
+      };
+  
+      this.service.post('/admin/assigner-role', role, (reponse: any) => {
+        console.log('Role ajouté avec succès', reponse);
+        // Une fois le rôle ajouté avec succès, vous pouvez recharger la liste des rôles
+        this.loadRoles();
+        // Réinitialise le champ nomRole après l'ajout du rôle
+        this.nomRole = '';
+      });
+    } else {
+      console.log('Le champ nom du rôle est vide.');
+      // Gérez le cas où le champ nomRole est vide, vous pouvez afficher un message à l'utilisateur par exemple.
+    }
+  }
+  
+  loadUsers() {
+    this.service.get('/users', (reponse: any) => {
+      console.log(reponse);
+     this.users = reponse;
+     console.log(this.users);
+     
+    });
+  }
 
 
 

@@ -52,126 +52,45 @@
             <div id="content">
   
                 <!-- Topbar -->
-                <nav class="p-3 navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow"style="height: 70px; background-color: white; border-bottom: 1px solid #252649; border-right: 1px solid #252649;">
+                <nav class="p-3 navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow" style="height: 70px; background-color: white; border-bottom: 1px solid #252649; border-right: 1px solid #252649;">
                   <div class="container-fluid"> 
                     <div class="d-flex justify-content-between collapse navbar-collapse" id="navbarsExample02">
                       <form role="search">
                         <input class="form-control p-2" style="border-radius: 17px; box-shadow: 1px 1px 1px #252649; " type="search" placeholder="Rechercher..." aria-label="Search">
                       </form>
                       <div class="dropdown me-3">
-                          <a href="#" class="d-flex align-items-center link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                            <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
-                            <strong>Donnateur</strong>
-                          </a>
-                          <ul class="dropdown-menu text-small shadow">
-                            <li><a class="dropdown-item" href="#">New project...</a></li>
-                            <li><a class="dropdown-item" href="#">Settings</a></li>
-                            <li><a class="dropdown-item" href="#">Profile</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="#">Sign out</a></li>
-                          </ul>
+                        <a href="#" class="d-flex align-items-center link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                          <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
+                          <strong>{{ user?.username }}</strong> <!-- Afficher le nom d'utilisateur -->
+                        </a>
+                        <ul class="dropdown-menu text-small shadow">
+                          <li><a class="dropdown-item" href="#">New project...</a></li>
+                          <li><a class="dropdown-item" href="#">Settings</a></li>
+                          <li><a class="dropdown-item" href="#">Profile</a></li>
+                          <li><hr class="dropdown-divider"></li>
+                          <li><a class="dropdown-item" href="#">Sign out</a></li>
+                        </ul>
                       </div>
                     </div>
                   </div> 
                 </nav>
                 <!-- End of Topbar -->
                         <!-- Page Heading -->
+                        <button type="button" class="nav-link ms-5 px-5 btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop" style="background-color: #252649; cursor: pointer; height: 50px;color: #C2A966;box-shadow:1px 1px 1px #C2A966; font-size: 15px; font-weight: bold;">
+                          Nous rejoindre
+                        </button>
     
-                        <div class="row mb-3">
-                          <article class="card col-md-4" style="margin: 0 auto;">
-                            <div class="" id="cardhov">
-                              <img src="assets/cardhov.jpeg" alt="">
-                            </div>
-                        <div class="card_content">
-                            <span class="card_title ms-5 ps-4">Abdoulaye Leye</span>
-                                <span class="card_subtitle text-center"> Association "Aidons les talibés"</span>
-                                <p class="card_description">Pour  la  lutte  contre  le  paludisme nous  avons procédé à une  donnation
-                                   de  plusieurs  kits hygiéniques et  des moustiquaires imprégnés pour la protection  de  ses  enfants. </p>
-                                <p> <span class="fw-bold">Date:</span>le 28/01/2024 </p>
-                                <p> <span class="fw-bold">Lieu:</span>Kaolack</p>
-                                <p> <span class="fw-bold">Destinataire:</span>Dahra Serigne Ndao </p>
-                            
-                        </div>
-                        </article>
-                        <article class="card col-md-4" style="margin: 0 auto;">
-                          <div class="" id="cardhov">
-                            <img src="assets/cardhov.jpeg" alt="">
+                        <div class="row">
+                          <div class="col-md-4 ps-5" style=" padding-right: 20px;">
+                              <div class="cardbi mb-3 p-3" style="line-height: 10px; border-radius: 10px; box-shadow: 1px 1px 1px 1px #252649;border-bottom: 10px solid #C2A966;background-color: white;">
+                                    <div class="mb-3" style="box-shadow: 1px 1px 1px 1px #252649;width: 30%; margin: 0 auto; border-radius: 5px;"><img src="assets/cardonSup.png" alt=""  style="width: 70px;display: flex; align-items: center;"></div>    
+                                    <p class="card-text py-2" style="color: #252649; font-size: 12px; font-weight: 400;"><span class="fw-bold">Donnateur:</span>dgjjuytyth</p>
+                                    <p class="card-text py-2" style="color: #252649; font-size: 12px; font-weight: 400;"><span class="fw-bold">Lieu:</span>kjfghjkjh</p>
+                                    <p class="card-text py-2" style="color: #252649; font-size: 12px; font-weight: 400;"><span class="fw-bold">Date:</span>lkjhgfgh</p>
+                                    <p class="card-text py-2" style="color: #252649; font-size: 12px; font-weight: 400;"><span class="fw-bold">Destinataire:</span>kjhgfhjk</p>
+                              </div>
                           </div>
-                      <div class="card_content">
-                          <span class="card_title ms-5 ps-4">Abdoulaye Leye</span>
-                              <span class="card_subtitle text-center"> Association "Aidons les talibés"</span>
-                              <p class="card_description">Pour  la  lutte  contre  le  paludisme nous  avons procédé à une  donnation
-                                 de  plusieurs  kits hygiéniques et  des moustiquaires imprégnés pour la protection  de  ses  enfants. </p>
-                              <p> <span class="fw-bold">Date:</span>le 28/01/2024 </p>
-                              <p> <span class="fw-bold">Lieu:</span>Kaolack</p>
-                              <p> <span class="fw-bold">Destinataire:</span>Dahra Serigne Ndao </p>
-                          
-                      </div>
-                      </article>
-                      <article class="card col-md-4" style="margin: 0 auto;">
-                        <div class="" id="cardhov">
-                          <img src="assets/cardhov.jpeg" alt="">
                         </div>
-                    <div class="card_content">
-                        <span class="card_title ms-5 ps-4">Abdoulaye Leye</span>
-                            <span class="card_subtitle text-center"> Association "Aidons les talibés"</span>
-                            <p class="card_description">Pour  la  lutte  contre  le  paludisme nous  avons procédé à une  donnation
-                               de  plusieurs  kits hygiéniques et  des moustiquaires imprégnés pour la protection  de  ses  enfants. </p>
-                            <p> <span class="fw-bold">Date:</span>le 28/01/2024 </p>
-                            <p> <span class="fw-bold">Lieu:</span>Kaolack</p>
-                            <p> <span class="fw-bold">Destinataire:</span>Dahra Serigne Ndao </p>
-                        
-                    </div>
-                    </article>
-                         </div>
-                         <div class="row mb-2">
-                          <article class="card col-md-4" style="margin: 0 auto;">
-                            <div class="" id="cardhov">
-                              <img src="assets/cardhov.jpeg" alt="">
-                            </div>
-                        <div class="card_content">
-                            <span class="card_title ms-5 ps-4">Abdoulaye Leye</span>
-                                <span class="card_subtitle text-center"> Association "Aidons les talibés"</span>
-                                <p class="card_description">Pour  la  lutte  contre  le  paludisme nous  avons procédé à une  donnation
-                                   de  plusieurs  kits hygiéniques et  des moustiquaires imprégnés pour la protection  de  ses  enfants. </p>
-                                <p> <span class="fw-bold">Date:</span>le 28/01/2024 </p>
-                                <p> <span class="fw-bold">Lieu:</span>Kaolack</p>
-                                <p> <span class="fw-bold">Destinataire:</span>Dahra Serigne Ndao </p>
-                            
-                        </div>
-                        </article>
-                        <article class="card col-md-4" style="margin: 0 auto;">
-                          <div class="" id="cardhov">
-                            <img src="assets/cardhov.jpeg" alt="">
-                          </div>
-                      <div class="card_content">
-                          <span class="card_title ms-5 ps-4">Abdoulaye Leye</span>
-                              <span class="card_subtitle text-center"> Association "Aidons les talibés"</span>
-                              <p class="card_description">Pour  la  lutte  contre  le  paludisme nous  avons procédé à une  donnation
-                                 de  plusieurs  kits hygiéniques et  des moustiquaires imprégnés pour la protection  de  ses  enfants. </p>
-                              <p> <span class="fw-bold">Date:</span>le 28/01/2024 </p>
-                              <p> <span class="fw-bold">Lieu:</span>Kaolack</p>
-                              <p> <span class="fw-bold">Destinataire:</span>Dahra Serigne Ndao </p>
-                          
-                      </div>
-                      </article>
-                      <article class="card col-md-4" style="margin: 0 auto;">
-                        <div class="" id="cardhov">
-                          <img src="assets/cardhov.jpeg" alt="">
-                        </div>
-                    <div class="card_content">
-                        <span class="card_title ms-5 ps-4">Abdoulaye Leye</span>
-                            <span class="card_subtitle text-center"> Association "Aidons les talibés"</span>
-                            <p class="card_description">Pour  la  lutte  contre  le  paludisme nous  avons procédé à une  donnation
-                               de  plusieurs  kits hygiéniques et  des moustiquaires imprégnés pour la protection  de  ses  enfants. </p>
-                            <p> <span class="fw-bold">Date:</span>le 28/01/2024 </p>
-                            <p> <span class="fw-bold">Lieu:</span>Kaolack</p>
-                            <p> <span class="fw-bold">Destinataire:</span>Dahra Serigne Ndao </p>
-                        
-                    </div>
-                    </article>
-                         </div>
-                        
   
             </div>
         <!-- End of Content Wrapper -->
@@ -180,7 +99,52 @@
     </div>
     <!-- End of Page Wrapper -->
   
-  
+   <!-- Modal 2-->
+   <div #modalElement class="modal fade" style="" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog mt-5" style="margin: 0 auto;">
+      <div class="modal-content" style="padding: 40px;  width: 800px;">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" style="margin: 0 auto; color: #252649;" id="staticBackdropLabel">Faites une  donnation</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+             <div class="row">
+                <div class="col-md-6 mb-3 pe-3">
+                  <label for="exampleFormControlInput1" style="color: #C2A966;" class="form-label">Nom Dahra:</label>
+                  <input type="name"  style="height: 40px;border: 1px solid #C2A966; box-shadow:1px 1px 1px #C2A966;" class="form-control" name="nom" id="exampleFormControlInput1">
+                </div>
+                <div class="col-md-6 mb-3 ps-3">
+                  <label for="exampleFormControlInput1" style="color: #C2A966;" class="form-label">Disponibilité:</label>
+                  <input type="text" style="height: 40px;border: 1px solid #C2A966; box-shadow:1px 1px 1px #C2A966;" class="form-control" id="exampleFormControlInput1">
+                </div>
+             </div>
+             <div class="row">
+              <div class="col-md-6 mb-3 pe-3">
+                <label for="exampleFormControlInput1" style="color: #C2A966;" class="form-label">Description:</label>
+                <input type="text"  style="height: 40px;border: 1px solid #C2A966; box-shadow:1px 1px 1px #C2A966;" class="form-control" id="exampleFormControlInput1">
+              </div>
+              <div class="col-md-6 mb-3 ps-3">
+                <label for="exampleFormControlInput1" style="color: #C2A966;" class="form-label">Provenance:</label>
+                <input type="text"  style="height: 40px;border: 1px solid #C2A966; box-shadow:1px 1px 1px #C2A966;" class="form-control" id="exampleFormControlInput1">
+              </div>
+           </div>
+           <div class="row">
+            <div class="col-md-6 mb-3 pe-3">
+              <label for="exampleFormControlInput1" style="color: #C2A966;" class="form-label">Date:</label>
+              <input type="date" style="height: 40px;border: 1px solid #C2A966; box-shadow:1px 1px 1px #C2A966;" class="form-control" id="exampleFormControlInput1">
+            </div>
+            <div class="col-md-6 mb-3 ps-3">
+              <label for="exampleFormControlInput1" style="color: #C2A966;" class="form-label">Statut:</label>
+              <input type="text"  style="height: 40px;border: 1px solid #C2A966; box-shadow:1px 1px 1px #C2A966;" class="form-control" id="exampleFormControlInput1">
+            </div>
+         </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" routerLink="/donsuser" class="btn btn-secondary" style="font-size: 15px;"  data-bs-dismiss="modal">Conclure</button>
+        </div>
+      </div>
+    </div>
+  </div>
   
   
   </body>

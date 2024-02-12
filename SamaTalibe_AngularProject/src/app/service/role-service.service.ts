@@ -8,7 +8,8 @@ export class RoleService {
   constructor(private allServices: AllservicesService) {}
 
   // Méthode pour récupérer la liste des rôles
-  getRoles(onSuccess:Function) {
-    return this.allServices.get('/roles', (response: any) => onSuccess(response));
-  }
+  // getRoles(onSuccess:Function) {
+  //   return this.allServices.get('/roles', (response: any) => onSuccess(response));
+  // }
+  
 }

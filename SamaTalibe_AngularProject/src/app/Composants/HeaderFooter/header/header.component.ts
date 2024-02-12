@@ -19,10 +19,11 @@ export class HeaderComponent {
 
   isHeaderFixed: boolean | undefined;
 
-  onScroll(event: any) {
-    // Ajoutez votre logique pour déterminer si le header doit être fixé
-    this.isHeaderFixed = window.scrollY > 100; // par exemple, fixez le header après un certain défilement
-  }
+  // onScroll(event: any) {
+  //   // Ajoutez votre logique pour déterminer si le header doit être fixé
+  //   this.isHeaderFixed = window.scrollY > 0;
+    
+  // }
  
   toggleDahrasDropdown() {
     this.isDahrasDropdownVisible = !this.isDahrasDropdownVisible;  

@@ -4,6 +4,33 @@
 }
 #logofooter{
     width: 60%;
-    margin-top: 30px;
+    margin-top: 50px;
     margin-left: 60px;
 }
+.progress{
+    background-color: #C2A966 !important;
+    color: #C2A966 !important;
+    position: fixed !important;
+    bottom: 20px !important;
+    right: 20px !important;
+    height: 70px !important;
+    width: 70px !important;
+    display: none !important;
+    place-items: center !important;
+    border-radius: 50% !important;
+    box-shadow: 0 0 10px #C2A966 !important;
+    cursor: pointer !important;
+  }
+  
+  .progressValue{
+    display: block;
+    height: calc(100% - 15px);
+    width: calc(100% - 15px);
+    background-color: #252649;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-size: 35px;
+    color: var(--mainColor);
+    font-weight: bold;
+  }

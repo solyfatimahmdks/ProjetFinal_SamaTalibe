@@ -8,6 +8,5 @@ export interface Dahra {
     adresse: string,
     region:string,
     nombreTalibe: number,
-    isBlocked: boolean;
     isActivated: boolean; // Nouvelle propriété pour suivre l'état d'activation du dahra
   }

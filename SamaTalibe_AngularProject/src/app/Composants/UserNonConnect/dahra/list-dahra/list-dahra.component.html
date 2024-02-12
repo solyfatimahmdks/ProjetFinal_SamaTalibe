@@ -1,7 +1,7 @@
 <app-header></app-header>
 <main>
     
-  <section class="banniere" style=" margin-bottom: 10%;">
+  <section class="banniere" style="margin-top: 160px;">
     <div class="banner-container">
       <img src="assets/liqtdaraImg.png" alt="Bannière" id="bcgban" class="banner-image">
       <div class="banner-text">
@@ -29,7 +29,7 @@
         <div class="my-5 g-3 row container" style="margin: 0 auto;">
             <div *ngFor="let dahra of dahrasList" class="contentcard  col-md-4">
                 <div class="card" style="width: 20rem; box-shadow: 1px 1px 1px 1px #C2A966;">
-                    <div><img [src]="dahra.imageSrc" id="cardImg" alt=""></div>
+                    <div><img [src]="dahra.imagePath" id="cardImg" alt=""></div>
                     <div class="card-body">
                       <h5 class="card-title text-center">{{ dahra.nom }}</h5>  
                       <div class="row">

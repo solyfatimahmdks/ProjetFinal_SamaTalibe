@@ -17,7 +17,7 @@ export class ListDahraComponent  implements OnInit{
 
   loadDahrasList() {
     this.allservicesService.get('/lister-dahra', (response: any) => {
-      this.dahrasList = response; // Assurez-vous que votre API renvoie la liste des dahras
+      this.dahrasList = response; 
     });
   }
 
