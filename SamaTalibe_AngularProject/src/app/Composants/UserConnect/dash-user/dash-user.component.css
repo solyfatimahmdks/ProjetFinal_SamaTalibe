@@ -42,7 +42,8 @@
   .btn{
     background-color: #252649;
     box-shadow: 1px 1px 1px 1px #C2A966 !important;
-    width: 300px; font-size: 20px; 
+    /* width: 300px;  */
+    font-size: 20px; 
     padding: 10px; margin: 20px; 
     font-weight: bold;
     color: #C2A966;
@@ -57,16 +58,16 @@
     width: 100%; 
   }
 
-#cardImg{
-  width: 100%;
-  border-radius: 1%;
-}
+  #cardImg{
+    width: 319px !important;
+    height: 200px;
+    border-radius: 1%;
+  }
 #détailImg{
-  width:100%;
-  border-radius: 30% 0 30% 0;
-  /* box-shadow: 5px 5px 5px 5px #252649; */
-  border-top: 8px solid #252649;
-  border-left: 8px solid #252649;
+  width:180px;
+  height: 200px;
+  border-radius: 10px;
+  box-shadow: 1px #252649;
   
 }
 

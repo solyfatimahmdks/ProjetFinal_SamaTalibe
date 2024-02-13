@@ -1,6 +1,20 @@
 <!-- <p>apropos works!</p> -->
 <app-header></app-header>
+
 <main>
+
+         <!-- Modal -->
+         <div class="modal fade mt-5" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" style="margin: 0 auto;">
+            <div class="modal-content p-5">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" style="margin: 0 auto; color: #252649;" id="exampleModalLabel">Authentifiez-vous d'abord</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+                 <button type="button" class="btn" style="background-color: #252649; color: #C2A966; border: none; box-shadow:1px 1px 1px 1px #C2A966; font-weight: bold;" routerLink="/login">Connexion</button>
+            </div>
+          </div>
+        </div>
 
   <section class="banniere" style="margin-top: 160px;">
     <div class="banner-container">
@@ -14,6 +28,9 @@
 </section>
 
 
+      <div class="container mt-5">
+        <video class="container" style="border:1px solid #252649; border-radius: 2%; box-shadow:1px 1px 1px #252649; padding: 1%;" src="assets/vidéo.mp4" controls></video>
+      </div>
     <!-- SECTION OBJECTIFS -->
     <section class="objectifs">
       <h3 class="text-center mt-5" style="color: #252649;">SAMA TALIBE à travers nos obectifs</h3>
@@ -101,19 +118,10 @@
                   </div>
     <!-- SECTION BANNER BOTTOM -->
 
-       <!-- Modal -->
-       <div class="modal fade mt-5" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content p-5">
-            <div class="modal-header">
-              <h1 class="modal-title fs-5" style="margin: 0 auto; color: #252649;" id="exampleModalLabel">Authentifiez-vous d'abord</h1>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-               <button type="button" class="btn" style="background-color: #252649; color: #C2A966; border: none; box-shadow:1px 1px 1px 1px #C2A966; font-weight: bold;" routerLink="/login">Connexion</button>
-          </div>
-        </div>
-      </div>
+
       
 </main>
+
 <app-footer></app-footer>
+
 

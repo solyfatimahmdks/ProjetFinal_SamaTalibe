@@ -1,4 +1,243 @@
-*{
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: #C2A966;
+}
+
+footer ul {
+  list-style: none;
+  padding: 0 !important;
+}
+
+footer li {
+  list-style-type: none;
+}
+
+footer li a {
+  text-decoration: none !important;
+  color: white;
+}
+
+/* footer */
+footer {
+  background-color: #252649 !important;
+  margin-top: 8%;
+  padding-bottom: 2%;
+}
+
+.footerContent .logoFooter {
+  background-color: white;
+  position: relative;
+  bottom: 40px;
+  border-radius: 3%;
+  box-shadow: 1px 1px 1px 1px #C2A966;
+}
+
+.footerContent .logoFooter:hover {
+  bottom: 0;
+  background-color: #C2A966;
+  transition: 2s ease;
+}
+
+.footerContent .logoFooter img {
+  width: 100%;
+  margin-top: 200px;
+}
+
+.footerContent .contentFooter {
+  padding: 4% 8% 0 8%;
+}
+
+.contentFooter .footerIpt {
+  border-radius: 15px;
+  margin-bottom: 6%;
+}
+
+.contentFooter .footerIpt input {
+  width: 60%;
+  border-radius: 15px 0 0 15px;
+  background-color: #252649;
+  border: none;
+  padding-left: 20px;
+  color: #C2A966;
+}
+
+.contentFooter .footerIpt input::placeholder {
+  font-size: 20px;
+  color: #C2A966;
+}
+
+.contentFooter .footerIpt button {
+  background-color: white;
+  width: 40%;
+  border-radius: 15px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #C2A966;
+}
+
+.contentFooter .pagesFooter h6 {
+  font-size: 35px;
+  font-weight: 600;
+  color: #C2A966;
+  margin-bottom: 3%;
+}
+
+.contentFooter .pagesFooter {
+  margin-bottom: 6%;
+}
+
+.contentFooter .pagesFooter li {
+  margin-bottom: 20px;
+}
+
+.contentFooter .pagesFooter li a {
+  font-size: 18px;
+  font-weight: 700;
+  color: white !important;
+}
+
+.contentFooter .pagesFooter li a:hover {
+  margin-left: 20px;
+  color: #C2A966 !important;
+  transition: 1s ease;
+}
+
+.contentFooter .traitFooter {
+  background-color: #C2A966;
+  height: 4px;
+  border: none;
+  margin-bottom: 2%;
+}
+
+.contentFooter .copyrightFooter .leftCopy {
+  color: #C2A966;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.contentFooter .copyrightFooter .rightCopy i {
+  color: #C2A966;
+  margin-left: 15px;
+}
+
+.contentFooter .copyrightFooter .rightCopy a:hover {
+  position: relative;
+  bottom: 8px;
+  transition: 2s ease;
+}
+
+/* footer */
+
+
+/* media*/
+
+/* media queries */
+
+/* 700px */
+@media(max-width: 800px) {
+  footer {
+      padding-top: 4%;
+      padding: 20px 25px;
+  }
+
+  .contentFooter {
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+  }
+
+  .footerIpt {
+      display: block !important;
+      border: none !important;
+  }
+
+  .footerContent .logoFooter {
+      background-color: white;
+      position: relative;
+      bottom: 0px;
+      /* display: none; */
+  }
+
+  .footerContent .logoFooter img {
+      width: 100% !important;
+  }
+
+  .contentFooter .footerIpt {
+      border: none;
+  }
+
+  .contentFooter .footerIpt input {
+      border: 1px solid white;
+      width: 100%;
+      padding: 2%;
+      border-radius: 15px;
+      margin-bottom: 3%;
+  }
+
+  .contentFooter .footerIpt button {
+      background-color: white;
+      width: 100%;
+      border-radius: 15px;
+      font-size: 14px;
+      font-weight: bold;
+      color: var(--orange);
+      padding: 2%;
+  }
+
+  .contentFooter .footerIpt input::placeholder {
+      font-size: 16px;
+      color: white;
+  }
+
+  .contentFooter .copyrightFooter {
+      display: block !important;
+  }
+
+  .copyrightFooter .leftCopy,
+  .rightCopy {
+      text-align: center;
+      margin-bottom: 15px !important;
+  }
+}
+
+
+/* 700px and 1100px */
+
+@media only screen and (min-width: 700px) and (max-width:930px) {
+  footer {
+      padding-top: 20px;
+  }
+
+  footer .footerIpt {
+      border: none !important;
+  }
+
+  /* section footer */
+  .footerContent {
+      display: block !important;
+  }
+
+  .footerContent .logoFooter {
+      width: 100%;
+      bottom: 0;
+  }
+
+  .footerContent .contentFooter {
+      width: 100%;
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+  }
+}
+
+/* *{
     margin: 0;
     padding: 0;
 }
@@ -33,4 +272,4 @@
     font-size: 35px;
     color: var(--mainColor);
     font-weight: bold;
-  }
+  } */

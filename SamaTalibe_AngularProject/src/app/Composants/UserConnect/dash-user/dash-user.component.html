@@ -78,7 +78,7 @@
                         <!-- Page Heading -->
     
                         <!-- Content Row -->
-                        <div class="my-5 row"   >
+                        <div class="listDahra my-5 row" *ngIf="showListDahra"  >
                           <div class="contentcard col-md-4" *ngFor="let dahra of dahras | paginate:{ itemsPerPage:itemsPerPage, currentPage:currentPage , totalItems:dahras.length}">
                               <div class="card" style="width: 20rem; box-shadow: 1px 1px 1px 1px #C2A966; margin: 0 auto;">
                                   <div><img [src]="getImage(dahra.imageFilename)" id="cardImg" alt=""></div>
@@ -90,41 +90,36 @@
                                             <p class="card-text text-start"><i class="bi bi-geo-alt-fill" style="color: #252649; margin-right: 10px;"></i>{{ dahra.region }}</p>
                                         </div>
                                         <div class="col-md-6">
-                                            <a href="#" class="btn"  data-bs-toggle="modal" data-bs-target="#exampleModal" style="width:80%; font-size: 18px; background-color: #252649;color: #C2A966;box-shadow:2px 2px 2px 2px #C2A966; font-weight: bold;"> <i class="bi bi-eye-fill" style="color: #C2A966; margin-right: 15px; font-weight: bold;"></i>Détails</a>
+                                            <a href="#" class="btn"  data-bs-toggle="modal" data-bs-target="#exampleModal" style="width:80%; font-size: 15px; background-color: #252649;color: #C2A966;box-shadow:2px 2px 2px 2px #C2A966; font-weight: bold;"> <i class="bi bi-eye-fill" style="color: #C2A966; margin-right: 15px; font-weight: bold;"></i>Détails</a>
                                         
                                               <!-- Modal -->
-                                                      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                                          <div class="modal-dialog">
-                                                          <div class="modal-content" style="background-color: #C2A966 !important;">
+                                                      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"   aria-hidden="true">
+                                                          <div class="modal-dialog mt-5" style="margin: 0 auto;">
+                                                          <div class="modal-content" style=" padding: 20px; background-color: white !important;">
                                                               <div class="modal-header">
-                                                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                              <button type="button" class="btn-close mb-2" data-bs-dismiss="modal" aria-label="Close"></button>
                                                               </div>
-                                                              <div class="modal-body">
-                                                                  <h1 class="text-center"  style="color: #252649;">{{ dahra.nom }}</h1>
-                                                                  <div class="mb-3 row" style="color: #252649; font-weight: bold;">
-                                                                      <div class="col-md-6">
-                                                                          <img src="assets/dahras/Imgcarte1.jpg" id="détailImg" alt="">
+                                                              <div class="modal-body" style="padding: 20px;">
+                                                                  <h5 class="text-center"  style="color: #252649;">{{ dahra.nom }}</h5>
+                                                                  <div class="my-4 row" style="color: #252649;">
+                                                                      <div class="col-md-6 mt-3" >
+                                                                          <img [src]="getImage(dahra.imageFilename)" id="détailImg" alt="">
                                                                       </div>
-                                                                      <div class="col-md-6">
-                                                                          <p><span>Nom Ouztas:</span>{{ dahra.nomOuztas }}</p>
-                                                                          <hr>
-                                                                          <p><span>Region:</span>{{ dahra.region }}</p>
-                                                                          <hr>
-                                                                          <p><span>Adresse:</span>{{ dahra.adresse }}</p>
+                                                                      <div class="col-md-6" style="padding: 20px; border-radius: 10px;">
+                                                                        <p><span style=" font-weight: bold;">Nom Ouztas:</span>{{ dahra.nomOuztas }}</p>
+                                                                          <hr class="mb-3">
+                                                                          <p><span style=" font-weight: bold;">Region:</span>{{ dahra.region }}</p>
+                                                                          <hr class="mb-3">
+                                                                          <p><span style=" font-weight: bold;">Adresse:</span>{{ dahra.adresse }}</p>
+                                                                          <hr class="mb-3">
+                                                                          <p style="color: #252649;"><span style="color: #252649; font-weight: bold;">Numero Téléphone Ouztas :</span>{{ dahra.numeroTelephoneOuztas }}</p>
                                                                           <hr>
                                                                       </div>
-                                                                  </div>
-                                                                  <div class="mb-3">
-                                                                      <p><span>Numéro Télephone Dahra : </span>{{ dahra.numeroTelephone }}</p>
-                                                                      <hr>
-                                                                      <p><span>Numero Téléphone Ouztas :</span>{{ dahra.numeroTelephoneOuztas }}</p>
-                                                                      <hr>
-                                                                     
                                                                   </div>
                                                               </div>
                                                               <div class="modal-footer d-flex justify-content-between">
-                                                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" style="background-color: #252649;color: #C2A966;font-weight: bold; box-shadow:2px 2px 2px 2px #C2A966;"> <i class="bi bi-eye-fill" style="color: #C2A966; margin-right: 10px; font-weight: bold;"></i>567 apprenants</button>
-                                                              <button type="button" class="btn btn-primary" style="background-color: #252649; color: #C2A966; font-weight: bold; border: none;">Faire un don</button>
+                                                              <button type="button" class="btn " (click)="toggleList('talib')" data-bs-dismiss="modal" style="font-size: 15px; background-color: #252649;color: #C2A966;font-weight: bold; box-shadow:2px 2px 2px 2px #C2A966; width: 150px;"> <i class="bi bi-eye-fill" style="color: #C2A966; margin-right: 10px; font-weight: bold;"></i>{{ dahra.nombreTalibe}} apprenants</button>
+                                                              <button type="button" class="btn " routerLink="/donsuser" style="background-color: #252649; color: #C2A966; font-size: 15px; width: 150px; font-weight: bold; border: none;">Faire un don</button>
                                                               </div>
                                                           </div>
                                                           </div>
@@ -138,7 +133,43 @@
                           </div>
 
                         </div> 
-
+                        
+                        <div class="listTalib"  *ngIf="showListTalib" >
+                          <div class="mt-3 d-flex justify-content-center ">
+                          </div>
+          
+                          <div class="table-responsive small mb-5 mx-4" style="border: 1px solid #C2A966; border-radius: 10px;">
+                                    <h5 class="text-center p-2" style="color: #252649;"><i class="btn§ bi bi-arrow-left"  (click)="toggleList('dahra')"  style="cursor: pointer; color: #C2A966 ; font-weight: bold; margin-right: 20px;"></i>Liste des Apprenants du dahra</h5>
+                                    <table class="table table-striped table-sm" style="width: 100%;">
+                                      <thead>
+                                        <tr class="">
+                                          <th scope="col" style="color: white; background-color: #C2A966;width: 15%;" class="ps-5">Image</th>
+                                          <th scope="col" style="color: white; background-color: #C2A966; width: 25%;">Nom du talibé</th>
+                                          <th scope="col" style="color: white; background-color: #C2A966;width: 20%;">Origine</th>
+                                          <th scope="col" style="color: white; background-color: #C2A966;width: 15%;">Age</th>
+                                          <th scope="col" style="color: white; padding-left: 60px; background-color: #C2A966;width: 25%;">Action</th>
+                     
+                                        </tr>
+                                      </thead>
+                                      <tbody>
+                                        <tr  style="height: 40px; margin-top: 20px !important;">
+                                          <td class="ps-5"><img src="#" style="height: 40px;" id="admindatable" alt=""></td>
+                                          <td>jhgfghgghh</td>
+                                          <td>fghjkl</td>
+                                          <td>dfghjhfghj</td>
+                                          <td style="padding: 20px;">
+                                            <i class="btn. me-3 fa-solid fa-user-xmark" data-bs-toggle="modal" data-bs-target="#staticBackdrop"  style="background-color: #252649;border-radius: 5px; box-shadow: 1px 1px 1px #C2A966;margin: 10px !important; cursor: pointer; font-size: 12px;padding: 5px; color: white;"></i>
+                                            <i class="bi bi-eye-fill btn3"   data-bs-toggle="modal" data-bs-target="#exampleModal" style="background-color: #252649;border-radius: 5px;margin: 10px !important; box-shadow: 1px 1px 1px #C2A966;cursor: pointer; font-size: 12px;padding: 5px; color: white;"></i>
+                                          
+                                            <!-- Button trigger modal -->
+                                          </td>
+                                        </tr>
+                                        
+                                        
+                                      </tbody>
+                                    </table>
+                          </div>
+                        </div>
 
                         <pagination-controls (pageChange)="setPage($event)" class="mt-3" previousLabel="prev" nextLabel="next" style="color: #252649;font-weight: bold;"></pagination-controls>
 
@@ -151,14 +182,41 @@
         </div>
     </div>
     <!-- End of Page Wrapper -->
-  
-  
-  
-  
-  </body>
-  
 
-  *ngFor="let dahra of dahras"
+<!-- Scrollable modal -->
+
+                                                      <!-- Modal -->
+                                                      <div class="modal fade mt-5  modal-dialog-scrollable" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                                        <div class="modal-dialog" style="margin: 0 auto;">
+                                                          <div class="modal-content" style="padding: 20px !important;">
+                                                            <div class="modal-header d-flex justify-content-between">
+                                                              <h1 class="modal-title fs-5" id="staticBackdropLabel">Condition de parrainages</h1>
+                                                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                            </div>
+                                                            <div class="modal-body p-3">
+                                                              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Totam unde pariatur alias aliquam! Ratione quis corrupti similique dolorum dolorem inventore harum soluta quia, ab nisi reprehenderit labore nam molestias pariatur.
+                                                              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Optio accusantium nam necessitatibus ea harum sunt commodi recusandae reprehenderit adipisci itaque illum placeat velit sapiente qui cumque nihil, consequatur blanditiis et.
+                                                              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo explicabo libero eum officia error laborum fugiat. Voluptatum, necessitatibus. Eum dolorem quos soluta sequi temporibus repellat quasi reprehenderit provident adipisci vel!
+                                                              Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque sunt quam amet veritatis id atque sed est nisi nostrum sint eligendi nam, deserunt, ipsum, consequatur facilis distinctio quibusdam ad eveniet.
+                                                            </div>
+                                                            <div class="form-check ps-5 mb-3" >
+                                                              <input class="form-check-input" type="checkbox" [(ngModel)]="isCheckboxChecked" style="cursor: pointer;" value="" id="flexCheckDefault">
+                                                              <label class="form-check-label" for="flexCheckDefault">
+                                                                J'accepte les  conditions  de parrainage
+                                                              </label>
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                              <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal1" class="btn btn-secondary" style="width: 100px; font-size: 15px; font-weight: bold;" data-bs-dismiss="modal" [disabled]="!isCheckboxChecked" (click)="showAlert()" >Continuer</button>
+                                                            </div>
+                                                          </div>
+                                                        </div>
+                                                      </div>
+
+
+
+  
+</body>
+  
   
   
   

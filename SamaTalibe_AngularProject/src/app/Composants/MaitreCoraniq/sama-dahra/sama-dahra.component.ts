@@ -55,25 +55,25 @@ export class SamaDahraComponent  implements OnInit{
     const formData = new FormData();
   
     // Ajouter les données du formulaire
-    formData.append('imageFilename', this.uploadedImages);
+    formData.append('imageFile', this.uploadedImages);
     formData.append('nom', this.talibe.nom);
     formData.append('prenom', this.talibe.prenom);
     formData.append('age', this.talibe.age);
     formData.append('adresse', this.talibe.adresse);
     formData.append('situation', this.talibe.situation);
     formData.append('description', this.talibe.description);
-    formData.append('datearrivetalibe', this.talibe.datearrivetalibe);
-    formData.append('presencetalibe', this.talibe.presencetalibe);
-  
-    // Ajouter les images sélectionnées
-    // if (this.uploadedImages.length > 0) {
-    //   for (let i = 0; i < this.uploadedImages.length; i++) {
-    //     formData.append('images[]', this.uploadedImages[i]);
-    //   }
-    // }
+    formData.append('dateArriveTalibe', this.talibe.datearrivetalibe);
+    formData.append('presenceTalibe', this.talibe.presencetalibe);
 
-  console.log(`test`,formData);
-  
+    // console.log('imageFile:', this.uploadedImages);
+    // console.log('nom:', this.talibe.nom);
+    // console.log('prenom:', this.talibe.prenom);
+    // console.log('age:', this.talibe.age);
+    // console.log('adresse:', this.talibe.adresse);
+    // console.log('situation:', this.talibe.situation);
+    // console.log('description:', this.talibe.description);
+    // console.log('datearrivetalibe:', this.talibe.datearrivetalibe);
+    // console.log('presencetalibe:', this.talibe.presencetalibe);
 
     // Envoyer les données à votre service
     this.service.post('/inscrire/add-talibe', formData, (response: any) => {

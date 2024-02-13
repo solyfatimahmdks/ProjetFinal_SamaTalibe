@@ -100,7 +100,7 @@
     <!-- End of Page Wrapper -->
   
    <!-- Modal 2-->
-   <div #modalElement class="modal fade" style="" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+   <div #modalElement (submit)="faireDonation()" class="modal fade" style="" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog mt-5" style="margin: 0 auto;">
       <div class="modal-content" style="padding: 40px;  width: 800px;">
         <div class="modal-header">
@@ -111,36 +111,41 @@
              <div class="row">
                 <div class="col-md-6 mb-3 pe-3">
                   <label for="exampleFormControlInput1" style="color: #C2A966;" class="form-label">Nom Dahra:</label>
-                  <input type="name"  style="height: 40px;border: 1px solid #C2A966; box-shadow:1px 1px 1px #C2A966;" class="form-control" name="nom" id="exampleFormControlInput1">
+                  <input type="name" [(ngModel)]="nom"  style="height: 40px;border: 1px solid #C2A966; box-shadow:1px 1px 1px #C2A966;" class="form-control" name="nom" id="exampleFormControlInput1">
                 </div>
                 <div class="col-md-6 mb-3 ps-3">
                   <label for="exampleFormControlInput1" style="color: #C2A966;" class="form-label">Disponibilité:</label>
-                  <input type="text" style="height: 40px;border: 1px solid #C2A966; box-shadow:1px 1px 1px #C2A966;" class="form-control" id="exampleFormControlInput1">
+                  <input type="text" [(ngModel)]="disponibiliteDon" style="height: 40px;border: 1px solid #C2A966; box-shadow:1px 1px 1px #C2A966;" class="form-control" id="exampleFormControlInput1">
                 </div>
              </div>
              <div class="row">
               <div class="col-md-6 mb-3 pe-3">
-                <label for="exampleFormControlInput1" style="color: #C2A966;" class="form-label">Description:</label>
-                <input type="text"  style="height: 40px;border: 1px solid #C2A966; box-shadow:1px 1px 1px #C2A966;" class="form-control" id="exampleFormControlInput1">
+                <label for="exampleFormControlInput1" style="color: #C2A966;" class="form-label">Type de don:</label>
+                <input type="text" [(ngModel)]="typeDon" style="height: 40px;border: 1px solid #C2A966; box-shadow:1px 1px 1px #C2A966;" class="form-control" id="exampleFormControlInput1">
               </div>
               <div class="col-md-6 mb-3 ps-3">
                 <label for="exampleFormControlInput1" style="color: #C2A966;" class="form-label">Provenance:</label>
-                <input type="text"  style="height: 40px;border: 1px solid #C2A966; box-shadow:1px 1px 1px #C2A966;" class="form-control" id="exampleFormControlInput1">
+                <input type="text" [(ngModel)]="adresseProvenance" style="height: 40px;border: 1px solid #C2A966; box-shadow:1px 1px 1px #C2A966;" class="form-control" id="exampleFormControlInput1">
               </div>
            </div>
            <div class="row">
             <div class="col-md-6 mb-3 pe-3">
               <label for="exampleFormControlInput1" style="color: #C2A966;" class="form-label">Date:</label>
-              <input type="date" style="height: 40px;border: 1px solid #C2A966; box-shadow:1px 1px 1px #C2A966;" class="form-control" id="exampleFormControlInput1">
+              <input type="date" [(ngModel)]="date" style="height: 40px;border: 1px solid #C2A966; box-shadow:1px 1px 1px #C2A966;" class="form-control" id="exampleFormControlInput1">
             </div>
             <div class="col-md-6 mb-3 ps-3">
               <label for="exampleFormControlInput1" style="color: #C2A966;" class="form-label">Statut:</label>
-              <input type="text"  style="height: 40px;border: 1px solid #C2A966; box-shadow:1px 1px 1px #C2A966;" class="form-control" id="exampleFormControlInput1">
+              <input type="text" [(ngModel)]="statut" style="height: 40px;border: 1px solid #C2A966; box-shadow:1px 1px 1px #C2A966;" class="form-control" id="exampleFormControlInput1">
             </div>
          </div>
+         <div class="row">
+          <div class="col-md-12 mb-3 pe-3">
+            <textarea name="descriptionDon" [(ngModel)]="descriptionDon" style="border-radius: 5px; width: 719px; height: 90px;border: 1px solid #C2A966; box-shadow:1px 1px 1px #C2A966;" placeholder="Description" id="" cols="30" rows="10"></textarea>          
+          </div>
+       </div>
         </div>
         <div class="modal-footer">
-          <button type="button" routerLink="/donsuser" class="btn btn-secondary" style="font-size: 15px;"  data-bs-dismiss="modal">Conclure</button>
+          <button type="submit" routerLink="/donsuser" (click)=" faireDonation()" class="btn btn-secondary" style="font-size: 15px;"  data-bs-dismiss="modal">Conclure</button>
         </div>
       </div>
     </div>

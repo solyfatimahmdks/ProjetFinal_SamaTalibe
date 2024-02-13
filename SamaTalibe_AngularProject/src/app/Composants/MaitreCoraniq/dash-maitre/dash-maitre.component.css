@@ -32,10 +32,11 @@
     width: 100%; 
   }
 
-#cardImg{
-  width: 100%;
-  border-radius: 1%;
-}
+  #cardImg{
+    width: 319px !important;
+    height: 200px;
+    border-radius: 1%;
+  }
 #détailImg{
   width:100%;
   border-radius: 30% 0 30% 0;

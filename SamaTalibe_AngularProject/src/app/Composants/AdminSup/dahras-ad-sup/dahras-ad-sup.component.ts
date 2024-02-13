@@ -90,14 +90,14 @@ export class DahrasAdSupComponent implements OnInit {
  
   }
 
+
   getImage(path: string): string {
     return path.includes(".jpeg") || path.includes(".jpg") || path.includes(".png") ? path : "https://placehold.co/20x20";
   }
-  // onFileSelected(event: any) {
-  //   const selectedFile = event.target.files[0] as File;
-  //   this.uploadedImages.push(selectedFile);
-  // }
-  addDahra() {
+
+
+
+addDahra() {
     // Créer un nouvel objet FormData
     const formData = new FormData();
   

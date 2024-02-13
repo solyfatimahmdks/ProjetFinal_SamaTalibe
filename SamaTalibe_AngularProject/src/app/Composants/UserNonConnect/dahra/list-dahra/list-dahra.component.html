@@ -29,7 +29,7 @@
     <hr class="container" style="color: #C2A966;">
     <div class="contenu" style="margin: 0 auto;">
         <div class="my-5 g-3 row container"  style="margin: 0 auto;">
-            <div *ngFor="let dahra of dahrasList | paginate:{ itemsPerPage:itemsPerPage, currentPage:currentPage , totalItems:dahras.length}" class="contentcard  col-md-4">
+            <div *ngFor="let dahra of dahras | paginate:{ itemsPerPage:itemsPerPage, currentPage:currentPage , totalItems:dahras.length}" class="contentcard  col-md-4">
                 <div class="card" style="width: 20rem; box-shadow: 1px 1px 1px 1px #C2A966;">
                     <div><img [src]="getImage(dahra.imageFilename)" id="cardImg" alt=""></div>
                     <div class="card-body">

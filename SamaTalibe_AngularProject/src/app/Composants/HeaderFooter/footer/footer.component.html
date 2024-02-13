@@ -1,5 +1,56 @@
 <!-- <p>footer works!</p> -->
-<footer class="py-5" style="background-color: #252649;">
+<footer>
+  <div class="footerContent mx-md-5 row">
+    <div class="col-12 col-md-4 logoFooter border">
+      <img src="assets/LOGOS/LogoHeader.png" alt="">
+    </div>
+    <div class="col-12 col-md-8 contentFooter">
+      <form class="border form d-flex footerIpt">
+        <input type="email" class="form-control" id="email"  [(ngModel)]="email" placeholder="Votre addresse email.">
+        <button class="btn" id="btnFooter" (click)="sAbonnerNewsletter()">S'incrire maintenant!</button>
+      </form>
+      <div class="row pagesFooter">
+        <div class="col-12 col-md-6">
+          <h6>Contacts</h6>
+          <ul>
+            <li><a href="/confidentialité/confidentialite.html"><i class="bi bi-geo-alt-fill" style=" margin-right: 10px;"></i>Sénégal/Dakar: Yoff</a></li>
+            <li><a href="/cookies/cookies.html"><i class="bi bi-envelope" style="margin-right: 10px;"></i>samatalibe.sn@gmail.com</a></li>
+            <li><a href="/condition-generale/condition.html"><i class="bi bi-telephone-fill" style=" margin-right: 10px;"></i>704877879</a></li>
+          </ul>
+        </div>
+        <div class="col-12 col-md-6">
+          <h6>Liens</h6>
+          <ul>
+            <li><a routerLink="/accueil">Accueil </a></li>
+            <li><a routerLink="/a-propos">A propos</a></li>
+            <li><a routerLink="/listdahra">Liste des dahras</a></li>
+            <li><a routerLink="/donnations">Donnations</a></li>
+            <li><a routerLink="/parrains">Liste des dahras</a></li>
+
+
+          </ul>
+        </div>
+      </div>
+      <div class="traitFooter"></div>
+      <div class="copyrightFooter d-flex justify-content-between">
+        <div class="leftCopy">
+          <p>@Copyright 2024 / Projet_Sama_Talibé</p>
+        </div>
+        <div class="rightCopy">
+          <a href="#"><i class="fa-brands fa-twitter"></i></a>
+          <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+<!-- <footer class="py-5" style="background-color: #252649;">
   <div class="progress">
     <span class="progressValue" ><i class="bi bi-arrow-up-square-fill" style="color: #252649;"></i></span>
   </div>
@@ -52,4 +103,4 @@
     <div class="d-flex flex-column flex-sm-row justify-content-center py-4 my-4 fw-bold" style="color: #C2A966; border-top:1px solid #C2A966; font-size: 12px;">
       <p>© 2023</p>
     </div>
-  </footer>
+  </footer> -->
