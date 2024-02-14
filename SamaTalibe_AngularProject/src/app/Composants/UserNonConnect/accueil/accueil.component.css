@@ -95,6 +95,12 @@ main{
   border-bottom-right-radius: 30px !important;
 }
 
+
+
+
+
+
+
 /* contacts */
 #exampleFormControlInput1{
   height: 60px;
@@ -102,9 +108,82 @@ main{
 }
 #exampleFormControlTextarea1{
   height: 250px;
-  border: 1px solid #C2A966
+  border: 1px solid #C2A966;
 }
 #contactImg{
   /* border: 1px solid black; */
   width: 70%;
+}
+
+
+/* Resposivité */
+
+@media screen and (max-width: 768px) {
+   .banniere{
+     margin-top:  18% !important;
+     /* border: 1px solid red; */
+   }
+  .banner-text h1{
+    font-size: 20px !important;
+    margin-top: 60px;
+    font-weight: bold;
+  }
+  .banner-text p{
+    font-size: 12px !important;
+    margin-bottom: 50px;
+    font-weight: bold;
+  }
+   .banner-container {
+    position: relative;
+  }
+  .banner-text {
+    position: absolute;
+    /* top: 50%;  */
+    left: 40%; /* Ajustez la position horizontale du texte */
+    transform: translate(-50%, -50%);
+    text-align: start; /* Centrez le texte horizontalement */
+  }
+
+
+
+
+/* temoignages */
+.temoignages{
+  margin-bottom: 600px;
+  padding-right: 30% !important;
+}
+
+#maitreImg{
+  width: 90%;
+  height: 30px;
+  border-radius: 100%;
+  box-shadow:2px 5px 2px #252649;
+}
+#cardBottom{
+  border-top-right-radius: 30px !important;
+  border-bottom-right-radius: 30px !important;
+  margin-top: 270px;
+}
+
+
+/* actualites */
+.actu .imageabout {
+  width: 95%;
+}
+
+/* contacts */
+
+  #exampleFormControlInput1{
+    height: 60px;
+    border: 1px solid #C2A966;
+    width: 90% !important;
+  }
+  #exampleFormControlTextarea1{
+    height: 250px;
+    border: 1px solid #C2A966;
+    width: 90% !important;
+  }
+  #contactImg{
+    width: 300px;
+  }
 }

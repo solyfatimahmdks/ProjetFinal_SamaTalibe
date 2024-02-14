@@ -2,13 +2,56 @@
 
 
 <header class="headerTop fixed-top" style="border-bottom: 3px solid #252649;">
-    <div class="px-3 py-2 border-bottom" style="background-color: #252649;">
+  <div  id="topMenuB">
+    <a class="btnMenu btn-primary" id="btnMenu" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+      <i class="bi bi-list"></i>
+    </a>
+    <img src="assets/LOGOS/LogoHeader.png" routerLink="/accueil" id="logoMenuB" alt="">
+    <!-- <div class="col-md-3 mt-4 container" style="padding-left: 240px !important;">
+      <button type="button" routerLink="/login" class="btn" style="background-color: #252649; color: #C2A966; box-shadow: 1px 1px 1px 1px #C2A966;">Connexion</button>
+    </div> -->
+  </div>
+
+  
+  <div class="offcanvas offcanvas-start" style="background-color: #252649; color: #C2A966;" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+    <div class="offcanvas-header">
+      <img src="assets/LOGOS/LogoFooter.png" id="logoMenuB" alt="">
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body" id="menuStyle">
+      <ul class=" row mt-4 fs-5 justify-content-center mb-md-0">
+        <li class="col-md-12">
+           <a routerLink="/accueil" [class.active-link]="isLinkActive('/accueil')" style=" margin-right:40px; text-decoration: none; font-weight: bold;" aria-label="Close">Accueil</a>
+        </li>
+        <li class="col-md-12">
+           <a routerLink="/a-propos" [class.active-link]="isLinkActive('/a-propos')" style="margin-right:40px; text-decoration: none; font-weight: bold;" aria-label="Close">A propos</a>
+        </li>
+        <li class="col-md-12">
+           <a routerLink="/listdahra" [class.active-link]="isLinkActive('/listdahra')" style="margin-right:40px; text-decoration: none; font-weight: bold;" aria-label="Close">Liste des dahras</a>
+        </li>
+        <li class="col-md-12">
+           <a routerLink="/donnations" [class.active-link]="isLinkActive('/donnations')" style="margin-right:40px; text-decoration: none; font-weight: bold;" aria-label="Close">Donnations</a>
+        </li>
+        <li class="col-md-12">
+           <a routerLink="/parrains" [class.active-link]="isLinkActive('/parrains')" style="margin-right:40px; text-decoration: none; font-weight: bold;" aria-label="Close">Parrainages</a>
+          </li>
+      </ul>
+      <div class="col-md-3 mt-4 container" style="padding-left: 10px !important;">
+        <button type="button" routerLink="/login" class="btn" style="background-color: #252649; color: #C2A966; box-shadow: 1px 1px 1px 1px #C2A966;">Connexion</button>
+      </div>
+    </div>
+  </div>
+
+
+
+
+    <div class="px-3 py-2 border-bottom" id="topbarr" style="background-color: #252649;">
       <div class="">
-        <div class="d-flex flex-wrap justify-content-between justify-content-lg-start">
-          <a href="/" class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
+        <div id="topBarrDet" class="d-flex flex-wrap justify-content-between justify-content-lg-start">
+          <a  class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
              <div class="d-flex justify-content-center">
-               <a href="#" class="nav-link pe-2" style="color: #C2A966; font-size: 12px; margin-top: 10px;"><i class="bi bi-envelope" style="color: #C2A966; margin-right: 10px;"></i>samatalibe.sn@gmail.com</a>
-               <a href="#" class="nav-link pe-2" style="color: #C2A966; font-size: 12px; margin-top: 10px;"><i class="bi bi-telephone-fill" style="color: #C2A966; margin-right: 10px;"></i>704877879</a> 
+               <a class="nav-link pe-2" style="color: #C2A966; font-size: 12px; margin-top: 10px;"><i class="bi bi-envelope" style="color: #C2A966; margin-right: 10px;"></i>samatalibe.sn@gmail.com</a>
+               <a class="nav-link pe-2" style="color: #C2A966; font-size: 12px; margin-top: 10px;"><i class="bi bi-telephone-fill" style="color: #C2A966; margin-right: 10px;"></i>704877879</a> 
                <p style="color: #C2A966; font-size: 12px; margin-top: 10px;"> "Nimbal ci dahra yi, moy taxawu talibé yi"</p>
              </div>
           </a>
@@ -22,7 +65,7 @@
         </div>
       </div>
     </div>
-    <div class="px-3 py-2 mb-3 row" style="margin: 0 auto;">
+    <div class="px-3 py-2 mb-3 row" id="barMenu" style="margin: 0 auto;">
               <div class="col-md-4 mb-2 mb-md-0">
                 <a href="/" class="d-inline-flex link-body-emphasis text-decoration-none">
                 <img src="assets/LOGOS/LogoHeader.png" alt="" id="logoheader">

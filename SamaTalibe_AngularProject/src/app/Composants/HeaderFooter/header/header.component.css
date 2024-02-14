@@ -14,6 +14,56 @@
     background-color: white;
     box-shadow: 1px 1px 1px #252649;
   }
+#topMenuB{
+  display: none;
+}
+
+
+/* Resposivité */
+
+@media screen and (max-width: 768px) {
+  .headerTop{
+    margin: 0;
+  }
+   #topMenuB{
+    display: flex;
+    justify-content: space-between;
+   }
+  #btnMenu{
+    background-color: #252649 !important;
+    color: #C2A966 !important;
+    box-shadow: 1px 1px 1px 1px #C2A966 !important;
+    border-radius: 10px !important;
+    font-size: 40px !important;
+    margin: 2% 0 2% 2%;
+  }
+  #logoMenuB{
+    width: 30%;
+    padding: 2% 2% 2% 0;
+  }
+  #menuStyle ul li{
+    list-style: none !important;
+    padding-bottom: 40px !important;
+  }
+
+  #menuStyle ul li a:focus-within{
+    color: #C2A966 !important;
+  }
+
+  #menuStyle ul li a{
+    color: white !important;
+  }
+  #topbarr{
+    display: none;
+  }
+  #barMenu{
+    display: none;
+  }
+
+
+
+
+}
 
 
 
