@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AllservicesService } from 'src/app/service/all-services-rest.service';
 import { ViewChild, ElementRef } from '@angular/core';
 import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment.development';
 
 
 @Component({
@@ -10,6 +11,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./dahras-ad-sup.component.css']
 })
 export class DahrasAdSupComponent implements OnInit {
+dahraData: any;
   getImageUrl(event: any) {
     console.warn(event.target.files[0]);
     this.uploadedImages = event.target.files[0] as File;
@@ -91,9 +93,14 @@ export class DahrasAdSupComponent implements OnInit {
   }
 
 
-  getImage(path: string): string {
-    return path.includes(".jpeg") || path.includes(".jpg") || path.includes(".png") ? path : "https://placehold.co/20x20";
-  }
+ getImage(path: string): string {
+  // console.log( 'jjlkl' , path);  
+    if (path.includes(".jpeg") || path.includes(".jpg") || path.includes(".png")) {
+        return `${environment.apiUrl}${path}` ;
+    } else {
+        return "https://placehold.co/20x20";
+    }
+}
 
 
 
@@ -132,16 +139,17 @@ addDahra() {
       this.loadDahrasList();
   
       // Naviguer vers la même page pour rafraîchir l'affichage (peut être facultatif)
-      this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+      this.router.navigateByUrl('/dahras-ad-sup', { skipLocationChange: true }).then(() => {
         this.router.navigate(['/dahras-ad-sup']);
       });
       this.hideModal();
     });
-  }
-  private hideModal(): void {
+}
+
+private hideModal(): void {
     const modal: any = this.modalElement.nativeElement;
     modal.hide();
-  }
+}
 
 
 
@@ -196,5 +204,14 @@ addDahra() {
     });
   }
 
+
+  // modifierDahra(dahraData: any) {
+  //   // Appelez la méthode put de votre service allservicesrest
+  //   this.allservicesService.put('/modifier-dahra-admin/{id}', dahraData , (response: any) => {
+  //       // Gérer la réponse du serveur (message de succès ou d'erreur)
+  //       console.log(response);
+  //     },
+      
+  // )}
   
 }

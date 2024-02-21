@@ -55,8 +55,14 @@
               "optimization": false,
               "vendorChunk": true,
               "extractLicenses": false,
-              "sourceMap": true,
-              "namedChunks": true
+              "sourceMap": true,  
+              "namedChunks": true,
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.development.ts"
+                }
+              ]
             }
           },
           "defaultConfiguration": "production"
@@ -99,6 +105,14 @@
         }
       }
     }
+  },
+  "build": {
+    "builder": "@angular-devkit/build-angular:browser",
+    "options": {
+       "allowedCommonJsDependencies": [
+          "lodash"
+       ]
+     }
   },
   "cli": {
     "analytics": "a80649a1-886c-4a54-9ec3-a8166e60fae3"

@@ -17,7 +17,6 @@ export class DonsUserComponent {
   descriptionDon: any;
   adresseProvenance: any;
   date: any;
-  statut: any;
   typeDon: any;
 
   don: any = {
@@ -38,7 +37,6 @@ export class DonsUserComponent {
 
   faireDonation() {
     this.don = {
-    statut: this.statut,
     disponibiliteDon: this.disponibiliteDon,
     descriptionDon: this.descriptionDon,
     adresseProvenance:this.adresseProvenance,
@@ -52,7 +50,6 @@ export class DonsUserComponent {
     console.log(' descriptionDon:', this.descriptionDon);
     console.log('adresseProvenance:', this.adresseProvenance);
     console.log('Date:', this.date);
-    console.log('statut:', this.statut);
     console.log('typeDon:', this.typeDon);
     
 

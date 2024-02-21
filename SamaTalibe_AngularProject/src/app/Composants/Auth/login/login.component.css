@@ -1,11 +1,19 @@
 .content{
-  background: linear-gradient(0deg, #2f315a59,#2f315a59), url("../../../../assets/authbcg.jpg");
+  background: linear-gradient(0deg, #2f315a00,#2f315a00), url("../../../../assets/authbcg.jpg");
   /* height: 80vh; */
   background-size: cover;
   background-repeat: no-repeat;
   margin: 0;
   width: 100%;
   background-position: center;
+  border: 1px solid #C2A966;
+  border-radius: 5px; 
+  width: 70%;
+  margin: 0 auto;
+}
+.form-container {
+  margin: 0 auto; 
+  width: 550px !important;
 }
 #logoform{
   width: 70%;

@@ -49,7 +49,7 @@ export class RolesAdSupComponent implements OnInit {
   }
   
   loadUsers() {
-    this.service.get('/users', (reponse: any) => {
+    this.service.get('/liste-roles', (reponse: any) => {
       console.log(reponse);
      this.users = reponse;
      console.log(this.users);

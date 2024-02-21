@@ -4,7 +4,20 @@
 <main>
 
          <!-- Modal -->
-         <div class="modal fade mt-5" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+         <div class="modal fade mt-5" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" style="margin: 0 auto;">
+            <div class="modal-content p-5">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" style="margin: 0 auto; color: #252649;" id="exampleModalLabel">Authentifiez-vous d'abord</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+                 <button type="button" class="btn" style="background-color: #252649; color: #C2A966; border: none; box-shadow:1px 1px 1px 1px #C2A966; font-weight: bold;" routerLink="/login">Connexion</button>
+            </div>
+          </div>
+        </div>
+
+         <!-- Modal -->
+         <div class="modal fade mt-5" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog" style="margin: 0 auto;">
             <div class="modal-content p-5">
               <div class="modal-header">
@@ -25,7 +38,7 @@
         <p style="color: white;font-weight: bold;width: 70%; font-size: 40px; margin-top: 20%;">Les conditions de vie de ces jeunes talibés au sein des dahras nous préoccupent</p>
       </div>
     </div>
-</section>
+  </section>
 
 
       <div class="container mt-5">
@@ -110,9 +123,9 @@
                     <div class="col-lg-6 px-0 py-2" style="color: #C2A966; margin: 0 auto;">
                       <p class="lead fs-1 fw-bold text-white">Vous pouvez aussi en faire partie</p>
                       <div class="row"  style="color: white">
-                          <div class="container col-md-3"><a class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" style="color: #C2A966; background-color: #252649; padding: 12px; font-weight: bold; border: none; font-size: 15px">Faire un don</a></div>
+                          <div class="container col-md-3"><a class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal1" style="color: #C2A966; background-color: #252649; padding: 12px; font-weight: bold; border: none; font-size: 15px">Faire un don</a></div>
                           <div class="container col-md-1 mt-2" style="margin: 0 auto;"><h3>OU</h3></div>
-                          <div class="container col-md-3"><a class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" style="color: #C2A966; background-color: #252649; padding: 12px; font-weight: bold; border: none;width: 140px; font-size: 15px">Parrainer</a></div>
+                          <div class="container col-md-3"><a class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal2" style="color: #C2A966; background-color: #252649; padding: 12px; font-weight: bold; border: none;width: 140px; font-size: 15px">Parrainer</a></div>
                       </div>
                     </div>
                   </div>

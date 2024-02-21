@@ -292,20 +292,16 @@
                   <div class="col-md-6 mb-3 pe-3">
                     <label for="exampleFormControlInput1" style="color: #C2A966;" class="form-label">Situation:</label>
                     <input name="situation" type="text" #origine placeholder="Adresse"  style="height: 40px;border: 1px solid #C2A966; box-shadow:1px 1px 1px #C2A966;" class="form-control" id="exampleFormControlInput1" [(ngModel)]="talibe.situation">
-                  </div>
+                  </div> 
                   <div class="col-md-6 mb-3 ps-3">
-                    <label for="exampleFormControlInput1" style="color: #C2A966;" class="form-label">Présence:</label>
-                    <input name="text" type="text" #situation placeholder="Situation" style="height: 40px;border: 1px solid #C2A966; box-shadow:1px 1px 1px #C2A966;" class="form-control" id="exampleFormControlInput1" [(ngModel)]="talibe.presencetalibe">
+                    <label for="exampleFormControlInput1" style="color: #C2A966;" class="form-label">Date d'arrivée:</label>
+                    <input name="datearrivetalibe" type="text" #dateArrivee placeholder="Date d'arrivée" style="height: 40px;border: 1px solid #C2A966; box-shadow:1px 1px 1px #C2A966;" class="form-control" id="exampleFormControlInput1" [(ngModel)]="talibe.datearrivetalibe">
                   </div>
                </div>
                <div class="row">
-                <div class="col-md-6 mb-3 pe-3">
-                  <label for="exampleFormControlInput1" style="color: #C2A966;" class="form-label">Date d'arrivée:</label>
-                  <input name="datearrivetalibe" type="text" #dateArrivee placeholder="Date d'arrivée" style="height: 40px;border: 1px solid #C2A966; box-shadow:1px 1px 1px #C2A966;" class="form-control" id="exampleFormControlInput1" [(ngModel)]="talibe.datearrivetalibe">
-                </div>
-                <div class="col-md-6 mb-3 ps-3">
+                <div class="col-md-12 mb-3 pe-3">
                   <label for="exampleFormControlInput1" style="color: #C2A966;" class="form-label">Description:</label>
-                  <textarea name="description" #description placeholder="Description" style="height: 40px;border: 1px solid #C2A966; box-shadow:1px 1px 1px #C2A966;" class="form-control" [(ngModel)]="talibe.description" id="exampleFormControlInput1"  cols="30" rows="10"></textarea>
+                  <textarea name="description" #description placeholder="Description" style=" width: 685px !important; height: 60px;border: 1px solid #C2A966; box-shadow:1px 1px 1px #C2A966;" class="form-control" [(ngModel)]="talibe.description" id="exampleFormControlInput1"  cols="30" rows="10"></textarea>
                 </div>
              </div>
              <div class="row">
@@ -316,7 +312,7 @@
            </div>
             </div>
             <div class="modal-footer">
-              <button  type="submit" (click)="addTalibe()" class="btn btn-secondary" data-bs-dismiss="modal">Ajouter</button>
+              <button  type="submit" (click)="addTalibe()" class="btn btn-secondary" style="font-size: 15px;" data-bs-dismiss="modal">Ajouter</button>
             </div>
           </div>
         </div>

@@ -1,5 +1,31 @@
 <app-header></app-header>
 <main>
+
+    <!-- Modal -->
+    <div class="modal fade mt-5" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" style="margin: 0 auto;">
+        <div class="modal-content p-5">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" style="margin: 0 auto; color: #252649;" id="exampleModalLabel">Authentifiez-vous d'abord</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+             <button type="button" class="btn" style="background-color: #252649; color: #C2A966; border: none; box-shadow:1px 1px 1px 1px #C2A966; font-weight: bold;" routerLink="/login">Connexion</button>
+        </div>
+      </div>
+    </div>
+
+     <!-- Modal -->
+     <div class="modal fade mt-5" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" style="margin: 0 auto;">
+        <div class="modal-content p-5">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" style="margin: 0 auto; color: #252649;" id="exampleModalLabel">Authentifiez-vous d'abord</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+             <button type="button" class="btn" style="background-color: #252649; color: #C2A966; border: none; box-shadow:1px 1px 1px 1px #C2A966; font-weight: bold;" routerLink="/login">Connexion</button>
+        </div>
+      </div>
+    </div>
     
   <section class="banniere" style="margin-top: 160px;">
     <div class="banner-container">
@@ -42,45 +68,7 @@
                           <div class="col-md-6 mt-3">
                               <a class="btn me-3" routerLink="/talibes" style="width: 100px; font-size: 12px; background-color: #252649;color: #C2A966;box-shadow:2px 2px 2px 2px #C2A966; font-weight: bold;"> <i class="bi bi-eye-fill" style="color: #C2A966; margin-right: 10px; font-weight: bold;"></i>Voir plus</a>
                           
-                                <!-- Modal -->
-                                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog">
-                                    <div class="modal-content" style="background-color: #C2A966 !important;">
-                                        <div class="modal-header">
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <h1 class="text-center"  style="color: #252649;">{{ dahra.nom }}</h1>
-                                            <div class="mb-3 row" style="color: #252649; font-weight: bold;">
-                                                <div class="col-md-6">
-                                                    <img src="assets/dahras/Imgcarte1.jpg" id="détailImg" alt="">
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <p>Nom et prénom Oustaz:{{ dahra.nomOuztas }}</p>
-                                                    <hr>
-                                                    <p>Région: {{ dahra.region }}</p>
-                                                    <hr>
-                                                    <p>Adresse: {{ dahra.adresse }}</p>
-                                                    <hr>
-                                                </div>
-                                            </div>
-                                            <div class="mb-3">
-                                                <p>Contact: {{ dahra.numeroTelephoneOuztas }}</p>
-                                                <hr>
-                                                <p>Description:</p>
-                                                <hr>
-                                                <hr>
-                                                <hr>
-                                                <hr>
-                                            </div>
-                                        </div>
-                                        <div class="modal-footer d-flex justify-content-between">
-                                        <button type="button" class="btn btn-secondary" routerLink="/talibes" data-bs-dismiss="modal" style="background-color: #252649;color: #C2A966;font-weight: bold; box-shadow:2px 2px 2px 2px #C2A966;"> <i class="bi bi-eye-fill" style="color: #C2A966; margin-right: 10px; font-weight: bold;"></i>567 apprenants</button>
-                                        <button type="button" class="btn btn-primary" style="background-color: #252649; color: #C2A966; font-weight: bold; border: none;">Faire un don</button>
-                                        </div>
-                                    </div>
-                                    </div>
-                                </div>
+                               
                         </div>
   
 

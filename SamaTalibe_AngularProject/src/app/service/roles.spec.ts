@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { AllservicesService } from '../app/service/all-services-rest.service';
+import { AllservicesService } from './all-services-rest.service';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 

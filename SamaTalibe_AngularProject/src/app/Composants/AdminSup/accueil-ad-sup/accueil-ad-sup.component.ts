@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { AllservicesService } from 'src/app/service/all-services-rest.service';
+import * as ApexCharts from 'apexcharts';
+
 
 @Component({
   templateUrl: './accueil-ad-sup.component.html',
@@ -17,18 +19,80 @@ export class AccueilAdSupComponent{
 
   ngOnInit(): void {
     this.getAllDahras();
+
+    var options = {
+      series: [{
+      name: 'Mendicité',
+      data: [44, 55, 57, 56, 61, 58, 63, 60, 66],
+      color: '#008FFB',
+      
+    }, {
+      name: 'Talibé',
+      data: [76, 85, 101, 98, 87, 105, 91, 114, 94],
+      color:'#00E396',
+    }],
+      chart: {
+      type: 'bar',
+      height: 250
+    
+    },
+    plotOptions: {
+      bar: {
+        horizontal: false,
+        columnWidth: '55%',
+        endingShape: '#00E396',
+        background: '#00E396'
+      },
+    },
+    dataLabels: {
+      enabled: false
+    },
+    stroke: {
+      show: true,
+      width: 2,
+      colors: ['transparent']
+    },
+    xaxis: {
+      categories: ['Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct'],
+    },
+    yaxis: {
+      title: {
+        text: ' (percent)'
+      }
+    },
+    fill: {
+      opacity: 1
+    },
+    tooltip: {
+      y: {
+        formatter: function (val: string) {
+          return val + " percent"
+        }
+      }
+    },
+    
+    };
+
+    var chart = new ApexCharts(document.querySelector("#chart"), options);
+    chart.render();
   }
 
   getAllDahras() {
     this.allservicesService.get('/lister-dahra', (response: any) => {
       this.dahras = response; 
       this.setPage(this.currentPage); // Mettre à jour la pagination une fois que les données sont récupérées
+      console.log(this.dahras);
+      
     });
   }
 
-  getImage(path: string): string {
-    return path.includes(".jpeg") || path.includes(".jpg") || path.includes(".png") ? path : "https://placehold.co/20x20";
-  }
+getImage(path: string): string {
+    if (path && (path.includes(".jpeg") || path.includes(".jpg") || path.includes(".png"))) {
+        return path;
+    } else {
+        return "https://placehold.co/20x20";
+    }
+}
 
 paginatePerPage(page: number, pageSize: number, data: any[]): any[] {
     if (!page) {

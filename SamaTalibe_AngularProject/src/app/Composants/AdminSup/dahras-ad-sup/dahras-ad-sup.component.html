@@ -100,7 +100,7 @@
                   </thead>
                   <tbody>
                     <tr *ngFor="let dahra of dahrasList | paginate:{ itemsPerPage:itemsPerPage, currentPage:currentPage , totalItems:dahras.length}" style="height: 60px; margin-top: 20px !important;">
-                      <td class="ps-5"> <img [src]="getImage(dahra.imageFilename)" id="admindatable" alt=""></td>
+                      <td class="ps-5"> <img [src]="getImage(dahra.image)" id="admindatable" alt=""></td>
                       <td>{{ dahra.nom }}</td>
                       <td>{{ dahra.nomOuztas }}</td>
                       <td>{{ dahra.region }}</td>
@@ -239,7 +239,7 @@
    </div>
   
     <!-- Modal 2-->
-    <div  class="modal fade" style="" id="staticBackdrop2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <!-- <div  class="modal fade" style="" id="staticBackdrop2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
       <div class="modal-dialog mt-5" style="margin: 0 auto;">
         <div class="modal-content" style="padding: 40px;  width: 800px;">
           <div class="modal-header">
@@ -250,46 +250,46 @@
                <div class="row">
                   <div class="col-md-6 mb-3 pe-3">
                     <label for="exampleFormControlInput1" style="color: #C2A966;" class="form-label">Nom Dahra:</label>
-                    <input type="name" style="height: 40px;border: 1px solid #C2A966; box-shadow:1px 1px 1px #C2A966;" class="form-control" id="exampleFormControlInput1" >
+                    <input type="name"  [(ngModel)]="dahraData.nomDahra" style="height: 40px;border: 1px solid #C2A966; box-shadow:1px 1px 1px #C2A966;" class="form-control" id="exampleFormControlInput1" >
                   </div>
                   <div class="col-md-6 mb-3 ps-3">
                     <label for="exampleFormControlInput1" style="color: #C2A966;" class="form-label">Nom Ouztas:</label>
-                    <input type="name" style="height: 40px;border: 1px solid #C2A966; box-shadow:1px 1px 1px #C2A966;" class="form-control" id="exampleFormControlInput1" >
+                    <input type="name"  [(ngModel)]="dahraData.nomOuztas" style="height: 40px;border: 1px solid #C2A966; box-shadow:1px 1px 1px #C2A966;" class="form-control" id="exampleFormControlInput1" >
                   </div>
                </div>
                <div class="row">
                 <div class="col-md-6 mb-3 pe-3">
                   <label for="exampleFormControlInput1" style="color: #C2A966;" class="form-label">Region:</label>
-                  <input type="text" style="height: 40px;border: 1px solid #C2A966; box-shadow:1px 1px 1px #C2A966;" class="form-control" id="exampleFormControlInput1" >
+                  <input type="text"  [(ngModel)]="dahraData.region" style="height: 40px;border: 1px solid #C2A966; box-shadow:1px 1px 1px #C2A966;" class="form-control" id="exampleFormControlInput1" >
                 </div>
                 <div class="col-md-6 mb-3 ps-3">
                   <label for="exampleFormControlInput1" style="color: #C2A966;" class="form-label">Adresse:</label>
-                  <input type="text" style="height: 40px;border: 1px solid #C2A966; box-shadow:1px 1px 1px #C2A966;" class="form-control" id="exampleFormControlInput1" >
+                  <input type="text"  [(ngModel)]="dahraData.adresse" style="height: 40px;border: 1px solid #C2A966; box-shadow:1px 1px 1px #C2A966;" class="form-control" id="exampleFormControlInput1" >
                 </div>
              </div>
              <div class="row">
               <div class="col-md-6 mb-3 pe-3">
                 <label for="exampleFormControlInput1" style="color: #C2A966;" class="form-label">Nombre Talibes:</label>
-                <input type="text" style="height: 40px;border: 1px solid #C2A966; box-shadow:1px 1px 1px #C2A966;" class="form-control" id="exampleFormControlInput1" >
+                <input type="text"  [(ngModel)]="dahraData.nombreTalibe" style="height: 40px;border: 1px solid #C2A966; box-shadow:1px 1px 1px #C2A966;" class="form-control" id="exampleFormControlInput1" >
               </div>
               <div class="col-md-6 mb-3 ps-3">
                 <label for="exampleFormControlInput1" style="color: #C2A966;" class="form-label">Numéro Ouztas:</label>
-                <textarea name="text" style="height: 40px;border: 1px solid #C2A966; box-shadow:1px 1px 1px #C2A966;" class="form-control" id="exampleFormControlInput1"  cols="30" rows="10"></textarea>
+                <textarea name="text"  [(ngModel)]="dahraData.numeroTelephoneOuztas" style="height: 40px;border: 1px solid #C2A966; box-shadow:1px 1px 1px #C2A966;" class="form-control" id="exampleFormControlInput1"  cols="30" rows="10"></textarea>
               </div>
            </div>
            <div class="row">
             <div col-md-12>
               <label for="formFileLg" style="color: #C2A966;" class="form-label" class="form-label">Numero Dahra</label>
-              <input class="form-control form-control-lg" style="height: 40px;border: 1px solid #C2A966; box-shadow:1px 1px 1px #C2A966;" id="formFileLg" type="file">
+              <input class="form-control form-control-lg"  [(ngModel)]="dahraData.numeroTelephone" style="height: 40px;border: 1px solid #C2A966; box-shadow:1px 1px 1px #C2A966;" id="formFileLg" type="file">
             </div>
          </div>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" routerLink="/dashmaitre" data-bs-dismiss="modal">Modifier</button>
+            <button type="button" (click)="modifierDahra(dahraData)" class="btn btn-secondary" routerLink="/dashmaitre" data-bs-dismiss="modal">Modifier</button>
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
 
 
 </body>

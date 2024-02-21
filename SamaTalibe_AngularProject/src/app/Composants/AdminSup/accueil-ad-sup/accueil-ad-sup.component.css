@@ -9,6 +9,15 @@
 .nav-item a i{
   width: 30%;
 }
+
+
+#chart{
+  margin:0 auto !important;
+  width: 80%;
+}
+
+
+
 .btn{
   background-color: #252649;
   box-shadow: 1px 1px 1px 1px #C2A966 !important;
