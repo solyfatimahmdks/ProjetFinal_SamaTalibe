@@ -1,8 +1,10 @@
 import { NgIfContext } from '@angular/common';
 import { Component, TemplateRef } from '@angular/core';
 import { Router } from '@angular/router';
+import { timer } from 'rxjs';
 import { TOKEN_KEY } from 'src/app/constants/constant';
 import { AuthService } from 'src/app/service/auth-service.service';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 // import Swal from 'sweetalert2';
 import Swal from 'sweetalert2';
 
@@ -18,6 +20,11 @@ regions: string[] = ["Dakar", "Kaolack", "Saint-louis",
 ];
 selectedImage: File | null = null;
 selectedRegion: string = "";
+
+
+
+
+
 getLoginLogin(choice: string) {
   this.isLoginFormVisible = choice;
 }
@@ -73,8 +80,13 @@ getLoginLogin(choice: string) {
     event.preventDefault();
   }
 
-  constructor(private route: Router, private authService: AuthService) {}
-  ngOnInit() {}
+  constructor(private route: Router, private authService: AuthService ) {
+
+  }
+
+  ngOnInit() {
+      
+  }
   user: any = {
     name: '',
     firstname: '',
@@ -119,6 +131,7 @@ getLoginLogin(choice: string) {
       icon: icon,
       title: titre,
       text: texte,
+      timer:1000
     });
   }
 
@@ -293,4 +306,8 @@ SignupDahra() {
     }
   );
 }
+
+
+
+
 }

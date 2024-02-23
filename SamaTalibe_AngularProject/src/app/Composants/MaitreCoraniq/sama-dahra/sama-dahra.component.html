@@ -55,30 +55,28 @@
             <!-- Main Content -->
             <div id="content">
   
-                <!-- Topbar -->
-                <nav class="p-3 navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow"style="height: 70px; background-color: white; border-bottom: 1px solid #252649; border-right: 1px solid #252649;">
-                  <div class="container-fluid"> 
-                    <div class="d-flex justify-content-between collapse navbar-collapse" id="navbarsExample02">
-                      <form role="search">
-                        <input class="form-control p-2" style="border-radius: 17px; box-shadow: 1px 1px 1px #252649; " type="search" placeholder="Rechercher..." aria-label="Search">
-                      </form>
-                      <div class="dropdown me-3">
-                          <a href="#" class="d-flex align-items-center link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                            <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
-                            <strong>Maitre</strong>
-                          </a>
-                          <ul class="dropdown-menu text-small shadow">
-                            <li><a class="dropdown-item" href="#">New project...</a></li>
-                            <li><a class="dropdown-item" href="#">Settings</a></li>
-                            <li><a class="dropdown-item" href="#">Profile</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="#">Sign out</a></li>
-                          </ul>
-                      </div>
+              <!-- Topbar -->
+              <nav class="p-3 navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow"style="height: 70px; background-color: white; border-bottom: 1px solid #252649; border-right: 1px solid #252649;">
+                <div class="container-fluid"> 
+                  <div class="d-flex justify-content-between collapse navbar-collapse" id="navbarsExample02">
+                    <div class="fs-1 fw-bold" style="color: #252649;"><i class="bi bi-list"></i>Sama dahra</div>
+                    <div class="dropdown me-3">
+                        <a href="#" class="d-flex align-items-center link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                          <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
+                          <strong>Admin</strong>
+                        </a>
+                        <ul class="dropdown-menu text-small shadow">
+                          <li><a class="dropdown-item" href="#">New project...</a></li>
+                          <li><a class="dropdown-item" href="#">Settings</a></li>
+                          <li><a class="dropdown-item" href="#">Profile</a></li>
+                          <li><hr class="dropdown-divider"></li>
+                          <li><a class="dropdown-item" href="#">Sign out</a></li>
+                        </ul>
                     </div>
-                  </div> 
-                </nav>
-                <!-- End of Topbar -->
+                  </div>
+                </div> 
+              </nav>
+              <!-- End of Topbar -->
                 <div *ngIf="showListTalib; else showListTalibArchiv" class="listTalib">
                   <div class="mt-3 d-flex justify-content-between ">
                     <button type="button" class="nav-link ps-5 btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop1" style="background-color: #252649; cursor: pointer; height: 50px; color: #C2A966;box-shadow:1px 1px 1px #C2A966; font-size: 15px; font-weight: bold;padding-right: 50px ;">
@@ -95,9 +93,9 @@
                               <thead>
                                 <tr class="">
                                   <th scope="col" style="color: white; background-color: #C2A966;width: 15%;" class="ps-5">Image</th>
-                                  <th scope="col" style="color: white; background-color: #C2A966; width: 20%;">Nom du dahra</th>
+                                  <th scope="col" style="color: white; background-color: #C2A966; width: 20%;">Nom et Prénom</th>
                                   <th scope="col" style="color: white; background-color: #C2A966;width: 20%;">Fondateur</th>
-                                  <th scope="col" style="color: white; background-color: #C2A966;width: 10%;">Lieu</th>
+                                  <th scope="col" style="color: white; background-color: #C2A966;width: 10%;">Age</th>
                                   <th scope="col" style="color: white; padding-left: 60px; background-color: #C2A966;width: 15%;">Action</th>
              
                                 </tr>
@@ -105,12 +103,12 @@
                               <tbody>
                                 <tr *ngFor="let talibe of talibesList" style="height: 40px; margin-top: 20px !important;">
                                   <td class="ps-5"><img [src]="getImage(talibe.imageFilename)" style="height: 40px;" id="admindatable" alt=""></td>
-                                  <td>{{ talibe?.nom }}</td>
+                                  <td>{{ talibe?.nom }} {{ talibe?.prenom }}</td>
                                   <td>{{ talibe?.adresse }}</td>
                                   <td>{{ talibe?.age}}</td>
                                   <td style="padding: 20px;">
-                                    <i class="bi bi-pencil-square btn6"  data-bs-toggle="modal" data-bs-target="#staticBackdrop2" style="margin: 10px !important; background-color: #252649;border-radius: 5px; box-shadow: 1px 1px 1px #C2A966;cursor: pointer; font-size: 12px;padding: 5px; color: white;"></i>
-                                    <i class="bi bi-trash3-fill"  style="background-color: #252649;border-radius: 5px; box-shadow: 1px 1px 1px #C2A966;margin: 10px !important; cursor: pointer; font-size: 12px;padding: 5px; color: white;"></i>
+                                    <i class="bi bi-pencil-square btn6" (click)="editTalibe(talibe)"  data-bs-toggle="modal" data-bs-target="#staticBackdrop2" style="margin: 10px !important; background-color: #252649;border-radius: 5px; box-shadow: 1px 1px 1px #C2A966;cursor: pointer; font-size: 12px;padding: 5px; color: white;"></i>
+                                    <i class="bi bi-trash3-fill" (click)="archiveTalibe(talibe)" style="background-color: #252649;border-radius: 5px; box-shadow: 1px 1px 1px #C2A966;margin: 10px !important; cursor: pointer; font-size: 12px;padding: 5px; color: white;"></i>
                                     <i class="bi bi-eye-fill btn3"   data-bs-toggle="modal" data-bs-target="#exampleModal" style="background-color: #252649;border-radius: 5px;margin: 10px !important; box-shadow: 1px 1px 1px #C2A966;cursor: pointer; font-size: 12px;padding: 5px; color: white;"></i>
                                   </td>
                                 </tr>
@@ -219,42 +217,49 @@
                <div class="row">
                   <div class="col-md-6 mb-3 pe-3">
                     <label for="exampleFormControlInput1" style="color: #C2A966;" class="form-label">Nom:</label>
-                    <input type="name"  style="height: 40px;border: 1px solid #C2A966; box-shadow:1px 1px 1px #C2A966;" class="form-control" id="exampleFormControlInput1" >
+                    <input name="nom" type="name" #nom placeholder="Nom"  style="height: 40px;border: 1px solid #C2A966; box-shadow:1px 1px 1px #C2A966;" class="form-control" id="exampleFormControlInput1" [(ngModel)]="talibe.nom" >
                   </div>
                   <div class="col-md-6 mb-3 ps-3">
                     <label for="exampleFormControlInput1" style="color: #C2A966;" class="form-label">Prénom:</label>
-                    <input type="name" style="height: 40px;border: 1px solid #C2A966; box-shadow:1px 1px 1px #C2A966;" class="form-control" id="exampleFormControlInput1" >
+                    <input name="prenom" type="name"  #prenom placeholder="Prénom" style="height: 40px;border: 1px solid #C2A966; box-shadow:1px 1px 1px #C2A966;" class="form-control" id="exampleFormControlInput1" [(ngModel)]="talibe.prenom">
                   </div>
                </div>
                <div class="row">
                 <div class="col-md-6 mb-3 pe-3">
-                  <label for="exampleFormControlInput1" style="color: #C2A966;" class="form-label">Origine:</label>
-                  <input type="text"  style="height: 40px;border: 1px solid #C2A966; box-shadow:1px 1px 1px #C2A966;" class="form-control" id="exampleFormControlInput1" >
+                  <label for="exampleFormControlInput1" style="color: #C2A966;" class="form-label">Age:</label>
+                  <input name="age" type="number" #origine placeholder="Age"  style="height: 40px;border: 1px solid #C2A966; box-shadow:1px 1px 1px #C2A966;" class="form-control" id="exampleFormControlInput1" [(ngModel)]="talibe.age">
                 </div>
                 <div class="col-md-6 mb-3 ps-3">
+                  <label for="exampleFormControlInput1" style="color: #C2A966;" class="form-label">Adresse:</label>
+                  <input name="text" type="presencetalibe" #situation placeholder="Présence Talibé" style="height: 40px;border: 1px solid #C2A966; box-shadow:1px 1px 1px #C2A966;" class="form-control" id="exampleFormControlInput1" [(ngModel)]="talibe.adresse">
+                </div>
+             </div>
+               <div class="row">
+                <div class="col-md-6 mb-3 pe-3">
                   <label for="exampleFormControlInput1" style="color: #C2A966;" class="form-label">Situation:</label>
-                  <input type="text"  style="height: 40px;border: 1px solid #C2A966; box-shadow:1px 1px 1px #C2A966;" class="form-control" id="exampleFormControlInput1" >
+                  <input name="situation" type="text" #origine placeholder="Adresse"  style="height: 40px;border: 1px solid #C2A966; box-shadow:1px 1px 1px #C2A966;" class="form-control" id="exampleFormControlInput1" [(ngModel)]="talibe.situation">
+                </div> 
+                <div class="col-md-6 mb-3 ps-3">
+                  <label for="exampleFormControlInput1" style="color: #C2A966;" class="form-label">Date d'arrivée:</label>
+                  <input name="datearrivetalibe" type="text" #dateArrivee placeholder="Date d'arrivée" style="height: 40px;border: 1px solid #C2A966; box-shadow:1px 1px 1px #C2A966;" class="form-control" id="exampleFormControlInput1" [(ngModel)]="talibe.datearrivetalibe">
                 </div>
              </div>
              <div class="row">
-              <div class="col-md-6 mb-3 pe-3">
-                <label for="exampleFormControlInput1" style="color: #C2A966;" class="form-label">Date d'arrivée:</label>
-                <input type="text" style="height: 40px;border: 1px solid #C2A966; box-shadow:1px 1px 1px #C2A966;" class="form-control" id="exampleFormControlInput1" >
-              </div>
-              <div class="col-md-6 mb-3 ps-3">
+              <div class="col-md-12 mb-3 pe-3">
                 <label for="exampleFormControlInput1" style="color: #C2A966;" class="form-label">Description:</label>
-                <textarea name="text" style="height: 40px;border: 1px solid #C2A966; box-shadow:1px 1px 1px #C2A966;" class="form-control" id="exampleFormControlInput1"  cols="30" rows="10"></textarea>
+                <textarea name="description" #description placeholder="Description" style=" width: 685px !important; height: 60px;border: 1px solid #C2A966; box-shadow:1px 1px 1px #C2A966;" class="form-control" [(ngModel)]="talibe.description" id="exampleFormControlInput1"  cols="30" rows="10"></textarea>
               </div>
            </div>
            <div class="row">
-            <div col-md-12>
-              <label for="formFileLg" style="color: #C2A966;" class="form-label" class="form-label">Image</label>
-              <input class="form-control form-control-lg" style="height: 40px;border: 1px solid #C2A966; box-shadow:1px 1px 1px #C2A966;" id="formFileLg" type="file">
+            <div>
+              <label for="formFileLg" class="form-label">Image:</label>
+              <input class="form-control form-control-lg" id="formFileLg" type="file" (change)="getImageUrl($event)">
             </div>
          </div>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" routerLink="/dashmaitre" data-bs-dismiss="modal">Modifier</button>
+            <button type="button" (click)="cancelEdit()" class="btn btn-secondary" routerLink="/dashmaitre" data-bs-dismiss="modal">Annuler</button>
           </div>
         </div>
       </div>

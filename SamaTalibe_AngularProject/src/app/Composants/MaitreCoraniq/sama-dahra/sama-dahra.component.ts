@@ -1,6 +1,7 @@
 
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { AllservicesService } from 'src/app/service/all-services-rest.service';
+import { environment } from 'src/environments/environment.development';
 
 
 @Component({
@@ -10,6 +11,9 @@ import { AllservicesService } from 'src/app/service/all-services-rest.service';
 })
 // N'oubliez pas d'ajouter 'export' devant la classe
 export class SamaDahraComponent  implements OnInit{
+cancelEdit() {
+throw new Error('Method not implemented.');
+}
   showListTalib = true;
   showListTalibArchiv = false;
   @ViewChild('modalElement') modalElement!: ElementRef;
@@ -48,7 +52,12 @@ export class SamaDahraComponent  implements OnInit{
   }
 
   getImage(path: string): string {
-    return path.includes(".jpeg") || path.includes(".jpg") || path.includes(".png") ? path : "https://placehold.co/20x20";
+    // console.log( 'jjlkl' , path);  
+      if (path.includes(".jpeg") || path.includes(".jpg") || path.includes(".png")) {
+          return `${environment.apiUrl}${path}` ;
+      } else {
+          return "https://placehold.co/20x20";
+      }
   }
   addTalibe() {
     // Créer un nouvel objet FormData
@@ -62,31 +71,30 @@ export class SamaDahraComponent  implements OnInit{
     formData.append('adresse', this.talibe.adresse);
     formData.append('situation', this.talibe.situation);
     formData.append('description', this.talibe.description);
-    formData.append('dateArriveTalibe', this.talibe.datearrivetalibe);
-    formData.append('presenceTalibe', this.talibe.presencetalibe);
+    formData.append('datearrivetalibe', this.talibe.datearrivetalibe);
 
-    // console.log('imageFile:', this.uploadedImages);
-    // console.log('nom:', this.talibe.nom);
-    // console.log('prenom:', this.talibe.prenom);
-    // console.log('age:', this.talibe.age);
-    // console.log('adresse:', this.talibe.adresse);
-    // console.log('situation:', this.talibe.situation);
-    // console.log('description:', this.talibe.description);
-    // console.log('datearrivetalibe:', this.talibe.datearrivetalibe);
-    // console.log('presencetalibe:', this.talibe.presencetalibe);
+    console.log('imageFile:', this.uploadedImages);
+    console.log('nom:', this.talibe.nom);
+    console.log('prenom:', this.talibe.prenom);
+    console.log('age:', this.talibe.age);
+    console.log('adresse:', this.talibe.adresse);
+    console.log('situation:', this.talibe.situation);
+    console.log('description:', this.talibe.description);
+    console.log('datearrivetalibe:', this.talibe.datearrivetalibe);
 
     // Envoyer les données à votre service
     this.service.post('/inscrire/add-talibe', formData, (response: any) => {
-      console.log("reponse = ",response);
+      console.log("testing",response);
       // Vous pouvez gérer la réponse ici, par exemple, afficher un message de succès
       this.service.message('Succès', 'success', 'Dahra ajouté avec succès');
   
-      // this.loadTalibeList();
+      this.loadTalibesList();
   
       // Naviguer vers la même page pour rafraîchir l'affichage (peut être facultatif)
       this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
-        this.router.navigate(['/dahras-ad-sup']);
+        this.router.navigate(['/samadahra']);
       });
+
       this.hideModal();
     });
   }
@@ -94,4 +102,40 @@ export class SamaDahraComponent  implements OnInit{
     const modal: any = this.modalElement.nativeElement;
     modal.hide();
   }
+
+
+  editTalibe(talibe: any) {
+        // Pré-remplir les champs du formulaire avec les informations du talibé
+        this.talibe = talibe;
+        // Afficher le popup de modification
+        const editModal = document.getElementById('editModal');
+        if (editModal) {
+            editModal.classList.add('show');
+        }
+  }
+
+  saveChanges() {
+    // Envoyer les modifications au backend
+    this.service.put('/modifier_info_talibe/{id}' + this.talibe.id, this.talibe, (response: any) => {
+        // Gérer la réponse du serveur
+        console.log('Modifications enregistrées avec succès.' , response);
+        // Cacher le popup de modification après l'enregistrement des modifications
+        const editModal = document.getElementById('editModal');
+        if (editModal) {
+            editModal.classList.remove('show');
+        }
+        // Actualiser la liste des talibés ou effectuer d'autres actions nécessaires
+        this.loadTalibesList();
+    });
+}
+
+
+archiveTalibe(talibe: any) {
+    this.service.put(`/archive-talibe/${talibe.id}`, {}, (response: any) => {
+        // Gérer la réponse du serveur
+        console.log('Talibé archivé avec succès.');
+        // Actualiser la liste des talibés pour refléter le changement
+        this.loadTalibesList();
+    });
+}
 }
