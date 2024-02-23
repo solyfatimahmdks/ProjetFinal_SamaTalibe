@@ -198,7 +198,7 @@
                     </thead>
                     <tbody>
                       <tr *ngFor="let dahra of dahras | paginate:{ itemsPerPage:itemsPerPage, currentPage:currentPage , totalItems:dahras.length}" style="height: 60px; margin-top: 20px !important;">
-                        <td class="ps-5"><img [src]="getImage(dahra.imageFilename)" id="admindatable" alt=""></td>
+                        <td class="ps-5"><img [src]="getImage(dahra.image)" id="admindatable" alt=""></td>
                         <td>{{ dahra.nom }}</td>
                         <td>{{ dahra.nomOuztas }}</td>
                         <td>{{ dahra.region }}</td>

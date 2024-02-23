@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { AllservicesService } from 'src/app/service/all-services-rest.service';
 import * as ApexCharts from 'apexcharts';
+import { environment } from 'src/environments/environment.development';
 
 
 @Component({
@@ -14,6 +15,7 @@ export class AccueilAdSupComponent{
   pagedDahras: any[] = []; // Les données à afficher sur une page
   currentPage = 1; // Page actuelle
   itemsPerPage = 3; 
+  uploadedImages: any;
   
   constructor(private allservicesService: AllservicesService) {}
 
@@ -86,13 +88,20 @@ export class AccueilAdSupComponent{
     });
   }
 
-getImage(path: string): string {
-    if (path && (path.includes(".jpeg") || path.includes(".jpg") || path.includes(".png"))) {
-        return path;
-    } else {
-        return "https://placehold.co/20x20";
-    }
-}
+  getImageUrl(event: any) {
+    console.warn(event.target.files[0]);
+    this.uploadedImages = event.target.files[0] as File;
+  }
+
+  getImage(path: string): string {
+    // console.log( 'jjlkl' , path);  
+      if (path.includes(".jpeg") || path.includes(".jpg") || path.includes(".png")) {
+          return `${environment.apiUrl}${path}` ;
+      } else {
+          return "https://placehold.co/20x20";
+      }
+  }
+  
 
 paginatePerPage(page: number, pageSize: number, data: any[]): any[] {
     if (!page) {

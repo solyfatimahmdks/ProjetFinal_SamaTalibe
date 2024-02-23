@@ -8,15 +8,9 @@ import { TOKEN_KEY } from '../constants/constant';
   providedIn: 'root',
 })
 export class AllservicesService implements OnInit {
-  modifierDahra(dahraData: any) {
-    throw new Error('Method not implemented.');
-  }
-  search(keyword: string) {
-    throw new Error('Method not implemented.');
-  }
-  unlockAndActivateDahra(id: number, arg1: (response: any) => void) {
-    throw new Error('Method not implemented.');
-  }
+
+
+
  
   private apiUrl = 'http://127.0.0.1:8000/api';
 
@@ -25,6 +19,8 @@ export class AllservicesService implements OnInit {
     throw new Error('Method not implemented.');
   }
 
+
+  
   post(path: string, dataToSend: any, onSuccess: Function) {
     const httpOptions = {
       headers: new HttpHeaders({

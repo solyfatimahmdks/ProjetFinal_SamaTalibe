@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AllservicesService } from 'src/app/service/all-services-rest.service';
+import { environment } from 'src/environments/environment.development';
 import Swal from 'sweetalert2';
 
 
@@ -9,6 +10,10 @@ import Swal from 'sweetalert2';
   styleUrls: ['./dash-user.component.css']
 })
 export class DashUserComponent {
+  selectedDahra: any;
+  searchQuery: string = '';
+
+
   dahras: any[] = []; 
   pagedDahras: any[] = []; // Les données à afficher sur une page
   currentPage = 1; // Page actuelle
@@ -18,6 +23,9 @@ export class DashUserComponent {
   showListTalib: boolean = false;
   isCheckboxChecked: boolean = false;
   router: any;
+  uploadedImages: any;
+  talibe: any;
+
 
   constructor(private service: AllservicesService) {}
 
@@ -25,8 +33,34 @@ export class DashUserComponent {
    this.loaddahras();
   }
 
+
+
+
+  getImageUrl(event: any) {
+    console.warn(event.target.files[0]);
+    this.uploadedImages = event.target.files[0] as File;
+  }
+
   getImage(path: string): string {
-    return path.includes(".jpeg") || path.includes(".jpg") || path.includes(".png") ? path : "https://placehold.co/20x20";
+    // console.log( 'jjlkl' , path);  
+      if (path?.includes(".jpeg") || path?.includes(".jpg") || path?.includes(".png")) {
+          return `${environment.apiUrl}${path}` ;
+      } else {
+          return "https://placehold.co/20x20";
+      }
+  }
+
+
+  searchDahras(): void {
+    if (this.searchQuery.trim() !== '') {
+      this.service.get('/recherche-dahra',(response:any) => {
+          this.dahras = response;
+        }
+      );
+    } else {
+      // Si la recherche est vide, chargez tous les dahras
+      this.loaddahras() ;
+    }
   }
 
   loaddahras() {
@@ -34,6 +68,31 @@ export class DashUserComponent {
       console.log('test', reponse);
       this.dahras=reponse;
     });
+}
+
+
+loadTalibes(dahraId: number) {
+  this.service.get(`/lister-apprenants/${dahraId}`, (reponse: any) => {
+    console.log('Liste des apprenants du dahra', reponse);
+    this.talibesList = reponse;
+  });
+}
+
+selectDahra(dahra: any) {
+  this.selectedDahra = dahra;
+}
+
+toggleList(section: string, dahraId?: number) {
+  if (section === 'dahra') {
+    this.showListDahra = true;
+    this.showListTalib = false;
+  } else if (section === 'talib') {
+    this.showListDahra = false;
+    this.showListTalib = true;
+    if (dahraId !== undefined) {
+      this.loadTalibes(dahraId);
+    }
+  }
 }
 
 paginatePerPage(page: number, pageSize: number, data: any[]): any[] {
@@ -61,16 +120,6 @@ setPage(page: number) {
   console.log("D:",this.dahras.length);
   console.log("d:",this.pagedDahras.length);
 
-}
-
-toggleList(section: string) {
-  if (section === 'dahra') {
-    this.showListDahra = true;
-    this.showListTalib = false;
-  } else if (section === 'talib') {
-    this.showListDahra = false;
-    this.showListTalib = true;
-  }
 }
 
 showAlert() {

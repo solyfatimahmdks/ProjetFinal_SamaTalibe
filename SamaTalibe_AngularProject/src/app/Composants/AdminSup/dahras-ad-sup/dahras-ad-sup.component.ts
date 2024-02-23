@@ -12,10 +12,26 @@ import { environment } from 'src/environments/environment.development';
 })
 export class DahrasAdSupComponent implements OnInit {
 dahraData: any;
-  getImageUrl(event: any) {
-    console.warn(event.target.files[0]);
-    this.uploadedImages = event.target.files[0] as File;
-  }
+truthyTab: any = [];
+  // Attributs
+  regions: string[] = [
+    'Dakar',
+    'Kaolack',
+    'Saint-louis',
+    'Diourbel',
+    'Ziguinchor',
+    'Tambacounda',
+    'Matam',
+    'Fatick',
+    'Thies',
+    'Kédougou',
+    'Matam',
+    'Kaffrine',
+    'Kolda',
+    'Sédhiou',
+  ];
+  selectedRegion: string = '';
+
    
   dahraActive: boolean = false; // Supposons que par défaut, le dahra est désactivé
   alreadyUnlocked: boolean = false; // Variable de contrôle pour vérifier si le dahra a déjà été débloqué
@@ -27,7 +43,7 @@ dahraData: any;
   dahras: any[] = []; 
   pagedDahras: any[] = []; // Les données à afficher sur une page
   currentPage = 1; // Page actuelle
-  itemsPerPage = 3; 
+  itemsPerPage = 4; 
 
 
   constructor(private allservicesService: AllservicesService , private router: Router) {}
@@ -49,6 +65,11 @@ dahraData: any;
     password:'',
     
 
+  }
+
+  getImageUrl(event: any) {
+    console.warn(event.target.files[0]);
+    this.uploadedImages = event.target.files[0] as File;
   }
 
   loadDahrasList() {
@@ -115,7 +136,7 @@ addDahra() {
     formData.append('numeroTelephone', this.dara.numeroTelephone);
     formData.append('numeroTelephoneOuztas', this.dara.numeroTelephoneOuztas);
     formData.append('adresse', this.dara.adresse);
-    formData.append('region', this.dara.region);
+    formData.append('region', this.selectedRegion);
     formData.append('email', this.dara.email);
     formData.append('password', this.dara.password);
     formData.append('nombreTalibe', this.dara.nombreTalibe.toString());
@@ -205,6 +226,10 @@ private hideModal(): void {
   }
 
 
+  // Voir  détails
+
+  
+
   // modifierDahra(dahraData: any) {
   //   // Appelez la méthode put de votre service allservicesrest
   //   this.allservicesService.put('/modifier-dahra-admin/{id}', dahraData , (response: any) => {
@@ -214,4 +239,207 @@ private hideModal(): void {
       
   // )}
   
+
+
+//Validations
+nomdahraValidate() {
+  let validationPrenom = document.getElementById('validationNomDahra');
+  const nomPrenomRegex = /^[a-zA-Z]{2,25}$/;
+  if (nomPrenomRegex.test(this.dara.nom)) {
+    // console.log(nomPrenomRegex.test(this.prenom));
+    validationPrenom!.innerHTML = 'valide';
+    validationPrenom!.classList.remove('error');
+    validationPrenom!.classList.add('success');
+    if (this.truthyTab.find((value: any) => value.dara.nom == true) == undefined) {
+      this.truthyTab.push({ nom: true });
+    }
+  } else {
+    // console.log(nomPrenomRegex.test(this.prenom));
+    validationPrenom!.innerHTML = 'invalide';
+    validationPrenom!.classList.remove('success');
+    validationPrenom!.classList.add('error');
+    if (this.truthyTab.find((value: any) => value.dara.nom == true) != undefined) {
+      this.truthyTab.splice(
+        this.truthyTab.findIndex((value: any) => value.dara.nom == true),
+        1
+      );
+    }
+  }
+  if (this.dara.nom == '') {
+    validationPrenom!.innerHTML = '';
+  }
+}
+
+nomOustazeValidate() {
+  let validationPrenom = document.getElementById('validationOustaze');
+  const nomPrenomRegex = /^[a-zA-Z]{2,25}$/;
+  if (nomPrenomRegex.test(this.dara.nomOuztas)) {
+    // console.log(nomPrenomRegex.test(this.prenom));
+    validationPrenom!.innerHTML = 'valide';
+    validationPrenom!.classList.remove('error');
+    validationPrenom!.classList.add('success');
+    if (
+      this.truthyTab.find((value: any) => value.dara.nomOuztas == true) ==
+      undefined
+    ) {
+      this.truthyTab.push({ nomOuztas: true });
+    }
+  } else {
+    // console.log(nomPrenomRegex.test(this.prenom));
+    validationPrenom!.innerHTML = 'invalide';
+    validationPrenom!.classList.remove('success');
+    validationPrenom!.classList.add('error');
+    if (
+      this.truthyTab.find((value: any) => value.dara.nomOuztas == true) !=
+      undefined
+    ) {
+      this.truthyTab.splice(
+        this.truthyTab.findIndex((value: any) => value.dara.nomOuztas == true),
+        1
+      );
+    }
+  }
+  if (this.dara.nomOuztas == '') {
+    validationPrenom!.innerHTML = '';
+  }
+}
+
+
+adresseValidate() {
+  let validationPrenom = document.getElementById('validationAdresse');
+  const nomPrenomRegex = /^[a-zA-Z]+[a-z0-9]{3,}$/;
+  if (nomPrenomRegex.test(this.dara.adresse)) {
+    // console.log(nomPrenomRegex.test(this.adresse));
+    validationPrenom!.innerHTML = 'valide';
+    validationPrenom!.classList.remove('error');
+    validationPrenom!.classList.add('success');
+    if (this.truthyTab.find((value:any)=>value.dara.adresse==true)==undefined) {
+      this.truthyTab.push({adresse:true});
+    }
+
+  } else {
+    // console.log(nomPrenomRegex.test(this.adresse));
+    validationPrenom!.innerHTML = 'invalide';
+    validationPrenom!.classList.remove('success');
+    validationPrenom!.classList.add('error');
+    if (this.truthyTab.find((value:any)=>value.dara.adresse==true)!=undefined) {
+      this.truthyTab.splice(this.truthyTab.findIndex((value:any)=>value.dara.adresse==true),1);
+    }
+  }
+  if (this.dara.adresse=="") {
+    validationPrenom!.innerHTML="";
+  }
+}
+
+regionValidate() {
+  let validationPrenom = document.getElementById('validationRegion');
+  const nomPrenomRegex = /^[a-zA-Z]+[a-z0-9]{3,}$/;
+  if (nomPrenomRegex.test(this.selectedRegion)) {
+    // console.log(nomPrenomRegex.test(this.adresse));
+    validationPrenom!.innerHTML = 'valide';
+    validationPrenom!.classList.remove('error');
+    validationPrenom!.classList.add('success');
+    if (this.truthyTab.find((value:any)=>value.selectedRegion==true)==undefined) {
+      this.truthyTab.push({adresse:true});
+    }
+
+  } else {
+    // console.log(nomPrenomRegex.test(this.adresse));
+    validationPrenom!.innerHTML = 'invalide';
+    validationPrenom!.classList.remove('success');
+    validationPrenom!.classList.add('error');
+    if (this.truthyTab.find((value:any)=>value.selectedRegion==true)!=undefined) {
+      this.truthyTab.splice(this.truthyTab.findIndex((value:any)=>value.selectedRegion==true),1);
+    }
+  }
+  if (this.selectedRegion=="") {
+    validationPrenom!.innerHTML="";
+  }
+}
+
+
+
+telephoneDharaValidate() {
+  let validationPrenom = document.getElementById('validationTelephoneDahra');
+  const nomPrenomRegex = /^(77|76|75|78|33)[0-9]{7}$/;
+  if (nomPrenomRegex.test(this.dara.numeroTelephone)) {
+    // console.log(nomPrenomRegex.test(this.numeroTelephone));
+    validationPrenom!.innerHTML = 'valide';
+    validationPrenom!.classList.remove('error');
+    validationPrenom!.classList.add('success');
+    if (this.truthyTab.find((value:any)=>value.dara.numeroTelephone==true)==undefined) {
+      this.truthyTab.push({telephone:true});
+    }
+
+  } else {
+    // console.log(nomPrenomRegex.test(this.numeroTelephone));
+    validationPrenom!.innerHTML = 'invalide';
+    validationPrenom!.classList.remove('success');
+    validationPrenom!.classList.add('error');
+    if (this.truthyTab.find((value:any)=>value.dara.numeroTelephone==true)!=undefined) {
+      this.truthyTab.splice(this.truthyTab.findIndex((value:any)=>value.dara.numeroTelephone==true),1);
+    }
+  }
+  if (this.dara.numeroTelephone=="") {
+    validationPrenom!.innerHTML="";
+  }
+}
+
+telephoneOustazeValidate() {
+  let validationPrenom = document.getElementById('validationTelephoneOustaze');
+  const nomPrenomRegex = /^(77|76|75|78|33)[0-9]{7}$/;
+  if (nomPrenomRegex.test(this.dara.numeroTelephoneOuztas)) {
+    // console.log(nomPrenomRegex.test(this.numeroTelephoneOuztas));
+    validationPrenom!.innerHTML = 'valide';
+    validationPrenom!.classList.remove('error');
+    validationPrenom!.classList.add('success');
+    if (this.truthyTab.find((value:any)=>value.dara.numeroTelephoneOuztas==true)==undefined) {
+      this.truthyTab.push({telephone:true});
+    }
+
+  } else {
+    // console.log(nomPrenomRegex.test(this.numeroTelephoneOuztas));
+    validationPrenom!.innerHTML = 'invalide';
+    validationPrenom!.classList.remove('success');
+    validationPrenom!.classList.add('error');
+    if (this.truthyTab.find((value:any)=>value.telephone==true)!=undefined) {
+      this.truthyTab.splice(this.truthyTab.findIndex((value:any)=>value.dara.numeroTelephoneOuztas==true),1);
+    }
+  }
+  if (this.dara.numeroTelephoneOuztas=="") {
+    validationPrenom!.innerHTML="";
+  }
+}
+
+// nombreTalibe Validators
+nombreTalibes() {
+let validationPrenom = document.getElementById('validationNombreTalibes');
+const nomPrenomRegex = /^[0-9]+[0-9]$/;
+if (nomPrenomRegex.test(this.dara.nombreTalibe.toString())) {
+  // console.log(nomPrenomRegex.test(this.pass));
+  validationPrenom!.innerHTML = 'valide';
+  validationPrenom!.classList.remove('error');
+  validationPrenom!.classList.add('success');
+  if (this.truthyTab.find((value:any)=>value.nombreTalibe==true)==undefined) {
+    this.truthyTab.push({nombreTalibe:true});
+  }
+
+} else {
+  // console.log(nomPrenomRegex.test(this.pass));
+  validationPrenom!.innerHTML = 'invalide';
+  validationPrenom!.classList.remove('success');
+  validationPrenom!.classList.add('error');
+  if (this.truthyTab.find((value:any)=>value.nombreTalibe==true)!=undefined) {
+    this.truthyTab.splice(this.truthyTab.findIndex((value:any)=>value.nombreTalibe==true),1);
+  }
+}
+if (this.dara.nombreTalibe.toString()=="") {
+  validationPrenom!.innerHTML="";
+}
+// console.log(this.truthyTab);
+// console.log(this.truthyTab.length);
+}
+
+
+
 }

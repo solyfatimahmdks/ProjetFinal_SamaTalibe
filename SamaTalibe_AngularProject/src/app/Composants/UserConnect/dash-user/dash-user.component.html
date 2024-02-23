@@ -76,10 +76,14 @@
                         <!-- Page Heading -->
     
                         <!-- Content Row -->
+                        <form class="d-flex justify-content-end mt-3 ms-2" role="search" (submit)="searchDahras()">
+                          <input class="form-control w-25 p-2" type="search" placeholder="Rechercher" aria-label="Search" [(ngModel)]="searchQuery">
+                          <button class="btn1 btn1-primary" type="submit">Ok</button>
+                        </form>
                         <div class="listDahra my-5 row" *ngIf="showListDahra"  >
                           <div class="contentcard col-md-4" *ngFor="let dahra of dahras | paginate:{ itemsPerPage:itemsPerPage, currentPage:currentPage , totalItems:dahras.length}">
                               <div class="card" style="width: 20rem; box-shadow: 1px 1px 1px 1px #C2A966; margin: 0 auto;">
-                                  <div><img [src]="getImage(dahra.imageFilename)" id="cardImg" alt=""></div>
+                                  <div><img [src]="getImage(dahra.image)" id="cardImg" alt=""></div>
                                   <div class="card-body">
                                     <h5 class="mt-2 card-title text-center">{{ dahra.nom }}</h5>  
                                     <div class="row p-2" style="">
@@ -88,29 +92,29 @@
                                             <p class="card-text text-start"><i class="bi bi-geo-alt-fill" style="color: #252649; margin-right: 10px;"></i>{{ dahra.region }}</p>
                                         </div>
                                         <div class="col-md-6">
-                                            <a href="#" class="btn"  data-bs-toggle="modal" data-bs-target="#exampleModal" style="width:80%; font-size: 15px; background-color: #252649;color: #C2A966;box-shadow:2px 2px 2px 2px #C2A966; font-weight: bold;"> <i class="bi bi-eye-fill" style="color: #C2A966; margin-right: 15px; font-weight: bold;"></i>Détails</a>
+                                            <a href="#" class="btn" (click)="selectDahra(dahra)"  data-bs-toggle="modal" data-bs-target="#exampleModal" style="width:80%; font-size: 15px; background-color: #252649;color: #C2A966;box-shadow:2px 2px 2px 2px #C2A966; font-weight: bold;"> <i class="bi bi-eye-fill" style="color: #C2A966; margin-right: 15px; font-weight: bold;"></i>Détails</a>
                                         
                                               <!-- Modal -->
-                                                      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"   aria-hidden="true">
+                                             <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"   aria-hidden="true">
                                                           <div class="modal-dialog mt-5" style="margin: 0 auto;">
                                                           <div class="modal-content" style=" padding: 20px; background-color: white !important;">
                                                               <div class="modal-header">
                                                               <button type="button" class="btn-close mb-2" data-bs-dismiss="modal" aria-label="Close"></button>
                                                               </div>
                                                               <div class="modal-body" style="padding: 20px;">
-                                                                  <h5 class="text-center"  style="color: #252649;">{{ dahra.nom }}</h5>
+                                                                  <h5 class="text-center"  style="color: #252649;">{{ selectedDahra?.nom }} </h5>
                                                                   <div class="my-4 row" style="color: #252649;">
                                                                       <div class="col-md-6 mt-3" >
-                                                                          <img [src]="getImage(dahra.imageFilename)" id="détailImg" alt="">
+                                                                          <img [src]="getImage(dahra.image)" id="détailImg" alt="">
                                                                       </div>
                                                                       <div class="col-md-6" style="padding: 20px; border-radius: 10px;">
-                                                                        <p><span style=" font-weight: bold;">Nom Ouztas:</span>{{ dahra.nomOuztas }}</p>
+                                                                        <p><span style=" font-weight: bold;">Nom Ouztas:</span>{{ selectedDahra?.nomOuztas }}</p>
                                                                           <hr class="mb-3">
-                                                                          <p><span style=" font-weight: bold;">Region:</span>{{ dahra.region }}</p>
+                                                                          <p><span style=" font-weight: bold;">Region:</span>{{ selectedDahra?.region }}</p>
                                                                           <hr class="mb-3">
-                                                                          <p><span style=" font-weight: bold;">Adresse:</span>{{ dahra.adresse }}</p>
+                                                                          <p><span style=" font-weight: bold;">Adresse:</span>{{ selectedDahra?.adresse }}</p>
                                                                           <hr class="mb-3">
-                                                                          <p style="color: #252649;"><span style="color: #252649; font-weight: bold;">Numero Téléphone Ouztas :</span>{{ dahra.numeroTelephoneOuztas }}</p>
+                                                                          <p style="color: #252649;"><span style="color: #252649; font-weight: bold;">Numero Téléphone Ouztas :</span>{{ selectedDahra?.numeroTelephoneOuztas }}</p>
                                                                           <hr>
                                                                       </div>
                                                                   </div>
@@ -121,7 +125,7 @@
                                                               </div>
                                                           </div>
                                                           </div>
-                                                      </div>
+                                             </div>
                                       </div>
                 
               
@@ -151,10 +155,10 @@
                                       </thead>
                                       <tbody>
                                         <tr  style="height: 40px; margin-top: 20px !important;">
-                                          <td class="ps-5"><img src="#" style="height: 40px;" id="admindatable" alt=""></td>
-                                          <td>jhgfghgghh</td>
-                                          <td>fghjkl</td>
-                                          <td>dfghjhfghj</td>
+                                          <td class="ps-5"><img [src]="getImage(talibe.image)" style="height: 40px;" id="admindatable" alt=""></td>
+                                          <td>{{ talibe.nom }} {{ talibe.prenom }}</td>
+                                          <td>{{ talibe.adresse }}</td>
+                                          <td>{{ talibe.age}}</td>
                                           <td style="padding: 20px;">
                                             <i class="btn. me-3 fa-solid fa-user-xmark" data-bs-toggle="modal" data-bs-target="#staticBackdrop"  style="background-color: #252649;border-radius: 5px; box-shadow: 1px 1px 1px #C2A966;margin: 10px !important; cursor: pointer; font-size: 12px;padding: 5px; color: white;"></i>
                                             <i class="bi bi-eye-fill btn3"   data-bs-toggle="modal" data-bs-target="#exampleModal" style="background-color: #252649;border-radius: 5px;margin: 10px !important; box-shadow: 1px 1px 1px #C2A966;cursor: pointer; font-size: 12px;padding: 5px; color: white;"></i>
