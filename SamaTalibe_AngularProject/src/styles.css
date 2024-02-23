@@ -8,7 +8,21 @@
 
 
 
+/* validation */
+span.span_validate
+{
+  font-size: 12px;
+  display: none;
+  transition: ease 1.5s;
+}
 
-
-
-
+.error
+{
+  display: inline-block !important;
+  color: red !important;
+}
+.success
+{
+  display: inline-block !important;
+  color: rgb(45, 194, 77) !important;
+}
