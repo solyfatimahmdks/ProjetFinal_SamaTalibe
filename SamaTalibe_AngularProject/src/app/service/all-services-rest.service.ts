@@ -1,5 +1,5 @@
 import { Injectable, OnInit } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 // import { Observable, tap } from 'rxjs';
 import Swal from 'sweetalert2';
 import { TOKEN_KEY } from '../constants/constant';
@@ -46,16 +46,17 @@ export class AllservicesService implements OnInit {
       .subscribe((reponse: any) => onSuccess(reponse));
   }
 
-  get(path: string, onSuccess: Function) {
+  get(path: string, onSuccess: Function, params?: HttpParams) {
     const httpOptions = {
       headers: new HttpHeaders({
         Authorization:
           'Bearer ' +
           JSON.parse(localStorage.getItem(TOKEN_KEY) ?? '{}').token,
       }),
+      params: params
     };
     this.http
-      .get(this.apiUrl + path, httpOptions)
+      .get(this.apiUrl + path, httpOptions )
       .subscribe((reponse: any) => onSuccess(reponse));
   }
 

@@ -90,8 +90,9 @@ export class LoginComponent {
     this.truthyTab=[]
     // this.choixForm = event.target.value;
     this.isLoginFormVisible = event.target.value;
+    console.log(this.isLoginFormVisible);
+    
 
-    // Fermer le modal
   }
   // }
   submitFunction(event: Event) {
@@ -182,7 +183,7 @@ export class LoginComponent {
               this.route.navigate(['/dashuser']);
             }
           } else {
-            this.showMessage('error', 'Oops', 'Login ou pass incorrect');
+            this.showMessage('error', 'Oops', 'Login ou Mot de passe incorrect');
           }
         }
       );

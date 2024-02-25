@@ -1,3 +1,4 @@
+import { HttpParams } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { AllservicesService } from 'src/app/service/all-services-rest.service';
 import { environment } from 'src/environments/environment.development';
@@ -12,6 +13,8 @@ import Swal from 'sweetalert2';
 export class DashUserComponent {
   selectedDahra: any;
   searchQuery: string = '';
+  parrainages: any;
+  talibeSelected?: number;
 
 
   dahras: any[] = []; 
@@ -52,10 +55,16 @@ export class DashUserComponent {
 
 
   searchDahras(): void {
+    console.log (this.searchQuery.trim() !== '');
+    
     if (this.searchQuery.trim() !== '') {
+      const params = new HttpParams().append('nom', this.searchQuery)
       this.service.get('/recherche-dahra',(response:any) => {
           this.dahras = response;
-        }
+          console.log(response);
+          
+        },
+        params
       );
     } else {
       // Si la recherche est vide, chargez tous les dahras
@@ -71,10 +80,13 @@ export class DashUserComponent {
 }
 
 
-loadTalibes(dahraId: number) {
-  this.service.get(`/lister-apprenants/${dahraId}`, (reponse: any) => {
+loadTalibes(dahraSelected: string) {
+  this.service.get(`/lister-talibe`, (reponse: any[]) => {
     console.log('Liste des apprenants du dahra', reponse);
-    this.talibesList = reponse;
+
+    this.talibesList = reponse.filter((dahra) => dahra.dahraNom == dahraSelected);
+    console.log('Liste des apprenants du dahra', this.talibesList);
+    
   });
 }
 
@@ -82,16 +94,16 @@ selectDahra(dahra: any) {
   this.selectedDahra = dahra;
 }
 
-toggleList(section: string, dahraId?: number) {
+toggleList(section: string, dahraSelected?: string) {
+  console.log(dahraSelected);
+  
   if (section === 'dahra') {
     this.showListDahra = true;
     this.showListTalib = false;
   } else if (section === 'talib') {
     this.showListDahra = false;
     this.showListTalib = true;
-    if (dahraId !== undefined) {
-      this.loadTalibes(dahraId);
-    }
+    this.loadTalibes(dahraSelected!);
   }
 }
 
@@ -122,33 +134,42 @@ setPage(page: number) {
 
 }
 
-showAlert() {
-  // Affiche une alerte demandant à l'utilisateur de patienter
-  Swal.fire({
-      title: 'Patientez...',
-      text: 'Votre parrainage est en cours de validation.',
-      icon: 'info',
-      showCancelButton: false,
-      showConfirmButton: false,
-      allowOutsideClick: false
-  });
 
-          // Simulez un délai de 3 secondes pour le processus de validation (vous devez ajuster cela en fonction de votre logique réelle)
-          setTimeout(() => {
-            // Une fois le parrainage validé, vous pouvez mettre à jour l'alerte pour informer l'utilisateur
-            Swal.update({
-                title: 'Parrainage validé!',
-                text: 'Vous serez notifié une fois que le parrainage sera confirmé.',
-                icon: 'success',
-                showCancelButton: false,
-                showConfirmButton: true,
-                confirmButtonText: 'OK',
-                allowOutsideClick: false
-            }
-            );
-        }, 10000); // 10000 ms = 1O secondes
-    
+    makeParrainage(talibeId: number) {
+        // Affiche une alerte demandant à l'utilisateur de patienter
+      Swal.fire({
+        title: 'Patientez...',
+        text: 'Votre parrainage est en cours de validation.',
+        icon: 'info',
+        showCancelButton: false,
+        showConfirmButton: false,
+        allowOutsideClick: false
+    });
+
+      this.service.post('/creer-parrainage', {"talibe_id" : talibeId} , (reponse: any) => {
+        console.log(reponse);
+       this.parrainages = reponse;
+       console.log(this.parrainages);
+
+       Swal.update({
+        title: 'Parrainage validé!',
+        text: 'Vous serez notifié une fois que le parrainage sera confirmé.',
+        icon: 'success',
+        showCancelButton: false,
+        showConfirmButton: true,
+        confirmButtonText: 'OK',
+        allowOutsideClick: false
+      
     }
+    );
+       
+      });
+  
+  }
+  getTalibeId(talibeId: number) {
+    this.talibeSelected = talibeId;
+  }
+  
 
 }
 

@@ -36,7 +36,8 @@ truthyTab: any = [];
   dahraActive: boolean = false; // Supposons que par défaut, le dahra est désactivé
   alreadyUnlocked: boolean = false; // Variable de contrôle pour vérifier si le dahra a déjà été débloqué
   dahrasList: any[] = [];
-  selectedDahraDetails: any | null = null;
+  selectedDahraDetails: any| null = null;
+  showDahraDetails: boolean = false;
   selectedDahra: any;
   @ViewChild('modalElement') modalElement!: ElementRef;
   uploadedImages: any;
@@ -177,6 +178,7 @@ private hideModal(): void {
 
   showDahraDetailsModal(dahra: any) {
     this.selectedDahra = dahra;
+    this.showDahraDetails = true;
 
     // Ouvrir le modal en utilisant JavaScript de Bootstrap
     const modalElement = document.getElementById('dahraDetailsModal');
@@ -188,6 +190,7 @@ private hideModal(): void {
 
   closeDahraDetailsModal() {
     this.selectedDahraDetails = null;
+    this.showDahraDetails = false ;
 
     // Fermer le modal en utilisant JavaScript de Bootstrap
     const modalElement = document.getElementById('dahraDetailsModal');

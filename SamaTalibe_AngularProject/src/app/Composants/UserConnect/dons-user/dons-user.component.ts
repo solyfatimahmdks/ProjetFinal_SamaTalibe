@@ -12,7 +12,7 @@ export class DonsUserComponent {
   user: any; // Contiendra les informations de l'utilisateur connecté
   donneeDonation: any = {}; // Contiendra les données de la donation
   
-  nom: any;
+  dahra_name: any;
   disponibiliteDon: any;
   descriptionDon: any;
   adresseProvenance: any;
@@ -25,7 +25,7 @@ export class DonsUserComponent {
     descriptionDon:'',
     adresseProvenance:'',
     date:'',
-    nom:'',
+    dahra_name:'',
     typeDon:'',
   };
   
@@ -41,23 +41,16 @@ export class DonsUserComponent {
     descriptionDon: this.descriptionDon,
     adresseProvenance:this.adresseProvenance,
     date: this.date,
-    nom: this.nom,
+    dahra_name: this.dahra_name,
     typeDon: this.typeDon,
     }
 
-    console.log('nom:', this.nom);
-    console.log('disponibiliteDon:', this.disponibiliteDon);
-    console.log(' descriptionDon:', this.descriptionDon);
-    console.log('adresseProvenance:', this.adresseProvenance);
-    console.log('Date:', this.date);
-    console.log('typeDon:', this.typeDon);
+    console.log(this.don)
     
 
 
-   this.service.post('/faire-don' , {}, (reponse: any) => {
+   this.service.post('/faire-don' ,this.don, (reponse: any) => {
         console.log(reponse);
-        // Une fois le rôle ajouté avec succès, vous pouvez recharger la liste des rôles
-        this.faireDonation();
         
       });
     }

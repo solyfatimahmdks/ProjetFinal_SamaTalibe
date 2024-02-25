@@ -1,6 +1,39 @@
 
 <!-- <p>accueil works!</p> -->
-<body id="page-top" style="">
+<body id="page-top" style="">     <!-- Modal -->
+  <div class="modal fade" id="Profile" tabindex="-1" aria-labelledby="exampleModalLabel"   aria-hidden="true">
+               <div class="modal-dialog mt-5" style="margin: 0 auto;">
+               <div class="modal-content" style=" padding: 20px; background-color: white !important;">
+                   <div class="modal-header">
+                   <button type="button" class="btn-close mb-2" data-bs-dismiss="modal" aria-label="Close"></button>
+                   </div>
+                   <div class="modal-body" style="padding: 20px;">
+                       <h5 class="text-center"  style="color: #252649;"> </h5>
+                       <div class="my-4 row" style="color: #252649;">
+                           <div class="col-md-6 mt-3" >
+                               <img src="#" id="détailImg" alt="">
+                           </div>
+                           <div class="col-md-6" style="padding: 20px; border-radius: 10px;">
+                             <p><span style=" font-weight: bold;">Nom Ouztas:</span></p>
+                               <hr class="mb-3">
+                               <p><span style=" font-weight: bold;">Region:</span></p>
+                               <hr class="mb-3">
+                               <p><span style=" font-weight: bold;">Adresse:</span></p>
+                               <hr class="mb-3">
+                               <p style="color: #252649;"><span style="color: #252649; font-weight: bold;">Numero Téléphone Ouztas :</span></p>
+                               <hr>
+                           </div>
+                       </div>
+                   </div>
+                   <div class="modal-footer d-flex justify-content-between">
+                   <button type="button" class="btn" data-bs-dismiss="modal" style="font-size: 15px; background-color: #252649;color: #C2A966;font-weight: bold; box-shadow:2px 2px 2px 2px #C2A966; width: 150px;"> <i class="bi bi-eye-fill" style="color: #C2A966; margin-right: 10px; font-weight: bold;"></i>apprenants</button>
+                   <button type="button" class="btn" style="background-color: #252649; color: #C2A966; font-size: 15px; width: 150px; font-weight: bold; border: none;">Modifier</button>
+                   </div>
+               </div>
+               </div>
+  </div>
+
+
 
   <!-- Page Wrapper -->
   <div class="row" id="wrapper">
@@ -66,7 +99,7 @@
                           <strong>Admin</strong>
                         </a>
                         <ul class="dropdown-menu text-small shadow p-3" style="color: #252649 !important; font-weight: bold !important;">
-                          <li><a class="dropdown-item" href="#">Profile</a></li>
+                          <li><a class="dropdown-item btnU" data-bs-toggle="modal" data-bs-target="#Profile" style="cursor: pointer;" >Profile</a></li>
                           <li><a class="dropdown-item" href="#">News</a></li>
                           <li><hr class="dropdown-divider"></li>
                           <li><a class="dropdown-item" href="#">Déconnexion</a></li>

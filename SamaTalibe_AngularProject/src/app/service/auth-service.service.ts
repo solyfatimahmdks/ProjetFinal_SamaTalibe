@@ -10,6 +10,7 @@ import { TOKEN_KEY } from '../constants/constant';
 export class AuthService implements OnInit{
 
   currentUser: any;
+  router: any;
   getUser(): any {
     return this.currentUser;
   }
@@ -73,5 +74,12 @@ export class AuthService implements OnInit{
     const userString = localStorage.getItem('loggedInUser');
     return userString ? JSON.parse(userString) : null;
   }
+
+
+  logout(): void {
+    this.currentUser = null;
+    this.router.navigate(['/login']);
+  }
+
 
 } 

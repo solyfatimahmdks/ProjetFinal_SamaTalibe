@@ -13,13 +13,5 @@ export class ParrainUserComponent implements OnInit{
   constructor(private service: AllservicesService ) {}
 
   ngOnInit(): void {}
-  makeParrainage() {
-    this.service.post('/creer-parrainage', {} , (reponse: any) => {
-      console.log(reponse);
-     this.parrainages = reponse;
-     console.log(this.parrainages);
-     
-    });
 
-}
 }

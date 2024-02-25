@@ -2,6 +2,9 @@ import { Component } from '@angular/core';
 import { AllservicesService } from 'src/app/service/all-services-rest.service';
 import * as ApexCharts from 'apexcharts';
 import { environment } from 'src/environments/environment.development';
+import { AuthService } from 'src/app/service/auth-service.service';
+import { Router } from '@angular/router';
+
 
 
 @Component({
@@ -11,15 +14,17 @@ import { environment } from 'src/environments/environment.development';
 })
 
 export class AccueilAdSupComponent{
+  currentUser: any;
   dahras: any[] = []; 
   pagedDahras: any[] = []; // Les données à afficher sur une page
   currentPage = 1; // Page actuelle
   itemsPerPage = 3; 
   uploadedImages: any;
   
-  constructor(private allservicesService: AllservicesService) {}
+  constructor(private allservicesService: AllservicesService , private authService: AuthService ) {}
 
   ngOnInit(): void {
+    this.currentUser = this.authService.currentUser; // Récupérer les informations de l'utilisateur connecté
     this.getAllDahras();
 
     var options = {
@@ -79,6 +84,10 @@ export class AccueilAdSupComponent{
     chart.render();
   }
 
+  // logout(): void {
+  //   this.authService.logout(); 
+  //   this.router.navigate(['/login']); 
+  // }
   getAllDahras() {
     this.allservicesService.get('/lister-dahra', (response: any) => {
       this.dahras = response; 
