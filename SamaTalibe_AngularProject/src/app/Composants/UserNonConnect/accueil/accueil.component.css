@@ -115,6 +115,7 @@ main{
   border-bottom: 8px solid #C2A966;
 }
 
+
 .project-info {
     padding: 25px 40px;
     display: flex;
@@ -128,7 +129,6 @@ main{
   
 .card {
     background-color: #C2A966;
-    /* color: black; */
     width: 270px;
     max-height: 250px;
     border-radius: 8px;
@@ -150,7 +150,7 @@ main{
     margin: 0 auto;
     font-size: 15px;
     width: 50%;
-    height: 150px;
+    height: 80px;
     border-radius: 100%;
 }
 
@@ -191,30 +191,30 @@ main{
 #cardBottomprimo{
   border-top-right-radius: 30px !important;
   border-bottom-right-radius: 30px !important;
-  width: 22% !important;
-  background-color: #C2A966;
+  width: 75% !important;
+  background-color: #C2A966 !important;
   height: 90px; 
-  top: 1940px !important; 
-  left: 198px !important;
+  left: 80px !important;
+  bottom: 30px;
 }
 
 #cardBottom1{
   border-top-right-radius: 30px !important;
   border-bottom-right-radius: 30px !important;
-  width: 22% !important;
-  background-color: #C2A966; 
+  width: 75% !important;
+  background-color: #C2A966 !important;
   height: 90px; 
-  top: 1940px !important; 
-  left: 570px !important;
+  left: 80px !important;
+  bottom: 30px;
 }
 #cardBottom2{
-  border-top-right-radius: 30px !important;
+  /* border-top-right-radius: 30px !important;
   border-bottom-right-radius: 30px !important;
-  width: 22% !important;
+  width: 75% !important;
   background-color: #C2A966; 
   height: 90px; 
-  top: 1940px!important; 
-  left: 941px !important;
+  bottom: 200px !important; 
+  left: 10px !important; */
 }
 
 /* SECTION ACTUS */

@@ -11,6 +11,8 @@ import { environment } from 'src/environments/environment.development';
 })
 // N'oubliez pas d'ajouter 'export' devant la classe
 export class SamaDahraComponent  implements OnInit{
+showTalibeEdit: boolean = false;
+public currentId:any="";
 cancelEdit() {
 throw new Error('Method not implemented.');
 }
@@ -21,13 +23,7 @@ throw new Error('Method not implemented.');
   talibe: any = {};
   uploadedImages: any;
   talibesList: any[] = [];
-
-
-  getImageUrl(event: any) {
-    console.warn(event.target.files[0]);
-    this.uploadedImages = event.target.files[0] as File;
-  }
-
+  talibeSelectionne: any;
 
   toggleView(view: string): void {
     this.showListTalib = view === 'listTalib';
@@ -39,7 +35,7 @@ throw new Error('Method not implemented.');
   }
 
   loadTalibesList() {
-    this.service.get('/lister-talibe', (response: any) => {
+    this.service.get('/lister-mes-talibes', (response: any) => {
       console.log(`test`,response);
       
       this.talibesList = response.map((talibe: any) => {
@@ -51,6 +47,13 @@ throw new Error('Method not implemented.');
     });
   }
 
+
+
+  getImageUrl(event: any) {
+    console.warn(event.target.files[0]);
+    this.uploadedImages = event.target.files[0] as File;
+  }
+
   getImage(path: string): string {
     // console.log( 'jjlkl' , path);  
       if (path.includes(".jpeg") || path.includes(".jpg") || path.includes(".png")) {
@@ -59,6 +62,8 @@ throw new Error('Method not implemented.');
           return "https://placehold.co/20x20";
       }
   }
+
+
   addTalibe() {
     // Créer un nouvel objet FormData
     const formData = new FormData();
@@ -103,16 +108,35 @@ throw new Error('Method not implemented.');
     modal.hide();
   }
 
+  showTalibeDetailsModal(talibe: any) {
+    this.talibeSelectionne = talibe;
+}
 
-  editTalibe(talibe: any) {
-        // Pré-remplir les champs du formulaire avec les informations du talibé
-        this.talibe = talibe;
-        // Afficher le popup de modification
-        const editModal = document.getElementById('editModal');
-        if (editModal) {
-            editModal.classList.add('show');
-        }
-  }
+showTalibeEditModal(talibe: any) {
+  // this.selectedDahra = { ...dahra };
+  this.showTalibeEdit= true;
+  this.talibe.nom=talibe.nom;
+  this.talibe.prenom=talibe.prenom;
+  this.talibe.age=talibe.age;
+  this.talibe.adresse=talibe.adresse;
+  this.talibe.situation=talibe.situation;
+  this.talibe.description=talibe.description;
+  this.talibe.datearrivetalibe=talibe.datearrivetalibe;
+  this.currentId=talibe.id;
+
+  console.log(talibe);
+} 
+
+
+modifierTalibe() {
+  // Appelez la méthode put de votre service allservicesrest
+  this.service.put('/modifier_info_talibe/'+ this.currentId, this.talibe , (response: any) => {
+      // Gérer la réponse du serveur (message de succès ou d'erreur)
+      console.log(response);
+      // this.hideEditModal();
+    },
+    
+)}
 
   saveChanges() {
     // Envoyer les modifications au backend

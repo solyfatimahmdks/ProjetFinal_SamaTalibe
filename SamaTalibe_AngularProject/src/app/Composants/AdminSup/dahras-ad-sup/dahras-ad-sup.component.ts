@@ -11,7 +11,7 @@ import { environment } from 'src/environments/environment.development';
   styleUrls: ['./dahras-ad-sup.component.css']
 })
 export class DahrasAdSupComponent implements OnInit {
-dahraData: any;
+dahra: any;
 truthyTab: any = [];
   // Attributs
   regions: string[] = [
@@ -45,6 +45,12 @@ truthyTab: any = [];
   pagedDahras: any[] = []; // Les données à afficher sur une page
   currentPage = 1; // Page actuelle
   itemsPerPage = 4; 
+  dahraAModifier: any;
+  renderer: any;
+  modal: any;
+  showDahraEdit: boolean = false;
+  public currentId:any="";
+
 
 
   constructor(private allservicesService: AllservicesService , private router: Router) {}
@@ -229,18 +235,33 @@ private hideModal(): void {
   }
 
 
-  // Voir  détails
+  showDahraEditModal(dahra: any) {
+    // this.selectedDahra = { ...dahra };
+    this.showDahraEdit= true;
+    this.dara.numeroTelephoneOuztas=dahra.numeroTelephoneOuztas;
+    this.dara.numeroTelephone=dahra.numeroTelephone;
+    this.dara.nom=dahra.nom;
+    this.dara.nomOuztas=dahra.nomOuztas;
+    this.dara.adresse=dahra.adresse;
+    this.dara.region=dahra.region;
+    this.dara.nombreTalibe=dahra.nombreTalibe;
+    this.currentId=dahra.id;
 
+    console.log(dahra);
+  } 
   
 
-  // modifierDahra(dahraData: any) {
-  //   // Appelez la méthode put de votre service allservicesrest
-  //   this.allservicesService.put('/modifier-dahra-admin/{id}', dahraData , (response: any) => {
-  //       // Gérer la réponse du serveur (message de succès ou d'erreur)
-  //       console.log(response);
-  //     },
+  modifierDahra() {
+    // Appelez la méthode put de votre service allservicesrest
+    this.allservicesService.put('/modifier-dahra-admin/'+ this.currentId, this.dara , (response: any) => {
+        // Gérer la réponse du serveur (message de succès ou d'erreur)
+        console.log(response);
+        // this.hideEditModal();
+      },
       
-  // )}
+  )}
+
+
   
 
 

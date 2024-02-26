@@ -82,7 +82,7 @@
                 <div class="my-5 row" >
                   <div class="contentcard col-md-4" *ngFor="let dahra of dahras | paginate:{ itemsPerPage:itemsPerPage, currentPage:currentPage , totalItems:dahras.length}">
                       <div class="card" style="width: 20rem; box-shadow: 1px 1px 1px 1px #C2A966; margin: 0 auto;">
-                          <div><img src="assets/dahras/Imgcarte1.jpg" id="cardImg" alt=""></div>
+                          <div><img [src]="getImage(dahra.image)" id="cardImg" alt=""></div>
                           <div class="card-body">
                             <h5 class="mt-2 card-title text-center">{{ dahra.nom }}</h5>  
                             <div class="row p-2" style="">

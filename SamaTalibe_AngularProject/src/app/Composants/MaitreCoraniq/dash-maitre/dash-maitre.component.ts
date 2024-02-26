@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AllservicesService } from '../../../service/all-services-rest.service';
+import { environment } from 'src/environments/environment.development';
 
 
 @Component({
@@ -26,6 +27,7 @@ export class DashMaitreComponent implements OnInit {
   email: string = '';
   password: string = '';
   nombreTalibe: string = '';
+  uploadedImages: any;
 
 
 
@@ -46,6 +48,7 @@ export class DashMaitreComponent implements OnInit {
       email: this.email,
       password: this.password,
       nombreTalibe: this.nombreTalibe,
+      
 
     };
     
@@ -54,6 +57,21 @@ export class DashMaitreComponent implements OnInit {
       this.allservicesService.message('Succès', 'success', 'Le Dahra a été ajouté avec succès.');
     });
 
+}
+
+
+getImageUrl(event: any) {
+  console.warn(event.target.files[0]);
+  this.uploadedImages = event.target.files[0] as File;
+}
+
+getImage(path: string): string {
+  // console.log( 'jjlkl' , path);  
+    if (path.includes(".jpeg") || path.includes(".jpg") || path.includes(".png")) {
+        return `${environment.apiUrl}${path}` ;
+    } else {
+        return "https://placehold.co/20x20";
+    }
 }
 loadDahraList() {
     this.allservicesService.get('/lister-dahra', (reponse: any) => {

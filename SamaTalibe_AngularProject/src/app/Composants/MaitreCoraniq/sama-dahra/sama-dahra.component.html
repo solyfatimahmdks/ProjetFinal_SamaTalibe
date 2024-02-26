@@ -101,14 +101,14 @@
                               </thead>
                               <tbody>
                                 <tr *ngFor="let talibe of talibesList" style="height: 40px; margin-top: 20px !important;">
-                                  <td class="ps-5"><img [src]="getImage(talibe.imageFilename)" style="height: 40px;" id="admindatable" alt=""></td>
+                                  <td class="ps-5"><img src="{{talibe.imageFilename}}" style="height: 40px;" id="admindatable" alt=""></td>
                                   <td>{{ talibe?.nom }} {{ talibe?.prenom }}</td>
                                   <td>{{ talibe?.adresse }}</td>
                                   <td>{{ talibe?.age}}</td>
                                   <td style="padding: 20px;">
-                                    <i class="bi bi-pencil-square btn6" (click)="editTalibe(talibe)"  data-bs-toggle="modal" data-bs-target="#staticBackdrop2" style="margin: 10px !important; background-color: #252649;border-radius: 5px; box-shadow: 1px 1px 1px #C2A966;cursor: pointer; font-size: 12px;padding: 5px; color: white;"></i>
+                                    <i class="bi bi-pencil-square btn6"  data-bs-toggle="modal" data-bs-target="#talibeEditModal" style="margin: 10px !important; background-color: #252649;border-radius: 5px; box-shadow: 1px 1px 1px #C2A966;cursor: pointer; font-size: 12px;padding: 5px; color: white;"  (click)="showTalibeEditModal(talibe)"></i>
                                     <i class="bi bi-trash3-fill" (click)="archiveTalibe(talibe)" style="background-color: #252649;border-radius: 5px; box-shadow: 1px 1px 1px #C2A966;margin: 10px !important; cursor: pointer; font-size: 12px;padding: 5px; color: white;"></i>
-                                    <i class="bi bi-eye-fill btn3"   data-bs-toggle="modal" data-bs-target="#exampleModal" style="background-color: #252649;border-radius: 5px;margin: 10px !important; box-shadow: 1px 1px 1px #C2A966;cursor: pointer; font-size: 12px;padding: 5px; color: white;"></i>
+                                    <i class="bi bi-eye-fill btn3"   data-bs-toggle="modal" data-bs-target="#exampleModal" style="background-color: #252649;border-radius: 5px;margin: 10px !important; box-shadow: 1px 1px 1px #C2A966;cursor: pointer; font-size: 12px;padding: 5px; color: white;" (click)="showTalibeDetailsModal(talibe)"></i>
                                   </td>
                                 </tr>
                                 
@@ -169,35 +169,30 @@
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog mt-5" style="margin: 0 auto;">
-      <div class="modal-content" style=" width: 870px; background-color: #C2A966 !important;">
+      <div class="modal-content" style=" width: 700px; background-color: white !important;">
           <div class="modal-header">
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <h4 class="text-center my-3"  style="margin: 0 auto; color: #252649;">Information Talibé</h4>
+          <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
           </div>
           <div class="modal-body p-5">
-              <h1 class="text-center mb-3"  style="color: #252649;">Information Talibé</h1>
-              <div class="mb-3 row" style="color: #252649; font-weight: bold;">
-                  <div class="col-md-4">
-                      <img src="assets/talibedashmaitre.webp" style="width: 250px; height: 150px; border-top: 10px solid #252649; border-left: 10px solid #252649; border-radius: 20% 0 20% 0;" id="détailImg" alt="">
+              <div class="mb-3 row p-2" style="color: #252649; font-weight: bold;">
+                  <div class="col-md-3">
+                      <img src="{{talibeSelectionne?.imageFilename}}" style="width: 150px; height: 150px !important; border-top: 10px solid #252649; border-left: 10px solid #252649; border-radius: 20% 0 20% 0;" id="détailImg" alt="">
                   </div>
-                  <div class="col-md-8">
-                      <p><span style="font-weight: bold;">Prénom et nom:</span>Omar Cisse</p>
+                  <div class="col-md-8 ms-5">
+                      <p><span style="font-weight: 300;">Prénom et nom:</span>{{ talibeSelectionne?.nom }} {{ talibeSelectionne?.prenom }}</p>
                       <hr class="mb-3"> 
-                      <p><span style="font-weight: bold;">Origine:</span>Louga</p>
+                      <p><span style="font-weight: 300;">Origine:</span>{{ talibeSelectionne?.adresse }}</p>
                       <hr class="mb-3">
-                      <p><span style="font-weight: bold;">Situation:</span>Orphelin</p>
+                      <p><span style="font-weight: 300;">Situation:</span>{{ talibeSelectionne?.situation }}</p>
+                      <hr class="mb-3">
+                      <p><span style="font-weight: 300;">Description:</span> {{ talibeSelectionne?.description }}
+                      </p>
                       <hr class="mb-3">
                   </div>
               </div>
               <div class="mb-3">
-                  <p><span style="font-weight: bold;">Description:</span> Lorem, ipsum dolor sit amet consectetur 
-                    adipisicing elit. Error in est quam eum, ducimus ex ratione 
-                  </p>
-                  <hr class="mb-3">
-                  <p>ipsum ad atque sequi. 
-                    Ducimus quaerat dolores suscipit ad accusamus reprehenderit rerum, quo ipsa?</p>
-                  <hr class="mb-3">
-                  <p><span style="font-weight: bold;">Parrain:</span>Awa Lala Sow</p>
-                  <hr class="mb-3">
+                 
               </div>
           </div>
       </div>
@@ -205,42 +200,41 @@
   </div>
   
     <!-- Modal 2-->
-    <div class="modal fade" style="" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div *ngIf="showTalibeEdit" class="modal fade" id="talibeEditModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="talibeEditModal" aria-hidden="true">
       <div class="modal-dialog mt-5" style="margin: 0 auto;">
         <div class="modal-content" style="padding: 40px;  width: 800px;">
           <div class="modal-header">
-            <h1 class="modal-title fs-5" style="margin: 0 auto; color: #252649;" id="staticBackdropLabel">Modifier Information Talibé</h1>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <h1 class="modal-title fs-5" style="margin: 0 auto; color: #252649;" id="talibeEditModal">Modifier Information Talibé</h1>
           </div>
           <div class="modal-body m-3">
                <div class="row">
                   <div class="col-md-6 mb-3 pe-3">
                     <label for="exampleFormControlInput1" style="color: #C2A966;" class="form-label">Nom:</label>
-                    <input name="nom" type="name" #nom placeholder="Nom"  style="height: 40px;border: 1px solid #C2A966; box-shadow:1px 1px 1px #C2A966;" class="form-control" id="exampleFormControlInput1" [(ngModel)]="talibe.nom" >
+                    <input [(ngModel)]="talibe.nom" name="nom" type="name" #nom placeholder="Nom"  style="height: 40px;border: 1px solid #C2A966; box-shadow:1px 1px 1px #C2A966;" class="form-control" id="exampleFormControlInput1" [(ngModel)]="talibe.nom" >
                   </div>
                   <div class="col-md-6 mb-3 ps-3">
                     <label for="exampleFormControlInput1" style="color: #C2A966;" class="form-label">Prénom:</label>
-                    <input name="prenom" type="name"  #prenom placeholder="Prénom" style="height: 40px;border: 1px solid #C2A966; box-shadow:1px 1px 1px #C2A966;" class="form-control" id="exampleFormControlInput1" [(ngModel)]="talibe.prenom">
+                    <input [(ngModel)]="talibe.prenom" name="prenom" type="name"  #prenom placeholder="Prénom" style="height: 40px;border: 1px solid #C2A966; box-shadow:1px 1px 1px #C2A966;" class="form-control" id="exampleFormControlInput1" [(ngModel)]="talibe.prenom">
                   </div>
                </div>
                <div class="row">
                 <div class="col-md-6 mb-3 pe-3">
                   <label for="exampleFormControlInput1" style="color: #C2A966;" class="form-label">Age:</label>
-                  <input name="age" type="number" #origine placeholder="Age"  style="height: 40px;border: 1px solid #C2A966; box-shadow:1px 1px 1px #C2A966;" class="form-control" id="exampleFormControlInput1" [(ngModel)]="talibe.age">
+                  <input [(ngModel)]="talibe.age" name="age" type="number" #origine placeholder="Age"  style="height: 40px;border: 1px solid #C2A966; box-shadow:1px 1px 1px #C2A966;" class="form-control" id="exampleFormControlInput1" [(ngModel)]="talibe.age">
                 </div>
                 <div class="col-md-6 mb-3 ps-3">
                   <label for="exampleFormControlInput1" style="color: #C2A966;" class="form-label">Adresse:</label>
-                  <input name="text" type="presencetalibe" #situation placeholder="Présence Talibé" style="height: 40px;border: 1px solid #C2A966; box-shadow:1px 1px 1px #C2A966;" class="form-control" id="exampleFormControlInput1" [(ngModel)]="talibe.adresse">
+                  <input [(ngModel)]="talibe.adresse" name="text" type="presencetalibe" #situation placeholder="Présence Talibé" style="height: 40px;border: 1px solid #C2A966; box-shadow:1px 1px 1px #C2A966;" class="form-control" id="exampleFormControlInput1" [(ngModel)]="talibe.adresse">
                 </div>
              </div>
                <div class="row">
                 <div class="col-md-6 mb-3 pe-3">
                   <label for="exampleFormControlInput1" style="color: #C2A966;" class="form-label">Situation:</label>
-                  <input name="situation" type="text" #origine placeholder="Adresse"  style="height: 40px;border: 1px solid #C2A966; box-shadow:1px 1px 1px #C2A966;" class="form-control" id="exampleFormControlInput1" [(ngModel)]="talibe.situation">
+                  <input [(ngModel)]="talibe.situation" name="situation" type="text" #origine placeholder="Adresse"  style="height: 40px;border: 1px solid #C2A966; box-shadow:1px 1px 1px #C2A966;" class="form-control" id="exampleFormControlInput1" [(ngModel)]="talibe.situation">
                 </div> 
                 <div class="col-md-6 mb-3 ps-3">
                   <label for="exampleFormControlInput1" style="color: #C2A966;" class="form-label">Date d'arrivée:</label>
-                  <input name="datearrivetalibe" type="text" #dateArrivee placeholder="Date d'arrivée" style="height: 40px;border: 1px solid #C2A966; box-shadow:1px 1px 1px #C2A966;" class="form-control" id="exampleFormControlInput1" [(ngModel)]="talibe.datearrivetalibe">
+                  <input [(ngModel)]="talibe.datearrivetalibe" type="text" #dateArrivee placeholder="Date d'arrivée" style="height: 40px;border: 1px solid #C2A966; box-shadow:1px 1px 1px #C2A966;" class="form-control" id="exampleFormControlInput1" [(ngModel)]="talibe.datearrivetalibe">
                 </div>
              </div>
              <div class="row">
@@ -252,13 +246,13 @@
            <div class="row">
             <div>
               <label for="formFileLg" class="form-label">Image:</label>
-              <input class="form-control form-control-lg" id="formFileLg" type="file" (change)="getImageUrl($event)">
+              <input  class="form-control form-control-lg" id="formFileLg" type="file" (change)="getImageUrl($event)">
             </div>
          </div>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" routerLink="/dashmaitre" data-bs-dismiss="modal">Modifier</button>
-            <button type="button" (click)="cancelEdit()" class="btn btn-secondary" routerLink="/dashmaitre" data-bs-dismiss="modal">Annuler</button>
+            <button type="button" (click)="cancelEdit()" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="modifierTalibe()">Modifier</button>
           </div>
         </div>
       </div>
