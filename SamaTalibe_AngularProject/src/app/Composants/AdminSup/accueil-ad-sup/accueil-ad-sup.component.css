@@ -18,6 +18,15 @@
   width: 80%;
 }
 
+.table-responsive{
+  border: 1px solid #C2A966; 
+  border-radius: 10px;
+
+}
+
+.table-responsive h5{
+  color: #252649;
+}
 
 
 .btn{

@@ -27,11 +27,11 @@ main{
   border-radius: 1%;
 }
 #détailImg{
-  width:100%;
-  border-radius: 30% 0 30% 0;
-  /* box-shadow: 5px 5px 5px 5px #252649; */
-  border-top: 8px solid #252649;
-  border-left: 8px solid #252649;
+  width:400px;
+  height: 300px;
+  border-radius: 10%;
+  box-shadow: 2px 2px 2px 2px #252649;
+
   
 }
 

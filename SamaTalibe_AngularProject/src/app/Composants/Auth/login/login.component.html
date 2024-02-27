@@ -1,160 +1,166 @@
 <app-header></app-header>
 
 <main class="" >
-            <div class="content my-3 row" *ngIf="isLoginFormVisible=='connexion'">
-                <div class="card-header mb-1" style=" background-color: white; color: #C2A966; padding-top: 10px;">
-                    <p class="title" routerLink="/accueil" style="cursor: pointer;margin-right: 20px;"><i class="bi bi-arrow-left" style=" margin-right: 20px;"></i>Accéder à mon espace</p>
-                </div>
-                <div class="card-body form-container" >
-                    <form class="form">
-                        <div class="input-group">
-                            <label for="username"  class="ms-2" style="color: #C2A966;">Adresse-mail: <span class="span_validate" id="validationEmail"></span></label>
-                            <input type="text" name="username" id="username" placeholder="" [(ngModel)]="emailLogin" (input)="emailValidate()">
+    <div class=" row container p-0" style="width: 60%; margin: 0 auto; border: 8px solid #C2A966; border-radius: 20px;">
+     <div class="col-md-6 p-0">
+         <img class=" p-0 " src="assets/authbcg.jpg" style="width: 100%; height: 100%;border-top-left-radius:15px ; border-bottom-left-radius: 15px;"  alt="">
+   
+     </div>
+                <div class="col-md-6 container content row p-0"   *ngIf="isLoginFormVisible=='connexion'">
+                    <div class=" card-body form-container container" style="width: 100%;">
+                        <form class="form">
+                            <div class="card-header mb-1" style=" background-color: white; color: #C2A966; padding-top: 10px;">
+                                <p class="title" routerLink="/accueil" style="cursor: pointer;margin-right: 20px;"><i class="bi bi-arrow-left" style=" margin-right: 20px;"></i>Accéder à mon espace</p>
+                            </div>
+                            <div class="input-group">
+                                <label for="username"  class="ms-2" style="color: #C2A966;">Adresse-mail: <span class="span_validate" id="validationEmail"></span></label>
+                                <input type="text" name="username" id="username" placeholder="" [(ngModel)]="emailLogin" (input)="emailValidate()">
+                            </div>
+                            <div class="input-group">
+                                <label for="password" class="ms-2" style="color: #C2A966;">Mot de passe: <span class="span_validate" id="validationPasse"></span>
+                                </label>
+                                <input type="password" name="password" id="password" placeholder="" [(ngModel)]="passwordLogin" (input)="passeValidate()">
+                            </div>
+                            <button class="sign mt-4" style="background-color: #C2A966; color: white; font-weight: bold;" (click)="login()"  [disabled]="truthyTab.length<2">Se connecter</button>
+                        </form>
+                        <div class="social-message">
+                            <p class="message mb-3">Connectez-vous avec des comptes sociaux</p>
                         </div>
-                        <div class="input-group">
-                            <label for="password" class="ms-2" style="color: #C2A966;">Mot de passe: <span class="span_validate" id="validationPasse"></span>
-                            </label>
-                            <input type="password" name="password" id="password" placeholder="" [(ngModel)]="passwordLogin" (input)="passeValidate()">
+                        <div class="social-icons mb-3">
+                            <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
+                                <li class="ms-3" ><a class="link-body-emphasis" ><i class="bi bi-twitter" style="color: #C2A966;"></i></a></li>
+                                <li class="ms-3" ><a class="link-body-emphasis" ><i class="bi bi-facebook" style="color: #C2A966;"></i></a></li>
+                                <li class="ms-3" ><a class="link-body-emphasis" ><i class="bi bi-linkedin" style="color: #C2A966;"></i></a></li>
+                                <li class="ms-3" ><a class="link-body-emphasis" ><i class="bi bi-google" style="color: #C2A966;"></i></a></li>
+                            </ul>
                         </div>
-                        <button class="sign mt-4" style="background-color: #C2A966; color: white; font-weight: bold;" (click)="login()"  [disabled]="truthyTab.length<2">Se connecter</button>
-                    </form>
-                    <div class="social-message">
-                        <p class="message mb-3">Connectez-vous avec des comptes sociaux</p>
+                        <p class="signup">Vous n'avez pas de compte?
+                            <a rel="noopener noreferrer" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal" style="color: #C2A966; font-weight: bold; cursor: pointer;" >S'inscrire</a>
+                        </p>
+                
+                                <!-- Modal -->
+                            
                     </div>
-                    <div class="social-icons mb-3">
-                        <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
-                            <li class="ms-3" ><a class="link-body-emphasis" ><i class="bi bi-twitter" style="color: #C2A966;"></i></a></li>
-                            <li class="ms-3" ><a class="link-body-emphasis" ><i class="bi bi-facebook" style="color: #C2A966;"></i></a></li>
-                            <li class="ms-3" ><a class="link-body-emphasis" ><i class="bi bi-linkedin" style="color: #C2A966;"></i></a></li>
-                            <li class="ms-3" ><a class="link-body-emphasis" ><i class="bi bi-google" style="color: #C2A966;"></i></a></li>
-                        </ul>
-                    </div>
-                    <p class="signup">Vous n'avez pas de compte?
-                        <a rel="noopener noreferrer" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal" style="color: #C2A966; font-weight: bold; cursor: pointer;" >S'inscrire</a>
-                    </p>
-            
-                            <!-- Modal -->
-                        
                 </div>
-            </div>
+        
+            <!-- <ng-template [ngIf]="choixForm === 'inscription'; else rejoindreForm" > -->
+                <div class="col-md-6 container content row p-0" *ngIf="isLoginFormVisible=='inscription'">
+                    <div class="card-body form-container container" style="width: 100%;">
+                        <form class="form">
+                                    <div class="card-header" style="background-color: white; color: #C2A966; padding-top: 10px;">
+                                        <p class="title" routerLink="/accueil" style="cursor: pointer;margin-right: 20px;"><i class="bi bi-arrow-left" style=" margin-right: 20px;"></i>Accéder à mon espace</p>
+                                    </div>
+                                    <div class="row container">
+                                        <div class="input-group1 col-md-6 row ps-5 ms-1">
+                                            <label for="name"  class="ms-2" style="color: #C2A966;">Nom: <span class="span_validate" id="validationNomUser"></span></label>
+                                            <input class="col-md-6" type="name" name="nom" id="name" placeholder="" [(ngModel)]="nom" (input)="nomUserValidate()">
+                                        </div>
+                                        <div class="input-group1 container col-md-6 row ps-5">
+                                            <label for="firstname"  class="ms-2" style="color: #C2A966;">Prénom: <span class="span_validate" id="validationPrenomUser"></span></label>
+                                            <input class="col-md-6" type="text" name="prenom" id="firstname" placeholder="" [(ngModel)]="prenom" (input)="prenomUserValidate()">
+                                        </div>
+                                    </div>
+                                    <div class="row container">
+                                        <div class="input-group1 row col-md-6 ps-5 ms-1">
+                                            <label for="phone"  class="ms-2" style="color: #C2A966;">Téléphone: <span class="span_validate" id="validationTelephoneDahra"></span></label>
+                                            <input type="text" name="numeroTelephone" id="phone" placeholder="" [(ngModel)]="numeroTelephone" (input)="telephoneUserValidate()">
+                                        </div>
+                                        <div class="input-group1 row col-md-6 ps-5">
+                                            <label for="adresse" class="ms-2" style="color: #C2A966;">Adresse:<span class="span_validate" id="validationAdresse"></span></label>
+                                            <input type="text"  name="adresse" id="adress" placeholder="" [(ngModel)]="adresse" (input)="adresseValidate()">
+                                        </div>
+                                    </div>
+                                    <div class="row container">
+                                        <div class="input-group1 row col-md-6 ps-5 ms-1">
+                                            <label for="username"  class="ms-2" style="color: #C2A966;">Adresse-mail: <span class="span_validate" id="validationEmail"></span> </label>
+                                            <input type="text" name="email" id="username" placeholder="" [(ngModel)]="email" (input)="emailRegisterValidate()">
+                                        </div>
+                                        <div class="input-group1 row col-md-6 ps-5">
+                                            <label for="password" class="ms-2" style="color: #C2A966;">Mot de passe: <span class="span_validate" id="validationPasseRegister"></span></label>
+                                            <input type="password" name="password" id="password" placeholder="" [(ngModel)]="password" (input)="passeRegisterValidate()">
+                                        </div>
+                                    </div>
+                                    <button class="sign mt-4"  style="background-color: #C2A966; color: white; font-weight: bold;"  (click)="Signup()" routerLink="/login" [disabled]="truthyTab.length<6">S'inscrire </button>
+                                </form>
+                                <p class="signup mt-4">Vous avez déjà un compte?
+                                    <a   style="color: #C2A966; font-weight: bold;" routerLink="/login" (click)="getLoginLogin('connexion')">Se connecter</a>
+                                </p>
+                        </div>
+                </div>
+            <!-- </ng-template> -->
     
-        <!-- <ng-template [ngIf]="choixForm === 'inscription'; else rejoindreForm" > -->
-            <div class="row content my-4" style=" border: 1px solid #C2A966;border-radius: 5px; width: 70%;margin: 0 auto;" *ngIf="isLoginFormVisible=='inscription'">
-                <div class="card-header" style="background-color: #C2A966; color: white; padding-top: 10px;">
-                    <p class="title" routerLink="/accueil" style="cursor: pointer;margin-right: 20px;"><i class="bi bi-arrow-left" style=" margin-right: 20px;"></i>Accéder à mon espace</p>
-                </div>
-                    <div class="card-body form-container" style="padding: 3% 0 3% 0; margin: 0 auto; width: 90%;">
-                            <form class="form">
-                                <div class="row container">
-                                    <div class="input-group1 col-md-6 row ps-5 ms-1">
-                                        <label for="name"  class="ms-2" style="color: #C2A966;">Nom: <span class="span_validate" id="validationNomUser"></span></label>
-                                        <input class="col-md-6" type="name" name="nom" id="name" placeholder="" [(ngModel)]="nom" (input)="nomUserValidate()">
-                                    </div>
-                                    <div class="input-group1 container col-md-6 row ps-5">
-                                        <label for="firstname"  class="ms-2" style="color: #C2A966;">Prénom: <span class="span_validate" id="validationPrenomUser"></span></label>
-                                        <input class="col-md-6" type="text" name="prenom" id="firstname" placeholder="" [(ngModel)]="prenom" (input)="prenomUserValidate()">
-                                    </div>
-                                </div>
-                                <div class="row container">
-                                    <div class="input-group1 row col-md-6 ps-5 ms-1">
-                                        <label for="phone"  class="ms-2" style="color: #C2A966;">Téléphone: <span class="span_validate" id="validationTelephoneDahra"></span></label>
-                                        <input type="text" name="numeroTelephone" id="phone" placeholder="" [(ngModel)]="numeroTelephone" (input)="telephoneUserValidate()">
-                                    </div>
-                                    <div class="input-group1 row col-md-6 ps-5">
-                                        <label for="adresse" class="ms-2" style="color: #C2A966;">Adresse:<span class="span_validate" id="validationAdresse"></span></label>
-                                        <input type="text"  name="adresse" id="adress" placeholder="" [(ngModel)]="adresse" (input)="adresseValidate()">
-                                    </div>
-                                </div>
-                                <div class="row container">
-                                    <div class="input-group1 row col-md-6 ps-5 ms-1">
-                                        <label for="username"  class="ms-2" style="color: #C2A966;">Adresse-mail: <span class="span_validate" id="validationEmail"></span> </label>
-                                        <input type="text" name="email" id="username" placeholder="" [(ngModel)]="email" (input)="emailRegisterValidate()">
-                                    </div>
-                                    <div class="input-group1 row col-md-6 ps-5">
-                                        <label for="password" class="ms-2" style="color: #C2A966;">Mot de passe: <span class="span_validate" id="validationPasseRegister"></span></label>
-                                        <input type="password" name="password" id="password" placeholder="" [(ngModel)]="password" (input)="passeRegisterValidate()">
-                                    </div>
-                                </div>
-                                <button class="sign mt-4"  style="background-color: #C2A966; color: white; font-weight: bold;"  (click)="Signup()" routerLink="/login" [disabled]="truthyTab.length<6">S'inscrire </button>
-                            </form>
-                            <p class="signup mt-4">Vous avez déjà un compte?
-                                <a   style="color: #C2A966; font-weight: bold;" routerLink="/login" (click)="getLoginLogin('connexion')">Se connecter</a>
-                            </p>
-                    </div>
-            </div>
-        <!-- </ng-template> -->
-
-
-        <!-- <ng-template #rejoindreForm > -->
-            <div class="row content my-4" style=" border: 1px solid #C2A966;border-radius: 5px; width: 70%;margin: 0 auto;" *ngIf="isLoginFormVisible=='rejoindre'">
-                <div class="card-header" style="background-color: #C2A966; color: white; padding-top: 10px;">
-                    <p class="title" routerLink="/accueil" style="cursor: pointer;margin-right: 20px;"><i class="bi bi-arrow-left" style=" margin-right: 20px;"></i>Accéder à mon espace</p>
-                </div>
-                    <div class="card-body form-container" style="padding: 3% 0 3% 0; margin: 0 auto; width: 90%;">
-                            <form class="form">
-                                <div class="row container">
-                                    <div class="input-group1 row col-md-6 ms-3">
-                                        <label for="name"  class="ms-2" style="color: #C2A966;">Nom Dahra: <span class="span_validate" id="validationNomDahra"></span></label>
-                                        <input class="col-md-6" type="name" name="nom" id="name" placeholder="" [(ngModel)]="nom" (input)="nomdahraValidate()">
-                                    </div>
-                                    <div class="input-group1 col-md-6 row ms-2">
-                                        <label for="firstname"  class="ms-2" style="color: #C2A966;">Nom Oustaz: <span class="span_validate" id="validationOustaze"></span></label>
-                                        <input class="col-md-6" type="text" name="nomOuztas" id="firstname" placeholder="" [(ngModel)]="nomOuztas" (input)="nomOustazeValidate()">
-                                    </div>
-                                </div>
-                                <div class="row container">
-                                    <div class="input-group1 col-md-6 row ms-3">
-                                        <label for="phone"  class="ms-2" style="color: #C2A966;">Téléphone Dahra: <span class="span_validate" id="validationTelephoneDahra"></span></label>
-                                        <input class="col-md-6" type="text" name="numeroTelephone" id="numeroTelephone" placeholder="" [(ngModel)]="numeroTelephone" (input)="telephoneDharaValidate()">
-                                    </div>
-                                    <div class="input-group1 col-md-6 row ms-2">
-                                        <label for="adresse" class="ms-2" style="color: #C2A966;">Téléphone Oustaz: <span class="span_validate" id="validationTelephoneOustaze"></span></label>
-                                        <input class="col-md-6" type="text"  name="numeroTelephoneOuztas" id="numeroTelephoneOuztas" placeholder="" [(ngModel)]="numeroTelephoneOuztas" (input)="telephoneOustazeValidate()">
-                                    </div>
-                                </div>
-                                <div class="row container">
-                                    <div class="input-group1 col-md-6 row ms-3">
-                                        <select [(ngModel)]="selectedRegion" (change)="regionValidate()" class="col-md-6" style="color: #C2A966;height: 45px; border: 1px solid #C2A966;
-                                        outline: 0;background-color: rgba(255, 255, 255, 0.418); width: 900px !important; margin-top: 25px;border-radius: 5px; font-size: 0.875rem;line-height: 1.25rem;" name="adresse" id="adresse">
-                                            <option value="" disabled selected>Choisissez une région</option>
-                                            <option *ngFor="let region of regions" [value]="region">{{ region }}</option>
-                                        </select>
-                                    </div>
-                                    <div class="input-group1 col-md-6 row ms-2">
-                                        <label for="adresse" class="ms-2" style="color: #C2A966;">Adresse: <span class="span_validate" id="validationAdresse"></span></label>
-                                        <input class="col-md-6" type="text"  name="adresse" id="adress" placeholder="" [(ngModel)]="adresse" (input)="adresseValidate()">
-                                    </div>
-                                </div>
-                                <div class="row container">
-                                    <div class="input-group1 col-md-6 row ms-3">
-                                        <label for="adresse" class="ms-2" style="color: #C2A966;">Nombre de Talibés: <span class="span_validate" id="validationNombreTalibes"></span></label>
-                                        <input class="col-md-6" type="text" style  name="nombreTalibe" id="number" placeholder="" [(ngModel)]="nombreTalibe" (input)="nombreTalibes()">
-                                    </div>
-                                    <div class="input-group1 col-md-6 row ms-2">
-                                        <label for="username"  class="ms-2" style="color: #C2A966;">Adresse-mail: <span class="span_validate" id="validationEmail"></span> </label>
-                                        <input class="col-md-6" type="text" name="email" id="username" placeholder="" [(ngModel)]="email" (input)="emailRegisterValidate()">
-                                    </div>
-                                </div>
-                                <div class="row container">
-                                    <div class="input-group1 col-md-6 row ms-3">
-                                        <label for="password" class="ms-2" style="color: #C2A966;">Mot de passe: <span class="span_validate" id="validationPasseRegister"></span></label>
-                                        <input class="col-md-6" type="password" name="password" id="password" placeholder="" [(ngModel)]="password" (input)="passeRegisterValidate()">
-                                    </div>
-                                    <div class="input-group1 col-md-6 row ms-2">
-                                        <label for="formFileLg" class="form-label">Image:</label>
-                                        <input class="col-md-6" type="file" style="color: #C2A966;" id="imageFilename" (change)="onFileSelected($event)" multiple>
-                                        <!-- <i class="fas fa-image" style="font-size: 20px;"></i> -->
-                                    </div>
-                                </div>
-                                <button class="sign mt-4" routerLink="/login" style="background-color: #C2A966; color: white; font-weight: bold;" (click)="SignupDahra()" [disabled]="truthyTab.length<10">Nous rejoindre</button>
-                            </form>
-                            <p class="signup mt-4">Vous avez déjà un compte?
-                                <a   style="color: #C2A966; font-weight: bold;" routerLink="/login" (click)="getLoginLogin('connexion')">Se connecter</a>
-                            </p>
-                    </div>
-            </div>
-        <!-- </ng-template> -->
     
+            <!-- <ng-template #rejoindreForm > -->
+                <div class="col-md-6 container content row p-0" *ngIf="isLoginFormVisible=='rejoindre'">
+                    <div class="card-body form-container" style="padding: 3% 0 3% 0; margin: 0 auto; width: 90%;">
+                        <form class="form">
+                                    <div class="card-header" style="background-color: white; color: #C2A966; padding-top: 10px;">
+                                        <p class="title" routerLink="/accueil" style="cursor: pointer;margin-right: 20px;"><i class="bi bi-arrow-left" style=" margin-right: 20px;"></i>Accéder à mon espace</p>
+                                    </div>
+                                    <div class="row container">
+                                        <div class="input-group1 row col-md-6 ms-3">
+                                            <label for="name"  class="ms-2" style="color: #C2A966;">Nom Dahra: <span class="span_validate" id="validationNomDahra"></span></label>
+                                            <input class="col-md-6" type="name" name="nom" id="name" placeholder="" [(ngModel)]="nom" (input)="nomdahraValidate()">
+                                        </div>
+                                        <div class="input-group1 col-md-6 row ms-2">
+                                            <label for="firstname"  class="ms-2" style="color: #C2A966;">Nom Oustaz: <span class="span_validate" id="validationOustaze"></span></label>
+                                            <input class="col-md-6" type="text" name="nomOuztas" id="firstname" placeholder="" [(ngModel)]="nomOuztas" (input)="nomOustazeValidate()">
+                                        </div>
+                                    </div>
+                                    <div class="row container">
+                                        <div class="input-group1 col-md-6 row ms-3">
+                                            <label for="phone"  class="ms-2" style="color: #C2A966;">Téléphone Dahra: <span class="span_validate" id="validationTelephoneDahra"></span></label>
+                                            <input class="col-md-6" type="text" name="numeroTelephone" id="numeroTelephone" placeholder="" [(ngModel)]="numeroTelephone" (input)="telephoneDharaValidate()">
+                                        </div>
+                                        <div class="input-group1 col-md-6 row ms-2">
+                                            <label for="adresse" class="ms-2" style="color: #C2A966;">Téléphone Oustaz: <span class="span_validate" id="validationTelephoneOustaze"></span></label>
+                                            <input class="col-md-6" type="text"  name="numeroTelephoneOuztas" id="numeroTelephoneOuztas" placeholder="" [(ngModel)]="numeroTelephoneOuztas" (input)="telephoneOustazeValidate()">
+                                        </div>
+                                    </div>
+                                    <div class="row container">
+                                        <div class="input-group1 col-md-6 row ms-3">
+                                            <select [(ngModel)]="selectedRegion" (change)="regionValidate()" class="col-md-6" style="color: #C2A966;height: 45px; border: 1px solid #C2A966;
+                                            outline: 0;background-color: rgba(255, 255, 255, 0.418); width: 900px !important; margin-top: 25px;border-radius: 5px; font-size: 0.875rem;line-height: 1.25rem;" name="adresse" id="adresse">
+                                                <option value="" disabled selected>Choisissez une région</option>
+                                                <option *ngFor="let region of regions" [value]="region">{{ region }}</option>
+                                            </select>
+                                        </div>
+                                        <div class="input-group1 col-md-6 row ms-2">
+                                            <label for="adresse" class="ms-2" style="color: #C2A966;">Adresse: <span class="span_validate" id="validationAdresse"></span></label>
+                                            <input class="col-md-6" type="text"  name="adresse" id="adress" placeholder="" [(ngModel)]="adresse" (input)="adresseValidate()">
+                                        </div>
+                                    </div>
+                                    <div class="row container">
+                                        <div class="input-group1 col-md-6 row ms-3">
+                                            <label for="adresse" class="ms-2" style="color: #C2A966;">Nombre de Talibés: <span class="span_validate" id="validationNombreTalibes"></span></label>
+                                            <input class="col-md-6" type="text" style  name="nombreTalibe" id="number" placeholder="" [(ngModel)]="nombreTalibe" (input)="nombreTalibes()">
+                                        </div>
+                                        <div class="input-group1 col-md-6 row ms-2">
+                                            <label for="username"  class="ms-2" style="color: #C2A966;">Adresse-mail: <span class="span_validate" id="validationEmail"></span> </label>
+                                            <input class="col-md-6" type="text" name="email" id="username" placeholder="" [(ngModel)]="email" (input)="emailRegisterValidate()">
+                                        </div>
+                                    </div>
+                                    <div class="row container">
+                                        <div class="input-group1 col-md-6 row ms-3">
+                                            <label for="password" class="ms-2" style="color: #C2A966;">Mot de passe: <span class="span_validate" id="validationPasseRegister"></span></label>
+                                            <input class="col-md-6" type="password" name="password" id="password" placeholder="" [(ngModel)]="password" (input)="passeRegisterValidate()">
+                                        </div>
+                                        <div class="input-group1 col-md-6 row ms-2">
+                                            <label for="formFileLg" class="form-label">Image:</label>
+                                            <input class="col-md-6" type="file" style="color: #C2A966;" id="imageFilename" (change)="onFileSelected($event)" multiple>
+                                            <!-- <i class="fas fa-image" style="font-size: 20px;"></i> -->
+                                        </div>
+                                    </div>
+                                    <button class="sign mt-4" routerLink="/login" style="background-color: #C2A966; color: white; font-weight: bold;" (click)="SignupDahra()" [disabled]="truthyTab.length<10">Nous rejoindre</button>
+                                </form>
+                                <p class="signup mt-4">Vous avez déjà un compte?
+                                    <a   style="color: #C2A966; font-weight: bold;" routerLink="/login" (click)="getLoginLogin('connexion')">Se connecter</a>
+                                </p>
+                        </div>
+                </div>
+            <!-- </ng-template> -->
+        
+    </div>
     
     <!--choice popup -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

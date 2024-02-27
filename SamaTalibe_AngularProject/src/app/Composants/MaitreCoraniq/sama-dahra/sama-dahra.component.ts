@@ -13,6 +13,7 @@ import { environment } from 'src/environments/environment.development';
 export class SamaDahraComponent  implements OnInit{
 showTalibeEdit: boolean = false;
 public currentId:any="";
+  talibes: any;
 cancelEdit() {
 throw new Error('Method not implemented.');
 }
@@ -24,6 +25,9 @@ throw new Error('Method not implemented.');
   uploadedImages: any;
   talibesList: any[] = [];
   talibeSelectionne: any;
+  pagedTalibes: any[] = []; // Les données à afficher sur une page
+  currentPage = 1; // Page actuelle
+  itemsPerPage = 4; 
 
   toggleView(view: string): void {
     this.showListTalib = view === 'listTalib';
@@ -34,6 +38,36 @@ throw new Error('Method not implemented.');
     this.loadTalibesList();
   }
 
+
+  
+  paginatePerPage(page: number, pageSize: number, data: any[]): any[] {
+    if (!page) {
+      return data;
+    }
+    const firsElementPerPage = pageSize * (page-1);
+    const totalElements = firsElementPerPage + pageSize;
+    return data.slice(firsElementPerPage, totalElements);
+}
+  
+  setPage(page: number) {
+    console.log("page:" ,page );
+    console.log("D:",this.talibes.length);
+
+    // Calculer l'index de début et de fin pour les éléments à afficher sur la page sélectionnée
+    // const startIndex = (page - 1) * this.itemsPerPage;
+    // const endIndex = Math.min(startIndex + this.itemsPerPage - 1, this.dahras.length - 1);
+    
+    // this.pagedDahras = this.dahras.slice(startIndex, endIndex + 1);
+
+    // Mettre à jour la page actuelle
+    this.currentPage = page ;
+    this.pagedTalibes =  this.paginatePerPage(this.currentPage,this.itemsPerPage,this.talibes)
+    console.log("D:",this.talibes.length);
+    console.log("d:",this.pagedTalibes.length);
+ 
+  }
+
+  
   loadTalibesList() {
     this.service.get('/lister-mes-talibes', (response: any) => {
       console.log(`test`,response);
@@ -138,28 +172,19 @@ modifierTalibe() {
     
 )}
 
-  saveChanges() {
-    // Envoyer les modifications au backend
-    this.service.put('/modifier_info_talibe/{id}' + this.talibe.id, this.talibe, (response: any) => {
-        // Gérer la réponse du serveur
-        console.log('Modifications enregistrées avec succès.' , response);
-        // Cacher le popup de modification après l'enregistrement des modifications
-        const editModal = document.getElementById('editModal');
-        if (editModal) {
-            editModal.classList.remove('show');
-        }
-        // Actualiser la liste des talibés ou effectuer d'autres actions nécessaires
-        this.loadTalibesList();
-    });
+
+supprimerTalibe(talibe: any) {
+  if (confirm('Êtes-vous sûr de vouloir supprimer ce talibé ?')) {
+    this.service. delete('/dahra/supprimer-talibe/' + talibe.id ,(response: any) => {
+        console.log(response);  
+        this.supprimerTalibe = response;  
+        this.service.message('Succès', 'success', 'Dahra supprimé avec succès');
+
+        this.loadTalibesList;
+      },
+
+    );
+  }
 }
 
-
-archiveTalibe(talibe: any) {
-    this.service.put(`/archive-talibe/${talibe.id}`, {}, (response: any) => {
-        // Gérer la réponse du serveur
-        console.log('Talibé archivé avec succès.');
-        // Actualiser la liste des talibés pour refléter le changement
-        this.loadTalibesList();
-    });
-}
 }

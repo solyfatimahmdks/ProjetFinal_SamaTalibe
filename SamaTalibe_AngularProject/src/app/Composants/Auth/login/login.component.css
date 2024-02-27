@@ -1,15 +1,15 @@
 main{
-  margin-top: 200px;
+  margin-top: 250px;
 }
 .content{
   /* background: linear-gradient(0deg, #2f315a00,#2f315a00), url("../../../../assets/authbcg.jpg");
   background-size: cover;
   background-repeat: no-repeat; */
-  background-color: #C2A966;
+  /* background-color: #C2A966; */
   margin: 0;
-  box-shadow:1px 1px 1px 1px #C2A966;
+  /* box-shadow:1px 1px 1px 1px #C2A966; */
   background-position: center;
-  border: 6px solid #C2A966;
+  /* border: 6px solid #C2A966; */
   border-radius: 5px; 
   width: 50%;
   margin: 0 auto;

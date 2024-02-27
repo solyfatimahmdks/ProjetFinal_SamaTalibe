@@ -200,15 +200,15 @@
       <div class="modal-dialog mt-5" style="margin: 0 auto;">
       <div class="modal-content" style="padding: 20px; width: 870px; background-color: white !important;">
           <div class="modal-header">
+            <h4 class="text-center mb-3"  style="color: #252649;">Information Dahra</h4>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body p-5">
-              <h1 class="text-center mb-3"  style="color: #252649;">Information Dahra</h1>
               <div class="mb-3 row" style="color: #252649; font-weight: bold;">
-                  <div class="col-md-4">
-                      <img [src]="getImage(selectedDahra.image)" style="width: 250px; height: 150px; border-top: 10px solid #252649; border-left: 10px solid #252649; border-radius: 20% 0 20% 0;" id="détailImg" alt="">
+                  <div class="col-md-3">
+                      <img [src]="getImage(selectedDahra.image)" style="width: 200px; height: 150px; border-top: 10px solid #252649; border-left: 10px solid #252649; border-radius: 20% 0 20% 0;" id="détailImg" alt="">
                   </div>
-                  <div class="col-md-8">
+                  <div class="col-md-8 ms-5">
                       <p><span style="font-weight: 400;">Nom:</span>{{ selectedDahra.nom }}</p>
                       <hr class="mb-3"> 
                       <p><span style="font-weight: 400;">Nom Ouztas:</span>{{ selectedDahra.nomOuztas }}</p>
@@ -233,6 +233,8 @@
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn" style="" (click)="closeDahraDetailsModal()" >Fermer</button>
+                <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#listTalibModal">Nos apprenants</button>
+
               </div>
           </div>
       </div>
@@ -297,6 +299,25 @@
         </div>
       </div>
     </div> 
+
+
+    <!-- Modal 3 -->
+    <div *ngIf="showDahraEdit"  class="modal fade" id="listTalibModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="listTalibModal" aria-hidden="true">
+      <div class="modal-dialog mt-5" style="margin: 0 auto;">
+        <div class="modal-content" style="padding: 40px;  width: 800px;">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" style="margin: 0 auto; color: #252649;" id="">Liste des nos apprenants</h1>
+          </div>
+          <div class="modal-body m-3">
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+            <button type="button" class="btn btn-secondary" >Modifier</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
 </body>
 

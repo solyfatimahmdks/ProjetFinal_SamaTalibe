@@ -10,36 +10,25 @@ export class ListDahraComponent  implements OnInit{
 search() {
 throw new Error('Method not implemented.');
 }
-  dahrasList: any[] = [];
-  dahras: any[] = []; 
-  pagedDahras: any[] = []; // Les données à afficher sur une page
-  currentPage = 1; // Page actuelle
-  itemsPerPage = 3;
-  searchKeyword: string = '';
+dahraList: any[] = [];
+// dahras: any;
+dahras: any[] = []; 
+pagedDahras: any[] = []; // Les données à afficher sur une page
+currentPage = 1; // Page actuelle
+itemsPerPage = 3; 
 
   constructor(private allservicesService: AllservicesService) {}
 
   ngOnInit(): void {
-    this.loadDahrasList();
+    this.loadDahraList();
   }
 
-  loadDahrasList() {
-    if (this.searchKeyword.trim() !== '') {
-      // Si un mot-clé de recherche est présent, effectuez la recherche
-      this.allservicesService.get(`/lister-dahra?keyword=${this.searchKeyword}`, (response: any) => {
-        this.dahrasList = response;
-        this.dahras = response; // Copie de la liste complète pour la pagination
-        this.setPage(this.currentPage); // Mettre à jour la pagination une fois que les données sont récupérées
-      });
-    } else {
-      // Sinon, chargez la liste complète des dahras
-      this.allservicesService.get('/lister-dahra', (response: any) => {
-        this.dahrasList = response;
-        this.dahras = response; // Copie de la liste complète pour la pagination
-        this.setPage(this.currentPage); // Mettre à jour la pagination une fois que les données sont récupérées
-      });
-    }
-  }
+loadDahraList() {
+    this.allservicesService.get('/lister-dahra', (reponse: any) => {
+      console.log('test', reponse);
+      this.dahras=reponse;
+    });
+}
 
   getImage(path: string): string {
     return path.includes(".jpeg") || path.includes(".jpg") || path.includes(".png") ? path : "https://placehold.co/20x20";

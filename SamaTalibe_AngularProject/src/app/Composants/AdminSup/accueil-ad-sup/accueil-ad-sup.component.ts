@@ -18,7 +18,7 @@ export class AccueilAdSupComponent{
   dahras: any[] = []; 
   pagedDahras: any[] = []; // Les données à afficher sur une page
   currentPage = 1; // Page actuelle
-  itemsPerPage = 3; 
+  itemsPerPage = 2; 
   uploadedImages: any;
   
   constructor(private allservicesService: AllservicesService , private authService: AuthService ) {}
@@ -31,22 +31,22 @@ export class AccueilAdSupComponent{
       series: [{
       name: 'Mendicité',
       data: [44, 55, 57, 56, 61, 58, 63, 60, 66],
-      color: '#008FFB',
+      
       
     }, {
       name: 'Talibé',
       data: [76, 85, 101, 98, 87, 105, 91, 114, 94],
-      color:'#00E396',
+    
     }],
       chart: {
       type: 'bar',
-      height: 250
+      height: 200
     
     },
     plotOptions: {
       bar: {
         horizontal: false,
-        columnWidth: '55%',
+        columnWidth: '30%',
         endingShape: '#00E396',
         background: '#00E396'
       },
@@ -56,7 +56,7 @@ export class AccueilAdSupComponent{
     },
     stroke: {
       show: true,
-      width: 2,
+      width: 1,
       colors: ['transparent']
     },
     xaxis: {

@@ -79,6 +79,7 @@ main{
    /* SECTION ABOUT */
 .about{
   background-color: #e0ce9b;
+  padding:  20px;
 }
 
 .cardtext{
@@ -93,6 +94,11 @@ main{
 
 .imageabout-container {
     position: relative;
+}
+
+
+#aboutImage{
+  margin: 0 auto;
 }
 
 /* SECTION COMMENT çA  MARCHE */
@@ -126,6 +132,8 @@ main{
     color: #252649; 
     font-size: 18px;
 }
+
+
   
 .card {
     background-color: #C2A966;
@@ -159,8 +167,13 @@ main{
   margin: 0 auto !important; 
   height: 250px;
 }
+/* #cards{
+  border: 1px solid red;
+  margin: 0 auto;
+} */
 
 #cardprimo{
+  /* border: 1px solid red; */
   max-width: 18rem;
   height: 400px;
   margin: 0 auto;  
@@ -191,31 +204,14 @@ main{
 #cardBottomprimo{
   border-top-right-radius: 30px !important;
   border-bottom-right-radius: 30px !important;
-  width: 75% !important;
+  width: 78% !important;
   background-color: #C2A966 !important;
   height: 90px; 
-  left: 80px !important;
+  left: 63px !important;
   bottom: 30px;
 }
 
-#cardBottom1{
-  border-top-right-radius: 30px !important;
-  border-bottom-right-radius: 30px !important;
-  width: 75% !important;
-  background-color: #C2A966 !important;
-  height: 90px; 
-  left: 80px !important;
-  bottom: 30px;
-}
-#cardBottom2{
-  /* border-top-right-radius: 30px !important;
-  border-bottom-right-radius: 30px !important;
-  width: 75% !important;
-  background-color: #C2A966; 
-  height: 90px; 
-  bottom: 200px !important; 
-  left: 10px !important; */
-}
+
 
 /* SECTION ACTUS */
 .imageabout img{
@@ -254,7 +250,8 @@ main{
 }
 #contactImg{
   /* border: 1px solid black; */
-  width: 70%;
+  width: 100%;
+  height: 400px;
 }
 
 
@@ -291,37 +288,6 @@ main{
 .temcontent{
   margin: 0 auto !important; 
   height: 250px;
-}
-#cardBottom{
-  /* border: 1px solid red;
-  border-top-right-radius: 30px !important;
-  border-bottom-right-radius: 30px !important;
-  width: 22% !important;
-  background-color: #C2A966 !important;
-  height: 90px !important; 
-  margin-top: 600px !important; */
-  display: none !important;
-}
-
-#cardBottom1{
-  /* border-top-right-radius: 30px !important;
-  border-bottom-right-radius: 30px !important;
-  width: 22% !important;
-  background-color: #C2A966; 
-  height: 90px;  */
-  /* top: 1970px; 
-  left: 570px; */
-  display: none;
-}
-#cardBottom2{
-  /* border-top-right-radius: 30px !important;
-  border-bottom-right-radius: 30px !important;
-  width: 22% !important;
-  background-color: #C2A966; 
-  height: 90px;  */
-  /* top: 1970px; 
-  left: 941px; */
-  display: none;
 }
 
 #maitreImg{

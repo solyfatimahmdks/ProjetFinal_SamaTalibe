@@ -48,56 +48,78 @@
 <!-- End soulignement -->
 <div class="search col-md-6">
   <form (submit)="search()">
-    <input type="search" class="form-control" placeholder="Rechercher..." [(ngModel)]="searchKeyword" name="searchKeyword" aria-label="Search" style="border: 1px solid #252649; color: #252649; width: 50%; margin-left: 50%;">
+    <input type="search" class="form-control" placeholder="Rechercher..." name="searchKeyword" aria-label="Search" style="border: 1px solid #252649; color: #252649; width: 50%; margin-left: 50%;">
     <!-- <button type="submit" class="btn" style="background-color: #252649; color: #C2A966; font-weight: bold;">Ok</button> -->
   </form>
 </div>
     <hr class="container" style="color: #C2A966;">
     <div class="contenu" style="margin: 0 auto;">
-        <div class="my-5 g-3 row container"  style="margin: 0 auto;">
-            <div *ngFor="let dahra of dahras | paginate:{ itemsPerPage:itemsPerPage, currentPage:currentPage , totalItems:dahras.length}" class="contentcard  col-md-4">
-                <div class="card" style="width: 20rem; box-shadow: 1px 1px 1px 1px #C2A966;">
-                    <div><img [src]="getImage(dahra.imageFilename)" id="cardImg" alt=""></div>
-                    <div class="card-body">
-                      <h5 class="card-title text-center">{{ dahra.nom }}</h5>  
-                      <div class="row">
-                          <div class="col-md-6" style="font-size: 15px;">
-                              <p class="card-text text-start"><i class="bi bi-person-badge" style="color: #252649; margin-right: 10px;"></i>{{ dahra.nombreTalibe }} apprenants</p>
-                              <p class="card-text text-start"><i class="bi bi-geo-alt-fill" style="color: #252649; margin-right: 10px;"></i> {{ dahra.region }}</p>
-                          </div>
-                          <div class="col-md-6 mt-3">
-                              <a class="btn me-3" routerLink="/talibes" style="width: 100px; font-size: 12px; background-color: #252649;color: #C2A966;box-shadow:2px 2px 2px 2px #C2A966; font-weight: bold;"> <i class="bi bi-eye-fill" style="color: #C2A966; margin-right: 10px; font-weight: bold;"></i>Voir plus</a>
-                        </div>
+      <div class="my-5 row" >
+        <div class="contentcard col-md-4" *ngFor="let dahra of dahras | paginate:{ itemsPerPage:itemsPerPage, currentPage:currentPage , totalItems:dahras.length}">
+            <div class="card" style="width: 20rem; box-shadow: 1px 1px 1px 1px #C2A966; margin: 0 auto;">
+                <div><img [src]="getImage(dahra.image)" id="cardImg" alt=""></div>
+                <div class="card-body">
+                  <h5 class="mt-2 card-title text-center">{{ dahra.nom }}</h5>  
+                  <div class="row p-2" style="">
+                      <div class="col-md-6 mt-3 fw-bold">
+                          <p class="card-text text-start"><i class="bi bi-person-badge" style="color: #252649; margin-right: 10px;"></i>{{ dahra.nombreTalibe}} apprenants</p>
+                          <p class="card-text text-start"><i class="bi bi-geo-alt-fill" style="color: #252649; margin-right: 10px;"></i>{{ dahra.region }}</p>
                       </div>
-                    </div>
+                      <div class="col-md-6" >
+                          <a href="#" class="btn"  data-bs-toggle="modal" data-bs-target="#exampleModal" style="width:80%; font-size: 18px; background-color: #252649;color: #C2A966;box-shadow:2px 2px 2px 2px #C2A966; font-weight: bold;"> <i class="bi bi-eye-fill" style="color: #C2A966; margin-right: 15px; font-weight: bold;"></i>Détails</a>
+                      
+                            <!-- Modal -->
+                                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog mt-2">
+                                        <div class="modal-content" style=" width: 900px; background-color: #C2A966 !important;margin: 0  auto;">
+                                            <div class="modal-header">
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body p-5">
+                                                <h1 class="text-center mb-3"  style="color: #252649;">Dahra Al Ihsaan</h1>
+                                                <div class="mb-3 row" style="color: #252649; font-weight: bold;">
+                                                    <div class="col-md-4">
+                                                        <img src="assets/dahras/Imgcarte1.jpg" style="width: 200px;" id="détailImg" alt="">
+                                                    </div>
+                                                    <div class="col-md-8">
+                                                        <p><span style="font-weight: bold;">Nom et prénom Oustaz:</span>Elhadji Djibril Thiam </p>
+                                                        <hr class="mb-3">
+                                                        <p><span style="font-weight: bold;">Région:</span>Fatick</p>
+                                                        <hr class="mb-3">
+                                                        <p><span style="font-weight: bold;">Adresse:</span> Niongolor</p>
+                                                        <hr class="mb-3">
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <p><span style="font-weight: bold;">Contact:</span> 786754898</p>
+                                                    <hr class="mb-3">
+                                                    <p><span style="font-weight: bold;">Description:</span> Lorem, ipsum dolor sit amet consectetur 
+                                                      adipisicing elit. Error in est quam eum, ducimus ex ratione 
+                                                    </p>
+                                                    <hr class="mb-3">
+                                                    <p>ipsum ad atque sequi. 
+                                                      Ducimus quaerat dolores suscipit ad accusamus reprehenderit rerum, quo ipsa?</p>
+                                                    <hr class="mb-3">
+                                                    <p><span style="font-weight: bold;">Nombre d'apprenants:</span> 786</p>
+                                                    <hr class="mb-3">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        </div>
+                                    </div>
+                      </div>
+                  </div>
                 </div>
             </div>
-           
         </div>
+      </div> 
+      <pagination-controls (pageChange)="setPage($event)" class="mt-3" previousLabel="prev" nextLabel="next"></pagination-controls>
           
     </div>
 
-    <pagination-controls (pageChange)="setPage($event)" class="mt-3" previousLabel="prev" nextLabel="next"></pagination-controls>
-
     <hr class="container mb-5" style="color: #C2A966;">
 
-    <!-- <nav aria-label="Page navigation example">
-        <ul class="pagination">
-          <li class="page-item">
-            <a class="page-link" style="color: #C2A966; border: none;" href="#" aria-label="Previous">
-              <span aria-hidden="true">&laquo;</span>
-            </a>
-          </li>
-          <li class="page-item" ><a class="page-link" style="background-color: #C2A966 !important; color: white; border:1px solid #C2A966; border-radius: 2% !important; box-shadow:1px 1px 1px 1px #C2A966; margin-right: 2%;" href="#">1</a></li>
-          <li class="page-item"><a class="page-link" href="#">2</a></li>
-          <li class="page-item"><a class="page-link" href="#">3</a></li>
-          <li class="page-item">
-            <a class="page-link" style="color: rgb(211, 207, 207); border: none;" href="#" aria-label="Next">
-              <span aria-hidden="true">&raquo;</span>
-            </a>
-          </li>
-        </ul>
-    </nav> -->
+
  </main>
 <app-footer></app-footer>
 

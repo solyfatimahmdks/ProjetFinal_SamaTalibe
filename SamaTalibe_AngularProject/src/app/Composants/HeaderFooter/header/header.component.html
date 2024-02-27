@@ -5,8 +5,6 @@
 
 
 
-
-
   <div  id="topMenuB">
     <a class="btnMenu btn-primary" id="btnMenu" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
       <i class="bi bi-list"></i>
@@ -81,28 +79,30 @@
                 <li><a routerLink="/accueil" [class.active-link]="isLinkActive('/accueil')" style="margin-right:40px; text-decoration: none; color: #252649; font-weight: bold;">Accueil</a></li>
                 <li><a routerLink="/a-propos" [class.active-link]="isLinkActive('/a-propos')" style="margin-right:40px ; text-decoration: none; color: #252649; font-weight: bold;">A propos</a></li>
                 <li>
-                  <a (click)="toggleDahrasDropdown()" style="margin-right:40px; text-decoration: none; color: #252649; font-weight: bold; cursor: pointer;">Dahras</a>
-                
-                  <!-- Dropdown content -->
-                  <ul *ngIf="isDahrasDropdownVisible ">
-                    <li style="list-style: none; font-weight: bold; "><a routerLink="/listdahra" [class.active-link]="isLinkActive('/dahra/liste')" style="text-decoration: none;color: #252649;">Liste des dahras</a></li>
-                    <li style="list-style: none; font-weight: bold; "><a class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal" style="text-decoration: none;color: #252649; border: none; font-size: 20px; font-weight: bold;">Sama dahra</a></li>
-                      <!-- Button trigger modal -->
-                 
-                  </ul>
+                  <a class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" style="margin-right:40px; text-decoration: none; color: #252649; font-weight: bold; cursor: pointer;">
+                    Dahras
+                </a>
+                <!-- Dropdown content -->
+                <ul class="dropdown-menu">
+                    <li><a routerLink="/listdahra" [class.active-link]="isLinkActive('/listdahra')" style="text-decoration: none;color: #252649; border: none; font-size: 20px; font-weight: bold;">Liste des dahras</a></li>
+                    <li><a class="btn" data-bs-toggle="modal" data-bs-target="#exampleModaly" style="text-decoration: none;color: #252649; border: none; font-size: 20px; font-weight: bold;">Sama dahra</a></li>
+                    <!-- Button trigger modal -->
+
+
+                </ul>
                 </li>
 
 
 
                 <li>
-                  <a (click)="toggleSoutiensDropdown()" style="margin-right:40px; text-decoration: none; color: #252649; font-weight: bold; cursor: pointer;">Soutiens</a>
-                
-                  <!-- Dropdown content -->
-                  <ul *ngIf=" isSoutiensDropdownVisible">
-                    <li style="list-style: none; font-weight: bold; "><a routerLink="/donnations" [class.active-link]="isLinkActive('/donnations')" style="text-decoration: none;color: #252649;">Donnations</a></li>
-                    <li style="list-style: none; font-weight: bold; "><a routerLink="/parrains" [class.active-link]="isLinkActive('/parrains')" style="text-decoration: none;color: #252649;">Parrainages</a></li>
-                  </ul>
-                </li>
+                  <a class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" style="margin-right:40px; text-decoration: none; color: #252649; font-weight: bold; cursor: pointer;">
+                    Soutiens
+                </a>
+                <!-- Dropdown content -->
+                <ul class="dropdown-menu border-0 ">
+                    <li><a routerLink="/donnations" [class.active-link]="isLinkActive('/donnations')" style="text-decoration: none;color: #252649; border: none; font-size: 20px; font-weight: bold;">Donnations</a></li>
+                    <li><a routerLink="/parrains" [class.active-link]="isLinkActive('/parrains')" style="text-decoration: none;color: #252649; border: none; font-size: 20px; font-weight: bold;">Parrainages</a></li>
+                </ul>
 
               </ul>
         
@@ -111,6 +111,20 @@
               </div>
               
     </div>
+    
+
+<!-- Modal -->
+<div class="modal fade mt-5" id="exampleModaly" tabindex="-1" aria-labelledby="exampleModaly" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content p-5">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" style="margin: 0 auto; color: #252649;" id="exampleModaly">Authentifiez-vous d'abord</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+         <button type="button" class="btn" style="background-color: #252649; color: #C2A966; border: none; box-shadow:1px 1px 1px 1px #C2A966; font-weight: bold;" routerLink="/login">Connexion</button>
+    </div>
+  </div>
+  </div>
     
             
 

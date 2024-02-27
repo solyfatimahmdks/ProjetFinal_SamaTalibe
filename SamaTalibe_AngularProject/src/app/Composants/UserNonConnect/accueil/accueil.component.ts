@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component , HostListener} from '@angular/core';
 
 @Component({
   selector: 'app-accueil',
@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AccueilComponent {
 
+  showScrollButton: boolean = false;
   nom: string = '';
   email: string = '';
   sujet: string = '';
@@ -32,4 +33,17 @@ export class AccueilComponent {
         // Vous pouvez également rediriger l'utilisateur vers une page de confirmation
         console.log('Message enregistré localement :', formData);
       }
-}
+
+      @HostListener('window:scroll', [])
+      onWindowScroll() {
+        if (window.pageYOffset > 100) {
+          this.showScrollButton = true;
+        } else {
+          this.showScrollButton = false;
+        }
+      }
+    
+      scrollToTop() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }
