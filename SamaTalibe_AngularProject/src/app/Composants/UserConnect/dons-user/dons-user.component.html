@@ -29,11 +29,11 @@
                 <i class="me-3 fa-solid fa-user-xmark" style="color: white;"></i>Parrainages
               </a>
             </li>
-            <li>
+            <!-- <li>
               <a class="nav-link ps-5 mb-2" routerLink="/temuser" style="height: 50px; color: white; font-size: 20px; font-weight: bold;">
                 <i class="me-3 fa-solid fa-user-group" style="color: white;"></i>Témoignages
               </a>
-            </li>
+            </li> -->
       
             <div class="d-sm-flex align-items-center justify-content-between my-4" style="margin: 0 auto;">
               <a href="#" class="d-none d-sm-inline-block btn btn-sm shadow-sm">
@@ -77,15 +77,48 @@
                           Faire un don
                         </button>
     
-                        <div class="row">
-                          <div class="col-md-4 ps-5" style=" padding-right: 20px;">
-                              <div class="cardbi mb-3 p-3" style="line-height: 10px; border-radius: 10px; box-shadow: 1px 1px 1px 1px #252649;border-bottom: 10px solid #C2A966;background-color: white;">
-                                    <div class="mb-3" style="box-shadow: 1px 1px 1px 1px #252649;width: 30%; margin: 0 auto; border-radius: 5px;"><img src="assets/cardonSup.png" alt=""  style="width: 70px;display: flex; align-items: center;"></div>    
-                                    <p class="card-text py-2" style="color: #252649; font-size: 12px; font-weight: 400;"><span class="fw-bold">Donnateur:</span>dgjjuytyth</p>
-                                    <p class="card-text py-2" style="color: #252649; font-size: 12px; font-weight: 400;"><span class="fw-bold">Lieu:</span>kjfghjkjh</p>
-                                    <p class="card-text py-2" style="color: #252649; font-size: 12px; font-weight: 400;"><span class="fw-bold">Date:</span>lkjhgfgh</p>
-                                    <p class="card-text py-2" style="color: #252649; font-size: 12px; font-weight: 400;"><span class="fw-bold">Destinataire:</span>kjhgfhjk</p>
+                        
+                        
+                        <div>
+                          <ul class="w-75 nav nav-pills nav-fill gap-2 p-1 small rounded-5 shadow-sm" id="pillNav2" role="tablist" style="--bs-nav-link-color: var(--bs-white); --bs-nav-pills-link-active-color: var(--bs-primary); --bs-nav-pills-link-active-bg: #252649; background-color: #C2A966; border: 1px solid #252649;margin: 0 auto;">
+                            <li class="nav-item" role="presentation">
+                              <button class="nav-link rounded-5" id="profile-tab2" data-bs-toggle="tab" type="button" role="tab" style=" color: white !important;font-weight: bold !important; "  aria-selected="false" (click)="toggleDonations(true)" [class.active]="showAllDonations">Les dons</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                              <button class="nav-link rounded-5" id="contact-tab2" data-bs-toggle="tab" type="button" role="tab" style=" color: white !important;font-weight: bold !important;" aria-selected="false" (click)="toggleDonations(false)" [class.active]="!showAllDonations">Mes dons</button>
+                            </li>
+                          </ul>
+                        </div>
+                        
+                        
+                        <div class=""  *ngIf="showAllDonations">
+                          <div  class="row p-3 container"  style="margin: 0 auto;">
+                            <div class="col-md-3 p-3" *ngFor="let don of dons">
+                              <div class="gap-2" >
+                                  <div class="cardbi mb-3 p-3" style="line-height: 10px; border-radius: 10px; box-shadow: 1px 1px 1px 1px #252649;border-bottom: 10px solid #C2A966;background-color: white;">
+                                        <div class="mb-3" style="box-shadow: 1px 1px 1px 1px #252649;width: 30%; margin: 0 auto; border-radius: 5px;"><img src="assets/cardonSup.png" alt=""  style="width: 70px;display: flex; align-items: center;"></div>    
+                                        <p class="card-text py-2" style="color: #252649; font-size: 12px; font-weight: 400;"><span class="fw-bold">Donnateur:</span>{{ don.user }}</p>
+                                        <p class="card-text py-2" style="color: #252649; font-size: 12px; font-weight: 400;"><span class="fw-bold">Lieu:</span>{{ don.adresseProvenance}}</p>
+                                        <p class="card-text py-2" style="color: #252649; font-size: 12px; font-weight: 400;"><span class="fw-bold">Date:</span>{{ don.date }}</p>
+                                        <p class="card-text py-2" style="color: #252649; font-size: 12px; font-weight: 400;"><span class="fw-bold">Destinataire:</span>{{ don.dahra }}</p>
+                                  </div>
                               </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class=""  *ngIf="!showAllDonations">
+                          <div  class="row p-3 container"  style="margin: 0 auto;">
+                            <div class="col-md-3 p-3" *ngFor="let don of myDons">
+                              <div class="gap-2" >
+                                  <div class="cardbi mb-3 p-3" style="line-height: 10px; border-radius: 10px; box-shadow: 1px 1px 1px 1px #252649;border-bottom: 10px solid #C2A966;background-color: white;">
+                                        <div class="mb-3" style="box-shadow: 1px 1px 1px 1px #252649;width: 30%; margin: 0 auto; border-radius: 5px;"><img src="assets/cardonSup.png" alt=""  style="width: 70px;display: flex; align-items: center;"></div>    
+                                        <p class="card-text py-2" style="color: #252649; font-size: 12px; font-weight: 400;"><span class="fw-bold">Donnateur:</span>{{ don.user }}</p>
+                                        <p class="card-text py-2" style="color: #252649; font-size: 12px; font-weight: 400;"><span class="fw-bold">Lieu:</span>{{ don.adresseProvenance}}</p>
+                                        <p class="card-text py-2" style="color: #252649; font-size: 12px; font-weight: 400;"><span class="fw-bold">Date:</span>{{ don.date }}</p>
+                                        <p class="card-text py-2" style="color: #252649; font-size: 12px; font-weight: 400;"><span class="fw-bold">Destinataire:</span>{{ don.dahra }}</p>
+                                  </div>
+                              </div>
+                            </div>
                           </div>
                         </div>
   

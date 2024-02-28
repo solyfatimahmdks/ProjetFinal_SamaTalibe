@@ -11,6 +11,11 @@ import { AuthService } from 'src/app/service/auth-service.service';
 export class DonsUserComponent {
   user: any; // Contiendra les informations de l'utilisateur connecté
   donneeDonation: any = {}; // Contiendra les données de la donation
+  showAllDonations: boolean = true;
+
+  pagedDons: any[] = []; // Les données à afficher sur une page
+  currentPage = 1; // Page actuelle
+  itemsPerPage = 8; 
   
   dahra_name: any;
   disponibiliteDon: any;
@@ -28,6 +33,8 @@ export class DonsUserComponent {
     dahra_name:'',
     typeDon:'',
   };
+  dons: any;
+  myDons: any;
   
 
 
@@ -53,6 +60,58 @@ export class DonsUserComponent {
         console.log(reponse);
         
       });
+    }
+
+    loadAllDons() {
+      this.service.get('/liste-dons', (reponse: any) => {
+        console.log('test', reponse);
+        this.dons=reponse;
+      });
+    }
+
+    loadMyDonations(){
+      this.service.get('/dons_donateur' , (response:any) => {
+        console.log('test' , response);
+        this.myDons = response ;
+        
+      })
+    }
+
+
+    toggleDonations(showAll: boolean) {
+      this.showAllDonations = showAll;
+      if (showAll) {
+        this. loadAllDons();
+      } else {
+        this.loadMyDonations();
+      }
+    }
+
+    paginatePerPage(page: number, pageSize: number, data: any[]): any[] {
+      if (!page) {
+        return data;
+      }
+      const firsElementPerPage = pageSize * (page-1);
+      const totalElements = firsElementPerPage + pageSize;
+      return data.slice(firsElementPerPage, totalElements);
+  }
+    
+    setPage(page: number) {
+      console.log("page:" ,page );
+      console.log("D:",this.dons.length);
+  
+      // Calculer l'index de début et de fin pour les éléments à afficher sur la page sélectionnée
+      // const startIndex = (page - 1) * this.itemsPerPage;
+      // const endIndex = Math.min(startIndex + this.itemsPerPage - 1, this.dahras.length - 1);
+      
+      // this.pagedDahras = this.dahras.slice(startIndex, endIndex + 1);
+  
+      // Mettre à jour la page actuelle
+      this.currentPage = page ;
+      this.pagedDons =  this.paginatePerPage(this.currentPage,this.itemsPerPage,this.dons)
+      console.log("D:",this.dons.length);
+      console.log("d:",this.pagedDons.length);
+   
     }
   
 }
