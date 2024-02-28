@@ -27,4 +27,18 @@ span.span_validate
   color: rgb(45, 194, 77) !important;
 }
 
+#inProgress{
+  display: flex;
+  justify-content: end;
+}
+
+#progress{
+  background-color: #252649; 
+  color: #C2A966; 
+  font-size: 40px; 
+  box-shadow: 1px 1px 1px 1px #C2A966;
+  border-radius: 100px; 
+  padding: 3px 13px;
+  cursor: pointer;
+}
 

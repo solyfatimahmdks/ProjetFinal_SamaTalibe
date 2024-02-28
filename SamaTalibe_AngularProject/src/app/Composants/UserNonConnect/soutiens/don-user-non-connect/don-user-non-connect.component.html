@@ -53,90 +53,28 @@
 
 <hr class="mt-3 container" style="color: #C2A966;">
 
-    <div class="row gap-4 container" style="margin: 0 auto;">
+    <div *ngFor="let don of dons" class="row gap-4 container" style="margin: 0 auto;">
             <div class="card col-md-4 my-5 p-4 container" style="width: 450px;" >
             <div class="row card__image-container mx-2 mt-2 py-3" style="background-color: #252649; border: 1px solid #252649; padding: 0 auto; border-radius: 20px;">
                  <div class="col-md-4">
                      <img src="assets/cardhov.jpeg" class="ms-2" style="width: 100px; height: 100px; border-radius: 100%; box-shadow: 1px 1px 1px 1px #C2A966;" alt="">
                  </div> 
                  <div class="col-md-8">
-                    <h3 class="mt-2" style="color: #C2A966;">Abdoulaye Leye</h3>
+                    <h3 class="mt-2" style="color: #C2A966;">{{don.user.nom}} {{don.user.prenom}}</h3>
                     <p style="color: #C2A966; font-weight: bold;">Association "Aidons les Talibés"</p>
                 </div> 
               
             </div>
               
                <div class="card__content">
-                 <p class="card__title ms-3 pt-3" style="font-weight: 500;">Pour  la  lutte  contre  le  paludisme nous  avons procédé à une  donnation de  
-                    plusieurs  kits hygiéniques et  des moustiquaires imprégnés pour la protection  de  ses  enfants. </p>
-               <p class="ms-4"><span style="font-weight: bold;">Date:</span>18/01/2024</p>
-               <p class="ms-4"><span style="font-weight: bold;">Lieu:</span>Kaolack</p>
-               <p class="ms-4"><span style="font-weight: bold;">Destinataire:</span>Dahra Serigne Ndao</p>
+                 <p class="card__title ms-3 pt-3" style="font-weight: 500;">{{don.descriptionDon}}</p>
+               <p class="ms-4"><span style="font-weight: bold;">Date:</span>{{don.date}}</p>
+               <p class="ms-4"><span style="font-weight: bold;">Lieu:</span>{{don.adresseProvenance}}</p>
+               <p class="ms-4"><span style="font-weight: bold;">Destinataire:</span>{{don.dahra}}</p>
               </div>
             </div>
-            <div class="card col-md-4 my-5 p-4 container" style="width: 450px;" >
-                <div class="row card__image-container mx-2 mt-2 py-3" style="background-color: #252649; border: 1px solid #252649; padding: 0 auto; border-radius: 20px;">
-                     <div class="col-md-4">
-                         <img src="assets/cardhov.jpeg" class="ms-2" style="width: 100px; height: 100px; border-radius: 100%; box-shadow: 1px 1px 1px 1px #C2A966;" alt="">
-                     </div> 
-                     <div class="col-md-8">
-                        <h3 class="mt-2" style="color: #C2A966;">Abdoulaye Leye</h3>
-                        <p style="color: #C2A966; font-weight: bold;">Association "Aidons les Talibés"</p>
-                    </div> 
-                  
-                </div>
-                  
-                   <div class="card__content">
-                     <p class="card__title ms-3 pt-3" style="font-weight: 500;">Pour  la  lutte  contre  le  paludisme nous  avons procédé à une  donnation de  
-                        plusieurs  kits hygiéniques et  des moustiquaires imprégnés pour la protection  de  ses  enfants. </p>
-                   <p class="ms-4"><span style="font-weight: bold;">Date:</span>18/01/2024</p>
-                   <p class="ms-4"><span style="font-weight: bold;">Lieu:</span>Kaolack</p>
-                   <p class="ms-4"><span style="font-weight: bold;">Destinataire:</span>Dahra Serigne Ndao</p>
-                  </div>
-            </div>
     </div>
-    <div class="row gap-4 container" style="margin: 0 auto;">
-        <div class="card col-md-4 my-5 p-4 container" style="width: 450px;" >
-        <div class="row card__image-container mx-2 mt-2 py-3" style="background-color: #252649; border: 1px solid #252649; padding: 0 auto; border-radius: 20px;">
-             <div class="col-md-4">
-                 <img src="assets/cardhov.jpeg" class="ms-2" style="width: 100px; height: 100px; border-radius: 100%; box-shadow: 1px 1px 1px 1px #C2A966;" alt="">
-             </div> 
-             <div class="col-md-8">
-                <h3 class="mt-2" style="color: #C2A966;">Abdoulaye Leye</h3>
-                <p style="color: #C2A966; font-weight: bold;">Association "Aidons les Talibés"</p>
-            </div> 
-          
-        </div>
-          
-           <div class="card__content">
-             <p class="card__title ms-3 pt-3" style="font-weight: 500;">Pour  la  lutte  contre  le  paludisme nous  avons procédé à une  donnation de  
-                plusieurs  kits hygiéniques et  des moustiquaires imprégnés pour la protection  de  ses  enfants. </p>
-           <p class="ms-4"><span style="font-weight: bold;">Date:</span>18/01/2024</p>
-           <p class="ms-4"><span style="font-weight: bold;">Lieu:</span>Kaolack</p>
-           <p class="ms-4"><span style="font-weight: bold;">Destinataire:</span>Dahra Serigne Ndao</p>
-          </div>
-        </div>
-        <div class="card col-md-4 my-5 p-4 container" style="width: 450px;" >
-            <div class="row card__image-container mx-2 mt-2 py-3" style="background-color: #252649; border: 1px solid #252649; padding: 0 auto; border-radius: 20px;">
-                 <div class="col-md-4">
-                     <img src="assets/cardhov.jpeg" class="ms-2" style="width: 100px; height: 100px; border-radius: 100%; box-shadow: 1px 1px 1px 1px #C2A966;" alt="">
-                 </div> 
-                 <div class="col-md-8">
-                    <h3 class="mt-2" style="color: #C2A966;">Abdoulaye Leye</h3>
-                    <p style="color: #C2A966; font-weight: bold;">Association "Aidons les Talibés"</p>
-                </div> 
-              
-            </div>
-              
-               <div class="card__content">
-                 <p class="card__title ms-3 pt-3" style="font-weight: 500;">Pour  la  lutte  contre  le  paludisme nous  avons procédé à une  donnation de  
-                    plusieurs  kits hygiéniques et  des moustiquaires imprégnés pour la protection  de  ses  enfants. </p>
-               <p class="ms-4"><span style="font-weight: bold;">Date:</span>18/01/2024</p>
-               <p class="ms-4"><span style="font-weight: bold;">Lieu:</span>Kaolack</p>
-               <p class="ms-4"><span style="font-weight: bold;">Destinataire:</span>Dahra Serigne Ndao</p>
-              </div>
-        </div>
-    </div>
+    
 
 <hr class="mt-3 container" style="color: #C2A966;">    
     <!-- SECTION BANNER BOTTOM -->

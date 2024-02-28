@@ -34,6 +34,7 @@ import { CommonModule } from '@angular/common';
 import { DonUserNonConnectComponent } from './Composants/UserNonConnect/soutiens/don-user-non-connect/don-user-non-connect.component';
 import { TemMaitreComponent } from './Composants/MaitreCoraniq/tem-maitre/tem-maitre.component';
 import { SamaDahraComponent } from './Composants/MaitreCoraniq/sama-dahra/sama-dahra.component';
+import { ScrollingComponent } from './Composants/scrolling/scrolling.component';
 
 
 
@@ -65,7 +66,8 @@ import { SamaDahraComponent } from './Composants/MaitreCoraniq/sama-dahra/sama-d
     DonUserNonConnectComponent,
     TemMaitreComponent,
     SamaDahraComponent,
-    SamaDahraComponent
+    SamaDahraComponent,
+    ScrollingComponent
 
 
   ],

@@ -1,12 +1,13 @@
-<app-header></app-header>
+<!-- <app-header></app-header> -->
 
 <main class="" >
-    <div class=" row container p-0" style="width: 60%; margin: 0 auto; border: 8px solid #C2A966; border-radius: 20px;">
+    <div class="mt-5 row container p-0" style="width: 80%; margin: 0 auto; border: 8px solid #C2A966; border-radius: 20px; box-shadow:1px 1px 1px 1px #252649;">
      <div class="col-md-6 p-0">
-         <img class=" p-0 " src="assets/authbcg.jpg" style="width: 100%; height: 100%;border-top-left-radius:15px ; border-bottom-left-radius: 15px;"  alt="">
+         <img class=" p-0 " src="assets/authbcg.jpg" style="width: 100%; height: 100%;border-top-left-radius:10px ; border-bottom-left-radius: 10px;"  alt="">
    
      </div>
                 <div class="col-md-6 container content row p-0"   *ngIf="isLoginFormVisible=='connexion'">
+                    <div class="position-absolute m-3 w-25" style="  margin: 0 auto;" routerLink="/accueil"><img src="assets/LOGOS/LogoFooter.png" style="width: 100px; cursor: pointer;" alt=""></div>
                     <div class=" card-body form-container container" style="width: 100%;">
                         <form class="form">
                             <div class="card-header mb-1" style=" background-color: white; color: #C2A966; padding-top: 10px;">
@@ -45,6 +46,7 @@
         
             <!-- <ng-template [ngIf]="choixForm === 'inscription'; else rejoindreForm" > -->
                 <div class="col-md-6 container content row p-0" *ngIf="isLoginFormVisible=='inscription'">
+                    <div class="position-absolute m-3 w-25" style="  margin: 0 auto;" routerLink="/accueil"><img src="assets/LOGOS/LogoFooter.png" style="width: 100px; cursor: pointer;" alt=""></div>
                     <div class="card-body form-container container" style="width: 100%;">
                         <form class="form">
                                     <div class="card-header" style="background-color: white; color: #C2A966; padding-top: 10px;">
@@ -92,6 +94,7 @@
     
             <!-- <ng-template #rejoindreForm > -->
                 <div class="col-md-6 container content row p-0" *ngIf="isLoginFormVisible=='rejoindre'">
+                    <div class="position-absolute m-3 w-25" style="  margin: 0 auto;" routerLink="/accueil"><img src="assets/LOGOS/LogoFooter.png" style="width: 100px; cursor: pointer;" alt=""></div>
                     <div class="card-body form-container" style="padding: 3% 0 3% 0; margin: 0 auto; width: 90%;">
                         <form class="form">
                                     <div class="card-header" style="background-color: white; color: #C2A966; padding-top: 10px;">
@@ -186,4 +189,4 @@
     </div>
 </main>
 
-<app-footer></app-footer>
+<!-- <app-footer></app-footer> -->
