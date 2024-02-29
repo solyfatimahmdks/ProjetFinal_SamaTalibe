@@ -109,3 +109,8 @@ transition-delay: .25s;
 text-align: center;
 
 }
+
+/* stylisation pour les éléments du popup , pour mettre un écart entre les texts  exemple : nombre talibés:    12 */
+p span {
+  margin-right: 10px;
+}

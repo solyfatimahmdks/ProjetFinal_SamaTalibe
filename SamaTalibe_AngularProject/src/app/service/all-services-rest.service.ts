@@ -59,6 +59,20 @@ export class AllservicesService implements OnInit {
       .get(this.apiUrl + path)
       .subscribe((reponse: any) => onSuccess(reponse));
   }
+  
+  getWithToken(path: string, onSuccess: Function, params?: HttpParams) {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        Authorization:
+          'Bearer ' +
+          JSON.parse(localStorage.getItem(TOKEN_KEY) ?? '{}').token,
+      }),
+      params: params
+    };
+    this.http
+      .get(this.apiUrl + path,httpOptions)
+      .subscribe((reponse: any) => onSuccess(reponse));
+  }
 
   put(path: string, dataToSend: any, onSuccess: Function) {
     const httpOptions = {

@@ -34,7 +34,7 @@ export class DonsUserComponent {
     typeDon:'',
   };
   dons: any[] = []; // Initialisez comme un tableau vide
-  myDons: any[] = []; // Initialisez comme un tableau vide
+  myDons: any; // Initialisez comme un tableau vide
   
   
 
@@ -73,7 +73,7 @@ export class DonsUserComponent {
     }
 
     loadMyDonations(){
-      this.service.get('/dons_donateur' , (response:any) => {
+      this.service.getWithToken('/dons_donateur' , (response:any) => {
         console.log('test' , response);
         this.myDons = response ;
         
