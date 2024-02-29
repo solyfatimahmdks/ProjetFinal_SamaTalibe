@@ -29,13 +29,13 @@ export class AuthService implements OnInit{
   }
   // login
    //service
-   login(user: any, onSuccess: Function){
+   login(user: any, onSuccess: Function,onError:Function){
     const httpOptions = {
       headers: new HttpHeaders({
         Authorization: "Bearer " + JSON.parse(localStorage.getItem(TOKEN_KEY)??'{}').token
       })
     };
-    return this.http.post(`${this.apiUrl}/login`, user,httpOptions).subscribe((reponse: any) => onSuccess(reponse));
+    return this.http.post(`${this.apiUrl}/login`, user,httpOptions).subscribe((reponse: any) => onSuccess(reponse),(error:any)=>onError(error));
   }
   // connexion
 
