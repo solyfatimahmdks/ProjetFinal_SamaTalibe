@@ -97,8 +97,8 @@
                   </thead>
                   <tbody>
                     <tr *ngFor="let dahra of dahrasList | paginate:{ itemsPerPage:itemsPerPage, currentPage:currentPage , totalItems:dahras.length}" style="height: 60px; margin-top: 20px !important;">
-                      <td class="ps-5"> <img src={{dahra.imageFilename}} id="admindatable" alt=""></td>
-                      <td>{{ dahra.nom }}</td>
+                      <td class="ps-5"> <img src="http://127.0.0.1:8000/uploads/de72b2bb9d2bcebe221fea00dae2b40e.jpg"  id="admindatable" alt=""></td>
+                      <td>{{ dahra.nom }} </td>
                       <td>{{ dahra.nomOuztas }}</td>
                       <td>{{ dahra.region }}</td>
                       <td style="padding: 20px;">
@@ -189,7 +189,7 @@
            </div>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" (click)="addDahra()" data-bs-dismiss="modal">Ajouter</button>
+              <button type="button" class="btn btn-secondary" (click)="addDahra()" >Ajouter</button>
             </div>
           </div>
         </div>

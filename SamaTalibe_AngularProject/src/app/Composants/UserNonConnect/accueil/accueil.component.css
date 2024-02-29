@@ -283,20 +283,61 @@ main{
     text-align: start; /* Centrez le texte horizontalement */
   }
 
+  /* about */
+
 
 /* temoignages */
-.temcontent{
-  margin: 0 auto !important; 
-  height: 250px;
-}
 
 #maitreImg{
-  width: 90%;
-  height: 30px;
+  width: 50px;
+  height: 50px;
   border-radius: 100%;
   box-shadow:2px 5px 2px #252649;
 }
 
+.temcontent{
+  margin: 0 auto !important; 
+  height: 250px;
+}
+/* #cards{
+  border: 1px solid red;
+  margin: 0 auto;
+} */
+
+#cardprimo{
+  /* border: 1px solid red; */
+  max-width: 18rem;
+  height: 400px;
+  margin: 0 auto;  
+  background-color: rgb(243, 240, 240);
+}
+.card-body p{
+  color: #252649; 
+  font-size: 25px; 
+  font-weight: 400;
+}
+
+.card-text{
+  color: #252649;
+  font-size: 15px !important;
+
+}
+
+.card-textdet{
+  font-size: 15px !important;
+  color: RED !important; 
+  margin-bottom: 20% !important;
+}
+
+#cardBottomprimo{
+  border-top-right-radius: 30px !important;
+  border-bottom-right-radius: 30px !important;
+  width: 78% !important;
+  background-color: #C2A966 !important;
+  height: 90px; 
+  left: 61px !important;
+  bottom: 30px;
+}
 
 
 /* actualites */
@@ -320,6 +361,9 @@ main{
     width: 300px;
   }
 }
+
+
+
 
 @media screen and (min-width: 768px){
   #cardBottom{

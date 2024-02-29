@@ -135,7 +135,7 @@ truthyTab: any = [];
 addDahra() {
     // Créer un nouvel objet FormData
     const formData = new FormData();
-  
+    console.log(this.selectedRegion,'region');
     // Ajouter les données du formulaire
     formData.append('imageFile', this.uploadedImages);
     formData.append('nom', this.dara.nom);

@@ -33,10 +33,10 @@ export class DonsUserComponent {
     dahra_name:'',
     typeDon:'',
   };
-  dons: any;
-  myDons: any;
+  dons: any[] = []; // Initialisez comme un tableau vide
+  myDons: any[] = []; // Initialisez comme un tableau vide
   
-
+  
 
   constructor(private service: AllservicesService ) {
     // this.user = this.authService.getLoggedInUser(); 
