@@ -1,157 +1,516 @@
 <app-header></app-header>
 <main>
-
-    <!-- Modal -->
-    <div class="modal fade mt-5" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog" style="margin: 0 auto;">
-        <div class="modal-content p-5">
-          <div class="modal-header">
-            <h1 class="modal-title fs-5" style="margin: 0 auto; color: #252649;" id="exampleModalLabel">Authentifiez-vous d'abord</h1>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-             <button type="button" class="btn" style="background-color: #252649; color: #C2A966; border: none; box-shadow:1px 1px 1px 1px #C2A966; font-weight: bold;" routerLink="/login">Connexion</button>
+  <!-- Modal -->
+  <div
+    class="modal fade mt-5"
+    id="exampleModal1"
+    tabindex="-1"
+    aria-labelledby="exampleModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog" style="margin: 0 auto">
+      <div class="modal-content p-5">
+        <div class="modal-header">
+          <h1
+            class="modal-title fs-5"
+            style="margin: 0 auto; color: #252649"
+            id="exampleModalLabel"
+          >
+            Authentifiez-vous d'abord
+          </h1>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
         </div>
+        <button
+          type="button"
+          class="btn"
+          style="
+            background-color: #252649;
+            color: #c2a966;
+            border: none;
+            box-shadow: 1px 1px 1px 1px #c2a966;
+            font-weight: bold;
+          "
+          routerLink="/login"
+        >
+          Connexion
+        </button>
       </div>
     </div>
+  </div>
 
-     <!-- Modal -->
-     <div class="modal fade mt-5" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog" style="margin: 0 auto;">
-        <div class="modal-content p-5">
-          <div class="modal-header">
-            <h1 class="modal-title fs-5" style="margin: 0 auto; color: #252649;" id="exampleModalLabel">Authentifiez-vous d'abord</h1>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-             <button type="button" class="btn" style="background-color: #252649; color: #C2A966; border: none; box-shadow:1px 1px 1px 1px #C2A966; font-weight: bold;" routerLink="/login">Connexion</button>
+  <!-- Modal -->
+  <div
+    class="modal fade mt-5"
+    id="exampleModal2"
+    tabindex="-1"
+    aria-labelledby="exampleModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog" style="margin: 0 auto">
+      <div class="modal-content p-5">
+        <div class="modal-header">
+          <h1
+            class="modal-title fs-5"
+            style="margin: 0 auto; color: #252649"
+            id="exampleModalLabel"
+          >
+            Authentifiez-vous d'abord
+          </h1>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
         </div>
+        <button
+          type="button"
+          class="btn"
+          style="
+            background-color: #252649;
+            color: #c2a966;
+            border: none;
+            box-shadow: 1px 1px 1px 1px #c2a966;
+            font-weight: bold;
+          "
+          routerLink="/login"
+        >
+          Connexion
+        </button>
       </div>
     </div>
-    
-  <section class="banniere" style="margin-top: 160px;">
+  </div>
+
+  <section class="banniere" style="margin-top: 160px">
     <div class="banner-container">
-      <img src="assets/liqtdaraImg.png" alt="Bannière" id="bcgban" class="banner-image">
+      <img
+        src="assets/liqtdaraImg.png"
+        alt="Bannière"
+        id="bcgban"
+        class="banner-image"
+      />
       <div class="banner-text">
-        <h1 style="color: #252649;font-weight: bold; font-size: 50px;">Nos dahras </h1>
-        <p style="color: white;font-weight: bold;width: 70%; font-size: 40px; margin-top: 20%;">Ils nous font  confiance  et  sont prêts pour le changement </p>
+        <h1 style="color: #252649; font-weight: bold; font-size: 50px">
+          Nos dahras
+        </h1>
+        <p
+          style="
+            color: white;
+            font-weight: bold;
+            width: 70%;
+            font-size: 40px;
+            margin-top: 20%;
+          "
+        >
+          Ils nous font confiance et sont prêts pour le changement
+        </p>
       </div>
     </div>
-</section>
-    <h3 class="text-center mt-4">Liste des Dahras </h3>
-    <!-- soulignement -->
-    <div class="d-flex justify-content-center mb-1">
-      <div style="width: 10%;margin-top: 18px;border-radius: 10px; height: 5px !important; background-color: #C2A966;"></div>
-      <div style="width: 3%; height: 40px !important; background-color: rgb(236, 236, 236); border-radius: 100%;">
-      <div class="position-absolute " style="margin-top: 12px;margin-left: 14px; width: 1%; height: 15px !important; background-color: #252649; border-radius: 100%;"></div>
-      </div>
-      <div style="width: 10%;margin-top: 18px;border-radius: 10px; height: 5px !important; background-color: #C2A966;"></div>
+  </section>
+  <h3 class="text-center mt-4">Liste des Dahras</h3>
+  <!-- soulignement -->
+  <div class="d-flex justify-content-center mb-1">
+    <div
+      style="
+        width: 10%;
+        margin-top: 18px;
+        border-radius: 10px;
+        height: 5px !important;
+        background-color: #c2a966;
+      "
+    ></div>
+    <div
+      style="
+        width: 3%;
+        height: 40px !important;
+        background-color: rgb(236, 236, 236);
+        border-radius: 100%;
+      "
+    >
+      <div
+        class="position-absolute"
+        style="
+          margin-top: 12px;
+          margin-left: 14px;
+          width: 1%;
+          height: 15px !important;
+          background-color: #252649;
+          border-radius: 100%;
+        "
+      ></div>
     </div>
-<!-- End soulignement -->
-<form class="d-flex justify-content-end mt-3 me-3" role="search" (submit)="searchDahras()">
-  <input class="form-control w-25 p-2 rounded-4" type="search" placeholder="Rechercher" aria-label="Search" style="box-shadow: 1px 1px 1px #252649; border:1px solid #252649; color: #252649; width: 50%; margin-left: 50%;" [(ngModel)]="searchQuery" name="searchQuery">
-  <button class="btn1 btn1-primary px-3 rounded-2 me-5" style="background-color: #252649; border:1px solid #252649; color: #C2A966;font-weight: bold;box-shadow: 1px 1px 1px #252649;  " type="submit">Ok</button>
-</form>
-    <hr class="container" style="color: #C2A966;">
+    <div
+      style="
+        width: 10%;
+        margin-top: 18px;
+        border-radius: 10px;
+        height: 5px !important;
+        background-color: #c2a966;
+      "
+    ></div>
+  </div>
+  <!-- End soulignement -->
+  <form
+    class="d-flex justify-content-end mt-3 me-3"
+    role="search"
+    (submit)="searchDahras()"
+  >
+    <input
+      class="form-control w-25 p-2 rounded-4"
+      type="search"
+      placeholder="Rechercher"
+      aria-label="Search"
+      style="
+        box-shadow: 1px 1px 1px #252649;
+        border: 1px solid #252649;
+        color: #252649;
+        width: 50%;
+        margin-left: 50%;
+      "
+      [(ngModel)]="searchQuery"
+      name="searchQuery"
+    />
+    <button
+      class="btn1 btn1-primary px-3 rounded-2 me-5"
+      style="
+        background-color: #252649;
+        border: 1px solid #252649;
+        color: #c2a966;
+        font-weight: bold;
+        box-shadow: 1px 1px 1px #252649;
+      "
+      type="submit"
+    >
+      Ok
+    </button>
+  </form>
+  <hr class="container" style="color: #c2a966" />
 
-                      <!-- Content Row -->
-                      <div class="listDahra my-5 row" *ngIf="showListDahra"  >
-                        <div class="contentcard col-md-4" *ngFor="let dahra of dahras | paginate:{ itemsPerPage:itemsPerPage, currentPage:currentPage , totalItems:dahras.length}">
-                            <div class="card" style="width: 20rem; box-shadow: 1px 1px 1px 1px #C2A966; margin: 0 auto;">
-                                <div><img [src]="getImage(dahra.image)" id="cardImg" alt=""></div>
-                                <div class="card-body">
-                                  <h5 class="mt-2 card-title text-center">{{ dahra.nom }}</h5>  
-                                  <div class="row p-2" style="">
-                                      <div class="col-md-6 fw-bold" style="font-size: 13px;">
-                                          <p class="card-text text-start"><i class="bi bi-person-badge" style="color: #252649; margin-right: 10px;"></i>{{ dahra.nombreTalibe}} apprenants</p>
-                                          <p class="card-text text-start"><i class="bi bi-geo-alt-fill" style="color: #252649; margin-right: 10px;"></i>{{ dahra.region }}</p>
-                                      </div>
-                                      <div class="col-md-6">
-                                          <a class="btn mt-2" (click)="selectDahra(dahra)"  data-bs-toggle="modal" data-bs-target="#exampleModal" style="width:80%; font-size: 13px; background-color: #252649;color: #C2A966;box-shadow:2px 2px 2px 2px #C2A966; font-weight: bold;"> <i class="bi bi-eye-fill" style="color: #C2A966; margin-right: 15px; font-weight: bold;"></i>Détails</a>
-                                      
-                                            <!-- Modal -->
-                                           <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"   aria-hidden="true">
-                                                        <div class="modal-dialog mt-5" style="margin: 0 auto;">
-                                                        <div class="modal-content" style=" padding: 20px; background-color: white !important;">
-                                                            <div class="modal-header">
-                                                            <button type="button" class="btn-close mb-2" data-bs-dismiss="modal" aria-label="Close"></button>
-                                                            </div>
-                                                            <div class="modal-body" style="padding: 20px;">
-                                                                <h5 class="text-center"  style="color: #252649;">{{ selectedDahra?.nom }} </h5>
-                                                                <div class="my-4 row" style="color: #252649;">
-                                                                    <div class="col-md-6 mt-3" >
-                                                                        <img [src]="getImage(dahra.image)" id="détailImg" alt="">
-                                                                    </div>
-                                                                    <div class="col-md-6" style="padding: 20px; border-radius: 10px;">
-                                                                      <p><span style=" font-weight: bold;">Nom Ouztas:</span>{{ selectedDahra?.nomOuztas }}</p>
-                                                                        <hr class="mb-3">
-                                                                        <p><span style=" font-weight: bold;">Region:</span>{{ selectedDahra?.region }}</p>
-                                                                        <hr class="mb-3">
-                                                                        <p><span style=" font-weight: bold;">Adresse:</span>{{ selectedDahra?.adresse }}</p>
-                                                                        <hr class="mb-3">
-                                                                        <p style="color: #252649;"><span style="color: #252649; font-weight: bold;">Numero Téléphone Ouztas :</span>{{ selectedDahra?.numeroTelephoneOuztas }}</p>
-                                                                        <hr>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="modal-footer d-flex justify-content-between">
-                                                            <button type="button" class="btn " (click)="toggleList('talib',selectedDahra.nom)" data-bs-dismiss="modal" style="font-size: 15px; background-color: #252649;color: #C2A966;font-weight: bold; box-shadow:2px 2px 2px 2px #C2A966; width: 150px;"> <i class="bi bi-eye-fill" style="color: #C2A966; margin-right: 10px; font-weight: bold;" ></i>{{ selectedDahra.nombreTalibe}} apprenants</button>
-                                                            <button type="button" class="btn " routerLink="/donsuser" style="background-color: #252649; color: #C2A966; font-size: 15px; width: 150px; font-weight: bold; border: none;">Faire un don</button>
-                                                            </div>
-                                                        </div>
-                                                        </div>
-                                           </div>
-                                    </div>
-              
-            
-                                  </div>
-                                </div>
-                            </div>
-                        </div>
+  <!-- Content Row -->
+  <div class="listDahra my-5 row" *ngIf="showListDahra">
+    <div
+      class="contentcard col-md-4"
+      *ngFor="
+        let dahra of dahras
+          | paginate
+            : {
+                itemsPerPage: itemsPerPage,
+                currentPage: currentPage,
+                totalItems: dahras.length
+              }
+      "
+    >
+      <div
+        class="card"
+        style="
+          width: 20rem;
+          box-shadow: 1px 1px 1px 1px #c2a966;
+          margin: 0 auto;
+        "
+      >
+        <div>
+          <img
+            src="https://www.hrw.org/sites/default/files/styles/image_gallery/public/multimedia_images_2017/201707africa_senegal_talibe_photo_06.jpg?itok=wNoj8O6e"
+            id="cardImg"
+            alt=""
+          />
+        </div>
+        <div class="card-body">
+          <h5 class="mt-2 card-title text-center">{{ dahra.nom }}</h5>
+          <div class="row p-2" style="">
+            <div class="col-md-6 fw-bold" style="font-size: 13px">
+              <p class="card-text text-start">
+                <i
+                  class="bi bi-person-badge"
+                  style="color: #252649; margin-right: 10px"
+                ></i
+                >{{ dahra.nombreTalibe }} talibés
+              </p>
+              <p class="card-text text-start">
+                <i
+                  class="bi bi-geo-alt-fill"
+                  style="color: #252649; margin-right: 10px"
+                ></i
+                >{{ dahra.region }}
+              </p>
+            </div>
+            <div class="col-md-6">
+              <a
+                class="btn mt-2"
+                (click)="selectDahra(dahra)"
+                data-bs-toggle="modal"
+                data-bs-target="#exampleModal"
+                style="
+                  width: 80%;
+                  font-size: 13px;
+                  background-color: #252649;
+                  color: #c2a966;
+                  box-shadow: 2px 2px 2px 2px #c2a966;
+                  font-weight: bold;
+                "
+              >
+                <i
+                  class="bi bi-eye-fill"
+                  style="color: #c2a966; margin-right: 15px; font-weight: bold"
+                ></i
+                >Détails</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-                      </div> 
-                      
-                      <div class="listTalib"  *ngIf="showListTalib" >
-                        <div class="mt-3 d-flex justify-content-center ">
-                        </div>
-        
-                        <div class="table-responsive small mb-5 mx-4" style="border: 1px solid #C2A966; border-radius: 10px;">
-                                  <h5 class="text-center p-2" style="color: #252649;"><i class="btn§ bi bi-arrow-left"  (click)="toggleList('dahra')"  style="cursor: pointer; color: #C2A966 ; font-weight: bold; margin-right: 20px;"></i>Liste des Apprenants du dahra</h5>
-                                  <table class="table table-striped table-sm" style="width: 100%;">
-                                    <thead>
-                                      <tr class="">
-                                        <th scope="col" style="color: white; background-color: #C2A966;width: 15%;" class="ps-5">Image</th>
-                                        <th scope="col" style="color: white; background-color: #C2A966; width: 25%;">Nom du talibé</th>
-                                        <th scope="col" style="color: white; background-color: #C2A966;width: 20%;">Origine</th>
-                                        <th scope="col" style="color: white; background-color: #C2A966;width: 15%;">Age</th>
-                                        <th scope="col" style="color: white; padding-left: 60px; background-color: #C2A966;width: 25%;">Action</th>
-                   
-                                      </tr>
-                                    </thead>
-                                    <tbody>
-                                      <tr *ngFor="let talibe of talibesList" style="height: 40px; margin-top: 20px !important;">
-                                        <td class="ps-5"><img [src]="getImage(talibe?.imageFilename)" style="height: 40px;" id="admindatable" alt=""></td>
-                                        <td>{{ talibe?.nom }} {{ talibe?.prenom }}</td>
-                                        <td>{{ talibe?.adresse }}</td>
-                                        <td>{{ talibe?.age}}</td>
-                                        <td style="padding: 20px;">
-                                          <i class="btn. me-3 fa-solid fa-user-xmark" data-bs-toggle="modal" data-bs-target="#staticBackdrop"  style="background-color: #252649;border-radius: 5px; box-shadow: 1px 1px 1px #C2A966;margin: 10px !important; cursor: pointer; font-size: 12px;padding: 5px; color: white;" (click)="getTalibeId(talibe.id)"></i>
-                                          <i class="bi bi-eye-fill btn3"   data-bs-toggle="modal" data-bs-target="#exampleModal" style="background-color: #252649;border-radius: 5px;margin: 10px !important; box-shadow: 1px 1px 1px #C2A966;cursor: pointer; font-size: 12px;padding: 5px; color: white;"></i>
-                                        
-                                          <!-- Button trigger modal -->
-                                        </td>
-                                      </tr>
-                                      
-                                      
-                                    </tbody>
-                                  </table>
-                        </div>
-                      </div>
+  <div class="listTalib" *ngIf="showListTalib">
+    <div class="mt-3 d-flex justify-content-center"></div>
 
-                      <pagination-controls (pageChange)="setPage($event)" class="mt-3" previousLabel="prev" nextLabel="next" style="color: #252649;font-weight: bold;"></pagination-controls>
+    <div
+      class="table-responsive small mb-5 mx-4"
+      style="border: 1px solid #c2a966; border-radius: 10px"
+    >
+      <h5 class="text-center p-2" style="color: #252649">
+        <i
+          class="btn§ bi bi-arrow-left"
+          (click)="toggleList('dahra')"
+          style="
+            cursor: pointer;
+            color: #c2a966;
+            font-weight: bold;
+            margin-right: 20px;
+          "
+        ></i
+        >Liste des Apprenants du dahra
+      </h5>
+      <table class="table table-striped table-sm" style="width: 100%">
+        <thead>
+          <tr class="">
+            <th
+              scope="col"
+              style="color: white; background-color: #c2a966; width: 15%"
+              class="ps-5"
+            >
+              Image
+            </th>
+            <th
+              scope="col"
+              style="color: white; background-color: #c2a966; width: 25%"
+            >
+              Nom du talibé
+            </th>
+            <th
+              scope="col"
+              style="color: white; background-color: #c2a966; width: 20%"
+            >
+              Origine
+            </th>
+            <th
+              scope="col"
+              style="color: white; background-color: #c2a966; width: 15%"
+            >
+              Age
+            </th>
+            <th
+              scope="col"
+              style="
+                color: white;
+                padding-left: 60px;
+                background-color: #c2a966;
+                width: 25%;
+              "
+            >
+              Action
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr
+            *ngFor="let talibe of talibesList"
+            style="height: 40px; margin-top: 20px !important"
+          >
+            <td class="ps-5">
+              <img
+                [src]="getImage(talibe?.imageFilename)"
+                style="height: 40px"
+                id="admindatable"
+                alt=""
+              />
+            </td>
+            <td>{{ talibe?.nom }} {{ talibe?.prenom }}</td>
+            <td>{{ talibe?.adresse }}</td>
+            <td>{{ talibe?.age }}</td>
+            <td style="padding: 20px">
+              <i
+                class="btn. me-3 fa-solid fa-user-xmark"
+                data-bs-toggle="modal"
+                data-bs-target="#staticBackdrop"
+                style="
+                  background-color: #252649;
+                  border-radius: 5px;
+                  box-shadow: 1px 1px 1px #c2a966;
+                  margin: 10px !important;
+                  cursor: pointer;
+                  font-size: 12px;
+                  padding: 5px;
+                  color: white;
+                "
+                (click)="getTalibeId(talibe.id)"
+              ></i>
+              <i
+                class="bi bi-eye-fill btn3"
+                data-bs-toggle="modal"
+                data-bs-target="#exampleModal"
+                style="
+                  background-color: #252649;
+                  border-radius: 5px;
+                  margin: 10px !important;
+                  box-shadow: 1px 1px 1px #c2a966;
+                  cursor: pointer;
+                  font-size: 12px;
+                  padding: 5px;
+                  color: white;
+                "
+              ></i>
 
-                      
-                     
-    <hr class="container mb-5" style="color: #C2A966;">
+              <!-- Button trigger modal -->
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
 
- </main>
+  <pagination-controls
+    (pageChange)="setPage($event)"
+    class="mt-3"
+    previousLabel="prev"
+    nextLabel="next"
+    style="color: #252649; font-weight: bold"
+  ></pagination-controls>
+
+  <hr class="container mb-5" style="color: #c2a966" />
+</main>
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="exampleModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog mt-5 modal-dialog-scrollable modal-lg" style="margin: 0 auto">
+    <div
+      class="modal-content"
+      style="padding: 20px; background-color: white !important"
+    >
+      <div class="modal-header">
+        <button
+          type="button"
+          class="btn-close mb-2"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body" style="padding: 20px">
+        <h5 class="text-center" style="color: #252649">
+          {{ selectedDahra?.nom }}
+        </h5>
+        <div class="my-4 row" style="color: #252649">
+          <div class="col-md-6 mt-3">
+            <img
+              style="width: 100%; height: 100%; object-fit: cover"
+              src="https://www.hrw.org/sites/default/files/styles/embed_xxl/public/multimedia_images_2019/201901africa_senegal_talibestoubarooftop.jpg?itok=AcAtSuSq"
+              id="détailImg"
+              alt=""
+            />
+          </div>
+          <div class="col-md-6" style="padding: 20px; border-radius: 10px">
+            <p>
+              <span style="font-weight: bold">Nom Ouztas:</span
+              >{{ selectedDahra?.nomOuztas }}
+            </p>
+            <hr class="mb-3" />
+            <p>
+              <span style="font-weight: bold">Region:</span
+              >{{ selectedDahra?.region }}
+            </p>
+            <hr class="mb-3" />
+            <p>
+              <span style="font-weight: bold">Adresse:</span
+              >{{ selectedDahra?.adresse }}
+            </p>
+            <hr class="mb-3" />
+            <p style="color: #252649">
+              <span style="color: #252649; font-weight: bold"
+                >Numero Téléphone Ouztas :</span
+              >{{ selectedDahra?.numeroTelephoneOuztas }}
+            </p>
+            <hr />
+            <p style="color: #252649">
+              <span style="color: #252649; font-weight: bold"
+                >Nombre talibés :</span
+              >{{ selectedDahra?.nombreTalibe }}
+            </p>
+            <hr />
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer d-flex justify-content-between">
+        <!-- <button
+                        type="button"
+                        class="btn"
+                        (click)="toggleList('talib', selectedDahra.nom)"
+                        data-bs-dismiss="modal"
+                        style="
+                          font-size: 15px;
+                          background-color: #252649;
+                          color: #c2a966;
+                          font-weight: bold;
+                          box-shadow: 2px 2px 2px 2px #c2a966;
+                          width: 150px;
+                        "
+                      >
+                        <i
+                          class="bi bi-eye-fill"
+                          style="
+                            color: #c2a966;
+                            margin-right: 10px;
+                            font-weight: bold;
+                          "
+                        ></i
+                        >{{ selectedDahra.nombreTalibe }} apprenants
+                      </button>-->
+        <!-- <button type="button" class="btn" data-bs-dismiss="modal">
+          <i
+            class="bi bi-eye-fill"
+            style="color: #c2a966; margin-right: 10px; font-weight: bold"
+          ></i>
+          {{ selectedDahra.nombreTalibe }} apprenants
+        </button> -->
+        <button
+          type="button"
+          class="btn"
+          routerLink="/donsuser"
+          style="
+            background-color: #252649;
+            color: #c2a966;
+            font-size: 15px;
+            width: 150px;
+            font-weight: bold;
+            border: none;
+          "
+           data-bs-dismiss="modal"
+           aria-label="Close"
+        >
+          Faire un don
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
 <app-footer></app-footer>
-

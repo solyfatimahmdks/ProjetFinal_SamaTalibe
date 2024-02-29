@@ -6,18 +6,25 @@ import { TOKEN_KEY } from '../constants/constant';
   providedIn: 'root',
 })
 export class DahraService {
-  private apiUrl = 'http://127.0.0.1:8000/api'; //
+  private apiUrl = 'http://127.0.0.1:8000/api';
+
   constructor(private http: HttpClient) {}
 
+  getListOfDahras(onSuccess: Function) {
+    const token = JSON.parse(localStorage.getItem(TOKEN_KEY) ?? '{}').token;
+    let httpOptions = {};
 
-    getListOfDahras(onSuccess: Function) {
-      const httpOptions = {
+    // Vérifiez si un token est disponible dans le stockage local
+    if (token) {
+      httpOptions = {
         headers: new HttpHeaders({
-          Authorization: 'Bearer ' + JSON.parse(localStorage.getItem(TOKEN_KEY) ?? '{}').token,
+          Authorization: 'Bearer ' + token,
         }),
       };
-  
-      this.http.get(this.apiUrl + 'endpoint_pour_liste_des_dahras', httpOptions)
-        .subscribe((reponse: any) => onSuccess(reponse));
     }
+
+    // Utilisez les options HTTP lors de l'appel à l'API
+    this.http.get(this.apiUrl + '/endpoint_pour_liste_des_dahras', httpOptions)
+      .subscribe((response: any) => onSuccess(response));
   }
+}
