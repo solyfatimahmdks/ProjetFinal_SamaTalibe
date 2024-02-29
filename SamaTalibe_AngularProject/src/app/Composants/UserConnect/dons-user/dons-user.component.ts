@@ -42,6 +42,9 @@ export class DonsUserComponent {
     // this.user = this.authService.getLoggedInUser(); 
   }
 
+  ngOnInit(): void {
+     this.loadAllDons();
+  }
   faireDonation() {
     this.don = {
     disponibiliteDon: this.disponibiliteDon,
