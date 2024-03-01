@@ -81,7 +81,7 @@ export class DashUserComponent {
 
 
 loadTalibes(dahraSelected: string) {
-  this.service.get(`/lister-talibe`, (reponse: any[]) => {
+  this.service.getWithToken(`/lister-talibe`, (reponse: any[]) => {
     console.log('Liste des apprenants du dahra', reponse);
 
     this.talibesList = reponse.filter((dahra) => dahra.dahraNom == dahraSelected);

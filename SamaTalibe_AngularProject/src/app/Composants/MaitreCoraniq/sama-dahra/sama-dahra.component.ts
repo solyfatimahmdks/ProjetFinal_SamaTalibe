@@ -69,7 +69,7 @@ throw new Error('Method not implemented.');
 
   
   loadTalibesList() {
-    this.service.get('/lister-mes-talibes', (response: any) => {
+    this.service.getWithToken('/lister-mes-talibes', (response: any) => {
       console.log(`test`,response);
       
       this.talibesList = response.map((talibe: any) => {

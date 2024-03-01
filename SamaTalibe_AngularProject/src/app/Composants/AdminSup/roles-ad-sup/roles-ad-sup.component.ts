@@ -11,7 +11,7 @@ export class RolesAdSupComponent implements OnInit {
   roles:{[key:string]:string} = {};
   role: any;
   public:any;
-  nomRole: string = '';
+  nomRole: string = ''  ;
   users: any[] = [];
 
   constructor(private service: AllservicesService) {}
@@ -22,7 +22,7 @@ export class RolesAdSupComponent implements OnInit {
   }
 
   loadRoles() {
-    this.service.get('/liste-roles', (reponse: any) => {
+    this.service.getWithToken('/liste-roles', (reponse: any) => {
       console.log('test', reponse);
       this.roles=reponse.roles;
       console.log(this.roles);
@@ -35,12 +35,13 @@ export class RolesAdSupComponent implements OnInit {
         nom: this.nomRole // Utilise la valeur de nomRole
       };
   
-      this.service.post('/admin/assigner-role', role, (reponse: any) => {
+      this.service.post('/ajouter_roles', role, (reponse: any) => {
         console.log('Role ajouté avec succès', reponse);
         // Une fois le rôle ajouté avec succès, vous pouvez recharger la liste des rôles
         this.loadRoles();
         // Réinitialise le champ nomRole après l'ajout du rôle
         this.nomRole = '';
+        console.log('Valeur de nomRole:', this.nomRole);
       });
     } else {
       console.log('Le champ nom du rôle est vide.');
@@ -49,7 +50,7 @@ export class RolesAdSupComponent implements OnInit {
   }
   
   loadUsers() {
-    this.service.get('/liste-roles', (reponse: any) => {
+    this.service.getWithToken('/liste-roles', (reponse: any) => {
       console.log(reponse);
      this.users = reponse;
      console.log(this.users);

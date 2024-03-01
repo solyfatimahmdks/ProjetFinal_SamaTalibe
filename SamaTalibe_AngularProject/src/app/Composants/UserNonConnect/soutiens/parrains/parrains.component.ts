@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AllservicesService } from 'src/app/service/all-services-rest.service';
 
 @Component({
   selector: 'app-parrains',
@@ -12,86 +13,25 @@ export class ParrainsComponent implements OnInit {
   dataprofessions: any;
   parrainsParPage: any;
 
-  constructor() {}
+  parrains: any;
+
+  constructor(private service: AllservicesService ) {}
 
   ngOnInit(): void {
-    // Initialisez vos données ici
-    this.dataprofessions = [
-      { 
-        nom: 'Assane Ly',
-        profession: 'Assistant de direction à la CNART',
-        adresse: 'Kaolack',
-        nombreParrainages: 8,
-        email: 'assly@gmail.com',
-        // Autres informations si nécessaire
-      },
-      { 
-        nom: 'Assane Ly',
-        profession: 'Assistant de direction à la CNART',
-        adresse: 'Kaolack',
-        nombreParrainages: 8,
-        email: 'assly@gmail.com',
-        // Autres informations si nécessaire
-      },
-      { 
-        nom: 'Assane Ly',
-        profession: 'Assistant de direction à la CNART',
-        adresse: 'Kaolack',
-        nombreParrainages: 8,
-        email: 'assly@gmail.com',
-        // Autres informations si nécessaire
-      },
-      { 
-        nom: 'Assane Ly',
-        profession: 'Assistant de direction à la CNART',
-        adresse: 'Kaolack',
-        nombreParrainages: 8,
-        email: 'assly@gmail.com',
-        // Autres informations si nécessaire
-      },
-      { 
-        nom: 'Assane Ly',
-        profession: 'Assistant de direction à la CNART',
-        adresse: 'Kaolack',
-        nombreParrainages: 8,
-        email: 'assly@gmail.com',
-        // Autres informations si nécessaire
-      },
-      { 
-        nom: 'Assane Ly',
-        profession: 'Assistant de direction à la CNART',
-        adresse: 'Kaolack',
-        nombreParrainages: 8,
-        email: 'assly@gmail.com',
-        // Autres informations si nécessaire
-      },
-      { 
-        nom: 'Assane Ly',
-        profession: 'Assistant de direction à la CNART',
-        adresse: 'Kaolack',
-        nombreParrainages: 8,
-        email: 'assly@gmail.com',
-        // Autres informations si nécessaire
-      },
-      { 
-        nom: 'Assane Ly',
-        profession: 'Assistant de direction à la CNART',
-        adresse: 'Kaolack',
-        nombreParrainages: 8,
-        email: 'assly@gmail.com',
-        // Autres informations si nécessaire
-      },
-      { 
-        nom: 'Assane Ly',
-        profession: 'Assistant de direction à la CNART',
-        adresse: 'Kaolack',
-        nombreParrainages: 8,
-        email: 'assly@gmail.com',
-        // Autres informations si nécessaire
-      },
-    ]; // Remplacez ... par vos données
-    this.parrainsParPage = this.getParrainsPage();
-  }
+    this. loadAllParrains();
+ }
+
+ loadAllParrains() {
+  this.service.get('/lister_parrainage', (reponse: any) => {
+    console.log('test', reponse);
+    console.log(this.loadAllParrains);
+    
+    this.parrains=reponse;
+  });
+  this.parrainsParPage = this.getParrainsPage();
+}
+  
+
 //pagination  
 getParrainsPage(): any[] {
   const indexDebut = (this.pageActuelle - 1) * this.parrainsParPage;

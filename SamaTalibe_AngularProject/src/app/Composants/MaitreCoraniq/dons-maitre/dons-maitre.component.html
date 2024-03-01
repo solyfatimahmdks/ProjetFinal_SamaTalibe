@@ -76,35 +76,20 @@
                 </div> 
               </nav>
               <!-- End of Topbar -->
-                <div class="row">
-                  <div class="col-md-4 ps-5" style=" padding-right: 20px;">
-                      <div class="cardbi mb-3 p-3" style="line-height: 10px; border-radius: 10px; box-shadow: 1px 1px 1px 1px #252649;border-bottom: 10px solid #C2A966;background-color: white;">
-                            <div class="mb-3" style="box-shadow: 1px 1px 1px 1px #252649;width: 30%; margin: 0 auto; border-radius: 5px;"><img src="assets/cardonSup.png" alt=""  style="width: 70px;display: flex; align-items: center;"></div>    
-                            <p class="card-text py-2" style="color: #252649; font-size: 12px; font-weight: 400;"><span class="fw-bold">Donnateur:</span>Elhadji Thiam Lamtoro</p>
-                            <p class="card-text py-2" style="color: #252649; font-size: 12px; font-weight: 400;"><span class="fw-bold">Lieu:</span>Pikine</p>
-                            <p class="card-text py-2" style="color: #252649; font-size: 12px; font-weight: 400;"><span class="fw-bold">Date:</span>Le 19/12/2023</p>
-                            <p class="card-text py-2" style="color: #252649; font-size: 12px; font-weight: 400;"><span class="fw-bold">Destinataire:</span>Dahra Asmahou Salam</p>
-                      </div>
-                  </div>
-                  <div class="col-md-4 ps-5" style=" padding-right: 20px;">
-                    <div class="cardbi mb-3 p-3" style="line-height: 10px; border-radius: 10px; box-shadow: 1px 1px 1px 1px #252649;border-bottom: 10px solid #C2A966;background-color: white;">
-                          <div class="mb-3" style="box-shadow: 1px 1px 1px 1px #252649;width: 30%; margin: 0 auto; border-radius: 5px;"><img src="assets/cardonSup.png" alt=""  style="width: 70px;display: flex; align-items: center;"></div>    
-                          <p class="card-text py-2" style="color: #252649; font-size: 12px; font-weight: 400;"><span class="fw-bold">Donnateur:</span>Elhadji Thiam Lamtoro</p>
-                          <p class="card-text py-2" style="color: #252649; font-size: 12px; font-weight: 400;"><span class="fw-bold">Lieu:</span>Pikine</p>
-                          <p class="card-text py-2" style="color: #252649; font-size: 12px; font-weight: 400;"><span class="fw-bold">Date:</span>Le 19/12/2023</p>
-                          <p class="card-text py-2" style="color: #252649; font-size: 12px; font-weight: 400;"><span class="fw-bold">Destinataire:</span>Dahra Asmahou Salam</p>
-                    </div>
-                  </div>
-                  <div class="col-md-4 ps-5" style=" padding-right: 20px;">
-                    <div class="cardbi mb-3 p-3" style="line-height: 10px; border-radius: 10px; box-shadow: 1px 1px 1px 1px #252649;border-bottom: 10px solid #C2A966;background-color: white;">
-                          <div class="mb-3" style="box-shadow: 1px 1px 1px 1px #252649;width: 30%; margin: 0 auto; border-radius: 5px;"><img src="assets/cardonSup.png" alt=""  style="width: 70px;display: flex; align-items: center;"></div>    
-                          <p class="card-text py-2" style="color: #252649; font-size: 12px; font-weight: 400;"><span class="fw-bold">Donnateur:</span>Elhadji Thiam Lamtoro</p>
-                          <p class="card-text py-2" style="color: #252649; font-size: 12px; font-weight: 400;"><span class="fw-bold">Lieu:</span>Pikine</p>
-                          <p class="card-text py-2" style="color: #252649; font-size: 12px; font-weight: 400;"><span class="fw-bold">Date:</span>Le 19/12/2023</p>
-                          <p class="card-text py-2" style="color: #252649; font-size: 12px; font-weight: 400;"><span class="fw-bold">Destinataire:</span>Dahra Asmahou Salam</p>
+              <div class="">
+                <div  class="row p-3 container"  style="margin: 0 auto;">
+                  <div class="col-md-3 p-3" *ngFor="let don of dons">
+                    <div class="gap-2" >
+                        <div class="cardbi mb-3 p-3" style="line-height: 10px; border-radius: 10px; box-shadow: 1px 1px 1px 1px #252649;border-bottom: 10px solid #C2A966;background-color: white;">
+                              <div class="mb-3" style="box-shadow: 1px 1px 1px 1px #252649;width: 30%; margin: 0 auto; border-radius: 5px;"><img src="assets/cardonSup.png" alt=""  style="width: 70px;display: flex; align-items: center;"></div>    
+                              <p class="card-text py-2" style="color: #252649; font-size: 12px; font-weight: 400;"><span class="fw-bold">Donnateur:</span>{{ don.user.prenom }} {{ don.user.nom }}</p>
+                              <p class="card-text py-2" style="color: #252649; font-size: 12px; font-weight: 400;"><span class="fw-bold">Lieu:</span>{{ don.adresseProvenance}}</p>
+                              <p class="card-text py-2" style="color: #252649; font-size: 12px; font-weight: 400;"><span class="fw-bold">Date:</span>{{ don.date }}</p>
+                        </div>
                     </div>
                   </div>
                 </div>
+              </div>
   
             </div>
         <!-- End of Content Wrapper -->
