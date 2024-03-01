@@ -28,6 +28,10 @@ export class DashMaitreComponent implements OnInit {
   password: string = '';
   nombreTalibe: string = '';
   uploadedImages: any;
+  selectedDahra: any;
+
+
+
 
 
 
@@ -59,6 +63,9 @@ export class DashMaitreComponent implements OnInit {
 
 }
 
+selectDahra(dahra: any) {
+  this.selectedDahra = dahra;
+}
 
 getImageUrl(event: any) {
   console.warn(event.target.files[0]);

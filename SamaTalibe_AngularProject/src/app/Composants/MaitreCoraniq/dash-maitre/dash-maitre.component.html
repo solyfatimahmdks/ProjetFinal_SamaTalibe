@@ -93,45 +93,7 @@
                                 <div class="col-md-6" >
                                     <a href="#" class="btn"  data-bs-toggle="modal" data-bs-target="#exampleModal" style="width:80%; font-size: 18px; background-color: #252649;color: #C2A966;box-shadow:2px 2px 2px 2px #C2A966; font-weight: bold;"> <i class="bi bi-eye-fill" style="color: #C2A966; margin-right: 15px; font-weight: bold;"></i>Détails</a>
                                 
-                                      <!-- Modal -->
-                                              <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                                  <div class="modal-dialog mt-2">
-                                                  <div class="modal-content" style=" width: 900px; background-color: #C2A966 !important;margin: 0  auto;">
-                                                      <div class="modal-header">
-                                                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                                      </div>
-                                                      <div class="modal-body p-5">
-                                                          <h1 class="text-center mb-3"  style="color: #252649;">Dahra Al Ihsaan</h1>
-                                                          <div class="mb-3 row" style="color: #252649; font-weight: bold;">
-                                                              <div class="col-md-4">
-                                                                  <img src="assets/dahras/Imgcarte1.jpg" style="width: 200px;" id="détailImg" alt="">
-                                                              </div>
-                                                              <div class="col-md-8">
-                                                                  <p><span style="font-weight: bold;">Nom et prénom Oustaz:</span>Elhadji Djibril Thiam </p>
-                                                                  <hr class="mb-3">
-                                                                  <p><span style="font-weight: bold;">Région:</span>Fatick</p>
-                                                                  <hr class="mb-3">
-                                                                  <p><span style="font-weight: bold;">Adresse:</span> Niongolor</p>
-                                                                  <hr class="mb-3">
-                                                              </div>
-                                                          </div>
-                                                          <div class="mb-3">
-                                                              <p><span style="font-weight: bold;">Contact:</span> 786754898</p>
-                                                              <hr class="mb-3">
-                                                              <p><span style="font-weight: bold;">Description:</span> Lorem, ipsum dolor sit amet consectetur 
-                                                                adipisicing elit. Error in est quam eum, ducimus ex ratione 
-                                                              </p>
-                                                              <hr class="mb-3">
-                                                              <p>ipsum ad atque sequi. 
-                                                                Ducimus quaerat dolores suscipit ad accusamus reprehenderit rerum, quo ipsa?</p>
-                                                              <hr class="mb-3">
-                                                              <p><span style="font-weight: bold;">Nombre d'apprenants:</span> 786</p>
-                                                              <hr class="mb-3">
-                                                          </div>
-                                                      </div>
-                                                  </div>
-                                                  </div>
-                                              </div>
+                                    
                                 </div>
                             </div>
                           </div>
@@ -147,8 +109,128 @@
         </div>
     </div>
     <!-- End of Page Wrapper -->
+
   
   </body>
+
+  <!-- Modal -->
+<div
+class="modal fade"
+id="exampleModal"
+tabindex="-1"
+aria-labelledby="exampleModalLabel"
+aria-hidden="true"
+>
+<div class="modal-dialog mt-5 modal-dialog-scrollable modal-lg" style="margin: 0 auto">
+  <div
+    class="modal-content"
+    style="padding: 20px; background-color: white !important"
+  >
+    <div class="modal-header">
+      <button
+        type="button"
+        class="btn-close mb-2"
+        data-bs-dismiss="modal"
+        aria-label="Close"
+      ></button>
+    </div>
+    <div class="modal-body" style="padding: 20px">
+      <h5 class="text-center" style="color: #252649">
+        {{ selectedDahra?.nom }}
+      </h5>
+      <div class="my-4 row" style="color: #252649">
+        <div class="col-md-6 mt-3">
+          <img
+            style="width: 100%; height: 100%; object-fit: cover"
+            src="https://www.hrw.org/sites/default/files/styles/embed_xxl/public/multimedia_images_2019/201901africa_senegal_talibestoubarooftop.jpg?itok=AcAtSuSq"
+            id="détailImg"
+            alt=""
+          />
+        </div>
+        <div class="col-md-6" style="padding: 20px; border-radius: 10px">
+          <p>
+            <span style="font-weight: bold">Nom Ouztas:</span
+            >{{ selectedDahra?.nomOuztas }}
+          </p>
+          <hr class="mb-3" />
+          <p>
+            <span style="font-weight: bold">Region:</span
+            >{{ selectedDahra?.region }}
+          </p>
+          <hr class="mb-3" />
+          <p>
+            <span style="font-weight: bold">Adresse:</span
+            >{{ selectedDahra?.adresse }}
+          </p>
+          <hr class="mb-3" />
+          <p style="color: #252649">
+            <span style="color: #252649; font-weight: bold"
+              >Numero Téléphone Ouztas :</span
+            >{{ selectedDahra?.numeroTelephoneOuztas }}
+          </p>
+          <hr />
+          <p style="color: #252649">
+            <span style="color: #252649; font-weight: bold"
+              >Nombre talibés :</span
+            >{{ selectedDahra?.nombreTalibe }}
+          </p>
+          <hr />
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer d-flex justify-content-between">
+      <!-- <button
+                      type="button"
+                      class="btn"
+                      (click)="toggleList('talib', selectedDahra.nom)"
+                      data-bs-dismiss="modal"
+                      style="
+                        font-size: 15px;
+                        background-color: #252649;
+                        color: #c2a966;
+                        font-weight: bold;
+                        box-shadow: 2px 2px 2px 2px #c2a966;
+                        width: 150px;
+                      "
+                    >
+                      <i
+                        class="bi bi-eye-fill"
+                        style="
+                          color: #c2a966;
+                          margin-right: 10px;
+                          font-weight: bold;
+                        "
+                      ></i
+                      >{{ selectedDahra.nombreTalibe }} apprenants
+                    </button>-->
+      <!-- <button type="button" class="btn" data-bs-dismiss="modal">
+        <i
+          class="bi bi-eye-fill"
+          style="color: #c2a966; margin-right: 10px; font-weight: bold"
+        ></i>
+        {{ selectedDahra.nombreTalibe }} apprenants
+      </button> -->
+      <button
+        type="button"
+        class="btn"
+        routerLink="/donsuser"
+        style="
+          background-color: #252649;
+          color: #c2a966;
+          font-size: 15px;
+          width: 150px;
+          font-weight: bold;
+          border: none;
+        "
+         data-bs-dismiss="modal"
+         aria-label="Close"
+      >
+        Faire un don
+      </button>
+    </div>
+  </div>
+</div>
+</div>
   
   
   

@@ -215,7 +215,7 @@
       >
         <div>
           <img
-            src="https://www.hrw.org/sites/default/files/styles/image_gallery/public/multimedia_images_2017/201707africa_senegal_talibe_photo_06.jpg?itok=wNoj8O6e"
+          [src]="getImage(dahra.image)"
             id="cardImg"
             alt=""
           />
@@ -423,9 +423,8 @@
         <div class="my-4 row" style="color: #252649">
           <div class="col-md-6 mt-3">
             <img
-              style="width: 100%; height: 100%; object-fit: cover"
-              src="https://www.hrw.org/sites/default/files/styles/embed_xxl/public/multimedia_images_2019/201901africa_senegal_talibestoubarooftop.jpg?itok=AcAtSuSq"
-              id="détailImg"
+              style="width: 100%; height: 100%; object-fit: cover ; border-radius: 10%; box-shadow: 1px 1px 1px #252649;"
+              [src]="getImage(selectedDahra?.image)"
               alt=""
             />
           </div>
@@ -494,8 +493,8 @@
         </button> -->
         <button
           type="button"
-          class="btn"
-          routerLink="/donsuser"
+          class="btn" 
+          
           style="
             background-color: #252649;
             color: #c2a966;
@@ -505,7 +504,7 @@
             border: none;
           "
            data-bs-dismiss="modal"
-           aria-label="Close"
+           aria-label="Close" data-bs-target="#exampleModaly"
         >
           Faire un don
         </button>
@@ -513,4 +512,19 @@
     </div>
   </div>
 </div>
+
+
+
+  <!-- Modal -->
+  <div class="modal fade mt-5" id="exampleModaly" tabindex="-1" aria-labelledby="exampleModaly" aria-hidden="true">
+    <div class="modal-dialog" style="margin: 0 auto;">
+      <div class="modal-content p-5">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" style="margin: 0 auto; color: #252649;" id="exampleModaly">Authentifiez-vous d'abord</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+           <button type="button" class="btn" style="background-color: #252649; color: #C2A966; border: none; box-shadow:1px 1px 1px 1px #C2A966; font-weight: bold;" data-bs-dismiss="modal" aria-label="Close" routerLink="/login">Connexion</button>
+      </div>
+    </div>
+  </div>
 <app-footer></app-footer>

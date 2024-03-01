@@ -97,7 +97,7 @@
                   </thead>
                   <tbody>
                     <tr *ngFor="let dahra of dahrasList | paginate:{ itemsPerPage:itemsPerPage, currentPage:currentPage , totalItems:dahras.length}" style="height: 60px; margin-top: 20px !important;">
-                      <td class="ps-5"> <img src="http://127.0.0.1:8000/uploads/de72b2bb9d2bcebe221fea00dae2b40e.jpg"  id="admindatable" alt=""></td>
+                      <td class="ps-5"> <img [src]="getImage(dahra.image)"  id="admindatable" alt=""></td>
                       <td>{{ dahra.nom }} </td>
                       <td>{{ dahra.nomOuztas }}</td>
                       <td>{{ dahra.region }}</td>
@@ -138,30 +138,30 @@
                  <div class="row">
                     <div class="col-md-6 mb-3 pe-3">
                       <label for="exampleFormControlInput1" style="color: #C2A966;" class="form-label">Nom Dahra:  <span class="span_validate" id="validationNomDahra"></span></label>
-                      <input type="name"  style="height: 40px;border: 1px solid #C2A966; box-shadow:1px 1px 1px #C2A966;" class="form-control" name="nom" id="exampleFormControlInput1" [(ngModel)]="dara.nom" (input)="nomdahraValidate()">
+                      <input type="name"  style="height: 40px;border: 1px solid #C2A966; box-shadow:1px 1px 1px #C2A966;" class="form-control" name="nom" id="exampleFormControlInput1" [(ngModel)]="dara.nom" >
                     </div>
                     <div class="col-md-6 mb-3 ps-3">
                       <label for="exampleFormControlInput1" style="color: #C2A966;" class="form-label">Nom Oustaz:  <span class="span_validate" id="validationOustaze"></span></label>
-                      <input type="name" style="height: 40px;border: 1px solid #C2A966; box-shadow:1px 1px 1px #C2A966;" class="form-control" id="exampleFormControlInput1" [(ngModel)]="dara.nomOuztas" (input)="nomOustazeValidate()">
+                      <input type="name" style="height: 40px;border: 1px solid #C2A966; box-shadow:1px 1px 1px #C2A966;" class="form-control" id="exampleFormControlInput1" [(ngModel)]="dara.nomOuztas" >
                     </div>
                  </div>
                  <div class="row">
                   <div class="col-md-6 mb-3 pe-3">
                     <label for="exampleFormControlInput1" style="color: #C2A966;" class="form-label">Numero Téléphone: <span class="span_validate" id="validationTelephoneDahra"></span></label>
-                    <input type="text"  style="height: 40px;border: 1px solid #C2A966; box-shadow:1px 1px 1px #C2A966;" class="form-control" id="exampleFormControlInput1" [(ngModel)]="dara.numeroTelephone" (input)="telephoneDharaValidate()">
+                    <input type="text"  style="height: 40px;border: 1px solid #C2A966; box-shadow:1px 1px 1px #C2A966;" class="form-control" id="exampleFormControlInput1" [(ngModel)]="dara.numeroTelephone" >
                   </div>
                   <div class="col-md-6 mb-3 ps-3">
                     <label for="exampleFormControlInput1" style="color: #C2A966;" class="form-label">Numéro Téléphone Oustaz: <span class="span_validate" id="validationTelephoneOustaze"></span></label>
-                    <input type="text"  style="height: 40px;border: 1px solid #C2A966; box-shadow:1px 1px 1px #C2A966;" class="form-control" id="exampleFormControlInput1" [(ngModel)]="dara.numeroTelephoneOuztas" (input)="telephoneOustazeValidate()">
+                    <input type="text"  style="height: 40px;border: 1px solid #C2A966; box-shadow:1px 1px 1px #C2A966;" class="form-control" id="exampleFormControlInput1" [(ngModel)]="dara.numeroTelephoneOuztas" >
                   </div>
                  </div>
                  <div class="row">
                   <div class="col-md-6 mb-3 pe-3">
                     <label for="exampleFormControlInput1" style="color: #C2A966;" class="form-label">Adresse:  <span class="span_validate" id="validationAdresse"></span></label>
-                    <input type="text" style="height: 40px;border: 1px solid #C2A966; box-shadow:1px 1px 1px #C2A966;" class="form-control" id="exampleFormControlInput1" [(ngModel)]="dara.adresse" (input)="adresseValidate()">
+                    <input type="text" style="height: 40px;border: 1px solid #C2A966; box-shadow:1px 1px 1px #C2A966;" class="form-control" id="exampleFormControlInput1" [(ngModel)]="dara.adresse" >
                   </div>
                   <div class="col-md-6 mb-3 ps-3">
-                    <select [(ngModel)]="selectedRegion" (change)="regionValidate()" class="col-md-6" style="color: #C2A966;height: 45px; border: 1px solid #C2A966;
+                    <select [(ngModel)]="selectedRegion"  class="col-md-6" style="color: #C2A966;height: 45px; border: 1px solid #C2A966;
                     outline: 0;background-color: rgba(255, 255, 255, 0.418); width: 346px !important; margin-top: 25px;border-radius: 5px; font-size: 0.875rem;line-height: 1.25rem;" name="adresse" id="adresse">
                         <option value="" disabled selected>Choisissez une région</option>
                         <option *ngFor="let region of regions" [value]="region">{{ region }}</option>
@@ -180,7 +180,7 @@
               </div>
               <div class="mb-3 ps-3">
                 <label for="exampleFormControlInput1" style="color: #C2A966;" class="form-label">Nombre de talibés:</label>
-                <input type="number"  style="height: 40px;border: 1px solid #C2A966; box-shadow:1px 1px 1px #C2A966;" class="form-control" id="exampleFormControlInput1" [(ngModel)]="dara.nombreTalibe" (input)="nombreTalibes()">
+                <input type="number"  style="height: 40px;border: 1px solid #C2A966; box-shadow:1px 1px 1px #C2A966;" class="form-control" id="exampleFormControlInput1" [(ngModel)]="dara.nombreTalibe">
               </div>
               <div>
                 <label for="formFileLg" class="form-label">Image:</label>
