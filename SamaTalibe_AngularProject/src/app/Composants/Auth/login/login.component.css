@@ -1,6 +1,12 @@
 main{
   /* margin-top: 65px; */
 }
+
+.disabled {
+  background-color: #c78a459c !important; /* Couleur sombre pour le bouton grisé */
+  color: #ffffff !important; /* Texte blanc pour le bouton grisé */
+}
+
 .content{
   /* background: linear-gradient(0deg, #2f315a00,#2f315a00), url("../../../../assets/authbcg.jpg");
   background-size: cover;
