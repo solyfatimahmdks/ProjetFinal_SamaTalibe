@@ -28,3 +28,8 @@
     box-shadow: 1px 1px 1px 1px #C2A966;
     border-radius: 8px;
   }
+
+  /* stylisation pour les éléments du popup , pour mettre un écart entre les texts  exemple : nombre talibés:    12 */
+p span {
+  margin-right: 10px;
+}
