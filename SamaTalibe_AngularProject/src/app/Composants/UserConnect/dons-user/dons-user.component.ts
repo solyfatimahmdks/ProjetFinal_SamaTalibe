@@ -35,6 +35,7 @@ export class DonsUserComponent {
   };
   dons: any[] = []; // Initialisez comme un tableau vide
   myDons: any; // Initialisez comme un tableau vide
+  dahras: any[]=[];
   
   
 
@@ -44,6 +45,7 @@ export class DonsUserComponent {
 
   ngOnInit(): void {
      this.loadAllDons();
+     this.loaddahras();
   }
   faireDonation() {
     this.don = {
@@ -63,6 +65,8 @@ export class DonsUserComponent {
         console.log(reponse);
         
       });
+      this.loadAllDons();
+      this.loadMyDonations();
     }
 
     loadAllDons() {
@@ -115,6 +119,13 @@ export class DonsUserComponent {
       console.log("D:",this.dons.length);
       console.log("d:",this.pagedDons.length);
    
+    }
+
+    loaddahras() {
+      this.service.get('/lister-dahra', (reponse: any) => {
+        console.log('test', reponse);
+        this.dahras = reponse;
+      });
     }
   
 }

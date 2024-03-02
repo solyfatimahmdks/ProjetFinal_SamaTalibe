@@ -137,13 +137,16 @@
       <div class="modal-content" style="padding: 40px;  width: 800px;">
         <div class="modal-header">
           <h1 class="modal-title fs-5" style="margin: 0 auto; color: #252649;" id="staticBackdropLabel">Faites une  donnation</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
         </div>
         <div class="modal-body">
              <div class="row">
                 <div class="col-md-6 mb-3 pe-3">
                   <label for="exampleFormControlInput1" style="color: #C2A966;" class="form-label">Nom Dahra:</label>
-                  <input type="name" [(ngModel)]="dahra_name"  style="height: 40px;border: 1px solid #C2A966; box-shadow:1px 1px 1px #C2A966;" class="form-control" name="nom" id="exampleFormControlInput1">
+                  <!-- <input type="name" [(ngModel)]="dahra_name"  style="height: 40px;border: 1px solid #C2A966; box-shadow:1px 1px 1px #C2A966;" class="form-control" name="nom" id="exampleFormControlInput1"> -->
+                  <select class="form-select" aria-label="Default select example" style="height: 40px;border: 1px solid #C2A966; box-shadow:1px 1px 1px #C2A966;" [(ngModel)]="dahra_name">
+                    <option *ngFor="let item of dahras" value="{{item.nom}}">{{item.nom}}</option>
+                  </select>
                 </div>
                 <div class="col-md-6 mb-3 ps-3">
                   <label for="exampleFormControlInput1" style="color: #C2A966;" class="form-label">Disponibilité:</label>
@@ -173,6 +176,7 @@
        </div>
         </div>
         <div class="modal-footer">
+          <button type="button" data-bs-dismiss="modal" aria-label="Close"  class="btn btn-secondary" style="font-size: 15px;"  data-bs-dismiss="modal">Annuler</button>
           <button type="submit" routerLink="/donsuser" (click)=" faireDonation()" class="btn btn-secondary" style="font-size: 15px;"  data-bs-dismiss="modal">Conclure</button>
         </div>
       </div>

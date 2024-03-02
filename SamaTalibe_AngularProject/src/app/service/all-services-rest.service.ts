@@ -8,10 +8,6 @@ import { TOKEN_KEY } from '../constants/constant';
   providedIn: 'root',
 })
 export class AllservicesService implements OnInit {
-
-
-
- 
   private apiUrl = 'http://127.0.0.1:8000/api';
 
   constructor(private http: HttpClient) {}
@@ -19,26 +15,28 @@ export class AllservicesService implements OnInit {
     throw new Error('Method not implemented.');
   }
 
-
-  
-  postWithError(path: string, dataToSend: any, onSuccess: Function,OnError:Function) {
+  postWithError(
+    path: string,
+    dataToSend: any,
+    onSuccess: Function,
+    OnError: Function
+  ) {
     const httpOptions = {
       headers: new HttpHeaders({
         Authorization:
-          'Bearer ' +
-          JSON.parse(localStorage.getItem(TOKEN_KEY) ?? '{}').token,
+          'Bearer ' + JSON.parse(localStorage.getItem(TOKEN_KEY) ?? '{}').token,
       }),
     };
-    this.http
-      .post(this.apiUrl + path, dataToSend, httpOptions)
-      .subscribe((reponse: any) => onSuccess(reponse),((error:any)=>OnError(error)));
+    this.http.post(this.apiUrl + path, dataToSend, httpOptions).subscribe(
+      (reponse: any) => onSuccess(reponse),
+      (error: any) => OnError(error)
+    );
   }
   post(path: string, dataToSend: any, onSuccess: Function) {
     const httpOptions = {
       headers: new HttpHeaders({
         Authorization:
-          'Bearer ' +
-          JSON.parse(localStorage.getItem(TOKEN_KEY) ?? '{}').token,
+          'Bearer ' + JSON.parse(localStorage.getItem(TOKEN_KEY) ?? '{}').token,
       }),
     };
     this.http
@@ -49,8 +47,7 @@ export class AllservicesService implements OnInit {
     const httpOptions = {
       headers: new HttpHeaders({
         Authorization:
-          'Bearer ' +
-          JSON.parse(localStorage.getItem(TOKEN_KEY) ?? '{}').token,
+          'Bearer ' + JSON.parse(localStorage.getItem(TOKEN_KEY) ?? '{}').token,
       }),
     };
     this.http
@@ -75,13 +72,12 @@ export class AllservicesService implements OnInit {
     const httpOptions = {
       headers: new HttpHeaders({
         Authorization:
-          'Bearer ' +
-          JSON.parse(localStorage.getItem(TOKEN_KEY) ?? '{}').token,
+          'Bearer ' + JSON.parse(localStorage.getItem(TOKEN_KEY) ?? '{}').token,
       }),
-      params: params
+      params: params,
     };
     this.http
-      .get(this.apiUrl + path,httpOptions)
+      .get(this.apiUrl + path, httpOptions)
       .subscribe((reponse: any) => onSuccess(reponse));
   }
 
@@ -89,8 +85,7 @@ export class AllservicesService implements OnInit {
     const httpOptions = {
       headers: new HttpHeaders({
         Authorization:
-          'Bearer ' +
-          JSON.parse(localStorage.getItem(TOKEN_KEY) ?? '{}').token,
+          'Bearer ' + JSON.parse(localStorage.getItem(TOKEN_KEY) ?? '{}').token,
       }),
     };
     this.http
@@ -102,8 +97,7 @@ export class AllservicesService implements OnInit {
     const httpOptions = {
       headers: new HttpHeaders({
         Authorization:
-          'Bearer ' +
-          JSON.parse(localStorage.getItem(TOKEN_KEY) ?? '{}').token,
+          'Bearer ' + JSON.parse(localStorage.getItem(TOKEN_KEY) ?? '{}').token,
       }),
     };
     this.http
@@ -118,7 +112,4 @@ export class AllservicesService implements OnInit {
       icon: icon,
     });
   }
-  
-
-  
 }
