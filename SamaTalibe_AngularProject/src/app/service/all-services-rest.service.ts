@@ -21,6 +21,18 @@ export class AllservicesService implements OnInit {
 
 
   
+  postWithError(path: string, dataToSend: any, onSuccess: Function,OnError:Function) {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        Authorization:
+          'Bearer ' +
+          JSON.parse(localStorage.getItem(TOKEN_KEY) ?? '{}').token,
+      }),
+    };
+    this.http
+      .post(this.apiUrl + path, dataToSend, httpOptions)
+      .subscribe((reponse: any) => onSuccess(reponse),((error:any)=>OnError(error)));
+  }
   post(path: string, dataToSend: any, onSuccess: Function) {
     const httpOptions = {
       headers: new HttpHeaders({
@@ -59,7 +71,6 @@ export class AllservicesService implements OnInit {
       .get(this.apiUrl + path)
       .subscribe((reponse: any) => onSuccess(reponse));
   }
-  
   getWithToken(path: string, onSuccess: Function, params?: HttpParams) {
     const httpOptions = {
       headers: new HttpHeaders({
