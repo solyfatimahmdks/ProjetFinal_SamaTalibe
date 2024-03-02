@@ -24,6 +24,7 @@ import { ParrainsComponent } from './Composants/UserNonConnect/soutiens/parrains
 import { ListTalibesComponent } from './Composants/UserNonConnect/dahra/list-talibes/list-talibes.component';
 import { TemMaitreComponent } from './Composants/MaitreCoraniq/tem-maitre/tem-maitre.component';
 import { SamaDahraComponent } from './Composants/MaitreCoraniq/sama-dahra/sama-dahra.component';
+import { tokenGuardGuard } from './guards/token-guard.guard';
 
 
 
@@ -33,25 +34,25 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent},
   { path: 'dahras' , component: DahraComponent},
   { path: 'soutiens' , component: SoutiensComponent},
-  { path: 'adsup' , component: AccueilAdSupComponent},
-  { path: 'dahradsup' , component: DahrasAdSupComponent},
-  { path: 'donadsup' , component: DonAdSupComponent},
-  { path: 'parrainadsup' , component: ParrainAdSupComponent},
-  { path: 'rolesadsup' , component: RolesAdSupComponent},
-  { path: 'dashmaitre' , component: DashMaitreComponent},
-  { path: 'donsmaitre' , component: DonsMaitreComponent},
-  { path: 'parrainmaitre' , component: ParrainMaitreCoraniqComponent},
-  { path: 'dashuser' , component: DashUserComponent},
-  { path: 'donsuser' , component: DonsUserComponent},
-  { path: 'parrainuser' , component: ParrainUserComponent},
-  { path: 'temuser' , component: TemUserComponent},
+  { path: 'adsup' , component: AccueilAdSupComponent ,canActivate:[tokenGuardGuard]},
+  { path: 'dahradsup' , component: DahrasAdSupComponent ,canActivate:[tokenGuardGuard]},
+  { path: 'donadsup' , component: DonAdSupComponent ,canActivate:[tokenGuardGuard]},
+  { path: 'parrainadsup' , component: ParrainAdSupComponent ,canActivate:[tokenGuardGuard]},
+  { path: 'rolesadsup' , component: RolesAdSupComponent ,canActivate:[tokenGuardGuard]},
+  { path: 'dashmaitre' , component: DashMaitreComponent,canActivate:[tokenGuardGuard]},
+  { path: 'donsmaitre' , component: DonsMaitreComponent,canActivate:[tokenGuardGuard]},
+  { path: 'parrainmaitre' , component: ParrainMaitreCoraniqComponent ,canActivate:[tokenGuardGuard]},
+  { path: 'dashuser' , component: DashUserComponent  ,canActivate:[tokenGuardGuard]},
+  { path: 'donsuser' , component: DonsUserComponent  ,canActivate:[tokenGuardGuard]},
+  { path: 'parrainuser' , component: ParrainUserComponent ,canActivate:[tokenGuardGuard]},
+  { path: 'temuser' , component: TemUserComponent ,canActivate:[tokenGuardGuard]},
   { path: 'listdahra' , component: ListDahraComponent},
   { path: 'donnations' , component: DonUserNonConnectComponent},
   { path: 'parrains', component: ParrainsComponent},
   { path: 'soutiens' , component: SoutiensComponent},
   { path: 'talibes' , component: ListTalibesComponent},
   { path: 'temaitre' , component: TemMaitreComponent},
-  { path: 'samadahra' , component: SamaDahraComponent},
+  { path: 'samadahra' , component: SamaDahraComponent ,canActivate:[tokenGuardGuard]},
   { path: '', redirectTo: '/accueil', pathMatch: 'full' },
   
 ];

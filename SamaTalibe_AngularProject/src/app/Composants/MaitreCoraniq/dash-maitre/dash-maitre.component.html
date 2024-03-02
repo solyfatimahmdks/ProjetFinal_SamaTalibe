@@ -1,180 +1,337 @@
-
 <!-- <p>accueil works!</p> -->
 <body id="page-top" style="">
+  <!-- Page Wrapper -->
+  <div class="row" id="wrapper">
+    <!-- Sidebar -->
+    <div class="col-md-3" id="sidebar">
+      <ul
+        class="navbar-nav sidebar sidebar-dark accordion"
+        id="accordionSidebar"
+        style=""
+      >
+        <li style="margin-bottom: 40%">
+          <a
+            href="#"
+            class="nav-link ps-5 mb-2"
+            style="
+              height: 50px;
+              color: #c2a966;
+              font-size: 20px;
+              font-weight: bold;
+            "
+          >
+            <img
+              class="mt-5 container"
+              style=""
+              id="logodash"
+              src="../../../../assets/LOGOS/LogoFooter.png"
+              alt=""
+            />
+          </a>
+        </li>
+        <li>
+          <a
+            class="nav-link ps-5 mb-2"
+            routerLink="/dashmaitre"
+            style="
+              height: 50px;
+              color: #c2a966;
+              font-size: 20px;
+              font-weight: bold;
+            "
+          >
+            <i class="me-3 fa-solid fa-house" style="color: #c2a966"></i
+            >Dashboard
+          </a>
+        </li>
+        <li>
+          <a
+            class="nav-link ps-5 mb-2"
+            routerLink="/samadahra"
+            style="
+              cursor: pointer;
+              height: 50px;
+              color: white;
+              font-size: 20px;
+              font-weight: bold;
+            "
+          >
+            <i class="me-3 fa-solid fa-house" style="color: white"></i>Sama
+            Dahra
+          </a>
+        </li>
+        <li>
+          <a
+            class="nav-link ps-5 mb-2"
+            routerLink="/donsmaitre"
+            style="
+              height: 50px;
+              color: white;
+              font-size: 20px;
+              font-weight: bold;
+            "
+          >
+            <i
+              class="me-3 fa-solid fa-hand-holding-droplet"
+              style="color: white"
+            ></i
+            >Donnations
+          </a>
+        </li>
+        <li>
+          <a
+            class="nav-link ps-5 mb-2"
+            routerLink="/parrainmaitre"
+            style="
+              height: 50px;
+              color: white;
+              font-size: 20px;
+              font-weight: bold;
+            "
+          >
+            <i class="me-3 fa-solid fa-user-xmark" style="color: white"></i
+            >Parrainages
+          </a>
+        </li>
 
-    <!-- Page Wrapper -->
-    <div class="row" id="wrapper">
-       
-        <!-- Sidebar -->
-        <div class="col-md-3" id="sidebar">
-          <ul class="navbar-nav sidebar sidebar-dark accordion" id="accordionSidebar" style="">
-            <li style="margin-bottom: 40%;">
-              <a href="#" class="nav-link ps-5 mb-2" style="height: 50px; color: #C2A966; font-size: 20px; font-weight: bold;">
-                <img class="mt-5 container" style="" id="logodash"  src="../../../../assets/LOGOS/LogoFooter.png" alt="">
-              </a>
-            </li>
-            <li>
-              <a  class="nav-link ps-5 mb-2" routerLink="/dashmaitre"  style="height: 50px; color: #C2A966; font-size: 20px; font-weight: bold;">
-                <i class="me-3 fa-solid fa-house" style="color: #C2A966;"></i>Dashboard
-              </a>
-            </li>
-            <li>
-              <a  class="nav-link ps-5 mb-2" routerLink="/samadahra"  style="cursor: pointer; height: 50px; color: white; font-size: 20px; font-weight: bold;">
-                <i class="me-3 fa-solid fa-house"  style="color: white;"></i>Sama Dahra
-              </a>
-            </li>
-            <li>
-              <a  class="nav-link ps-5 mb-2" routerLink="/donsmaitre" style="height: 50px; color: white; font-size: 20px; font-weight: bold;">
-                <i class="me-3 fa-solid fa-hand-holding-droplet" style="color: white;"></i>Donnations
-              </a>
-            </li>
-            <li>
-              <a class="nav-link ps-5 mb-2" routerLink="/parrainmaitre" style="height: 50px; color: white; font-size: 20px; font-weight: bold;">
-                <i class="me-3 fa-solid fa-user-xmark" style="color: white;"></i>Parrainages
-              </a>
-            </li>
-      
-            <div class="d-sm-flex align-items-center justify-content-between my-4" style="margin: 0 auto;">
-              <a href="#" class="d-none d-sm-inline-block btn btn-sm shadow-sm">
-              <i class="bi bi-box-arrow-left me-3" style="color: #C2A966;font-size: 30px;font-weight: bold; "></i>Déconnexion</a>
-          </div>
-    
-         </ul>
+        <div
+          class="d-sm-flex align-items-center justify-content-between my-4"
+          style="margin: 0 auto" (click)="deconnexion()"
+        >
+          <a class="d-none d-sm-inline-block btn btn-sm shadow-sm">
+            <i
+              class="bi bi-box-arrow-left me-3"
+              style="color: #c2a966; font-size: 30px; font-weight: bold"
+            ></i
+            >Déconnexion</a
+          >
         </div>
-        <!-- End of Sidebar -->
-  
-  
-        <!-- Content Wrapper -->
-        <div id="content-wrapper" class="p-0 d-flex flex-column col-md-9 m-auto" >
-  
-            <!-- Main Content -->
-            <div id="content">
-  
-              <!-- Topbar -->
-              <nav class="p-3 navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow"style="height: 70px; background-color: white; border-bottom: 1px solid #252649; border-right: 1px solid #252649;">
-                <div class="container-fluid"> 
-                  <div class="d-flex justify-content-between collapse navbar-collapse" id="navbarsExample02">
-                    <div class="fs-1 fw-bold" style="color: #252649;"><i class="bi bi-list"></i>Dashboard</div>
-                    <div class="dropdown me-3">
-                        <a href="#" class="d-flex align-items-center link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                          <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
-                          <strong>Admin</strong>
-                        </a>
-                        <ul class="dropdown-menu text-small shadow p-3" style="color: #252649 !important; font-weight: bold !important;">
-                          <li><a class="dropdown-item btnU" data-bs-toggle="modal" data-bs-target="#Profile" style="cursor: pointer;" >Profile</a></li>
-                          <li><hr class="dropdown-divider"></li>
-                          <li><a class="dropdown-item" href="#">Déconnexion</a></li>
-                        </ul>
+      </ul>
+    </div>
+    <!-- End of Sidebar -->
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="p-0 d-flex flex-column col-md-9 m-auto">
+      <!-- Main Content -->
+      <div id="content">
+        <!-- Topbar -->
+        <nav
+          class="p-3 navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow"
+          style="
+            height: 70px;
+            background-color: white;
+            border-bottom: 1px solid #252649;
+            border-right: 1px solid #252649;
+          "
+        >
+          <div class="container-fluid">
+            <div
+              class="d-flex justify-content-between collapse navbar-collapse"
+              id="navbarsExample02"
+            >
+              <div class="fs-1 fw-bold" style="color: #252649">
+                <i class="bi bi-list"></i>Dashboard
+              </div>
+              <div class="dropdown me-3">
+                <a
+                  href="#"
+                  class="d-flex align-items-center link-body-emphasis text-decoration-none dropdown-toggle"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  <img
+                    src="https://github.com/mdo.png"
+                    alt=""
+                    width="32"
+                    height="32"
+                    class="rounded-circle me-2"
+                  />
+                  <strong>Admin</strong>
+                </a>
+                <ul
+                  class="dropdown-menu text-small shadow p-3"
+                  style="
+                    color: #252649 !important;
+                    font-weight: bold !important;
+                  "
+                >
+                  <li>
+                    <a
+                      class="dropdown-item btnU"
+                      data-bs-toggle="modal"
+                      data-bs-target="#Profile"
+                      style="cursor: pointer"
+                      >Profile</a
+                    >
+                  </li>
+                  <li><hr class="dropdown-divider" /></li>
+                  <li><a class="dropdown-item" href="#">Déconnexion</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </nav>
+        <!-- End of Topbar -->
+
+        <div style="margin-top: 100px">
+          <div class="my-5 row">
+            <div
+              class="contentcard col-md-4"
+              *ngFor="
+                let dahra of dahras
+                  | paginate
+                    : {
+                        itemsPerPage: itemsPerPage,
+                        currentPage: currentPage,
+                        totalItems: dahras.length
+                      }
+              "
+            >
+              <div
+                class="card"
+                style="
+                  width: 20rem;
+                  box-shadow: 1px 1px 1px 1px #c2a966;
+                  margin: 0 auto;
+                "
+              >
+                <div>
+                  <img [src]="getImage(dahra.image)" id="cardImg" alt="" />
+                </div>
+                <div class="card-body">
+                  <h5 class="mt-2 card-title text-center">{{ dahra.nom }}</h5>
+                  <div class="row p-2" style="">
+                    <div class="col-md-6 mt-3 fw-bold">
+                      <p class="card-text text-start">
+                        <i
+                          class="bi bi-person-badge"
+                          style="color: #252649; margin-right: 10px"
+                        ></i
+                        >{{ dahra.nombreTalibe }} apprenants
+                      </p>
+                      <p class="card-text text-start">
+                        <i
+                          class="bi bi-geo-alt-fill"
+                          style="color: #252649; margin-right: 10px"
+                        ></i
+                        >{{ dahra.region }}
+                      </p>
+                    </div>
+                    <div class="col-md-6">
+                      <a
+                        (click)="selectDahra(dahra)"
+                        class="btn"
+                        data-bs-toggle="modal"
+                        data-bs-target="#exampleModal"
+                        style="
+                          width: 80%;
+                          font-size: 18px;
+                          background-color: #252649;
+                          color: #c2a966;
+                          box-shadow: 2px 2px 2px 2px #c2a966;
+                          font-weight: bold;
+                        "
+                      >
+                        <i
+                          class="bi bi-eye-fill"
+                          style="
+                            color: #c2a966;
+                            margin-right: 15px;
+                            font-weight: bold;
+                          "
+                        ></i
+                        >Détails</a
+                      >
                     </div>
                   </div>
-                </div> 
-              </nav>
-              <!-- End of Topbar -->
-               
-
-                <div style="margin-top: 100px;">
-                  <div class="my-5 row" >
-                    <div class="contentcard col-md-4" *ngFor="let dahra of dahras | paginate:{ itemsPerPage:itemsPerPage, currentPage:currentPage , totalItems:dahras.length}">
-                        <div class="card" style="width: 20rem; box-shadow: 1px 1px 1px 1px #C2A966; margin: 0 auto;">
-                            <div><img [src]="getImage(dahra.image)" id="cardImg" alt=""></div>
-                            <div class="card-body">
-                              <h5 class="mt-2 card-title text-center">{{ dahra.nom }}</h5>  
-                              <div class="row p-2" style="">
-                                  <div class="col-md-6 mt-3 fw-bold">
-                                      <p class="card-text text-start"><i class="bi bi-person-badge" style="color: #252649; margin-right: 10px;"></i>{{ dahra.nombreTalibe}} apprenants</p>
-                                      <p class="card-text text-start"><i class="bi bi-geo-alt-fill" style="color: #252649; margin-right: 10px;"></i>{{ dahra.region }}</p>
-                                  </div>
-                                  <div class="col-md-6" >
-                                      <a (click)="selectDahra(dahra)" class="btn"  data-bs-toggle="modal" data-bs-target="#exampleModal" style="width:80%; font-size: 18px; background-color: #252649;color: #C2A966;box-shadow:2px 2px 2px 2px #C2A966; font-weight: bold;"> <i class="bi bi-eye-fill" style="color: #C2A966; margin-right: 15px; font-weight: bold;" ></i>Détails</a>
-                                  
-                                      
-                                  </div>
-                              </div>
-                            </div>
-                        </div>
-                    </div>
-                  </div> 
-                  <pagination-controls (pageChange)="setPage($event)" class="mt-3" previzousLabel="prev" nextLabel="next"></pagination-controls>
-                          
                 </div>
-  
+              </div>
             </div>
-        <!-- End of Content Wrapper -->
-  
-        </div>
-    </div>
-    <!-- End of Page Wrapper -->
-
-  
-  </body>
-
-  <!-- Modal -->
-<div
-class="modal fade"
-id="exampleModal"
-tabindex="-1"
-aria-labelledby="exampleModalLabel"
-aria-hidden="true"
->
-<div class="modal-dialog mt-5 modal-dialog-scrollable modal-lg" style="margin: 0 auto">
-  <div
-    class="modal-content"
-    style="padding: 20px; background-color: white !important"
-  >
-    <div class="modal-header">
-      <button
-        type="button"
-        class="btn-close mb-2"
-        data-bs-dismiss="modal"
-        aria-label="Close"
-      ></button>
-    </div>
-    <div class="modal-body" style="padding: 20px">
-      <h5 class="text-center" style="color: #252649">
-        {{ selectedDahra?.nom }}
-      </h5>
-      <div class="my-4 row" style="color: #252649">
-        <div class="col-md-6 mt-3">
-          <img
-            style="width: 100%; height: 100%; object-fit: cover"
-            src="https://www.hrw.org/sites/default/files/styles/embed_xxl/public/multimedia_images_2019/201901africa_senegal_talibestoubarooftop.jpg?itok=AcAtSuSq"
-            id="détailImg"
-            alt=""
-          />
-        </div>
-        <div class="col-md-6" style="padding: 20px; border-radius: 10px">
-          <p>
-            <span style="font-weight: bold">Nom Ouztas:</span
-            >{{ selectedDahra?.nomOuztas }}
-          </p>
-          <hr class="mb-3" />
-          <p>
-            <span style="font-weight: bold">Region:</span
-            >{{ selectedDahra?.region }}
-          </p>
-          <hr class="mb-3" />
-          <p>
-            <span style="font-weight: bold">Adresse:</span
-            >{{ selectedDahra?.adresse }}
-          </p>
-          <hr class="mb-3" />
-          <p style="color: #252649">
-            <span style="color: #252649; font-weight: bold"
-              >Numero Téléphone Ouztas :</span
-            >{{ selectedDahra?.numeroTelephoneOuztas }}
-          </p>
-          <hr />
-          <p style="color: #252649">
-            <span style="color: #252649; font-weight: bold"
-              >Nombre talibés :</span
-            >{{ selectedDahra?.nombreTalibe }}
-          </p>
-          <hr />
+          </div>
+          <pagination-controls
+            (pageChange)="setPage($event)"
+            class="mt-3"
+            previzousLabel="prev"
+            nextLabel="next"
+          ></pagination-controls>
         </div>
       </div>
+      <!-- End of Content Wrapper -->
     </div>
-    <div class="modal-footer d-flex justify-content-between">
-      <!-- <button
+  </div>
+  <!-- End of Page Wrapper -->
+</body>
+
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="exampleModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div
+    class="modal-dialog mt-5 modal-dialog-scrollable modal-lg"
+    style="margin: 0 auto"
+  >
+    <div
+      class="modal-content"
+      style="padding: 20px; background-color: white !important"
+    >
+      <div class="modal-header">
+        <button
+          type="button"
+          class="btn-close mb-2"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body" style="padding: 20px">
+        <h5 class="text-center" style="color: #252649">
+          {{ selectedDahra?.nom }}
+        </h5>
+        <div class="my-4 row" style="color: #252649">
+          <div class="col-md-6 mt-3">
+            <img
+              style="width: 100%; height: 100%; object-fit: cover"
+              src="https://www.hrw.org/sites/default/files/styles/embed_xxl/public/multimedia_images_2019/201901africa_senegal_talibestoubarooftop.jpg?itok=AcAtSuSq"
+              id="détailImg"
+              alt=""
+            />
+          </div>
+          <div class="col-md-6" style="padding: 20px; border-radius: 10px">
+            <p>
+              <span style="font-weight: bold">Nom Ouztas:</span
+              >{{ selectedDahra?.nomOuztas }}
+            </p>
+            <hr class="mb-3" />
+            <p>
+              <span style="font-weight: bold">Region:</span
+              >{{ selectedDahra?.region }}
+            </p>
+            <hr class="mb-3" />
+            <p>
+              <span style="font-weight: bold">Adresse:</span
+              >{{ selectedDahra?.adresse }}
+            </p>
+            <hr class="mb-3" />
+            <p style="color: #252649">
+              <span style="color: #252649; font-weight: bold"
+                >Numero Téléphone Ouztas :</span
+              >{{ selectedDahra?.numeroTelephoneOuztas }}
+            </p>
+            <hr />
+            <p style="color: #252649">
+              <span style="color: #252649; font-weight: bold"
+                >Nombre talibés :</span
+              >{{ selectedDahra?.nombreTalibe }}
+            </p>
+            <hr />
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer d-flex justify-content-between">
+        <!-- <button
                       type="button"
                       class="btn"
                       (click)="toggleList('talib', selectedDahra.nom)"
@@ -198,37 +355,31 @@ aria-hidden="true"
                       ></i
                       >{{ selectedDahra.nombreTalibe }} apprenants
                     </button>-->
-      <!-- <button type="button" class="btn" data-bs-dismiss="modal">
+        <!-- <button type="button" class="btn" data-bs-dismiss="modal">
         <i
           class="bi bi-eye-fill"
           style="color: #c2a966; margin-right: 10px; font-weight: bold"
         ></i>
         {{ selectedDahra.nombreTalibe }} apprenants
       </button> -->
-      <button
-        type="button"
-        class="btn"
-        routerLink="/donsuser"
-        style="
-          background-color: #252649;
-          color: #c2a966;
-          font-size: 15px;
-          width: 150px;
-          font-weight: bold;
-          border: none;
-        "
-         data-bs-dismiss="modal"
-         aria-label="Close"
-      >
-        Faire un don
-      </button>
+        <button
+          type="button"
+          class="btn"
+          routerLink="/donsuser"
+          style="
+            background-color: #252649;
+            color: #c2a966;
+            font-size: 15px;
+            width: 150px;
+            font-weight: bold;
+            border: none;
+          "
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        >
+          Faire un don
+        </button>
+      </div>
     </div>
   </div>
 </div>
-</div>
-  
-  
-  
-  
-  
-  

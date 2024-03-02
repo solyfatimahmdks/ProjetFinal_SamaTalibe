@@ -1,5 +1,7 @@
 
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
+import { TOKEN_KEY } from 'src/app/constants/constant';
 import { AllservicesService } from 'src/app/service/all-services-rest.service';
 import { environment } from 'src/environments/environment.development';
 
@@ -33,7 +35,7 @@ throw new Error('Method not implemented.');
     this.showListTalib = view === 'listTalib';
     this.showListTalibArchiv = view === 'listTalibArchiv';
   }
-  constructor(private service: AllservicesService) {}
+  constructor(private service: AllservicesService , private route : Router) {}
   ngOnInit(): void {
     this.loadTalibesList();
   }
@@ -140,6 +142,12 @@ throw new Error('Method not implemented.');
   private hideModal(): void {
     const modal: any = this.modalElement.nativeElement;
     modal.hide();
+  }
+
+  deconnexion(){
+    this.route.navigate(['/accueil']);
+    localStorage.removeItem(TOKEN_KEY);
+    this.service.message('Au revoir','success','deconnexion faite avec succès');
   }
 
   showTalibeDetailsModal(talibe: any) {

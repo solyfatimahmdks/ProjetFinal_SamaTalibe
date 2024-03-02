@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { TOKEN_KEY } from 'src/app/constants/constant';
 import { AllservicesService } from 'src/app/service/all-services-rest.service';
 import { AuthService } from 'src/app/service/auth-service.service';
 
@@ -39,13 +41,19 @@ export class DonsUserComponent {
   
   
 
-  constructor(private service: AllservicesService ) {
+  constructor(private service: AllservicesService , private route: Router) {
     // this.user = this.authService.getLoggedInUser(); 
   }
 
   ngOnInit(): void {
      this.loadAllDons();
      this.loaddahras();
+  }
+
+  deconnexion(){
+    this.route.navigate(['/accueil']);
+    localStorage.removeItem(TOKEN_KEY);
+    this.service.message('Au revoir','success','deconnexion faite avec succès');
   }
   faireDonation() {
     this.don = {

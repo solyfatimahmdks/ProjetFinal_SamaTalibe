@@ -3,6 +3,7 @@ import { AllservicesService } from 'src/app/service/all-services-rest.service';
 import { ViewChild, ElementRef } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.development';
+import { TOKEN_KEY } from 'src/app/constants/constant';
 
 
 @Component({
@@ -53,12 +54,17 @@ truthyTab: any = [];
 
 
 
-  constructor(private allservicesService: AllservicesService , private router: Router) {}
+  constructor(private allservicesService: AllservicesService , private route: Router) {}
 
   ngOnInit(): void {
     this.loadDahrasList();
   }
 
+  deconnexion(){
+    this.route.navigate(['/accueil']);
+    localStorage.removeItem(TOKEN_KEY);
+    this.allservicesService.message('Au revoir','success','deconnexion faite avec succès');
+  }
   
   public dara={
     nom:'',
@@ -167,8 +173,8 @@ addDahra() {
       this.loadDahrasList();
   
       // Naviguer vers la même page pour rafraîchir l'affichage (peut être facultatif)
-      this.router.navigateByUrl('/dahras-ad-sup', { skipLocationChange: true }).then(() => {
-        this.router.navigate(['/dahras-ad-sup']);
+      this.route.navigateByUrl('/dahras-ad-sup', { skipLocationChange: true }).then(() => {
+        this.route.navigate(['/dahras-ad-sup']);
       });
       this.hideModal();
     });

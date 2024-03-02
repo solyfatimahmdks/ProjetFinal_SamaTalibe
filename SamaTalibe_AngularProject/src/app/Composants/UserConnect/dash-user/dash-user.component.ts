@@ -1,5 +1,7 @@
 import { HttpParams } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { TOKEN_KEY } from 'src/app/constants/constant';
 import { AllservicesService } from 'src/app/service/all-services-rest.service';
 import { environment } from 'src/environments/environment.development';
 import Swal from 'sweetalert2';
@@ -27,10 +29,16 @@ export class DashUserComponent {
   uploadedImages: any;
   talibe: any;
 
-  constructor(private service: AllservicesService) {}
+  constructor(private service: AllservicesService , private route: Router) {}
 
   ngOnInit() {
     this.loaddahras();
+  }
+
+  deconnexion(){
+    this.route.navigate(['/accueil']);
+    localStorage.removeItem(TOKEN_KEY);
+    this.service.message('Au revoir','success','deconnexion faite avec succès');
   }
 
   getImageUrl(event: any) {

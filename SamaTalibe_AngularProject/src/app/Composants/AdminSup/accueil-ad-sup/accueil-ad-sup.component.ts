@@ -4,6 +4,7 @@ import * as ApexCharts from 'apexcharts';
 import { environment } from 'src/environments/environment.development';
 import { AuthService } from 'src/app/service/auth-service.service';
 import { Router } from '@angular/router';
+import { TOKEN_KEY } from 'src/app/constants/constant';
 
 
 
@@ -21,7 +22,7 @@ export class AccueilAdSupComponent{
   itemsPerPage = 2; 
   uploadedImages: any;
   
-  constructor(private allservicesService: AllservicesService , private authService: AuthService ) {}
+  constructor(private allservicesService: AllservicesService , private authService: AuthService , private route: Router ) {}
 
   ngOnInit(): void {
     this.currentUser = this.authService.currentUser; // Récupérer les informations de l'utilisateur connecté
@@ -137,5 +138,11 @@ paginatePerPage(page: number, pageSize: number, data: any[]): any[] {
     console.log("D:",this.dahras.length);
     console.log("d:",this.pagedDahras.length);
  
+  }
+
+  deconnexion(){
+    this.route.navigate(['/accueil']);
+    localStorage.removeItem(TOKEN_KEY);
+    this.allservicesService.message('Au revoir','success','deconnexion faite avec succès');
   }
 }

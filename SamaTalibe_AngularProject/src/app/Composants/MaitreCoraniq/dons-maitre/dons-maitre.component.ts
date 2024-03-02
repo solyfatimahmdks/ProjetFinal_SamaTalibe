@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { TOKEN_KEY } from 'src/app/constants/constant';
 import { AllservicesService } from 'src/app/service/all-services-rest.service';
 
 @Component({
@@ -10,7 +12,7 @@ export class DonsMaitreComponent {
   dons: any[] = []; // Initialisez comme un tableau vide
 
 
-  constructor(private service: AllservicesService ) {}
+  constructor(private service: AllservicesService ,private route: Router ) {}
 
   ngOnInit(): void {
     this. loadAllDons();
@@ -24,5 +26,10 @@ export class DonsMaitreComponent {
     this.dons=reponse;
 
   });
+}
+deconnexion(){
+  this.route.navigate(['/accueil']);
+  localStorage.removeItem(TOKEN_KEY);
+  this.service.message('Au revoir','success','deconnexion faite avec succès');
 }
 }
