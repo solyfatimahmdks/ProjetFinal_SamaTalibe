@@ -21,6 +21,7 @@
                                 <label for="password" class="ms-2" style="color: #C2A966;">Mot de passe: <span class="span_validate" id="validationPasse"></span>
                                 </label>
                                 <input type="password" name="password" id="password" placeholder="" [(ngModel)]="passwordLogin" (input)="passeValidate()">
+                                <i class="bi bi-eye password-toggle position-absolute" style="font-size: 20px; color: #C2A966; margin-left: 430px; margin-top: 35px; cursor: pointer;" (click)="togglePasswordVisibility('password')"></i>
                             </div>
                             <button class="sign mt-4" style="background-color: #C2A966; color: white; font-weight: bold;" (click)="login()"  [disabled]="truthyTab.length<2">Se connecter</button>
                         </form>
@@ -80,6 +81,7 @@
                                         <div class="input-group1 row col-md-6 ps-5">
                                             <label for="password" class="ms-2" style="color: #C2A966;">Mot de passe: <span class="span_validate" id="validationPasseRegister"></span></label>
                                             <input type="password" name="password" id="password" placeholder="" [(ngModel)]="password" (input)="passeRegisterValidate()">
+                                            <i class="bi bi-eye password-toggle position-absolute" style="font-size: 20px; color: #C2A966; margin-left: 120px; margin-top: 35px; cursor: pointer;" (click)="togglePasswordVisibility('password')"></i>
                                         </div>
                                     </div>
                                     <button class="sign mt-4"  style="background-color: #C2A966; color: white; font-weight: bold;"  (click)="Signup()" routerLink="/login" [disabled]="truthyTab.length<6">S'inscrire </button>
@@ -147,6 +149,7 @@
                                         <div class="input-group1 col-md-6 row ms-3">
                                             <label for="password" class="ms-2" style="color: #C2A966;">Mot de passe: <span class="span_validate" id="validationPasseRegister"></span></label>
                                             <input class="col-md-6" type="password" name="password" id="password" placeholder="" [(ngModel)]="password" (input)="passeRegisterValidate()">
+                                            <i class="bi bi-eye password-toggle position-absolute" style="font-size: 20px; color: #C2A966; margin-left: 180px; margin-top: 40px; cursor: pointer;" (click)="togglePasswordVisibility('password')"></i>
                                         </div>
                                         <div class="input-group1 col-md-6 row ms-2">
                                             <label for="formFileLg" class="form-label">Image:</label>

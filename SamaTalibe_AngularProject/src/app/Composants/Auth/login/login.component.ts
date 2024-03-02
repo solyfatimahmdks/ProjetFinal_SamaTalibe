@@ -86,6 +86,23 @@ export class LoginComponent {
   getLoginLogin(choice: string) {
     this.isLoginFormVisible = choice;
   }
+
+  togglePasswordVisibility(fieldId: string) {
+    const field = document.getElementById(fieldId) as HTMLInputElement;
+    const toggleIcon = document.querySelector('.password-toggle') as HTMLElement;
+
+    if (field.type === "password") {
+        field.type = "text";
+        toggleIcon.classList.remove('bi-eye');
+        toggleIcon.classList.add('bi-eye-slash');
+    } else {
+        field.type = "password";
+        toggleIcon.classList.remove('bi-eye-slash');
+        toggleIcon.classList.add('bi-eye');
+    }
+}
+
+   
   updateChoixForm(event: any) {
     this.truthyTab=[]
     // this.choixForm = event.target.value;
