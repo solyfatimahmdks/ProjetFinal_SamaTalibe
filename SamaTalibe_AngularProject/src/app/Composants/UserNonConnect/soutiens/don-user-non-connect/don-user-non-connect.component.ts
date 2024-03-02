@@ -19,7 +19,7 @@ export class DonUserNonConnectComponent {
   loadDons(){
     this.service.get('/liste-dons' , (response:any) =>{
       console.log(response);      
-      this.loadDons = response ;
+      this.dons = response ;
     })
   }
 

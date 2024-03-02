@@ -6,7 +6,7 @@
     <div class="row" id="wrapper">
   
         <!-- Sidebar -->
-        <div class="col-md-3" style="background-color: #252649;">
+        <div class="col-md-3" id="sidebar">
           <ul class="navbar-nav sidebar sidebar-dark accordion" id="accordionSidebar" style="">
             <li style="margin-bottom: 40%;">
               <a href="#" class="nav-link ps-5 mb-2" style="height: 50px; color: #C2A966; font-size: 20px; font-weight: bold;">
@@ -29,11 +29,6 @@
               </a>
             </li>
             <li>
-              <a class="nav-link ps-5 mb-2" routerLink="/rolesadsup" style="height: 50px; color: white; font-size: 20px; font-weight: bold;">
-                <i class="me-3 fa-solid fa-user-group" style="color: white;"></i>Rôles
-              </a>
-            </li>
-            <li>
               <a class="nav-link ps-5 mb-2" routerLink="/dahradsup" style="height: 50px; color: white; font-size: 20px; font-weight: bold;">
                 <i class="me-3 fa-solid fa-house-chimney-user" style="color: white;"></i>Dahras
               </a>
@@ -50,7 +45,7 @@
   
   
         <!-- Content Wrapper -->
-        <div id="content-wrapper" class="p-0 d-flex flex-column col-md-9" >
+        <div id="content-wrapper" class="p-0 d-flex flex-column col-md-9 m-auto" >
   
             <!-- Main Content -->
             <div id="content">
@@ -76,60 +71,64 @@
                 </div> 
               </nav>
               <!-- End of Topbar -->
-                        <!-- Page Heading -->
-                        <div class="row">
-                          <div class="card col-md-4" style="background-color: white; margin: 0 auto;height: 490px;" >
-                            <div class="card-image">
-                              <img src="assets/parrain.avif" alt="">
-                            </div>
-                            <p class="card-title">Assane Ly</p>
-                            <p class="card-body text-center">
-                              Assistant de direction à la CNART
-                            </p>
-                            <p class="footer"><i class="bi bi-geo-alt-fill" style="color: #252649; margin-right: 10px;"></i><span class="by-name me-2">Adresse:</span>Kaolack</p>
-                            <p class="footer"><i class="bi bi-people-fill" style="color: #252649; margin-right: 10px;"></i><span class="by-name me-2">Nombre de parrainages:</span>8</p>
-                            <p class="footer"><i class="bi bi-envelope" style="color: #252649; margin-right: 10px;"></i><span class="by-name me-2 ">Adresse-mail:</span>assly@gmail.com</p> 
-                            <div class="btnfoot d-sm-flex align-items-center justify-content-between" style="width: 300px;">
-                              <a href="#" class="d-sm-inline-block btn btn-sm shadow-sm">
-                                 Détails
-                              </a>
-                            </div>
+
+                    <div style="margin-top: 100px;">
+                      <!-- Page Heading -->
+                      <div class="row">
+                        <div class="card col-md-4" style="background-color: white; margin: 0 auto;height: 490px;" >
+                          <div class="card-image">
+                            <img src="assets/parrain.avif" alt="">
                           </div>
-                          <!-- <div class="card col-md-4" style="background-color: #C2A966; margin: 0 auto;height: 490px;" >
-                            <div class="card-image">
-                              <img src="assets/parrain.avif" alt="">
-                            </div>
-                            <p class="card-title">Assane Ly</p>
-                            <p class="card-body text-center">
-                              Assistant de direction à la CNART
-                            </p>
-                            <p class="footer"><i class="bi bi-geo-alt-fill" style="color: #252649; margin-right: 10px;"></i><span class="by-name me-2">Adresse:</span>Kaolack</p>
-                            <p class="footer"><i class="bi bi-people-fill" style="color: #252649; margin-right: 10px;"></i><span class="by-name me-2">Nombre de parrainages:</span>8</p>
-                            <p class="footer"><i class="bi bi-envelope" style="color: #252649; margin-right: 10px;"></i><span class="by-name me-2 ">Adresse-mail:</span>assly@gmail.com</p> 
-                            <div class="btnfoot d-sm-flex align-items-center justify-content-between" style="width: 300px;">
-                              <a href="#" class="d-sm-inline-block btn btn-sm shadow-sm">
-                                 Détails
-                              </a>
-                            </div>
+                          <p class="card-title">Assane Ly</p>
+                          <p class="card-body text-center">
+                            Assistant de direction à la CNART
+                          </p>
+                          <p class="footer"><i class="bi bi-geo-alt-fill" style="color: #252649; margin-right: 10px;"></i><span class="by-name me-2">Adresse:</span>Kaolack</p>
+                          <p class="footer"><i class="bi bi-people-fill" style="color: #252649; margin-right: 10px;"></i><span class="by-name me-2">Nombre de parrainages:</span>8</p>
+                          <p class="footer"><i class="bi bi-envelope" style="color: #252649; margin-right: 10px;"></i><span class="by-name me-2 ">Adresse-mail:</span>assly@gmail.com</p> 
+                          <div class="btnfoot d-sm-flex align-items-center justify-content-between" style="width: 300px;">
+                            <a href="#" class="d-sm-inline-block btn btn-sm shadow-sm">
+                               Détails
+                            </a>
                           </div>
-                          <div class="card col-md-4" style="background-color: white; margin: 0 auto;height: 490px;" >
-                            <div class="card-image">
-                              <img src="assets/parrain.avif" alt="">
-                            </div>
-                            <p class="card-title">Assane Ly</p>
-                            <p class="card-body text-center">
-                              Assistant de direction à la CNART
-                            </p>
-                            <p class="footer"><i class="bi bi-geo-alt-fill" style="color: #252649; margin-right: 10px;"></i><span class="by-name me-2">Adresse:</span>Kaolack</p>
-                            <p class="footer"><i class="bi bi-people-fill" style="color: #252649; margin-right: 10px;"></i><span class="by-name me-2">Nombre de parrainages:</span>8</p>
-                            <p class="footer"><i class="bi bi-envelope" style="color: #252649; margin-right: 10px;"></i><span class="by-name me-2 ">Adresse-mail:</span>assly@gmail.com</p> 
-                            <div class="btnfoot d-sm-flex align-items-center justify-content-between" style="width: 300px;">
-                              <a href="#" class="d-sm-inline-block btn btn-sm shadow-sm">
-                                 Détails
-                              </a>
-                            </div>
-                          </div>          -->
                         </div>
+                        <!-- <div class="card col-md-4" style="background-color: #C2A966; margin: 0 auto;height: 490px;" >
+                          <div class="card-image">
+                            <img src="assets/parrain.avif" alt="">
+                          </div>
+                          <p class="card-title">Assane Ly</p>
+                          <p class="card-body text-center">
+                            Assistant de direction à la CNART
+                          </p>
+                          <p class="footer"><i class="bi bi-geo-alt-fill" style="color: #252649; margin-right: 10px;"></i><span class="by-name me-2">Adresse:</span>Kaolack</p>
+                          <p class="footer"><i class="bi bi-people-fill" style="color: #252649; margin-right: 10px;"></i><span class="by-name me-2">Nombre de parrainages:</span>8</p>
+                          <p class="footer"><i class="bi bi-envelope" style="color: #252649; margin-right: 10px;"></i><span class="by-name me-2 ">Adresse-mail:</span>assly@gmail.com</p> 
+                          <div class="btnfoot d-sm-flex align-items-center justify-content-between" style="width: 300px;">
+                            <a href="#" class="d-sm-inline-block btn btn-sm shadow-sm">
+                               Détails
+                            </a>
+                          </div>
+                        </div>
+                        <div class="card col-md-4" style="background-color: white; margin: 0 auto;height: 490px;" >
+                          <div class="card-image">
+                            <img src="assets/parrain.avif" alt="">
+                          </div>
+                          <p class="card-title">Assane Ly</p>
+                          <p class="card-body text-center">
+                            Assistant de direction à la CNART
+                          </p>
+                          <p class="footer"><i class="bi bi-geo-alt-fill" style="color: #252649; margin-right: 10px;"></i><span class="by-name me-2">Adresse:</span>Kaolack</p>
+                          <p class="footer"><i class="bi bi-people-fill" style="color: #252649; margin-right: 10px;"></i><span class="by-name me-2">Nombre de parrainages:</span>8</p>
+                          <p class="footer"><i class="bi bi-envelope" style="color: #252649; margin-right: 10px;"></i><span class="by-name me-2 ">Adresse-mail:</span>assly@gmail.com</p> 
+                          <div class="btnfoot d-sm-flex align-items-center justify-content-between" style="width: 300px;">
+                            <a href="#" class="d-sm-inline-block btn btn-sm shadow-sm">
+                               Détails
+                            </a>
+                          </div>
+                        </div>          -->
+                      </div>
+
+                    </div>
                         
   
             </div>

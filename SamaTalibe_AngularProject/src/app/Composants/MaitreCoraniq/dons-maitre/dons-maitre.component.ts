@@ -19,7 +19,10 @@ export class DonsMaitreComponent {
  loadAllDons() {
   this.service.getWithToken('/mes-dons', (reponse: any) => {
     console.log('test', reponse);
+    console.log(this.loadAllDons);
+    
     this.dons=reponse;
+
   });
 }
 }

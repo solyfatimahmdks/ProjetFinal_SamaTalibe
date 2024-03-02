@@ -6,7 +6,7 @@
     <div class="row" id="wrapper">
        
         <!-- Sidebar -->
-        <div class="col-md-3" style="background-color: #252649;height: 674px;">
+        <div class="col-md-3" id="sidebar">
           <ul class="navbar-nav sidebar sidebar-dark accordion" id="accordionSidebar" style="">
             <li style="margin-bottom: 40%;">
               <a href="#" class="nav-link ps-5 mb-2" style="height: 50px; color: #C2A966; font-size: 20px; font-weight: bold;">
@@ -33,11 +33,6 @@
                 <i class="me-3 fa-solid fa-user-xmark" style="color: white;"></i>Parrainages
               </a>
             </li>
-            <li>
-              <a class="nav-link ps-5 mb-2" routerLink="/temaitre" style="height: 50px; color: white; font-size: 20px; font-weight: bold;">
-                <i class="me-3 fa-solid fa-user-group" style="color: white;"></i>Témoignages
-              </a>
-            </li>
       
             <div class="d-sm-flex align-items-center justify-content-between my-4" style="margin: 0 auto;">
               <a href="#" class="d-none d-sm-inline-block btn btn-sm shadow-sm">
@@ -50,7 +45,7 @@
   
   
         <!-- Content Wrapper -->
-        <div id="content-wrapper" class="p-0 d-flex flex-column col-md-9" >
+        <div id="content-wrapper" class="p-0 d-flex flex-column col-md-9 m-auto" >
   
             <!-- Main Content -->
             <div id="content">
@@ -78,30 +73,31 @@
               <!-- End of Topbar -->
                
 
-
-                <div class="my-5 row" >
-                  <div class="contentcard col-md-4" *ngFor="let dahra of dahras | paginate:{ itemsPerPage:itemsPerPage, currentPage:currentPage , totalItems:dahras.length}">
-                      <div class="card" style="width: 20rem; box-shadow: 1px 1px 1px 1px #C2A966; margin: 0 auto;">
-                          <div><img [src]="getImage(dahra.image)" id="cardImg" alt=""></div>
-                          <div class="card-body">
-                            <h5 class="mt-2 card-title text-center">{{ dahra.nom }}</h5>  
-                            <div class="row p-2" style="">
-                                <div class="col-md-6 mt-3 fw-bold">
-                                    <p class="card-text text-start"><i class="bi bi-person-badge" style="color: #252649; margin-right: 10px;"></i>{{ dahra.nombreTalibe}} apprenants</p>
-                                    <p class="card-text text-start"><i class="bi bi-geo-alt-fill" style="color: #252649; margin-right: 10px;"></i>{{ dahra.region }}</p>
-                                </div>
-                                <div class="col-md-6" >
-                                    <a href="#" class="btn"  data-bs-toggle="modal" data-bs-target="#exampleModal" style="width:80%; font-size: 18px; background-color: #252649;color: #C2A966;box-shadow:2px 2px 2px 2px #C2A966; font-weight: bold;"> <i class="bi bi-eye-fill" style="color: #C2A966; margin-right: 15px; font-weight: bold;"></i>Détails</a>
-                                
-                                    
-                                </div>
+                <div style="margin-top: 100px;">
+                  <div class="my-5 row" >
+                    <div class="contentcard col-md-4" *ngFor="let dahra of dahras | paginate:{ itemsPerPage:itemsPerPage, currentPage:currentPage , totalItems:dahras.length}">
+                        <div class="card" style="width: 20rem; box-shadow: 1px 1px 1px 1px #C2A966; margin: 0 auto;">
+                            <div><img [src]="getImage(dahra.image)" id="cardImg" alt=""></div>
+                            <div class="card-body">
+                              <h5 class="mt-2 card-title text-center">{{ dahra.nom }}</h5>  
+                              <div class="row p-2" style="">
+                                  <div class="col-md-6 mt-3 fw-bold">
+                                      <p class="card-text text-start"><i class="bi bi-person-badge" style="color: #252649; margin-right: 10px;"></i>{{ dahra.nombreTalibe}} apprenants</p>
+                                      <p class="card-text text-start"><i class="bi bi-geo-alt-fill" style="color: #252649; margin-right: 10px;"></i>{{ dahra.region }}</p>
+                                  </div>
+                                  <div class="col-md-6" >
+                                      <a (click)="selectDahra(dahra)" class="btn"  data-bs-toggle="modal" data-bs-target="#exampleModal" style="width:80%; font-size: 18px; background-color: #252649;color: #C2A966;box-shadow:2px 2px 2px 2px #C2A966; font-weight: bold;"> <i class="bi bi-eye-fill" style="color: #C2A966; margin-right: 15px; font-weight: bold;" ></i>Détails</a>
+                                  
+                                      
+                                  </div>
+                              </div>
                             </div>
-                          </div>
-                      </div>
-                  </div>
-                </div> 
-                <pagination-controls (pageChange)="setPage($event)" class="mt-3" previousLabel="prev" nextLabel="next"></pagination-controls>
-                        
+                        </div>
+                    </div>
+                  </div> 
+                  <pagination-controls (pageChange)="setPage($event)" class="mt-3" previzousLabel="prev" nextLabel="next"></pagination-controls>
+                          
+                </div>
   
             </div>
         <!-- End of Content Wrapper -->

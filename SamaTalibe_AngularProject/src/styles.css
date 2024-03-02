@@ -42,3 +42,28 @@ span.span_validate
   cursor: pointer;
 }
 
+#sidebar{
+  background-color: #252649;
+  width: 18%;
+}
+
+#accordionSidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 250px; 
+  background-color: #252649;
+  overflow-y: auto;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 250px; 
+  width: calc(100% - 250px); 
+  z-index: 1000; 
+  background-color: white;
+  border-bottom: 1px solid #252649;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+}

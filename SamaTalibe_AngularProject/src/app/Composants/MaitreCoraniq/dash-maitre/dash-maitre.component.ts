@@ -65,6 +65,7 @@ export class DashMaitreComponent implements OnInit {
 
 selectDahra(dahra: any) {
   this.selectedDahra = dahra;
+  console.log(this.selectedDahra,'soly selected dahra');
 }
 
 getImageUrl(event: any) {

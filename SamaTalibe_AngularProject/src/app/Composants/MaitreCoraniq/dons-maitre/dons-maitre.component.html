@@ -6,7 +6,7 @@
     <div class="row" id="wrapper">
   
         <!-- Sidebar -->
-        <div class="col-md-3" style="background-color: #252649;height: 674px;">
+        <div class="col-md-3" id="sidebar">
           <ul class="navbar-nav sidebar sidebar-dark accordion" id="accordionSidebar" style="">
             <li style="margin-bottom: 40%;">
               <a href="#" class="nav-link ps-5 mb-2" style="height: 50px; color: #C2A966; font-size: 20px; font-weight: bold;">
@@ -33,11 +33,6 @@
                 <i class="me-3 fa-solid fa-user-xmark" style="color: white;"></i>Parrainages
               </a>
             </li>
-            <li>
-              <a class="nav-link ps-5 mb-2" routerLink="/temaitre" style="height: 50px; color: white; font-size: 20px; font-weight: bold;">
-                <i class="me-3 fa-solid fa-user-group" style="color: white;"></i>Témoignages
-              </a>
-            </li>
       
             <div class="d-sm-flex align-items-center justify-content-between my-4" style="margin: 0 auto;">
               <a href="#" class="d-none d-sm-inline-block btn btn-sm shadow-sm">
@@ -50,7 +45,7 @@
   
   
         <!-- Content Wrapper -->
-        <div id="content-wrapper" class="p-0 d-flex flex-column col-md-9" >
+        <div id="content-wrapper" class="p-0 d-flex flex-column col-md-9 m-auto" >
   
             <!-- Main Content -->
             <div id="content">
@@ -76,7 +71,7 @@
                 </div> 
               </nav>
               <!-- End of Topbar -->
-              <div class="">
+              <div class="" style="margin-top: 100px;">
                 <div  class="row p-3 container"  style="margin: 0 auto;">
                   <div class="col-md-3 p-3" *ngFor="let don of dons">
                     <div class="gap-2" >
