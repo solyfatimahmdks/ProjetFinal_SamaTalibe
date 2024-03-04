@@ -9,8 +9,27 @@ import { AllservicesService } from 'src/app/service/all-services-rest.service';
   styleUrls: ['./parrain-ad-sup.component.css']
 })
 export class ParrainAdSupComponent {
+parrains: any;
+user: any;
+cheminImageUtilisateur: any;
+username: any;
 
   constructor(private allservicesService: AllservicesService, private route:Router) {}
+
+  ngOnInit(): void {
+    this.loadParrains();
+    this.cheminImageUtilisateur = "../../../../assets/adminImg.png" ;
+    this.username = "SOLY";
+
+  }
+
+  loadParrains() {
+     this.allservicesService.get('/lister_parrainage' , (response:any) => {
+       console.log(this.loadParrains());
+       this.loadParrains = response ;
+       
+     })
+  }
 
   deconnexion(){
     this.route.navigate(['/accueil']);

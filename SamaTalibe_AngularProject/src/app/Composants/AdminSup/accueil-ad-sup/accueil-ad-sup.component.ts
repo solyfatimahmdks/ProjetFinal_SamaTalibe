@@ -21,12 +21,16 @@ export class AccueilAdSupComponent{
   currentPage = 1; // Page actuelle
   itemsPerPage = 2; 
   uploadedImages: any;
+  username: any;
+  cheminImageUtilisateur: any;
   
   constructor(private allservicesService: AllservicesService , private authService: AuthService , private route: Router ) {}
 
   ngOnInit(): void {
     this.currentUser = this.authService.currentUser; // Récupérer les informations de l'utilisateur connecté
     this.getAllDahras();
+    this.cheminImageUtilisateur = "../../../../assets/adminImg.png" ;
+    this.username = "SOLY";
 
     var options = {
       series: [{

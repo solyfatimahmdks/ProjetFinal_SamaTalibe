@@ -12,6 +12,10 @@ import Swal from 'sweetalert2';
   styleUrls: ['./dash-user.component.css'],
 })
 export class DashUserComponent {
+talibeSelectionne: any;
+showTalibeDetailsModal(_t118: any) {
+throw new Error('Method not implemented.');
+}
   selectedDahra: any;
   searchQuery: string = '';
   parrainages: any;

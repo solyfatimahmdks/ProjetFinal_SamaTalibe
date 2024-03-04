@@ -11,7 +11,7 @@
           <ul class="navbar-nav sidebar sidebar-dark accordion" id="accordionSidebar" style="">
             <li style="margin-bottom: 40%;">
               <a href="#" class="nav-link ps-5 mb-2" style="height: 50px; color: #C2A966; font-size: 20px; font-weight: bold;">
-                <img class="mt-5 container" style="" id="logodash"  src="../../../../assets/LOGOS/LogoFooter.png" alt="">
+                <img class="mt-5 container" style="" id="logodash"  src="/assets/LOGOS/LogoFooter.png" alt="">
               </a>
             </li>
             <li>
@@ -71,45 +71,46 @@
                         <!-- Content Row -->
                         <div style="margin-top: 100px;">
 
-                            <form
-    class="d-flex justify-content-end mt-3 me-3"
-    role="search"
-    (submit)="searchDahras()"
-  >
-    <input
-      class="form-control w-25 p-2 rounded-4"
-      type="search"
-      placeholder="Rechercher"
-      aria-label="Search"
-      style="
-        box-shadow: 1px 1px 1px #252649;
-        border: 1px solid #252649;
-        color: #252649;
-        width: 50%;
-        margin-left: 50%;
-      "
-      [(ngModel)]="searchQuery"
-      name="searchQuery"
-    />
-    <button
-      class="btn1 btn1-primary px-3 rounded-2 me-5"
-      style="
-        background-color: #252649;
-        border: 1px solid #252649;
-        color: #c2a966;
-        font-weight: bold;
-        box-shadow: 1px 1px 1px #252649;
-      "
-      type="submit"
-    >
-      Ok
-    </button>
-  </form>
+
                           <!-- <form class="d-flex justify-content-end mt-3 ms-2" role="search" (submit)="searchDahras()">
                             <input class="form-control w-25 p-2" type="search" placeholder="Rechercher" aria-label="Search" [(ngModel)]="searchQuery" name="searchQuery">
                             <button class="btn1 btn1-primary" type="submit">Ok</button>
                           </form> -->
                           <div class="listDahra my-5 row" *ngIf="showListDahra"  >
+                            <form
+                            class="d-flex justify-content-end my-3 me-2"
+                            role="search"
+                            (submit)="searchDahras()"
+                          >
+                            <input
+                              class="form-control w-25 p-2 rounded-4"
+                              type="search"
+                              placeholder="Rechercher"
+                              aria-label="Search"
+                              style="
+                                box-shadow: 1px 1px 1px #252649;
+                                border: 1px solid #252649;
+                                color: #252649;
+                                width: 50%;
+                                margin-left: 50%;
+                              "
+                              [(ngModel)]="searchQuery"
+                              name="searchQuery"
+                            />
+                            <button
+                              class="btn1 btn1-primary px-3 rounded-2 me-1"
+                              style="
+                                background-color: #252649;
+                                border: 1px solid #252649;
+                                color: #c2a966;
+                                font-weight: bold;
+                                box-shadow: 1px 1px 1px #252649;
+                              "
+                              type="submit"
+                            >
+                              Ok
+                            </button>
+                          </form>
                             <div class="contentcard col-md-4" *ngFor="let dahra of dahras | paginate:{ itemsPerPage:itemsPerPage, currentPage:currentPage , totalItems:dahras.length}">
                                 <div class="card" style="width: 20rem; box-shadow: 1px 1px 1px 1px #C2A966; margin: 0 auto;">
                                     <div><img [src]="getImage(dahra.image)" id="cardImg" alt=""></div>
@@ -164,6 +165,7 @@
                                 </div>
                             </div>
   
+                            <pagination-controls (pageChange)="setPage($event)" class="mt-3" previousLabel="prev" nextLabel="next" style="color: #252649;font-weight: bold;"></pagination-controls>
                           </div> 
                           
                           <div class="listTalib"  *ngIf="showListTalib" >
@@ -185,13 +187,13 @@
                                         </thead>
                                         <tbody>
                                           <tr *ngFor="let talibe of talibesList" style="height: 40px; margin-top: 20px !important;">
-                                            <td class="ps-5"><img [src]="getImage(talibe?.imageFilename)" style="height: 40px;" id="admindatable" alt=""></td>
+                                            <td class="ps-5"><img [src]="getImage(talibe?.image)" style="height: 40px;" id="admindatable" alt=""></td>
                                             <td>{{ talibe?.nom }} {{ talibe?.prenom }}</td>
                                             <td>{{ talibe?.adresse }}</td>
                                             <td>{{ talibe?.age}}</td>
                                             <td style="padding: 20px;">
                                               <i class="btn. me-3 fa-solid fa-user-xmark" data-bs-toggle="modal" data-bs-target="#staticBackdrop"  style="background-color: #252649;border-radius: 5px; box-shadow: 1px 1px 1px #C2A966;margin: 10px !important; cursor: pointer; font-size: 12px;padding: 5px; color: white;" (click)="getTalibeId(talibe.id)"></i>
-                                              <i class="bi bi-eye-fill btn3"   data-bs-toggle="modal" data-bs-target="#exampleModal" style="background-color: #252649;border-radius: 5px;margin: 10px !important; box-shadow: 1px 1px 1px #C2A966;cursor: pointer; font-size: 12px;padding: 5px; color: white;"></i>
+                                              <i class="bi bi-eye-fill btn3"   data-bs-toggle="modal" data-bs-target="#exampleModal" style="background-color: #252649;border-radius: 5px;margin: 10px !important; box-shadow: 1px 1px 1px #C2A966;cursor: pointer; font-size: 12px;padding: 5px; color: white;" (click)="showTalibeDetailsModal(talibe)"></i>
                                             
                                               <!-- Button trigger modal -->
                                             </td>
@@ -203,7 +205,6 @@
                             </div>
                           </div>
   
-                          <pagination-controls (pageChange)="setPage($event)" class="mt-3" previousLabel="prev" nextLabel="next" style="color: #252649;font-weight: bold;"></pagination-controls>
                         </div>
 
                         
@@ -218,6 +219,39 @@
 
 <!-- Scrollable modal -->
 
+ <!-- Modal -->
+ <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog mt-5" style="margin: 0 auto;">
+  <div class="modal-content" style=" width: 700px; background-color: white !important;">
+      <div class="modal-header">
+        <h4 class="text-center my-3"  style="margin: 0 auto; color: #252649;">Information Talibé</h4>
+      <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+      </div>
+      <div class="modal-body p-5">
+          <div class="mb-3 row p-2" style="color: #252649; font-weight: bold;">
+              <div class="col-md-3">
+                  <img src="{{talibeSelectionne?.imageFilename}}" style="width: 150px; height: 150px !important; border-top: 10px solid #252649; border-left: 10px solid #252649; border-radius: 20% 0 20% 0;" id="détailImg" alt="">
+              </div>
+              <div class="col-md-8 ms-5">
+                  <p><span style="font-weight: 300;">Prénom et nom:</span>{{ talibeSelectionne?.nom }} {{ talibeSelectionne?.prenom }}</p>
+                  <hr class="mb-3"> 
+                  <p><span style="font-weight: 300;">Origine:</span>{{ talibeSelectionne?.adresse }}</p>
+                  <hr class="mb-3">
+                  <p><span style="font-weight: 300;">Situation:</span>{{ talibeSelectionne?.situation }}</p>
+                  <hr class="mb-3">
+                  <p><span style="font-weight: 300;">Description:</span> {{ talibeSelectionne?.description }}
+                  </p>
+                  <hr class="mb-3">
+              </div>
+          </div>
+          <div class="mb-3">
+             
+          </div>
+      </div>
+  </div>
+  </div>
+</div>
+
                                                       <!-- Modal -->
                                                       <div class="modal fade mt-5  modal-dialog-scrollable" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                                                         <div class="modal-dialog" style="margin: 0 auto;">
@@ -227,10 +261,20 @@
                                                               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                             </div>
                                                             <div class="modal-body p-3">
-                                                              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Totam unde pariatur alias aliquam! Ratione quis corrupti similique dolorum dolorem inventore harum soluta quia, ab nisi reprehenderit labore nam molestias pariatur.
-                                                              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Optio accusantium nam necessitatibus ea harum sunt commodi recusandae reprehenderit adipisci itaque illum placeat velit sapiente qui cumque nihil, consequatur blanditiis et.
-                                                              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo explicabo libero eum officia error laborum fugiat. Voluptatum, necessitatibus. Eum dolorem quos soluta sequi temporibus repellat quasi reprehenderit provident adipisci vel!
-                                                              Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque sunt quam amet veritatis id atque sed est nisi nostrum sint eligendi nam, deserunt, ipsum, consequatur facilis distinctio quibusdam ad eveniet.
+                                                              <h6 style="color: forestgreen;font-weight: bold;">Parrainer un talibé</h6>
+                                                              <p>Le parrainage d'un talibé est un programme mis en place par <span style="color: #252649;font-weight: bold;">SAMA TALIBE</span> dans le but de fournir un soutien individuel et personnalisé à un enfant talibé spécifique. Cette analyse examine les différents aspects de ce programme de parrainage et son impact sur la vie des talibés bénéficiaires.
+                                                              </p>
+                                                              <br>
+                                                              <p>Il repose sur le principe de jumelage entre un enfant talibé et un parrain ou une marraine. Ce lien individuel crée une relation spéciale où le parrain ou la marraine s'engage à soutenir financièrement et émotionnellement le talibé tout au long de son parcours. Ce soutien pouvant être financier, permet de subvenir aux besoins essentiels de l'enfant, tels que l'alimentation,  les vêtements, les soins médicaux etc.</p>
+                                                              <br>
+                                                              <p>L'analyse du parrainage d'un talibé révèle plusieurs avantages et impacts positifs.</p>
+                                                              <br>
+                                                              <p>En outre, le parrainage d'un talibé favorise la création de liens affectifs et de soutien émotionnel. Les talibés se sentent valorisés et soutenus, sachant qu'il y a quelqu'un qui se soucie d'eux et qui les accompagne dans leur parcours. Ce sentiment d'appartenance et de soutien peut renforcer leur confiance en eux, leur estime de soi et leur motivation à réussir.</p>
+                                                              <br>
+                                                              <p>Il est également essentiel de mettre en place des mécanismes de contrôle et de suivi pour éviter toute forme d'exploitation ou de mauvaise utilisation des fonds de parrainage. Les programmes de parrainage doivent être transparents et responsables.</p>
+                                                              <br>
+                                                              <p style="color: #252649;">Si vous êtes conscient de l'importance du parrainage , acceptez ces conditions pour poursuivre</p>
+                                                              
                                                             </div>
                                                             <div class="form-check ps-5 mb-3" >
                                                               <input class="form-check-input" type="checkbox" [(ngModel)]="isCheckboxChecked" style="cursor: pointer;" value="" id="flexCheckDefault">

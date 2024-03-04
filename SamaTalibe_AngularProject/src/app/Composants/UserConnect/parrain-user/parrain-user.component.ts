@@ -10,11 +10,23 @@ import { AllservicesService } from 'src/app/service/all-services-rest.service';
 })
 export class ParrainUserComponent implements OnInit{
   parrainages: any;
+parrains: any;
+user: any;
 
   
   constructor(private service: AllservicesService , private route: Router ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.loadParrains();
+  }
+
+  loadParrains() {
+    this.service.get('/lister_parrainage' , (response:any) => {
+      console.log(this.loadParrains());
+      this.loadParrains = response ;
+      
+    })
+ }
 
   deconnexion(){
     this.route.navigate(['/accueil']);

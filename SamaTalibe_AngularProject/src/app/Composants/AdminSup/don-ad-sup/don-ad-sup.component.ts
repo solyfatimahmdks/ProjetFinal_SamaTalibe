@@ -12,11 +12,16 @@ export class DonAdSupComponent {
   dons: any[] = [];
   don: any;
   public:any;
+  cheminImageUtilisateur: any;
+  username: any;
 
   constructor(private service: AllservicesService , private route: Router) {}
 
   ngOnInit(): void {
     this.loadDons();
+    this.cheminImageUtilisateur = "../../../../assets/adminImg.png" ;
+    this.username = "SOLY";
+
   }
 
 

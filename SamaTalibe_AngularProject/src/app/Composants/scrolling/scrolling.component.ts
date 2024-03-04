@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./scrolling.component.css']
 })
 export class ScrollingComponent {
+  scrollToTop() {
+    window.scrollTo(0,0);
+   }
 
 }

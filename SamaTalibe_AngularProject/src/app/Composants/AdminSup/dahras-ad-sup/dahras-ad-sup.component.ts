@@ -51,6 +51,8 @@ truthyTab: any = [];
   modal: any;
   showDahraEdit: boolean = false;
   public currentId:any="";
+  cheminImageUtilisateur: any;
+  username: any;
 
 
 
@@ -58,6 +60,9 @@ truthyTab: any = [];
 
   ngOnInit(): void {
     this.loadDahrasList();
+    this.cheminImageUtilisateur = "../../../../assets/adminImg.png" ;
+    this.username = "SOLY";
+
   }
 
   deconnexion(){

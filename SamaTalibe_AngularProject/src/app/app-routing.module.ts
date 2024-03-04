@@ -25,6 +25,7 @@ import { ListTalibesComponent } from './Composants/UserNonConnect/dahra/list-tal
 import { TemMaitreComponent } from './Composants/MaitreCoraniq/tem-maitre/tem-maitre.component';
 import { SamaDahraComponent } from './Composants/MaitreCoraniq/sama-dahra/sama-dahra.component';
 import { tokenGuardGuard } from './guards/token-guard.guard';
+import { ScrollingComponent } from './Composants/scrolling/scrolling.component';
 
 
 
@@ -53,6 +54,7 @@ const routes: Routes = [
   { path: 'talibes' , component: ListTalibesComponent},
   { path: 'temaitre' , component: TemMaitreComponent},
   { path: 'samadahra' , component: SamaDahraComponent ,canActivate:[tokenGuardGuard]},
+  { path: 'scrol' , component: ScrollingComponent} ,
   { path: '', redirectTo: '/accueil', pathMatch: 'full' },
   
 ];
