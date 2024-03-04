@@ -17,7 +17,7 @@ export class DonsUserComponent {
 
   pagedDons: any[] = []; // Les données à afficher sur une page
   currentPage = 1; // Page actuelle
-  itemsPerPage = 8; 
+  itemsPerPage = 4; 
   
   dahra_name: any;
   disponibiliteDon: any;

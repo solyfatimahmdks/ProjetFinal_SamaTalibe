@@ -54,7 +54,15 @@
 <hr class="mt-3 container" style="color: #C2A966;">
 
     <div  class="row gap-4 container" style="margin: 0 auto;">
-            <div *ngFor="let don of dons" class=" card col-md-4 my-5 p-4 container" style="width: 450px;" >
+            <div *ngFor="
+            let don of dons
+              | paginate
+                : {
+                    itemsPerPage: itemsPerPage,
+                    currentPage: currentPage,
+                    totalItems: dons.length
+                  }
+          " class=" card col-md-4 my-5 p-4 container" style="width: 450px;" >
             <div class="row card__image-container mx-2 mt-2 py-3" style="background-color: #252649; border: 1px solid #252649; padding: 0 auto; border-radius: 20px;">
                  <div class="col-md-4">
                      <img src="assets/cardhov.jpeg" class="ms-2" style="width: 100px; height: 100px; border-radius: 100%; box-shadow: 1px 1px 1px 1px #C2A966;" alt="">
@@ -73,6 +81,15 @@
                <p class="ms-4"><span style="font-weight: bold;">Destinataire:</span>{{don.dahra.nom}}</p>
               </div>
             </div>
+
+
+            <pagination-controls
+            (pageChange)="setPage($event)"
+            class="mt-3"
+            previousLabel="prev"
+            nextLabel="next"
+            style="color: #252649; font-weight: bold"
+          ></pagination-controls>
     </div>
     
 
