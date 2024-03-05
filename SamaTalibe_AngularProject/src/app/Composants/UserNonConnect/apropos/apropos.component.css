@@ -131,6 +131,10 @@ main{
 
  /* End section banner bottom */
 
+ #objText{
+  height: 300px; 
+  margin: 0 auto;
+ }
 
  @media screen and (max-width: 768px) {
   .banniere{
@@ -162,4 +166,6 @@ main{
    transform: translate(-50%, -50%);
    text-align: start; /* Centrez le texte horizontalement */
  }
+
+
 }

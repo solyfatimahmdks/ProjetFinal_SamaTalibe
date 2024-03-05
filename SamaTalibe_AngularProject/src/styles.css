@@ -40,6 +40,7 @@ span.span_validate
   border-radius: 100px; 
   padding: 3px 13px;
   cursor: pointer;
+  position: fixed;
 }
 
 #sidebar{

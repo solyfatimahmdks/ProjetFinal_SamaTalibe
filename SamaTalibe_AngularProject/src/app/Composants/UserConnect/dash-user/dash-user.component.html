@@ -187,7 +187,7 @@
                                         </thead>
                                         <tbody>
                                           <tr *ngFor="let talibe of talibesList" style="height: 40px; margin-top: 20px !important;">
-                                            <td class="ps-5"><img [src]="getImage(talibe?.image)" style="height: 40px;" id="admindatable" alt=""></td>
+                                            <td class="ps-5"><img [src]="getImage(talibe?.imageFilename)" style="height: 40px;" id="admindatable" alt=""></td>
                                             <td>{{ talibe?.nom }} {{ talibe?.prenom }}</td>
                                             <td>{{ talibe?.adresse }}</td>
                                             <td>{{ talibe?.age}}</td>

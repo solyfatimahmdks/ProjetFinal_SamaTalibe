@@ -12,6 +12,7 @@ export class ListTalibesComponent implements OnInit {
   talibesList: any[] = [];
 talibe: any;
   uploadedImages: any;
+dahra: any;
 
   constructor(private service: AllservicesService) { }
 
@@ -38,14 +39,10 @@ talibe: any;
     }
   }
 
-  loadTalibes(dahraSelected: string) {
-    
-    this.service.get(`/lister-talibe`, (reponse: any[]) => {
+  loadTalibes(dahraId: string) {
+    this.service.get(`/lister-talibe/${dahraId}`, (reponse: any[]) => {
       console.log('Liste des apprenants du dahra', reponse);
-  
-      this.talibesList = reponse.filter(
-        (talibe) => talibe.dahraNom === dahraSelected
-      );
+      this.talibesList = reponse;
       console.log('Liste des apprenants du dahra', this.talibesList);
     });
   }
