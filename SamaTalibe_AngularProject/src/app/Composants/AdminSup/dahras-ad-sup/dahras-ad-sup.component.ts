@@ -264,7 +264,7 @@ private hideModal(): void {
 
   modifierDahra() {
     // Appelez la méthode put de votre service allservicesrest
-    this.allservicesService.put('/modifier-dahra-admin/'+ this.currentId, this.dara , (response: any) => {
+    this.allservicesService.post('/modifier-dahra-admin/'+ this.currentId, this.dara , (response: any) => {
         // Gérer la réponse du serveur (message de succès ou d'erreur)
         console.log(response);
         // this.hideEditModal();

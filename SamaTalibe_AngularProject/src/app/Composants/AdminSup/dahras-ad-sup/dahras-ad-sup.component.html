@@ -99,8 +99,8 @@
                        <i class="bi bi-trash3-fill" (click)="delete(dahra.id)" style="background-color: #252649;border-radius: 5px; box-shadow: 1px 1px 1px #C2A966;margin: 8px !important; cursor: pointer; font-size: 12px;padding: 5px; color: white;"></i>
                        <i class="bi bi-eye-fill btn3" (click)="showDahraDetailsModal(dahra)"  data-bs-toggle="modal" data-bs-target="#dahraDetailsModal" style="background-color: #252649;border-radius: 5px;margin: 8px !important; box-shadow: 1px 1px 1px #C2A966;cursor: pointer; font-size: 12px;padding: 5px; color: white;"></i>
                        <!-- Remplacez l'icône de déblocage par l'icône de cadenas verrouillé -->
-                       <i class="fa fa-lock" style="background-color: #252649;border-radius: 5px; box-shadow: 1px 1px 1px #C2A966;margin: 8px !important; cursor: pointer; font-size: 12px;padding: 5px; color: white;" *ngIf="!dahraActive"  (click)="activateDahra(dahra.id)"></i>
-                       <i class="fa fa-unlock" style="background-color: #252649;border-radius: 5px; box-shadow: 1px 1px 1px #C2A966;margin: 8px !important; cursor: pointer; font-size: 12px;padding: 5px; color: white;" *ngIf="dahraActive"></i>
+                       <!-- <i class="fa fa-lock" style="background-color: #252649;border-radius: 5px; box-shadow: 1px 1px 1px #C2A966;margin: 8px !important; cursor: pointer; font-size: 12px;padding: 5px; color: white;" *ngIf="!dahraActive"  (click)="activateDahra(dahra.id)"></i>
+                       <i class="fa fa-unlock" style="background-color: #252649;border-radius: 5px; box-shadow: 1px 1px 1px #C2A966;margin: 8px !important; cursor: pointer; font-size: 12px;padding: 5px; color: white;" *ngIf="dahraActive"></i> -->
                      </td>
                    </tr>
                  </tbody>
@@ -127,7 +127,7 @@
           <div class="modal-content" style="padding: 40px;  width: 800px;">
             <div class="modal-header">
               <h1 class="modal-title fs-5" style="margin: 0 auto; color: #252649;" id="staticBackdropLabel">Ajouter Dahra</h1>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
             </div>
             <div class="modal-body">
                  <div class="row">
@@ -156,7 +156,7 @@
                     <input type="text" style="height: 40px;border: 1px solid #C2A966; box-shadow:1px 1px 1px #C2A966;" class="form-control" id="exampleFormControlInput1" [(ngModel)]="dara.adresse" >
                   </div>
                   <div class="col-md-6 mb-3 ps-3">
-                    <select [(ngModel)]="selectedRegion"  class="col-md-6" style="color: #C2A966;height: 45px; border: 1px solid #C2A966;
+                    <select [(ngModel)]="selectedRegion" style="color: #C2A966;height: 45px; border: 1px solid #C2A966; 
                     outline: 0;background-color: rgba(255, 255, 255, 0.418); width: 346px !important; margin-top: 25px;border-radius: 5px; font-size: 0.875rem;line-height: 1.25rem;" name="adresse" id="adresse">
                         <option value="" disabled selected>Choisissez une région</option>
                         <option *ngFor="let region of regions" [value]="region">{{ region }}</option>
@@ -173,7 +173,7 @@
                 <label for="exampleFormControlInput1" style="color: #C2A966;" class="form-label">Mot de passe:</label>
                 <input type="password" style="height: 40px;border: 1px solid #C2A966; box-shadow:1px 1px 1px #C2A966;" class="form-control" id="exampleFormControlInput1" [(ngModel)]="dara.password">
               </div>
-              <div class="mb-3 ps-3">
+              <div class="mb-3">
                 <label for="exampleFormControlInput1" style="color: #C2A966;" class="form-label">Nombre de talibés:</label>
                 <input type="number"  style="height: 40px;border: 1px solid #C2A966; box-shadow:1px 1px 1px #C2A966;" class="form-control" id="exampleFormControlInput1" [(ngModel)]="dara.nombreTalibe">
               </div>
@@ -184,7 +184,8 @@
            </div>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" (click)="addDahra()" >Ajouter</button>
+              <button type="button" style="font-size: 15px;" class="btn " data-bs-dismiss="modal" aria-label="Close" >Annuler</button>
+              <button type="button" style="font-size: 15px;" class="btn " (click)="addDahra()" >Ajouter</button>
             </div>
           </div>
         </div>
@@ -196,14 +197,14 @@
       <div class="modal-content" style="padding: 20px; width: 870px; background-color: white !important;">
           <div class="modal-header">
             <h4 class="text-center mb-3"  style="color: #252649;">Information Dahra</h4>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
           </div>
           <div class="modal-body p-5">
               <div class="mb-3 row" style="color: #252649; font-weight: bold;">
-                  <div class="col-md-3">
-                      <img [src]="getImage(selectedDahra.image)" style="width: 200px; height: 150px; border-top: 10px solid #252649; border-left: 10px solid #252649; border-radius: 20% 0 20% 0;" id="détailImg" alt="">
+                  <div class="col-md-6">
+                      <img [src]="getImage(selectedDahra.image)" style="width: 100%; height: 100%; border-radius: 10%;" id="détailImg" alt="">
                   </div>
-                  <div class="col-md-8 ms-5">
+                  <div class="col-md-5 ms-5">
                       <p><span style="font-weight: 400;">Nom:</span>{{ selectedDahra.nom }}</p>
                       <hr class="mb-3"> 
                       <p><span style="font-weight: 400;">Nom Ouztas:</span>{{ selectedDahra.nomOuztas }}</p>
@@ -214,21 +215,14 @@
                       <hr class="mb-3">
                       <p><span style="font-weight: 400;">Numero Telephone Ouztas:</span>{{ selectedDahra.numeroTelephoneOuztas }}</p>
                       <hr class="mb-3">
-                      <p><span style="font-weight: 400;">numero Telephone</span>{{ selectedDahra.numeroTelephone }}</p>
+                      <p><span style="font-weight: 400;">nombreTalibe:</span>{{ selectedDahra.nombreTalibe }}</p>
                       <hr class="mb-3">
                   </div>
               </div>
-              <div class="mb-3">
-                  <p><span style="font-weight: 400;">Mot de passe:</span>{{ selectedDahra.password }}</p>
-                  <hr class="mb-3">
-                  <p><span style="font-weight: 400;">email:</span>{{ selectedDahra.email }}</p>
-                  <hr class="mb-3">
-                  <p><span style="font-weight: 400;">nombreTalibe:</span>{{ selectedDahra.nombreTalibe }}</p>
-                  <hr class="mb-3">
-              </div>
               <div class="modal-footer">
-                <button type="button" class="btn" style="" (click)="closeDahraDetailsModal()" >Fermer</button>
-                <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#listTalibModal">Nos apprenants</button>
+                <button type="button" style="font-size: 15px;" class="btn" data-bs-dismiss="modal" aria-label="Close">Annuler</button>
+                <button type="button" style="font-size: 15px;" class="btn" data-bs-dismiss="modal" aria-label="Close" (click)="closeDahraDetailsModal()" >Fermer</button>
+                <!-- <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#listTalibModal">Nos apprenants</button> -->
 
               </div>
           </div>
@@ -275,12 +269,6 @@
               </div>
            </div>
            <div class="row">
-            <div class="col-md-12 mb-3">
-              <label for="exampleFormControlInput1" style="color: #C2A966;" class="form-label">Numéro Dahra:</label>
-              <textarea [(ngModel)]="dara.numeroTelephone"  name="text" style="height: 40px;border: 1px solid #C2A966; box-shadow:1px 1px 1px #C2A966;" class="form-control" id="exampleFormControlInput1"  cols="30" rows="10"></textarea>
-            </div>
-           </div>
-           <div class="row">
             <div col-md-12>
               <label for="formFileLg" style="color: #C2A966;" class="form-label" class="form-label">Image</label>
               <input class="form-control form-control-lg"  style="height: 40px;border: 1px solid #C2A966; box-shadow:1px 1px 1px #C2A966;" id="formFileLg" type="file">
@@ -288,8 +276,8 @@
          </div>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
-            <button type="button" class="btn btn-secondary" (click)="modifierDahra()">Modifier</button>
+            <button type="button"  style="font-size: 15px;" class="btn btn-secondary" data-bs-dismiss="modal" >Annuler</button>
+            <button type="button"  style="font-size: 15px;" class="btn btn-secondary" (click)="modifierDahra()">Modifier</button>
           </div>
         </div>
       </div>
