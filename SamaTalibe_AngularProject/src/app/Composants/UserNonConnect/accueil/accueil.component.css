@@ -1,6 +1,6 @@
 main{
-  /* margin: 0;
-  padding: 0; */
+  margin: 0;
+  padding: 0;
   /* border: 1px solid red; */
 }
 
@@ -289,8 +289,8 @@ main{
 /* temoignages */
 
 #maitreImg{
-  width: 50px;
-  height: 50px;
+  width: 70px;
+  height: 70px;
   border-radius: 100%;
   box-shadow:2px 5px 2px #252649;
 }
@@ -311,6 +311,11 @@ main{
   margin: 0 auto;  
   background-color: rgb(243, 240, 240);
 }
+
+#botcard{
+  bottom: 80px;
+  left: 100px;
+}
 .card-body p{
   color: #252649; 
   font-size: 25px; 
@@ -325,24 +330,27 @@ main{
 
 .card-textdet{
   font-size: 15px !important;
-  color: RED !important; 
-  margin-bottom: 20% !important;
+  color: white !important; 
+  /* margin-bottom: 20% !important;  */
 }
 
 #cardBottomprimo{
   border-top-right-radius: 30px !important;
   border-bottom-right-radius: 30px !important;
-  width: 78% !important;
+  width: 75% !important;
   background-color: #C2A966 !important;
   height: 90px; 
-  left: 61px !important;
+  left:  71px !important;
   bottom: 30px;
 }
-
+.temoignages{
+  /* border: 1px solid red; */
+  height: 950px;
+}
 
 /* actualites */
 .actu .imageabout {
-  width: 95%;
+  width: 100%;
 }
 
 /* contacts */
@@ -350,15 +358,15 @@ main{
   #exampleFormControlInput1{
     height: 60px;
     border: 1px solid #C2A966;
-    width: 90% !important;
+    width: 100% !important;
   }
   #exampleFormControlTextarea1{
     height: 250px;
     border: 1px solid #C2A966;
-    width: 90% !important;
+    width: 100% !important;
   }
   #contactImg{
-    width: 300px;
+    width: 100%;
   }
 }
 

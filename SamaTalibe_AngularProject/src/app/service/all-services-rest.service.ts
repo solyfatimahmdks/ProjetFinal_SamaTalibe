@@ -9,6 +9,7 @@ import { TOKEN_KEY } from '../constants/constant';
 })
 export class AllservicesService implements OnInit {
   private apiUrl = 'http://127.0.0.1:8000/api';
+  selectedDahra: any;
 
   constructor(private http: HttpClient) {}
   ngOnInit(): void {

@@ -14,7 +14,7 @@ export class ListDahraComponent implements OnInit {
   searchQuery: string = '';
   parrainages: any;
   talibeSelected?: number;
-
+  dahra: any;
   dahras: any[] = [];
   pagedDahras: any[] = []; // Les données à afficher sur une page
   currentPage = 1; // Page actuelle
@@ -31,6 +31,8 @@ export class ListDahraComponent implements OnInit {
 
   ngOnInit() {
     this.loaddahras();
+    this.service.selectedDahra = this.dahra;
+    this.router.navigate(['/talibes']);
   }
 
   getImageUrl(event: any) {
